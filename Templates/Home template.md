@@ -1,4 +1,1 @@
-[[{{date}}]]
-[[<% let yesterday = tp.date.now("YYYY-MM-DD", -1);
-yesterday %>]]
-{{time}}
+Check out [Today's note!](<% tp.date.now("YYYY-MM-DD") %>)
