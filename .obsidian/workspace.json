@@ -121,50 +121,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/Home template.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d617d1fcd76c37f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates/Home template.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0d409b3b75ae1e23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates/Home template.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "53a99c65921c1e9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Weeks/2024-W36.md",
+                "file": "Daily notes/2024-09-05.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -230,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Weeks/2024-W36.md",
+                "file": "Daily notes/2024-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -247,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Weeks/2024-W36.md",
+                "file": "Daily notes/2024-09-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -270,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Weeks/2024-W36.md"
+                "file": "Daily notes/2024-09-05.md"
               }
             }
           },
@@ -295,7 +259,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -313,25 +277,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "53a99c65921c1e9d",
+  "active": "e731d9b07cd830df",
   "lastOpenFiles": [
-    "Weeks/2024-W36.md",
-    "Weeks/2024-W36.md",
-    "Templates/Weekly template.md",
     "Templates/Home template.md",
+    "Daily notes/2024-09-05.md",
+    "Daily notes/Untitled.md",
+    "Weeks/Untitled.md",
     "Weeks/Untitled 1.md",
+    "Templates/Weekly template.md",
+    "Templates/Daily notes template.md",
+    "Weeks/2024-W36.md",
+    "Daily notes/2024-09-04.md",
+    "Daily notes/storage.md",
     "Weeks/Untitled 4.md",
     "Weeks/Untitled 3.md",
     "Weeks/Untitled 2.md",
-    "Templates/Daily notes template.md",
     "Create ssd.md",
-    "Daily notes/2024-09-05.md",
     "Untitled.md",
     "Untitled 1.md",
     "Daily notes/Untitled 2.md",
     "Daily notes/Untitled 1.md",
-    "Daily notes/2024-09-04.md",
-    "Daily notes/storage.md",
     "Home.md",
     "Welcome.md",
     "Untitled 2.md",
@@ -340,7 +305,6 @@
     "Daily.md",
     "README.md",
     "Untitled 3.md",
-    "().md",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",

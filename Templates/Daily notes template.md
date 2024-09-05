@@ -4,8 +4,7 @@ tags:
   - Daily
 ---
 Check out [yesterdays](<% tp.date.yesterday() %>) note!
-## Wat heb ik vandaag gedaan
-
+## What have I done today
 ## De 3 studievragen van vandaag
 
 ## Links
