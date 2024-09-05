@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Links to keep in mind.md",
+                "file": "Daily notes/2024-09-05.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Links to keep in mind.md",
+                "file": "Daily notes/2024-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Links to keep in mind.md",
+                "file": "Daily notes/2024-09-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Links to keep in mind.md"
+                "file": "Daily notes/2024-09-05.md"
               }
             }
           },
@@ -163,7 +163,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -181,12 +181,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "300320140e7e2855",
+  "active": "6d3ea26c0e7fe3c6",
   "lastOpenFiles": [
+    "Daily notes/2024-09-04.md",
     "Daily notes/2024-09-05.md",
     "Links to keep in mind.md",
     "Create ssd.md",
-    "Daily notes/2024-09-04.md",
     "HvA-brain",
     "Weeks/2024-W36.md",
     "Templates/Weekly template.md",

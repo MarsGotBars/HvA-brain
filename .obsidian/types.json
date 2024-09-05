@@ -3,9 +3,6 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "Date": "text",
-    "trest": "date",
-    "Date:{{date:YYYY-MM-DD}}": "date",
     "Week": "text"
   }
 }
