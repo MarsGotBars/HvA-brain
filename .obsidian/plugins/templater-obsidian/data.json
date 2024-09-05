@@ -21,6 +21,10 @@
     {
       "folder": "/",
       "template": "Templates/Home template.md"
+    },
+    {
+      "folder": "Weeks",
+      "template": "Templates/Weekly template.md"
     }
   ],
   "syntax_highlighting": true,

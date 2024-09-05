@@ -1,7 +1,7 @@
-# Week <% tp.date.now("YYYY") %>-W<% tp.date.now("WW") %> 
-## 📅 Daily Notes for Week <% tp.date.now("WW") %> 
-- [[<% tp.date.now("YYYY-MM-DD", 0, "monday") %>]] - Monday 
-- [[<% tp.date.now("YYYY-MM-DD", 1, "monday") %>]] - Tuesday 
-- [[<% tp.date.now("YYYY-MM-DD", 2, "monday") %>]] - Wednesday 
-- [[<% tp.date.now("YYYY-MM-DD", 3, "monday") %>]] - Thursday 
-- [[<% tp.date.now("YYYY-MM-DD", 4, "monday") %>]] - Friday
+<%* 
+	let today = moment();
+	let startOfWeek = today.startOf('week').add(1, 'days').format('YYYY-MM-DD');
+	let endOfWeek = today.endOf('week').format('YYYY-MM-DD');
+	
+	%>
+# Week of <% startOfWeek %> to <% endOfWeek %>
