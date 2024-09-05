@@ -167,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,16 +184,17 @@
   },
   "active": "300320140e7e2855",
   "lastOpenFiles": [
-    "README.md",
-    "Daily notes/2024-09-05.md",
+    "Weeks/2024-W36.md",
+    "Templates/Weekly template.md",
     "Daily notes/2024-09-04.md",
+    "Daily notes/2024-09-05.md",
+    "Templates/Daily notes template.md",
+    "<% moment(tp.file.title, \"YYYY-MM-DD\").format(\"YYYY-[W]WW\") %>.md",
+    "README.md",
     "Links to keep in mind.md",
     "Create ssd.md",
     "HvA-brain",
-    "Weeks/2024-W36.md",
-    "Templates/Weekly template.md",
     "Weeks",
-    "Templates/Daily notes template.md",
     "Welcome.md",
     "Daily notes/2024-10-12.md",
     "Daily notes/test.md",
@@ -211,7 +213,6 @@
     "Daily notes/zx.md",
     "Daily notes/asz.md",
     "Daily notes/sd.md",
-    "Daily notes/sasd.md",
     "Templates/Untitled",
     "Templates",
     "Daily notes"
