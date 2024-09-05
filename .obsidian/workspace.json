@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-09-04.md",
+                "file": "Daily notes/2024-09-05.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-04.md",
+                "file": "Daily notes/2024-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-04.md",
+                "file": "Daily notes/2024-09-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-09-04.md"
+                "file": "Daily notes/2024-09-05.md"
               }
             }
           },
@@ -170,15 +170,15 @@
   },
   "active": "300320140e7e2855",
   "lastOpenFiles": [
-    "Daily notes/2024-09-05.md",
     "Daily notes/2024-09-04.md",
+    "Daily notes/2024-09-05.md",
     "Templates/Daily notes template.md",
+    "Templates/Weekly template.md",
     "Templates/Home template.md",
     "Daily notes/storage.md",
     "Welcome.md",
     "Daily notes/Untitled.md",
     "Daily notes/Untitled 2.md",
-    "Templates/Weekly template.md",
     "Weeks/2024-W36.md",
     "Daily notes/Untitled 1.md",
     "Home.md",
