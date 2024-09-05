@@ -121,7 +121,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Create.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Create.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Create.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -234,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-09-06.md"
+                "file": "Create.md"
               }
             }
           },
@@ -279,11 +279,12 @@
   },
   "active": "93c8ee5df9271cae",
   "lastOpenFiles": [
-    "Daily notes/2024-09-05.md",
-    "Daily notes/2024-09-06.md",
-    "Links to keep in mind.md",
+    "openmouth.png",
     "Templates/Daily notes template.md",
     "Templates/Home template.md",
+    "Daily notes/2024-09-06.md",
+    "Daily notes/2024-09-05.md",
+    "Links to keep in mind.md",
     "Daily notes/Untitled.md",
     "Weeks/Untitled.md",
     "Weeks/Untitled 1.md",
@@ -294,7 +295,7 @@
     "Weeks/Untitled 4.md",
     "Weeks/Untitled 3.md",
     "Weeks/Untitled 2.md",
-    "Create ssd.md",
+    "Create.md",
     "Untitled.md",
     "Untitled 1.md",
     "Daily notes/Untitled 2.md",
@@ -304,7 +305,6 @@
     "Untitled 2.md",
     "Test.md",
     "Daily.md",
-    "README.md",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",
