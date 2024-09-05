@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Create ssd.md",
+                "file": "Daily notes/2024-09-05.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Create ssd.md",
+                "file": "Daily notes/2024-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Create ssd.md",
+                "file": "Daily notes/2024-09-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Create ssd.md"
+                "file": "Daily notes/2024-09-05.md"
               }
             }
           },
@@ -170,6 +170,7 @@
   },
   "active": "b76665fb4de30fb8",
   "lastOpenFiles": [
+    "Create ssd.md",
     "Daily notes/2024-09-04.md",
     "HvA-brain",
     "Weeks/2024-W36.md",
@@ -184,7 +185,6 @@
     "Daily notes/est.md",
     "Daily notes/Donderdag - Javascript.md",
     "Test.md",
-    "Create ssd.md",
     "Daily notes/s.md",
     "Daily notes/egg.md",
     "Daily notes/Untitled.canvas",
