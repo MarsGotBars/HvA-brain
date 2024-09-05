@@ -4,5 +4,6 @@ Make a note of something, [[Create ssd]], or try [the Importer](https://help.obs
 
 When you're ready, delete this note and make the vault your own.
 
-Check out my `="[[" + dateformat(date(today), "yyyy-MM-dd") + "|daily note! ]]"`
+Check out my {{date}} - Daily Note
+
 Or my `="[[" + dateformat(date(yesterday), "yyyy-MM-dd") + "|previous note! ]]"`
