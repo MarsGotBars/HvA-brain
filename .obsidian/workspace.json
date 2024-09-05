@@ -23,11 +23,10 @@
             "id": "300320140e7e2855",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
-                "mode": "source",
-                "source": false
+                "file": ".obsidian/workspace.json",
+                "staged": false
               }
             }
           }
@@ -98,7 +97,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +134,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Daily notes/2024-09-05.md"
-              }
+              "state": {}
             }
           },
           {
@@ -181,10 +176,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e731d9b07cd830df",
+  "active": "300320140e7e2855",
   "lastOpenFiles": [
-    "Daily notes/2024-09-04.md",
+    "README.md",
     "Daily notes/2024-09-05.md",
+    "Daily notes/2024-09-04.md",
     "Links to keep in mind.md",
     "Create ssd.md",
     "HvA-brain",
@@ -211,7 +207,6 @@
     "Daily notes/asz.md",
     "Daily notes/sd.md",
     "Daily notes/sasd.md",
-    "Daily notes/Daily.md",
     "Templates/Untitled",
     "Templates",
     "Daily notes"
