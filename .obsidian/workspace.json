@@ -121,7 +121,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
+                "file": "Daily notes/2024-09-06.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
+                "file": "Daily notes/2024-09-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-05.md",
+                "file": "Daily notes/2024-09-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -234,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-09-05.md"
+                "file": "Daily notes/2024-09-06.md"
               }
             }
           },
@@ -277,15 +277,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e731d9b07cd830df",
+  "active": "93c8ee5df9271cae",
   "lastOpenFiles": [
-    "Templates/Home template.md",
     "Daily notes/2024-09-05.md",
+    "Daily notes/2024-09-06.md",
+    "Links to keep in mind.md",
+    "Templates/Daily notes template.md",
+    "Templates/Home template.md",
     "Daily notes/Untitled.md",
     "Weeks/Untitled.md",
     "Weeks/Untitled 1.md",
     "Templates/Weekly template.md",
-    "Templates/Daily notes template.md",
     "Weeks/2024-W36.md",
     "Daily notes/2024-09-04.md",
     "Daily notes/storage.md",
@@ -301,10 +303,8 @@
     "Welcome.md",
     "Untitled 2.md",
     "Test.md",
-    "Links to keep in mind.md",
     "Daily.md",
     "README.md",
-    "Untitled 3.md",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",
