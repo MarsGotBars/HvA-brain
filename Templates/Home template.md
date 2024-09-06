@@ -1,1 +1,1 @@
-Check out [yesterdays](<% tp.date.yesterday() %>) note!
+Check out [Today's Note!](<% tp.date.today() %>)
