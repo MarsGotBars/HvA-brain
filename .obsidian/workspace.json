@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Home.md",
+                "file": "Templates/Weekly template.md",
                 "mode": "source",
                 "source": true
               }
@@ -37,14 +37,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Code review - Ole.md",
+                "file": "Code review/Code review - Ole.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ba11f7c3279d6570",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Templates/Home template.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "490a5317a5445a10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Code review/Code review - Ole.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -110,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Code review - Ole.md",
+                "file": "Code review/Code review - Ole.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Code review - Ole.md",
+                "file": "Code review/Code review - Ole.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Code review - Ole.md"
+                "file": "Code review/Code review - Ole.md"
               }
             }
           },
@@ -179,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,15 +217,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "60437275ccdef518",
+  "active": "490a5317a5445a10",
   "lastOpenFiles": [
     "Home.md",
-    "Code review - Ole.md",
-    "Templates/Weekly template.md",
-    "Templates/Daily notes template.md",
-    "Daily notes/2024-09-06.md",
+    "Welcome.md",
     "Daily notes/2024-09-05.md",
     "Templates/Home template.md",
+    "Code review/Code review - Ole.md",
+    "Templates/Weekly template.md",
+    "Code review",
+    "Templates/Daily notes template.md",
+    "Daily notes/2024-09-06.md",
     "Weeks/2024-W36.md",
     "Links to keep in mind.md",
     "Daily notes/2024-09-04.md",
@@ -214,7 +239,6 @@
     "Create ssd.md",
     "HvA-brain",
     "Weeks",
-    "Welcome.md",
     "Daily notes/2024-10-12.md",
     "Daily notes/test.md",
     "Invalid date.md",
@@ -225,7 +249,6 @@
     "Daily notes/egg.md",
     "Daily notes/Untitled.canvas",
     "Daily notes/Untitled 1.md",
-    "Daily notes/daily.md",
     "Templates/Untitled",
     "Templates",
     "Daily notes"

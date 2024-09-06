@@ -1,1 +1,1 @@
-Check out [Today's Note!](<%tp.date.now('YYYY-MM-DD')%>)
+Check out [Today's Note!](2024-09-06)
