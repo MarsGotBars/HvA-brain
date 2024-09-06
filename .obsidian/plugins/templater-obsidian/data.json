@@ -20,7 +20,7 @@
     },
     {
       "folder": "/",
-      "template": "Templates/Home template.md"
+      "template": "Templates/Root template.md"
     },
     {
       "folder": "Weeks",
