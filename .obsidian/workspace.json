@@ -61,9 +61,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Create.md",
+                "file": "Daily notes/2024-09-06.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Create.md",
+                "file": "Daily notes/2024-09-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Create.md",
+                "file": "Daily notes/2024-09-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Create.md"
+                "file": "Daily notes/2024-09-06.md"
               }
             }
           },
@@ -219,24 +219,25 @@
   },
   "active": "8a7e7005e5687af5",
   "lastOpenFiles": [
-    "Home.md",
-    "Daily.md",
-    "Links to keep in mind.md",
-    "Daily notes/2024-09-06.md",
-    "Untitled.md",
-    "Templates/Root template.md",
-    "Code review/Code review - Ole.md",
-    "Welcome.md",
     "Daily notes/2024-09-05.md",
-    "Templates/Weekly template.md",
-    "Code review",
-    "Templates/Daily notes template.md",
-    "Weeks/2024-W36.md",
     "Daily notes/2024-09-04.md",
-    "openmouth.png",
-    "Create.md",
-    "<% moment(tp.file.title, \"YYYY-MM-DD\").format(\"YYYY-[W]WW\") %>.md",
     "README.md",
+    "Untitled.md",
+    "Links to keep in mind.md",
+    "Home.md",
+    "Create.md",
+    "Templates/Weekly template.md",
+    "Daily notes/2024-09-06.md",
+    "Weeks/2024-W36.md",
+    "Templates/Daily notes template.md",
+    "Templates/Root template.md",
+    "Welcome.md",
+    "Test.md",
+    "Daily.md",
+    "Code review/Code review - Ole.md",
+    "Code review",
+    "openmouth.png",
+    "<% moment(tp.file.title, \"YYYY-MM-DD\").format(\"YYYY-[W]WW\") %>.md",
     "Create ssd.md",
     "HvA-brain",
     "Weeks",
@@ -245,7 +246,6 @@
     "Invalid date.md",
     "Daily notes/est.md",
     "Daily notes/Donderdag - Javascript.md",
-    "Test.md",
     "Daily notes/s.md",
     "Daily notes/egg.md",
     "Daily notes/Untitled.canvas",
