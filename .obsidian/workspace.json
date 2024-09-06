@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Code review/Code review - Ole.md",
+                "file": "Daily notes/2024-09-06.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Code review/Code review - Ole.md",
+                "file": "Daily notes/2024-09-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Code review/Code review - Ole.md",
+                "file": "Daily notes/2024-09-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Code review/Code review - Ole.md"
+                "file": "Daily notes/2024-09-06.md"
               }
             }
           },
@@ -212,18 +212,16 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "490a5317a5445a10",
   "lastOpenFiles": [
+    "Code review/Code review - Ole.md",
     "Home.md",
     "Welcome.md",
     "Daily notes/2024-09-05.md",
     "Templates/Home template.md",
-    "Code review/Code review - Ole.md",
     "Templates/Weekly template.md",
     "Code review",
     "Templates/Daily notes template.md",
