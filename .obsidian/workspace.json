@@ -61,9 +61,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Daily notes/2024-09-09.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Daily notes/2024-09-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-06.md",
+                "file": "Daily notes/2024-09-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-09-06.md"
+                "file": "Daily notes/2024-09-09.md"
               }
             }
           },
@@ -219,19 +219,22 @@
   },
   "active": "8a7e7005e5687af5",
   "lastOpenFiles": [
-    "Daily notes/2024-09-05.md",
+    "Links to keep in mind.md",
+    "Daily notes/2024-09-09.md",
+    "Daily notes/2024-09-06.md",
     "Daily notes/2024-09-04.md",
+    "Daily notes/2024-09-05.md",
+    "Weeks/2024-W37.md",
+    "Weeks/2024-W36.md",
+    "2024-09-08.md",
+    "Templates/Weekly template.md",
+    "Templates/Root template.md",
+    "Home.md",
     "README.md",
     "Untitled.md",
-    "Links to keep in mind.md",
-    "Home.md",
-    "Create.md",
-    "Templates/Weekly template.md",
-    "Daily notes/2024-09-06.md",
-    "Weeks/2024-W36.md",
-    "Templates/Daily notes template.md",
-    "Templates/Root template.md",
     "Welcome.md",
+    "Create.md",
+    "Templates/Daily notes template.md",
     "Test.md",
     "Daily.md",
     "Code review/Code review - Ole.md",
@@ -245,11 +248,7 @@
     "Daily notes/test.md",
     "Invalid date.md",
     "Daily notes/est.md",
-    "Daily notes/Donderdag - Javascript.md",
-    "Daily notes/s.md",
-    "Daily notes/egg.md",
     "Daily notes/Untitled.canvas",
-    "Daily notes/Untitled 1.md",
     "Templates/Untitled",
     "Templates",
     "Daily notes"
