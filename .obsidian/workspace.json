@@ -35,11 +35,10 @@
             "id": "93c8ee5df9271cae",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
                 "file": "Daily notes/2024-09-09.md",
-                "mode": "source",
-                "source": false
+                "staged": false
               }
             }
           }
@@ -110,7 +109,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +125,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +146,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Daily notes/2024-09-09.md"
-              }
+              "state": {}
             }
           },
           {
@@ -195,13 +190,13 @@
   },
   "active": "e731d9b07cd830df",
   "lastOpenFiles": [
+    "Daily notes/2024-09-09.md",
+    "Daily notes/2024-09-06.md",
     "Weeks/2024-W37.md",
     "Untitled.md",
     "Templates/Root template.md",
-    "Daily notes/2024-09-06.md",
     "Daily notes/2024-09-05.md",
     "Daily notes/2024-09-04.md",
-    "Daily notes/2024-09-09.md",
     "Templates/Home template.md",
     "Daily.md",
     "Create.md",
