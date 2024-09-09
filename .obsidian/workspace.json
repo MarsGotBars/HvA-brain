@@ -37,7 +37,7 @@
             "state": {
               "type": "diff-view",
               "state": {
-                "file": "Daily notes/2024-09-09.md",
+                "file": "Daily notes/2024-09-05.md",
                 "staged": false
               }
             }
@@ -184,24 +184,25 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "e731d9b07cd830df",
   "lastOpenFiles": [
     "Daily notes/2024-09-09.md",
+    "Templates/Root template.md",
+    "2024-09-08.md",
+    "Daily notes/2024-09-04.md",
+    "Daily notes/2024-09-05.md",
     "Daily notes/2024-09-06.md",
+    "Templates/Daily notes template.md",
     "Weeks/2024-W37.md",
     "Untitled.md",
-    "Templates/Root template.md",
-    "Daily notes/2024-09-05.md",
-    "Daily notes/2024-09-04.md",
     "Templates/Home template.md",
     "Daily.md",
     "Create.md",
     "Links to keep in mind.md",
-    "Templates/Daily notes template.md",
     "openmouth.png",
     "Daily notes/Untitled.md",
     "Weeks/Untitled.md",
@@ -216,7 +217,6 @@
     "Daily notes/Untitled 2.md",
     "Daily notes/Untitled 1.md",
     "Home.md",
-    "Welcome.md",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",
