@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "/Templates",
+  "templates_folder": "",
   "templates_pairs": [
     [
       "",
@@ -20,7 +20,7 @@
     },
     {
       "folder": "/",
-      "template": "Templates/Home template.md"
+      "template": "Templates/Root template.md"
     },
     {
       "folder": "Weeks",

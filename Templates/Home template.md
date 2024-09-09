@@ -1,1 +1,0 @@
-Check out [yesterdays](<% tp.date.yesterday() %>) note!
