@@ -8,58 +8,34 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b76665fb4de30fb8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily notes/2024-09-05.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "300320140e7e2855",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/Weekly template.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "ba11f7c3279d6570",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates/Root template.md",
+                "file": "Templates/Daily notes template.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "490a5317a5445a10",
+            "id": "ee28c392d4a4d09b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/Root template.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8a7e7005e5687af5",
+            "id": "93c8ee5df9271cae",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
                 "file": "Daily notes/2024-09-11.md",
                 "mode": "source",
@@ -68,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:Daily-notes",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -118,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 296.5
   },
   "right": {
     "id": "923a096a3d76abda",
@@ -134,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-09-11.md",
+                "file": "Daily notes/2024-09-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-09-11.md",
+                "file": "Daily notes/2024-09-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-09-11.md"
+                "file": "Daily notes/2024-09-09.md"
               }
             }
           },
@@ -213,42 +189,45 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "8a7e7005e5687af5",
+  "active": "e731d9b07cd830df",
   "lastOpenFiles": [
-    "Daily notes/2024-09-10.md",
-    "Daily notes/2024-09-11.md",
-    "Daily notes/2024-09-09.md",
     "Links to keep in mind.md",
+    "Daily notes/2024-09-09.md",
     "Daily notes/2024-09-06.md",
     "Daily notes/2024-09-04.md",
     "Daily notes/2024-09-05.md",
-    "Weeks/2024-W37.md",
-    "Weeks/2024-W36.md",
-    "2024-09-08.md",
-    "Templates/Weekly template.md",
-    "Templates/Root template.md",
-    "Home.md",
-    "README.md",
-    "Untitled.md",
-    "Welcome.md",
-    "Create.md",
+    "Daily notes/2024-09-06.md",
     "Templates/Daily notes template.md",
-    "Test.md",
+    "Weeks/2024-W37.md",
+    "Untitled.md",
+    "Templates/Home template.md",
     "Daily.md",
-    "Code review/Code review - Ole.md",
-    "Code review",
+    "Create.md",
+    "Links to keep in mind.md",
     "openmouth.png",
-    "<% moment(tp.file.title, \"YYYY-MM-DD\").format(\"YYYY-[W]WW\") %>.md",
-    "Create ssd.md",
+    "Daily notes/Untitled.md",
+    "Weeks/Untitled.md",
+    "Weeks/Untitled 1.md",
+    "Templates/Weekly template.md",
+    "Weeks/2024-W36.md",
+    "Daily notes/storage.md",
+    "Weeks/Untitled 4.md",
+    "Weeks/Untitled 3.md",
+    "Weeks/Untitled 2.md",
+    "Untitled 1.md",
+    "Daily notes/Untitled 2.md",
+    "Daily notes/Untitled 1.md",
+    "Home.md",
     "HvA-brain",
     "Weeks",
     "Daily notes/2024-10-12.md",
     "Daily notes/test.md",
     "Invalid date.md",
+    "Daily notes/est.md",
     "Daily notes/Untitled.canvas",
     "Templates/Untitled",
     "Templates",
