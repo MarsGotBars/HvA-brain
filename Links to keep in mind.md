@@ -28,6 +28,6 @@ ___
 	- amazing slider
 - https://www.makereign.com/
 	- text opacity on scroll
+	- also a possible internship/job opportunity?
 ---
-
 ### Others/Miscellaneous
