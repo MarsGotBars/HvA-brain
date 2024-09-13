@@ -23,4 +23,9 @@ ___
 - https://codepen.io/cjimmy/pen/wvexYoJ
 	- Grainy box-shadow effect
 ___
+### Inspiration
+- https://aristidebenoist.com/
+	- amazing slider
+---
+
 ### Others/Miscellaneous
