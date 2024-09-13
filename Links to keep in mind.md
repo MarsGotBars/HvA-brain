@@ -26,6 +26,8 @@ ___
 ### Inspiration
 - https://aristidebenoist.com/
 	- amazing slider
+- https://www.makereign.com/
+	- text opacity on scroll
 ---
 
 ### Others/Miscellaneous
