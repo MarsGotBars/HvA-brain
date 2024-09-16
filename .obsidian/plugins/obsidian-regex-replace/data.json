@@ -1,0 +1,10 @@
+{
+  "findText": "fef0c1d1ab8743ff",
+  "replaceText": "fef0c1d1ab8743ff x",
+  "useRegEx": true,
+  "selOnly": false,
+  "caseInsensitive": false,
+  "processLineBreak": false,
+  "processTab": false,
+  "prefillFind": false
+}

@@ -2,5 +2,6 @@
   "obsidian-emoji-toolbar",
   "obsidian-discordrpc",
   "obsidian-git",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-regex-replace"
 ]
