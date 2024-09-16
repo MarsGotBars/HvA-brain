@@ -25,14 +25,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Links to keep in mind.md",
+                "file": "Daily notes/2024-09-16.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "f1fbe5c64ea91217",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": ".obsidian/workspace.json",
+                "staged": true
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -78,7 +89,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -98,7 +110,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Links to keep in mind.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +126,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Links to keep in mind.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +147,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Links to keep in mind.md"
-              }
+              "state": {}
             }
           },
           {
@@ -181,12 +189,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ee28c392d4a4d09b",
+  "active": "e731d9b07cd830df",
   "lastOpenFiles": [
+    "Songs.md",
+    "Daily notes/2024-09-16.md",
+    "Links to keep in mind.md",
     "Home.md",
     "Templates/Root template.md",
     "Daily notes/2024-09-13.md",
-    "Links to keep in mind.md",
     "Daily notes/2024-09-11.md",
     "Daily notes/2024-09-10.md",
     "README.md",
@@ -208,8 +218,6 @@
     "Templates/Weekly template.md",
     "Weeks/2024-W36.md",
     "Daily notes/storage.md",
-    "Weeks/Untitled 4.md",
-    "Weeks/Untitled 3.md",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",
