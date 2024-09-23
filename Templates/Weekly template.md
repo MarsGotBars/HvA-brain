@@ -1,9 +1,9 @@
 <%* 
 	let today = moment();
 	let startOfWeek = today.startOf('week').add(1, 'days').format('YYYY-MM-DD');
-	let endOfWeek = today.endOf('week').format('YYYY-MM-DD');
+	let endOfWeek = today.endOf('week').subtract(1, 'days').format('YYYY-MM-DD');
 	
-	%> Check out [yesterdays](<% tp.date.yesterday() %>) note!
+	%>
 # Week of <% startOfWeek %> to <% endOfWeek %>
 ## Daily notes for this week
 ___
