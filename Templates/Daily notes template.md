@@ -8,5 +8,5 @@ Check out [yesterdays](<% tp.date.yesterday() %>) note!
 ## What have I done today
 ## 3 Daily study questions
 
-## Interesting links I found today
+## Interesting links / info I found today
 none 😔
