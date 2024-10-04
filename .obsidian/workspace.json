@@ -37,9 +37,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-10-02.md",
+                "file": "Daily notes/2024-10-04.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-10-02.md",
+                "file": "Daily notes/2024-10-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-10-02.md",
+                "file": "Daily notes/2024-10-04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-10-02.md"
+                "file": "Daily notes/2024-10-04.md"
               }
             }
           },
@@ -195,8 +195,9 @@
   },
   "active": "47e910bf1c550405",
   "lastOpenFiles": [
-    "Templates/Daily notes template.md",
     "Daily notes/2024-10-02.md",
+    "Daily notes/2024-10-04.md",
+    "Templates/Daily notes template.md",
     "Daily notes/2024-09-30.md",
     "Weeks/2024-W40.md",
     "Weeks/2024-W39.md",
@@ -221,7 +222,6 @@
     "The Client.md",
     "Links to keep in mind.md",
     "Daily notes/2024-09-06.md",
-    "Home.md",
     "openmouth.png",
     "HvA-brain",
     "Weeks",
