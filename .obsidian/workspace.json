@@ -37,9 +37,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-10-04.md",
+                "file": "Daily notes/2024-10-09.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-10-04.md",
+                "file": "Daily notes/2024-10-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-10-04.md",
+                "file": "Daily notes/2024-10-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-10-04.md"
+                "file": "Daily notes/2024-10-09.md"
               }
             }
           },
@@ -195,8 +195,13 @@
   },
   "active": "47e910bf1c550405",
   "lastOpenFiles": [
-    "Daily notes/2024-10-02.md",
+    "Daily notes/2024-09-23.md",
+    "Daily notes/2024-10-09.md",
+    "Daily notes/2024-10-08.md",
+    "Daily notes/2024-10-07.md",
+    "Links to keep in mind.md",
     "Daily notes/2024-10-04.md",
+    "Daily notes/2024-10-02.md",
     "Templates/Daily notes template.md",
     "Daily notes/2024-09-30.md",
     "Weeks/2024-W40.md",
@@ -207,7 +212,6 @@
     "Daily notes/2024-09-27.md",
     "Daily notes/2024-09-26.md",
     "Daily notes/2024-09-25.md",
-    "Daily notes/2024-09-23.md",
     "Daily notes/2024-09-17.md",
     "Daily notes/2024-09-11.md",
     "Daily notes/2024-09-13.md",
@@ -218,10 +222,6 @@
     "Daily notes/2024-09-19.md",
     "Daily notes/2024-09-24.md",
     "Untitled.canvas",
-    "Daily notes/2024-09-12.md",
-    "The Client.md",
-    "Links to keep in mind.md",
-    "Daily notes/2024-09-06.md",
     "openmouth.png",
     "HvA-brain",
     "Weeks",
