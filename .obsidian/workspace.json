@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-10-14.md",
+                "file": "Daily notes/2024-10-16.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-10-14.md",
+                "file": "Daily notes/2024-10-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-10-14.md",
+                "file": "Daily notes/2024-10-16.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-10-14.md"
+                "file": "Daily notes/2024-10-16.md"
               }
             }
           },
@@ -195,8 +195,9 @@
   },
   "active": "47e910bf1c550405",
   "lastOpenFiles": [
-    "Daily notes/2024-10-11.md",
     "Daily notes/2024-10-14.md",
+    "Daily notes/2024-10-16.md",
+    "Daily notes/2024-10-11.md",
     "Daily notes/2024-10-10.md",
     "Daily notes/2024-10-09.md",
     "Daily notes/2024-09-29.md",
@@ -220,7 +221,6 @@
     "Daily notes/2024-09-17.md",
     "Daily notes/2024-09-11.md",
     "Daily notes/2024-09-13.md",
-    "Daily notes/2024-09-14.md",
     "Untitled.canvas",
     "openmouth.png",
     "HvA-brain",
