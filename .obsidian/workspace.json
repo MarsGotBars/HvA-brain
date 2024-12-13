@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-11-20.md",
+                "file": "Daily notes/2024-12-13.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-20"
+              "title": "2024-12-13"
             }
           },
           {
@@ -111,16 +111,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily notes/2024-12-09.md",
+                "file": "Daily notes/2024-12-13.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-12-09"
+              "title": "2024-12-13"
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -151,7 +151,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"Week\"]",
+                "query": "tag:we",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -172,7 +172,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -287,10 +288,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d6770dc70b703c9b",
+  "active": "1f29b1921fb1517d",
   "lastOpenFiles": [
-    "Daily notes/2024-12-05.md",
+    "Daily notes/2024-11-20.md",
+    "Daily notes/2024-12-13.md",
+    "Untitled.canvas",
+    "Daily notes/2024-10-04.md",
     "Daily notes/2024-12-09.md",
+    "Daily notes/2024-12-05.md",
     "Daily notes/2024-12-04.md",
     "Weeks/2024-W38.md",
     "Weeks/2024-W39.md",
@@ -299,7 +304,6 @@
     "Daily notes/2024-11-29.md",
     "Daily notes/2024-11-22.md",
     "Performance.now().md",
-    "Daily notes/2024-11-20.md",
     "PRIVATE/Project plans.md",
     "PRIVATE/Schedule planning.md",
     "Daily notes/2024-10-02.md",
@@ -312,11 +316,7 @@
     "Links to keep in mind.md",
     "The Client.md",
     "Daily notes/2024-11-14.md",
-    "Daily notes/2024-11-11.md",
-    "Daily notes/2024-10-25.md",
-    "Daily notes/2024-11-05.md",
     "PRIVATE",
-    "Untitled.canvas",
     "openmouth.png",
     "HvA-brain",
     "Weeks",
