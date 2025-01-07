@@ -16,6 +16,7 @@ ___
 ___
 ### CSS related
 #### - General
+- https://css-tricks.com/number-scrubbing/ great idea for movie ender
 - https://css-tricks.com/grainy-gradients/
 	- Grainy gradient effects with svg filters
 		- [related video](https://www.youtube.com/watch?v=_ZFghigBmqo)
