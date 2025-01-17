@@ -95,13 +95,14 @@
             "id": "1f29b1921fb1517d",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/workspace.json",
-                "staged": false
+                "file": "Daily notes/2025-01-17.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "git-pull-request",
-              "title": "Diff View (workspace.json)"
+              "icon": "lucide-file",
+              "title": "2025-01-17"
             }
           },
           {
@@ -286,8 +287,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e731d9b07cd830df",
+  "active": "1f29b1921fb1517d",
   "lastOpenFiles": [
+    "Performance.now().md",
+    "Daily notes/2025-01-17.md",
     "Daily notes/2025-01-13.md",
     "Daily notes/2025-01-10.md",
     "Daily notes/2025-01-06.md",
@@ -312,8 +315,6 @@
     "Daily notes/2024-10-18.md",
     "Daily notes/2024-10-21.md",
     "Daily notes/2024-10-24.md",
-    "Daily notes/2024-10-25.md",
-    "Daily notes/2024-11-08.md",
     "Untitled.canvas",
     "PRIVATE",
     "openmouth.png",
