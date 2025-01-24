@@ -52,7 +52,7 @@ tags:
 > create rules for routes that shouldn't run scripts
 ## Paul Williams & Jason Williams
 ### Bloomberg becomes browser
-> [!hint] Bloomberg
+> [!hint]- Bloomberg
 > Temporal for standard JS
 > Container timing attribute
 > bloomberg github for above attribute
