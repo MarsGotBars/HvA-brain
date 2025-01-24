@@ -41,86 +41,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2024-W41.md",
+                "file": "Links to keep in mind.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-W41"
+              "title": "Links to keep in mind"
             }
           },
           {
-            "id": "4c9002c233b60666",
+            "id": "279a2aacb8cbca3a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weeks/2024-W37.md",
+                "file": "Daily notes/2024-10-04.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-W37"
-            }
-          },
-          {
-            "id": "6135fb51515d0f10",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily notes/2024-11-14.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2024-11-14"
-            }
-          },
-          {
-            "id": "ff81b81ea3447c6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Performance.now().md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Performance.now()"
-            }
-          },
-          {
-            "id": "1f29b1921fb1517d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily notes/2025-01-17.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "2025-01-17"
-            }
-          },
-          {
-            "id": "d6770dc70b703c9b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Daily notes/2024-12-13.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2024-12-13"
+              "title": "2024-10-04"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -192,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily notes/2024-10-21.md",
+                "file": "Daily notes/2025-01-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +146,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2024-10-21"
+              "title": "Backlinks for 2025-01-16"
             }
           },
           {
@@ -211,12 +155,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily notes/2024-10-21.md",
+                "file": "Daily notes/2025-01-16.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2024-10-21"
+              "title": "Outgoing links from 2025-01-16"
             }
           },
           {
@@ -238,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily notes/2024-10-21.md"
+                "file": "Daily notes/2025-01-16.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 2024-10-21"
+              "title": "Outline of 2025-01-16"
             }
           },
           {
@@ -284,39 +228,39 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "e731d9b07cd830df",
+  "active": "279a2aacb8cbca3a",
   "lastOpenFiles": [
+    "Daily notes/2024-12-13.md",
     "Daily notes/2025-01-16.md",
-    "Daily notes/2025-01-13.md",
-    "Daily notes/2025-01-17.md",
-    "Daily notes/2024-09-10.md",
-    "Daily notes/2024-09-09.md",
-    "Daily notes/2024-09-06.md",
-    "Daily notes/2024-09-05.md",
-    "Daily notes/2024-09-04.md",
-    "Weeks/2024-W36.md",
-    "Daily notes/2025-01-06.md",
-    "Daily notes/2025-01-10.md",
     "Performance.now().md",
+    "Daily notes/2025-01-17.md",
+    "Daily notes/2025-01-24.md",
+    "Daily notes/2025-01-23.md",
+    "Daily notes/2025-01-22.md",
+    "Daily notes/2025-01-13.md",
+    "Daily notes/2025-01-10.md",
+    "Daily notes/2025-01-06.md",
+    "The Client.md",
+    "Weeks/2024-W41.md",
+    "Weeks/2024-W40.md",
+    "Untitled.canvas",
+    "Untitled 1.md",
+    "Evaluatie mentoren 1G - 2.md",
     "Daily notes/2024-12-18.md",
     "Daily notes/2024-12-09.md",
-    "Daily notes/2024-12-13.md",
+    "Daily notes/2024-12-05.md",
+    "Daily notes/2024-12-04.md",
+    "Daily notes/2024-11-29.md",
+    "Daily notes/2024-11-22.md",
+    "Daily notes/2024-11-20.md",
+    "Daily notes/2024-11-14.md",
+    "Daily notes/2024-11-11.md",
+    "Daily notes/2024-11-08.md",
     "Daily notes/2024-11-06.md",
-    "Daily notes/2024-11-05.md",
-    "Daily notes/2024-09-24.md",
-    "Daily notes/2024-09-25.md",
-    "Daily notes/2024-09-26.md",
-    "Daily notes/2024-09-29.md",
-    "Daily notes/2024-09-30.md",
-    "Daily notes/2024-10-02.md",
-    "Daily notes/2024-10-04.md",
-    "Daily notes/2024-10-07.md",
-    "Daily notes/2024-10-09.md",
-    "Untitled.canvas",
-    "PRIVATE",
     "openmouth.png",
     "HvA-brain",
     "Weeks",

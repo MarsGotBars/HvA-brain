@@ -3,5 +3,6 @@
   "obsidian-discordrpc",
   "obsidian-git",
   "templater-obsidian",
-  "obsidian-regex-replace"
+  "obsidian-regex-replace",
+  "omnisearch"
 ]
