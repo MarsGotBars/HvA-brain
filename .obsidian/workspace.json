@@ -67,13 +67,14 @@
             "id": "ba5173f1c1ef9739",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/graph.json",
-                "staged": false
+                "file": "Daily notes/2025-01-28.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "git-pull-request",
-              "title": "Diff View (graph.json)"
+              "icon": "lucide-file",
+              "title": "2025-01-28"
             }
           }
         ],
@@ -249,6 +250,7 @@
   "lastOpenFiles": [
     "private/Wireflow SV.canvas",
     "private/Pages/detail pages/Vacature(s).md",
+    "Daily notes/2025-01-28.md",
     "private/Pages/detail pages/Blog post(s).md",
     "private/Pages/WAAS.md",
     "private/Pages/Vacatures.md",
@@ -267,7 +269,6 @@
     "private",
     "New Text Document.txt",
     "The Client.md",
-    "Daily notes/2025-01-28.md",
     "Daily notes/2024-12-04.md",
     "Daily notes/2024-11-29.md",
     "Daily notes/2024-12-05.md",
