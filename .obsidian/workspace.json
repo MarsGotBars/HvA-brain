@@ -69,6 +69,34 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Daily notes/2025-01-30.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-01-30"
+            }
+          },
+          {
+            "id": "9e76e9ba362a1c85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Daily notes/2025-01-28.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-01-28"
+            }
+          },
+          {
+            "id": "cf5ffe58029b25a3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Daily notes/2025-01-28.md",
                 "mode": "source",
                 "source": false
@@ -76,9 +104,26 @@
               "icon": "lucide-file",
               "title": "2025-01-28"
             }
+          },
+          {
+            "id": "fb191db5888dd8ad",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "private/Wireflow SV.canvas",
+                "viewState": {
+                  "x": -946.8471990263145,
+                  "y": -45.38646837999568,
+                  "zoom": -1.9615171257794446
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Wireflow SV"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -97,7 +142,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -246,46 +292,47 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "ba5173f1c1ef9739",
+  "active": "fb191db5888dd8ad",
   "lastOpenFiles": [
-    "private/Wireflow SV.canvas",
-    "private/Pages/detail pages/Vacature(s).md",
-    "Daily notes/2025-01-28.md",
-    "private/Pages/detail pages/Blog post(s).md",
-    "private/Pages/WAAS.md",
-    "private/Pages/Vacatures.md",
-    "private/Pages/forms/NerdCalculator.md",
-    "private/Pages/forms/Beschikbaarheid doorgeven.md",
-    "private/Pages/forms",
-    "private/Pages/Over ons.md",
-    "private/Pages/Blogs.md",
-    "private/Pages/detail pages",
     "private/Pages/Index.md",
+    "private/Wireflow SV.canvas",
+    "private/Pages/Demo page.md",
+    "private/Pages/forms/Partner worden form.md",
+    "private/Pages/forms/Nerd aandragen.md",
+    "private/Pages/mega menu items/Partner worden.md",
+    "private/Pages/forms/Beschikbaarheid doorgeven.md",
+    "private/Pages/forms/NerdCalculator.md",
+    "private/Pages/mega menu items/Legends.md",
+    "private/Pages/mega menu items/Contact.md",
+    "private/Pages/WAAS.md",
+    "private/Pages/mega menu items/NAAS (home).md",
+    "private/Pages/mega menu items",
+    "Pasted image 20250131001046.png",
+    "private/Pages/Over ons.md",
+    "private/Pages/Vacatures.md",
+    "Daily notes/2025-01-30.md",
+    "2025-01-27.md",
+    "Daily notes/2025-01-28.md",
+    "Weeks/2025-W05.md",
+    "Daily notes/2025-01-13.md",
+    "Daily notes/2025-01-17.md",
+    "Daily notes/2025-01-24.md",
+    "Templates/Daily notes template.md",
+    "Templates/Root template.md",
+    "Daily notes/2024-12-04.md",
+    "Daily notes/2024-09-13.md",
+    "The Client.md",
+    "private/Pages/forms",
+    "private/Pages/detail pages",
     "private/Pages",
-    "Untitled.md",
     "Untitled.canvas",
-    "private/test.md",
-    "Links to keep in mind.md",
     "private",
     "New Text Document.txt",
-    "The Client.md",
-    "Daily notes/2024-12-04.md",
-    "Daily notes/2024-11-29.md",
-    "Daily notes/2024-12-05.md",
-    "Daily notes/2024-12-09.md",
-    "Daily notes/2024-12-13.md",
-    "Daily notes/2024-12-18.md",
-    "Daily notes/2025-01-06.md",
-    "Daily notes/2025-01-10.md",
-    "Daily notes/2025-01-13.md",
-    "Daily notes/2025-01-16.md",
-    "Daily notes/2025-01-17.md",
     "openmouth.png",
     "HvA-brain",
     "Weeks",
     "Daily notes/Untitled.canvas",
     "Templates/Untitled",
-    "Templates",
-    "Daily notes"
+    "Templates"
   ]
 }

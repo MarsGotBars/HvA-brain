@@ -1,1 +1,0 @@
-Check out [Today's Note!](2024-09-06)

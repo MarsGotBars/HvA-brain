@@ -4,5 +4,6 @@
   "obsidian-git",
   "templater-obsidian",
   "obsidian-regex-replace",
-  "omnisearch"
+  "omnisearch",
+  "simple-canvasearch"
 ]
