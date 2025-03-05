@@ -30,6 +30,9 @@ ___
 - https://www.makereign.com/
 	- text opacity on scroll
 	- also a possible internship/job opportunity?
+- https://v0.dev/chat/community/dynamic-frame-layout-v1tIli3svjV
+	- V0 suggested by Ivan from SV (freelancing work)
+	- grid hover changing sizes of all images/videos on hover
 ---
 ### Others/Miscellaneous
 https://wireframe.cc/
