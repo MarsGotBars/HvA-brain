@@ -9,6 +9,7 @@ Nog niet helemaal over uit, het zou wel leuk zijn maar hier zou je eigenlijk wee
 ### Zo wel:
 
 Zou je dit het liefst met een slot aan willen geven?
--
+
+\-
 ## Navbar op mobiel
 Krijgen we maandag nog een uitgebreidere uitwerking van. Zoals die nu staat is deze netjes maar het is mogelijk dat hier nog items bij komen dus zal het niet passen op de manier waarop het nu staat
