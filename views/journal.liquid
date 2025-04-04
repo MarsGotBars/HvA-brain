@@ -1,11 +1,15 @@
 {% render './partials/head.liquid' %}
 <header>
-  <span class="icon">( M ‿ M )</span>
   <h1 class="main-heading">Welcome!</h1>
 </header>
 <main>
-  {% render './partials/about/about-me.liquid' %}
   {% comment %} {% render './partials/cards/daily-note.liquid' %} {% endcomment %}
-  <a href="/journal">Journal</a>
+  {% for file in dailyNotes %}
+    {% assign link = file | slice: 0, -3 %}
+
+    {% render './partials/cards/daily-note.liquid'
+      , title: path
+      , link: link %}
+  {% endfor %}
 </main>
 {% render './partials/footer.liquid' %}

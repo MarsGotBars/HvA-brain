@@ -1,0 +1,13 @@
+.daily-note{
+    grid-column: span 3;
+    padding: 1.125rem;
+    background: var(--accent);
+    color: var(--primary);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.daily-note span{
+    white-space: nowrap;
+}

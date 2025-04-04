@@ -1,0 +1,98 @@
+@font-face {
+  font-family: Cabin;
+  src: url(../fonts/Cabin.ttf);
+}
+
+@font-face {
+  font-family: Archivo;
+  src: url(../fonts/Archivo.ttf);
+}
+
+@font-face {
+  font-family: Martian;
+  src: url(../fonts/MartianMono.ttf);
+}
+
+@font-face {
+  font-family: Sour;
+  src: url(../fonts/SourGummy.ttf);
+}
+
+/* MARK: CSS reset 
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* MARK: Theme
+ */
+
+body {
+  /* Theme */
+  --primary: #2f150b;
+  --secondary: #dcb62e;
+  --tertiary: #fadb84;
+  --accent: #27f6a7;
+
+  /* Styling */
+  background: var(--primary);
+  color: var(--secondary);
+  font-family: Archivo;
+}
+
+/* TODO: thema bepalen */
+body[data-theme="dark"] {
+  --primary: blue;
+  --secondary: orange;
+  --accent: red;
+}
+
+.main-heading {
+  color: var(--secondary);
+  font-size: 4rem;
+  font-family: Sour, sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.125rem;
+  width: 100%;
+}
+
+main > * {
+  grid-column: 1 / -1;
+}
+
+.sub-text {
+  font-family: Sour;
+  font-size: 1rem;
+}
+
+.icon {
+  display: inline-block;
+  font-family: Archivo, Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+}
+
+::selection {
+  color: var(--primary);
+  background: var(--secondary);
+}
