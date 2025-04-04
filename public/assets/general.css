@@ -1,6 +1,56 @@
-*, *::after, *::before{
-    content: '';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: Cabin;
+  src: url(./fonts/Cabin-VariableFont_wdth\wght.ttf);
+}
+
+@font-face {
+  font-family: Martian;
+  src: url(./fonts/MartianMono-VariableFont_wdth\wght.ttf);
+}
+
+@font-face {
+  font-family: Sour;
+  src: url(./fonts/SourGummy-VariableFont_wdth\wght.ttf);
+}
+
+*,
+*::after,
+*::before {
+  content: "";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  --text: #dcb62e;
+  --bg: #2f150b;
+  --primary: #fadb84;
+  --secondary: #dcb62e;
+  --accent: #27f6a7;
+  background: var(--primary);
+}
+
+body[data-theme="dark"] {
+  --primary: blue;
+  --secondary: orange;
+  --accent: red;
+}
+
+.main-heading {
+  color: var(--secondary);
+  font-size: 4rem;
+  font-family: Martian;
+}
+
+::selection {
+  color: var(--primary);
+  background: var(--secondary);
 }
