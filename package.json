@@ -1,0 +1,26 @@
+{
+  "name": "i-love-web",
+  "version": "2.0.0",
+  "description": "Mijn learning journal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarsGotBars/hva-brain.git"
+  },
+  "keywords": [
+    "Learning-journal"
+  ],
+  "author": "Marcin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarsGotBars/hva-brain/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/MarsGotBars/hva-brain#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,1 +1,5 @@
 PRIVATE/
+.env
+LOCAL/
+node_modules/
+.obsidian/workspace.json
