@@ -1,0 +1,11 @@
+- Wanneer kunnen we vragen stellen en hoe?
+- Zijn er belangrijke mijlpalen of gebeurtenissen?
+- Wat is het doel voor het bedrijf?
+- Is er een bestaand FIGMA design? Of mogen we deze zelf maken?
+- Wat is de reden dat de opdracht wordt ingediend en waarom op dit moment?
+- Moet het voldoen aan een huisstijl?
+- Hoe denken gebruikers van het eindresultaat over het gebruik van het product of dienst?
+- Is het onderdeel van een groter system of website?
+- Nog een stand-up op vrijdag om te laten zien hoe het ervoor staat met wat tussentijdse feedback?
+- Wat is de content? Zijn er al teksten, visuals, foto's of andere assets die gebruikt kunnen worden?
+- Kunnen jullie content (afbeeldingen etc) aanleveren in de (directus) API?
