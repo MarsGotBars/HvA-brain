@@ -46,6 +46,8 @@ a {
 
 body {
   /* Theme */
+  --black: #140905;
+  --white: #faf1da;
   --primary: #2f150b;
   --secondary: #dcb62e;
   --tertiary: #fadb84;

@@ -1,0 +1,14 @@
+{
+    "proj1":{
+        "description": "Dit is een test",
+        "live": "https://google.com",
+        "github": "https://github.com",
+        "labels": ["HTML", "JS", "CSS"]
+    },
+    "node project":{
+        "description": "Dit is een test",
+        "live": "https://google.com",
+        "github": "https://github.com",
+        "labels": ["LiquidJS", "JS", "CSS", "Express", "NodeJS"]
+    }
+}

@@ -1,5 +1,6 @@
 import express from "express";
 import { Liquid } from 'liquidjs';
+import { log } from "node:console";
 import { readdir, readFile } from 'node:fs/promises'
 
 const app = express();
@@ -14,8 +15,15 @@ app.use(express.urlencoded({ extended: true }));
 app.set('views', './views');
 
 const dailyNotes = await readdir('content/daily notes');
+
+const myProjects = await readFile('content/JSON/projects.json')
+
+    const {test} = await myProjects.json()
+    console.log(test);
+    
 // routes
 app.get('/', async function (request, response) {
+    
     response.render('index.liquid')
 })
 app.get('/journal', async function (request, response) {  
