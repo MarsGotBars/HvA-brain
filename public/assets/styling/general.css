@@ -18,6 +18,16 @@
   src: url(../fonts/SourGummy.ttf);
 }
 
+@font-face {
+  font-family: Space;
+  src: url(../fonts/SpaceMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: Tauri;
+  src: url(../fonts/Tauri-Regular.ttf);
+}
+
 /* MARK: CSS reset 
 */
 *,
@@ -33,6 +43,13 @@
 html,
 body {
   min-height: 100vh;
+}
+
+li{
+  list-style-type: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 a {
@@ -51,36 +68,26 @@ body {
   --primary: #2f150b;
   --secondary: #dcb62e;
   --tertiary: #fadb84;
-  --accent: #27f6a7;
+  --accent: #74f997;
+
+  /* font */
+  --XXL: 11.625rem;
+  --XL: 5rem;
+  --LG: 3.25rem;
+  --MD: 2.25rem;
+  --SM: 1.5rem;
+  --XS: 1rem;
 
   /* Styling */
-  background: var(--primary);
-  color: var(--secondary);
+  background: var(--tertiary);
+  color: var(--black);
   font-family: Archivo;
 }
 
-/* TODO: thema bepalen */
-body[data-theme="dark"] {
-  --primary: blue;
-  --secondary: orange;
-  --accent: red;
-}
-
-.main-heading {
-  color: var(--secondary);
-  font-size: 4rem;
-  font-family: Sour, sans-serif;
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.125rem;
-  width: 100%;
-}
-
-main > * {
-  grid-column: 1 / -1;
+/* MARK: Font sizes
+ */
+.huge{
+  font-size: clamp(var(--XL), 12vw, var(--XXL));
 }
 
 .sub-text {
@@ -95,6 +102,21 @@ main > * {
 }
 
 ::selection {
-  color: var(--primary);
-  background: var(--secondary);
+  color: var(--black);
+  background: var(--accent);
+}
+
+.bg-brown {
+  background: var(--primary);
+  color: var(--tertiary);
+}
+.bg-black {
+  background: var(--black);
+  color: var(--tertiary);
+}
+.bg-yellow {
+  background: var(--tertiary);
+}
+.bg-mint {
+  background: var(--accent);
 }
