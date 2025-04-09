@@ -128,20 +128,15 @@ aside li {
   font-size: clamp(var(--SM), 2vw, var(--LG));
 }
 
-nav li::marker{
- content: "";
+nav li::marker {
+  content: "";
 }
 
-aside nav ul{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 2rem 0;
-}
-
-.underlined {
-  text-decoration: underline;
-  text-underline-offset: 0.25rem;
+aside nav ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 2rem 0;
 }
 
 /* MARK: NAV (bottom left)
@@ -172,8 +167,28 @@ aside nav ul{
   color: var(--accent);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  padding: 1rem .875rem;
+  padding: 1rem 0.875rem;
 }
 
 /* MARK: FOOTER (bottom right)
  */
+
+/* MARK: small utils 
+ */
+.underlined {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+/* deliberate delay in animation */
+.highlight-block:not(:focus) {
+  background: var(--accent);
+  color: var(--black);
+  transition-delay: 0.3s;
+}
+
+.highlight-block:hover {
+    background: transparent ;
+  color: var(--tertiary);
+  transition: 0.3s ease;
+}
