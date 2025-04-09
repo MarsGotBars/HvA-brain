@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('views', './views');
 
-const dailyNotes = await readdir('content/daily notes');
+const dailyNotes = await readdir('content/daily_notes');
 
 const myProjects = await readFile('content/JSON/projects.json')
 
@@ -30,7 +30,7 @@ app.get('/journal', async function (request, response) {
 })
 app.get('/journal/:path', async function (request, response) {    
     const {path} = request.params
-    const note = await readFile('content/daily notes/' + path + '.md', { encoding: 'utf8'})
+    const note = await readFile('content/daily_notes/' + path + '.md', { encoding: 'utf8'})
     
     response.render('note.liquid', {note})
 });
