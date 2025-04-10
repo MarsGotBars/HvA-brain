@@ -137,21 +137,24 @@ main article details[open] p > span {
   transform: translateY(-110%);
   animation: txt-reveal 0.5s 0.5s ease forwards;
 }
+main div.anti::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--black);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateY(-110%);
+  animation: txt-reveal 0.5s 0.5s ease forwards;
+}
 
 @supports (--test: test) {
   main article details[open] p > span {
     animation: txt-reveal .3s calc(0.75s * (var(--order))) ease forwards;
   }
   main div.anti::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: var(--black);
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform: translateY(-110%);
     animation: txt-reveal .3s calc(0.75s * (var(--order))) ease forwards;
   }
 
