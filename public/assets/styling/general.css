@@ -87,13 +87,17 @@ body {
 /* MARK: Font sizes
  */
 .huge {
-  font-size: clamp(var(--XL), 12vw, var(--XXL));
+  font-size: clamp(var(--XL), 10vw, var(--XXL));
 }
 
 .icon {
   display: inline-block;
   font-family: Archivo, Arial, Helvetica, sans-serif;
-  font-size: 5rem;
+  font-size: clamp(var(--MD), 5vw, var(--XL));
+}
+
+.semi-bold {
+  font-weight: 600;
 }
 
 ::selection {
@@ -115,3 +119,4 @@ body {
 .bg-mint {
   background: var(--accent);
 }
+
