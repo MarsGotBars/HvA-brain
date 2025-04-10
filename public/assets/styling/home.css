@@ -76,14 +76,14 @@ header {
   position: absolute;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  top: 18%;
+  top: 21%;
   font-family: Tauri;
   font-size: clamp(var(--XS), 2vw, var(--MD));
   right: -3vw;
 }
 
 /* in case of overlap */
-.heading-label::selection {
+.heading-label::selection, footer *::selection {
   color: var(--accent);
   background: var(--black);
 }
@@ -95,6 +95,7 @@ aside {
   padding: 0 var(--MD);
   display: flex;
   flex-direction: column;
+  border-right: 2px solid var(--black);
 }
 .spacing {
   display: flex;
@@ -137,6 +138,7 @@ aside nav ul {
   justify-content: space-between;
   flex-direction: row;
   padding: 2rem 0;
+  gap: 0.75rem;
 }
 
 /* MARK: NAV (bottom left)
@@ -172,6 +174,45 @@ aside nav ul {
 
 /* MARK: FOOTER (bottom right)
  */
+footer {
+  padding: .75rem 2.25rem;
+  position: relative;
+  border-top: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer h2{
+  font-family: Martian;
+  font-size: var(--MD);
+}
+
+footer .icon {
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+  background: var(--accent);
+  border: 2px solid var(--black);
+  border-bottom: 0;
+  border-right: 0;
+  position: absolute;
+}
+footer details{
+  align-self: end;
+  position: relative;
+}
+footer details div{
+  position: absolute;
+  /* top 0 and translateY to position based on content instead of parent height */
+  top: 0;
+  transform: translateY(-100%);
+  /* left: 0; */
+}
+footer details summary {
+  display: inline;
+  cursor: pointer;
+}
 
 /* MARK: small utils 
  */
@@ -188,7 +229,7 @@ aside nav ul {
 }
 
 .highlight-block:hover {
-    background: transparent ;
+  background: transparent;
   color: var(--tertiary);
   transition: 0.3s ease;
 }

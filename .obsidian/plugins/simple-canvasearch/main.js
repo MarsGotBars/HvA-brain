@@ -12,24 +12,28 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+  if ((from && typeof from === "object") || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
   }
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // main.ts
 var main_exports = {};
 __export(main_exports, {
-  default: () => CanvaSearch
+  default: () => CanvaSearch,
 });
 module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
 var DEFAULT_SETTINGS = {
-  searchText: false
+  searchText: false,
 };
 var current_index;
 function focusOnNode(canvas, node) {
@@ -37,7 +41,7 @@ function focusOnNode(canvas, node) {
     minX: node.x - node.width * 1,
     minY: node.y - node.height * 1,
     maxX: node.x + node.width * 1,
-    maxY: node.y + node.height * 1
+    maxY: node.y + node.height * 1,
   });
   let node_full = canvas.nodes.get(node.id);
   canvas.deselectAll();
@@ -45,16 +49,18 @@ function focusOnNode(canvas, node) {
 }
 var CanvaSearch = class extends import_obsidian.Plugin {
   async index_canvas_notes(searchText) {
-    const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian.ItemView);
+    const canvasView = this.app.workspace.getActiveViewOfType(
+      import_obsidian.ItemView,
+    );
     const vault = this.app.vault;
     if ((canvasView == null ? void 0 : canvasView.getViewType()) === "canvas") {
       const canvas = canvasView.canvas;
       let return_array;
       if (searchText) {
-        return_array = canvas.data.nodes.map(async function(a) {
+        return_array = canvas.data.nodes.map(async function (a) {
           if (a.type == "file") {
             let content = await vault.cachedRead(
-              vault.getAbstractFileByPath(a.file)
+              vault.getAbstractFileByPath(a.file),
             );
             return [a, content];
           }
@@ -72,13 +78,12 @@ var CanvaSearch = class extends import_obsidian.Plugin {
           }
         });
       } else {
-        return_array = canvas.data.nodes.map(async function(a) {
+        return_array = canvas.data.nodes.map(async function (a) {
           return [a, ""];
         });
       }
       return await Promise.all(return_array);
-    } else
-      return [];
+    } else return [];
   }
   async onload() {
     await this.loadSettings();
@@ -86,22 +91,27 @@ var CanvaSearch = class extends import_obsidian.Plugin {
       id: "open-canvasearch-modal",
       name: "Open CanvaSearch modal",
       callback: async () => {
-        const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian.ItemView);
-        if ((canvasView == null ? void 0 : canvasView.getViewType()) === "canvas") {
-          current_index = await this.index_canvas_notes(this.settings.searchText);
+        const canvasView = this.app.workspace.getActiveViewOfType(
+          import_obsidian.ItemView,
+        );
+        if (
+          (canvasView == null ? void 0 : canvasView.getViewType()) === "canvas"
+        ) {
+          current_index = await this.index_canvas_notes(
+            this.settings.searchText,
+          );
           new CanvaSearchModal(this.app).open();
         } else {
           this.openSearchBar();
         }
-      }
+      },
     });
     this.addSettingTab(new CanvaSearchSettingTab(this.app, this));
   }
   openSearchBar() {
     this.app.commands.executeCommandById("editor:open-search");
   }
-  onunload() {
-  }
+  onunload() {}
   async loadSettings() {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
   }
@@ -112,7 +122,8 @@ var CanvaSearch = class extends import_obsidian.Plugin {
 var CanvaSearchModal = class extends import_obsidian.FuzzySuggestModal {
   getActiveCanvas() {
     var _a;
-    const maybeCanvasView = (_a = this.app.workspace.activeLeaf) == null ? void 0 : _a.view;
+    const maybeCanvasView =
+      (_a = this.app.workspace.activeLeaf) == null ? void 0 : _a.view;
     return maybeCanvasView ? maybeCanvasView["canvas"] : null;
   }
   constructor(app) {
@@ -138,7 +149,9 @@ var CanvaSearchModal = class extends import_obsidian.FuzzySuggestModal {
     }
   }
   onChooseItem(data, evt) {
-    const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian.ItemView);
+    const canvasView = this.app.workspace.getActiveViewOfType(
+      import_obsidian.ItemView,
+    );
     const canvas = "";
     if ((canvasView == null ? void 0 : canvasView.getViewType()) === "canvas") {
       const canvas2 = canvasView.canvas;
@@ -179,15 +192,18 @@ var CanvaSearchSettingTab = class extends import_obsidian.PluginSettingTab {
   display() {
     const { containerEl } = this;
     containerEl.empty();
-    new import_obsidian.Setting(containerEl).setName("Include note contents in search").setDesc(
-      "Will search inside the notes in your canvas, there is no indexing done so it can be very slow if your canvas is very large."
-    ).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.searchText);
-      toggle.onChange(async (value) => {
-        this.plugin.settings.searchText = value;
-        await this.plugin.saveSettings();
+    new import_obsidian.Setting(containerEl)
+      .setName("Include note contents in search")
+      .setDesc(
+        "Will search inside the notes in your canvas, there is no indexing done so it can be very slow if your canvas is very large.",
+      )
+      .addToggle((toggle) => {
+        toggle.setValue(this.plugin.settings.searchText);
+        toggle.onChange(async (value) => {
+          this.plugin.settings.searchText = value;
+          await this.plugin.saveSettings();
+        });
       });
-    });
   }
 };
 

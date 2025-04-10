@@ -45,7 +45,7 @@ body {
   min-height: 100vh;
 }
 
-li{
+li {
   list-style-type: none;
   font-size: inherit;
   font-family: inherit;
@@ -86,7 +86,7 @@ body {
 
 /* MARK: Font sizes
  */
-.huge{
+.huge {
   font-size: clamp(var(--XL), 12vw, var(--XXL));
 }
 

@@ -3,6 +3,9 @@
 <header>
   <h1 class="main-heading huge">ABOUT <span class="heading-label">MARCIN</span></h1>
 </header>
+<article>
+  MARCIN MAGDZIAK IS A
+</article>
   {% comment %} {% render './partials/about/about-me.liquid' %} {% endcomment %}
   {% comment %} {% render './partials/cards/daily-note.liquid' %} {% endcomment %}
 </main>
@@ -19,7 +22,13 @@
     </ul>
     </div>
   
- <nav><ul><li><a href="/portfolio">Portfolio</a></li><li><a href="/" class="active">About</a></li><li><a href="/journal">Journal</a></li></ul></nav>
+ <nav>
+  <ul>
+    <li>
+      <a href="/portfolio">PORTFOLIO</a></li><li><a href="/" class="active">ABOUT</a></li><li><a href="/journal">JOURNAL</a>
+    </li>
+  </ul>
+ </nav>
 </aside>
 <nav class="bg-black footer-nav">
   <h2>SOCIALS</h2>
@@ -29,4 +38,15 @@
 </ul>
 </div>
 </nav>
-{% render './partials/footer.liquid' %}
+<footer>
+  <h2>SERVICES</h2>
+  <ul>
+    <li></li>
+    <li></li>
+  </ul>
+  <details><summary><h2>CONTACT</h2></summary>
+  <div>hoi</div>
+  </details>
+  <div class="icon">( M ‿ M )</div>
+</footer>
+{% render './partials/page-end.liquid' %}

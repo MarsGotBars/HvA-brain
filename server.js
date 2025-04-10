@@ -1,38 +1,39 @@
 import express from "express";
-import { Liquid } from 'liquidjs';
-import { readdir, readFile } from 'node:fs/promises'
+import { Liquid } from "liquidjs";
+import { readdir, readFile } from "node:fs/promises";
 
 const app = express();
 
 const engine = new Liquid();
-app.engine('liquid', engine.express()); 
+app.engine("liquid", engine.express());
 
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 
-app.set('views', './views');
+app.set("views", "./views");
 
-const dailyNotes = await readdir('content/daily_notes');
+const dailyNotes = await readdir("content/daily_notes");
 
-const myProjects = await readFile('content/JSON/projects.json')
+const myProjects = await readFile("content/JSON/projects.json");
 
-    // const {test} = await myProjects.json()
-    // console.log(test);
-    
+// const {test} = await myProjects.json()
+// console.log(test);
+
 // routes
-app.get('/', async function (request, response) {
-    
-    response.render('index.liquid')
-})
-app.get('/journal', async function (request, response) {  
-    response.render('journal.liquid', {dailyNotes})
-})
-app.get('/journal/:path', async function (request, response) {    
-    const {path} = request.params
-    const note = await readFile('content/daily_notes/' + path + '.md', { encoding: 'utf8'})
-    
-    response.render('note.liquid', {note})
+app.get("/", async function (request, response) {
+  response.render("index.liquid");
+});
+app.get("/journal", async function (request, response) {
+  response.render("journal.liquid", { dailyNotes });
+});
+app.get("/journal/:path", async function (request, response) {
+  const { path } = request.params;
+  const note = await readFile("content/daily_notes/" + path + ".md", {
+    encoding: "utf8",
+  });
+
+  response.render("note.liquid", { note });
 });
 
 app.set("port", process.env.PORT || 8000);
