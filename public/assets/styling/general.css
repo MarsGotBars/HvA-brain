@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 @font-face {
   font-family: Cabin;
   src: url(../fonts/Cabin.ttf);
@@ -43,6 +47,7 @@
 html,
 body {
   min-height: 100vh;
+  position: relative;
 }
 
 li {
@@ -101,23 +106,103 @@ body {
   font-weight: 600;
 }
 
+.bg-brown {
+  background: var(--primary);
+  color: var(--tertiary);
+}
+
+.bg-black {
+  background: var(--black);
+  color: var(--tertiary);
+}
+
+.bg-yellow {
+  background: var(--tertiary);
+}
+
+.bg-mint {
+  background: var(--accent);
+}
+
+/* MARK: General utils
+ */
+.aside-heading,
+.main-heading {
+  position: relative;
+  line-height: 1;
+  width: fit-content;
+}
+
+.main-heading {
+  color: var(--primary);
+  font-family: Space, sans-serif;
+  text-align: center;
+}
+
+.heading-label {
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  top: calc(36% - 1em);
+  font-family: Tauri;
+  font-size: clamp(var(--XS), 2vw, var(--MD));
+  right: clamp(-2rem, -3vw, -1rem);
+}
+
+/* MARK: Selections
+ */
+
 ::selection {
   color: var(--black);
   background: var(--accent);
 }
 
-.bg-brown {
-  background: var(--primary);
-  color: var(--tertiary);
-}
-.bg-black {
+/* in case of overlap */
+.heading-label::selection,
+footer *::selection,
+.highlight-block::selection,
+.anti-highlight-block::selection {
+  color: var(--accent);
   background: var(--black);
-  color: var(--tertiary);
-}
-.bg-yellow {
-  background: var(--tertiary);
-}
-.bg-mint {
-  background: var(--accent);
 }
 
+/* MARK: Transitioning
+ */
+.container {
+  view-transition-name: body;
+}
+
+:root::view-transition {
+  pointer-events: none;
+}
+
+.seeker {
+  view-transition-name: seeker;
+}
+
+::view-transition-new(body) {
+  opacity: 0;
+  animation: fade-in 0.3s 0.3s ease-out forwards;
+}
+
+::view-transition-old(body) {
+  animation: fade-out 0.2s ease-in forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

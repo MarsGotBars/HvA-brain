@@ -66,45 +66,13 @@ header {
   justify-content: flex-start;
 }
 
-.aside-heading,
-.main-heading {
-  position: relative;
-  line-height: 1;
-  width: fit-content;
-}
-
-.main-heading {
-  color: var(--primary);
-  font-family: Space, sans-serif;
-  text-align: center;
-}
-
-.heading-label {
-  position: absolute;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  top: calc(36% - 1em);
-  font-family: Tauri;
-  font-size: clamp(var(--XS), 2vw, var(--MD));
-  right: -3vw;
-}
-
-/* in case of overlap */
-.heading-label::selection,
-footer *::selection,
-.highlight-block::selection,
-.anti-highlight-block::selection {
-  color: var(--accent);
-  background: var(--black);
-}
-
 /* MARK: MAIN (top right) 
 */
 
 main article {
   overflow: hidden;
   padding: var(--MD);
-  font-size: clamp(var(--SM), 2vw, var(--MD));
+  font-size: clamp(var(--SM), calc(2vw - 15%), var(--MD));
   font-family: Martian;
   position: relative;
   height: 100%;
@@ -119,8 +87,12 @@ main article img {
   position: absolute;
   left: var(--MD);
   bottom: var(--MD);
-  width: calc(50% - .125rem);
-  height: calc(55% - .125rem);
+  width: calc(55% - 0.125rem);
+  height: calc(60% - 0.125rem);
+  @media screen and (max-width: 969px) {
+    width: calc(100% - (var(--MD) * 2));
+    height: calc(100% - (var(--MD) * 2));
+  }
   object-fit: cover;
   object-position: 0 25%;
   opacity: 0;
@@ -129,12 +101,12 @@ main article img {
   animation: reveal-me 0.5s calc(0.75s * var(--reveal)) ease-out forwards;
 }
 
-main article img[data-moshable="enhanced"]{
+main article img[data-moshable="enhanced"] {
   animation: unset;
   opacity: 1;
 }
 
-main article h2 span{
+main article h2 span {
   z-index: 2;
 }
 
@@ -195,14 +167,14 @@ main article div.anti::after {
 
 main article p.exclude > span {
   transform: translateY(-110%);
-  animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
+  animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
 }
 @supports (--test: test) {
   main article p > span {
-    animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
+    animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
   }
   main article div.anti::after {
-    animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
+    animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
   }
 
   @keyframes txt-reveal {
@@ -218,7 +190,10 @@ main article p.exclude > span {
   }
 }
 
-main article h2 + p, article > p + p, p + div, article > div + div {
+main article h2 + p,
+article > p + p,
+p + div,
+article > div + div {
   margin-top: 0.375rem;
 }
 
@@ -367,7 +342,6 @@ main summary {
  */
 .underlined {
   text-decoration: underline;
-  text-underline-offset: 0.25rem;
 }
 
 /* deliberate delay in animation */
@@ -391,7 +365,7 @@ main summary {
 
   main article div.anti::after {
     transform: translateX(-110%);
-    animation-duration: .65s;
+    animation-duration: 0.65s;
   }
 
   main article p.exclude > span {
@@ -411,23 +385,54 @@ main summary {
   transition: 0s ease;
 } */
 
-
 /* MARK: Mousemove Blob
 */
 
-.seeker{
-  height: 10px;
-  aspect-ratio: 1;
+div.seeker {
+  view-transition-name: seeker;
+  /* size to go to */
+  --custom-width: 10px;
+  --custom-height: 10px;
+  height: 0.625rem;
+  width: 0.625rem;
   background-color: var(--accent);
   mix-blend-mode: difference;
   pointer-events: none;
   position: fixed;
   z-index: 10;
-  transition: height 0.2s ease;
-  border-radius: .125rem;
+  border-radius: 0.125rem;
+  transform-origin: center;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    border-radius 0.3s ease;
   /* transition: 0.15s cubic-bezier(.47,1.64,.41,.8); */
 }
 
-.seeker.gone{
+.seeker.hovering {
+  width: var(--custom-width);
+  height: var(--custom-height);
+  mix-blend-mode: normal;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.seeker span {
+  opacity: 0;
+  /* instantly reset transition */
+  transition: 0s;
+}
+
+.seeker.hovering span {
+  font-size: var(--LG);
+  font-family: Space;
+  font-weight: 700;
+  transition: opacity 0.2s 0.2s ease;
+  display: inline-block;
+  opacity: 1;
+}
+.seeker.gone {
   height: 0px;
 }
