@@ -29,7 +29,9 @@ app.get("/", async function (request, response) {
 
 app.get("/portfolio", async function (request, response) {
 
-    response.render("portfolio.liquid")
+    response.render("portfolio.liquid", {
+      styles: ["portfolio.css"],
+    })
 })
 
 app.get("/journal", async function (request, response) {
