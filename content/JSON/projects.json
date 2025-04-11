@@ -1,14 +1,39 @@
 {
-  "proj1": {
+  "0": {
+    "title": "project1",
     "description": "Dit is een test",
     "live": "https://google.com",
     "github": "https://github.com",
-    "labels": ["HTML", "JS", "CSS"]
+    "labels": [
+      "HTML",
+      "JS",
+      "CSS"
+    ]
   },
-  "node project": {
+  "1": {
+    "title": "project2",
     "description": "Dit is een test",
     "live": "https://google.com",
     "github": "https://github.com",
-    "labels": ["LiquidJS", "JS", "CSS", "Express", "NodeJS"]
+    "labels": [
+      "LiquidJS",
+      "JS",
+      "CSS",
+      "Express",
+      "NodeJS"
+    ]
+  },
+  "2": {
+    "title": "project3",
+    "description": "Dit is een test",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": [
+      "LiquidJS",
+      "JS",
+      "CSS",
+      "Express",
+      "NodeJS"
+    ]
   }
 }

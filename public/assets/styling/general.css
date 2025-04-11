@@ -43,6 +43,7 @@
 html,
 body {
   min-height: 100vh;
+  position: relative;
 }
 
 li {
@@ -101,23 +102,73 @@ body {
   font-weight: 600;
 }
 
-::selection {
-  color: var(--black);
-  background: var(--accent);
-}
-
 .bg-brown {
   background: var(--primary);
   color: var(--tertiary);
 }
+
 .bg-black {
   background: var(--black);
   color: var(--tertiary);
 }
+
 .bg-yellow {
   background: var(--tertiary);
 }
+
 .bg-mint {
   background: var(--accent);
 }
 
+/* MARK: General utils
+ */
+.aside-heading,
+.main-heading {
+  position: relative;
+  line-height: 1;
+  width: fit-content;
+}
+
+.main-heading {
+  color: var(--primary);
+  font-family: Space, sans-serif;
+  text-align: center;
+}
+
+.heading-label {
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  top: calc(36% - 1em);
+  font-family: Tauri;
+  font-size: clamp(var(--XS), 2vw, var(--MD));
+  right: clamp(-1.5rem, -3vw, -1rem);
+}
+
+/* MARK: Selections
+ */
+
+ ::selection {
+  color: var(--black);
+  background: var(--accent);
+}
+
+ /* in case of overlap */
+.heading-label::selection,
+footer *::selection,
+.highlight-block::selection,
+.anti-highlight-block::selection {
+  color: var(--accent);
+  background: var(--black);
+}
+
+/* MARK: Transitioning
+ */
+
+ .seeker.transitioning{
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+ }

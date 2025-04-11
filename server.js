@@ -15,10 +15,9 @@ app.set("views", "./views");
 
 const dailyNotes = await readdir("content/daily_notes");
 
-const myProjects = await readFile("content/JSON/projects.json");
-
-// const {test} = await myProjects.json()
-// console.log(test);
+const readProjectJSON = await readFile("content/JSON/projects.json", "utf-8");
+const allProjects = JSON.parse(readProjectJSON);
+console.log(allProjects[2]);
 
 // routes
 app.get("/", async function (request, response) {
@@ -27,9 +26,16 @@ app.get("/", async function (request, response) {
     scripts: ["moshing.js", "mouse-follow.js"]
   });
 });
+
+app.get("/portfolio", async function (request, response) {
+
+    response.render("portfolio.liquid")
+})
+
 app.get("/journal", async function (request, response) {
   response.render("journal.liquid", { dailyNotes });
 });
+
 app.get("/journal/:path", async function (request, response) {
   const { path } = request.params;
   const note = await readFile("content/daily_notes/" + path + ".md", {
