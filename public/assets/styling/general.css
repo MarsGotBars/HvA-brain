@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 @font-face {
   font-family: Cabin;
   src: url(../fonts/Cabin.ttf);
@@ -142,18 +146,18 @@ body {
   top: calc(36% - 1em);
   font-family: Tauri;
   font-size: clamp(var(--XS), 2vw, var(--MD));
-  right: clamp(-1.5rem, -3vw, -1rem);
+  right: clamp(-2rem, -3vw, -1rem);
 }
 
 /* MARK: Selections
  */
 
- ::selection {
+::selection {
   color: var(--black);
   background: var(--accent);
 }
 
- /* in case of overlap */
+/* in case of overlap */
 .heading-label::selection,
 footer *::selection,
 .highlight-block::selection,
@@ -164,11 +168,41 @@ footer *::selection,
 
 /* MARK: Transitioning
  */
+.container {
+  view-transition-name: body;
+}
 
- .seeker.transitioning{
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  border-radius: 0 !important;
- }
+:root::view-transition {
+  pointer-events: none;
+}
+
+.seeker {
+  view-transition-name: seeker;
+}
+
+::view-transition-new(body) {
+  opacity: 0;
+  animation: fade-in 0.3s 0.3s ease-out forwards;
+}
+
+::view-transition-old(body) {
+  animation: fade-out 0.2s ease-in forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
