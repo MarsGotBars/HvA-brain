@@ -22,7 +22,10 @@ const myProjects = await readFile("content/JSON/projects.json");
 
 // routes
 app.get("/", async function (request, response) {
-  response.render("index.liquid");
+  response.render("index.liquid", {
+    styles: ["home.css"],
+    scripts: ["moshing.js", "mouse-follow.js"]
+  });
 });
 app.get("/journal", async function (request, response) {
   response.render("journal.liquid", { dailyNotes });
