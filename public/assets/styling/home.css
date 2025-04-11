@@ -12,6 +12,8 @@ body {
 main {
   grid-column: 2;
   grid-row: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 aside {
@@ -104,6 +106,42 @@ main article {
   padding: var(--MD);
   font-size: clamp(var(--SM), 2vw, var(--MD));
   font-family: Martian;
+  position: relative;
+  height: 100%;
+}
+
+main article * {
+  z-index: 2;
+  position: relative;
+}
+
+main article img {
+  position: absolute;
+  left: var(--MD);
+  bottom: var(--MD);
+  width: calc(50% - .125rem);
+  height: calc(55% - .125rem);
+  object-fit: cover;
+  object-position: 0 25%;
+  opacity: 0;
+  z-index: 1;
+  /* default animation */
+  animation: reveal-me 0.5s calc(0.75s * var(--reveal)) ease-out forwards;
+}
+
+main article img[data-moshable="enhanced"]{
+  animation: unset;
+  opacity: 1;
+}
+
+main article h2 span{
+  z-index: 2;
+}
+
+@keyframes reveal-me {
+  to {
+    opacity: 0.4;
+  }
 }
 
 main article * {
@@ -124,20 +162,25 @@ main h2 {
 }
 main article p {
   overflow: hidden;
+  width: fit-content;
 }
 
-main article p.special-case {
+main article p.special-case,
+main article p.exclude {
   display: inline-flex;
 }
+
 main article p.anti-highlight-block > span:first-child {
   padding-right: 0.5ch;
 }
-main article details[open] p > span {
+
+main article p > span {
   display: inline-block;
   transform: translateY(-110%);
   animation: txt-reveal 0.5s 0.5s ease forwards;
 }
-main div.anti::after{
+
+main article div.anti::after {
   content: "";
   position: absolute;
   top: 0;
@@ -150,12 +193,16 @@ main div.anti::after{
   animation: txt-reveal 0.5s 0.5s ease forwards;
 }
 
+main article p.exclude > span {
+  transform: translateY(-110%);
+  animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
+}
 @supports (--test: test) {
-  main article details[open] p > span {
-    animation: txt-reveal .3s calc(0.75s * (var(--order))) ease forwards;
+  main article p > span {
+    animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
   }
-  main div.anti::after{
-    animation: txt-reveal .3s calc(0.75s * (var(--order))) ease forwards;
+  main article div.anti::after {
+    animation: txt-reveal .3s calc(.75s * (var(--order))) ease forwards;
   }
 
   @keyframes txt-reveal {
@@ -171,10 +218,11 @@ main div.anti::after{
   }
 }
 
-main details div {
+main article h2 + p, article > p + p, p + div, article > div + div {
   margin-top: 0.375rem;
 }
-main div.anti{
+
+main div.anti {
   overflow: hidden;
   position: relative;
   width: fit-content;
@@ -336,6 +384,22 @@ main summary {
   /* width: fit-content; */
 }
 
+@supports selector(::after) {
+  .anti-highlight-block {
+    background: unset;
+  }
+
+  main article div.anti::after {
+    transform: translateX(-110%);
+    animation-duration: .65s;
+  }
+
+  main article p.exclude > span {
+    transform: unset;
+    animation: unset;
+  }
+}
+
 .sentence {
   white-space: nowrap;
   display: inline-block;
@@ -346,3 +410,24 @@ main summary {
   color: var(--tertiary);
   transition: 0s ease;
 } */
+
+
+/* MARK: Mousemove Blob
+*/
+
+.seeker{
+  height: 10px;
+  aspect-ratio: 1;
+  background-color: var(--accent);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  position: fixed;
+  z-index: 10;
+  transition: height 0.2s ease;
+  border-radius: .125rem;
+  /* transition: 0.15s cubic-bezier(.47,1.64,.41,.8); */
+}
+
+.seeker.gone{
+  height: 0px;
+}
