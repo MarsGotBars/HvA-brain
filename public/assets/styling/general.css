@@ -91,6 +91,7 @@ body {
 }
 
 .icon {
+  z-index: 2;
   display: inline-block;
   font-family: Archivo, Arial, Helvetica, sans-serif;
   font-size: clamp(var(--MD), 5vw, var(--XL));
