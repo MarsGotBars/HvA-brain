@@ -1,0 +1,3 @@
+# Ignore specific files
+views/partials/head.liquid
+views/partials/page-end.liquid
