@@ -7,9 +7,7 @@
   {% for file in dailyNotes %}
     {% assign link = file | slice: 0, -3 %}
 
-    {% render './partials/cards/daily-note.liquid'
-      , title: path
-      , link: link %}
+    {% render './partials/cards/daily-note.liquid', title: path, link: link %}
   {% endfor %}
 </main>
-{% render './partials/footer.liquid' %}
+{% render './partials/page-end.liquid' %}

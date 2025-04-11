@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% for style in styles %}
+      <link rel="stylesheet" href="/assets/styling/{{style}}" />
+    {% endfor %}
+    {% for script in scripts %}
+      <script src="/script/{{script}}" type="module"></script>
+    {% endfor %}
     <link rel="stylesheet" href="/assets/styling/general.css" />
-    <link rel="stylesheet" href="/assets/styling/home.css" />
     <link rel="stylesheet" href="/assets/styling/cards/daily-note.css">
     <title>{{title |  default: "( M ‿ M )"}}</title>
   </head>
