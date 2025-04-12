@@ -1,3 +1,7 @@
+// cool snippet
+// const {matches: motionOk} = window.matchMedia('(prefers-reduced-motion: no-preference)')
+// console.log(motionOk);
+
 /**
  * MouseFollow class - Creates a smooth, physics-based cursor follower.
  * 
