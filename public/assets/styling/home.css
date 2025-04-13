@@ -33,33 +33,50 @@ nav {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  body:has(main:focus-within) {
+    grid-template-columns: 4.75fr 7fr;
+    grid-template-rows: 1fr minmax(8.5rem, 11.5rem);
+  }
+  
+  body:has(footer:focus-within) {
+    grid-template-columns: 4.75fr 7fr;
+    grid-template-rows: 1fr minmax(10.5rem, 13.5rem);
+  }
+  
+  body:has(aside:focus-within) {
+    grid-template-columns: 5fr 6.75fr;
+    grid-template-rows: 1fr minmax(8.5rem, 11.5rem);
+  }
+  
+  body:has(.footer-nav:focus-within) {
+    grid-template-columns: 5fr 6.75fr;
+    grid-template-rows: 1fr minmax(10.5rem, 13.5rem);
+  }
   /* check if device supports hover */
   @media (hover: hover) {
-    body:has(main:hover),
-    body:has(main:focus-within) {
+    body:has(main:hover) {
       grid-template-columns: 4.75fr 7fr;
       grid-template-rows: 1fr minmax(8.5rem, 11.5rem);
     }
-
-    body:has(footer:hover),
-    body:has(footer:focus-within) {
+    
+    body:has(footer:hover) {
       grid-template-columns: 4.75fr 7fr;
       grid-template-rows: 1fr minmax(10.5rem, 13.5rem);
     }
-
-    body:has(aside:hover),
-    body:has(aside:focus-within) {
+    
+    body:has(aside:hover) {
       grid-template-columns: 5fr 6.75fr;
       grid-template-rows: 1fr minmax(8.5rem, 11.5rem);
     }
-
-    body:has(.footer-nav:hover),
-    body:has(.footer-nav:focus-within) {
+    
+    body:has(.footer-nav:hover) {
       grid-template-columns: 5fr 6.75fr;
       grid-template-rows: 1fr minmax(10.5rem, 13.5rem);
     }
+    
   }
 }
+
 header {
   display: flex;
   padding: 0 var(--MD);
@@ -85,13 +102,16 @@ main article * {
 
 main article img {
   position: absolute;
-  left: var(--MD);
-  bottom: var(--MD);
+  left: calc(var(--MD) * 2);
+  bottom: calc(var(--MD) * 2);
+
   width: calc(55% - 0.125rem);
   height: calc(60% - 0.125rem);
   @media screen and (max-width: 969px) {
     width: calc(100% - (var(--MD) * 2));
     height: calc(100% - (var(--MD) * 2));
+    left: var(--MD);
+    bottom: var(--MD);
   }
   object-fit: cover;
   object-position: 0 25%;
@@ -169,10 +189,12 @@ main article p.exclude > span {
   transform: translateY(-110%);
   animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
 }
+
 @supports (--test: test) {
   main article p > span {
     animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
   }
+
   main article div.anti::after {
     animation: txt-reveal 0.3s calc(0.75s * (var(--order))) ease forwards;
   }
@@ -222,13 +244,16 @@ aside {
   justify-content: space-between;
   height: 100%;
 }
+
 aside h3 {
   font-size: var(--MD);
   font-weight: 700;
 }
+
 aside .details {
   padding-top: var(--MD);
 }
+
 aside ul {
   list-style-position: inside;
 }
