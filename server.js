@@ -31,6 +31,7 @@ app.get("/portfolio", async function (request, response) {
 
     response.render("portfolio.liquid", {
       styles: ["portfolio.css"],
+      allProjects
     })
 })
 
