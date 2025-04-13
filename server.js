@@ -30,7 +30,7 @@ app.get("/", async function (request, response) {
 app.get("/portfolio", async function (request, response) {
 
     response.render("portfolio.liquid", {
-      styles: ["portfolio.css"],
+      styles: ["portfolio.css", "accessible-link.css"],
       allProjects
     })
 })
