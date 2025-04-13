@@ -1,6 +1,33 @@
-{
-  "0": {
-    "title": "project1",
+[
+ {
+    "title": "villas4u",
+    "description": "Eerste groeps project",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": [
+      "LiquidJS",
+      "JS",
+      "CSS",
+      "Express",
+      "NodeJS"
+    ]
+  },
+   {
+    "title": "Crow",
+    "description": "CRUD project in PHP",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": [
+      "LiquidJS",
+      "JS",
+      "CSS",
+      "Express",
+      "NodeJS"
+    ]
+  },
+  {
+    "title": "Hoe verzinnen ze het?",
+    "slug": "hvzh",
     "description": "Dit is een test",
     "live": "https://google.com",
     "github": "https://github.com",
@@ -9,31 +36,5 @@
       "JS",
       "CSS"
     ]
-  },
-  "1": {
-    "title": "project2",
-    "description": "Dit is een test",
-    "live": "https://google.com",
-    "github": "https://github.com",
-    "labels": [
-      "LiquidJS",
-      "JS",
-      "CSS",
-      "Express",
-      "NodeJS"
-    ]
-  },
-  "2": {
-    "title": "project3",
-    "description": "Dit is een test",
-    "live": "https://google.com",
-    "github": "https://github.com",
-    "labels": [
-      "LiquidJS",
-      "JS",
-      "CSS",
-      "Express",
-      "NodeJS"
-    ]
   }
-}
+]
