@@ -108,7 +108,7 @@ body {
 /* MARK: Font sizes
  */
 .huge {
-  font-size: clamp(var(--XL), 10vw, var(--XXL));
+  font-size: clamp(calc(var(--XL) - .5rem), 9.5vw, var(--XXL));
 }
 
 .icon {
@@ -177,6 +177,7 @@ body {
 .heading-label::selection,
 footer *::selection,
 .highlight-block::selection,
+.highlight-block span::selection,
 .anti-highlight-block::selection {
   color: var(--accent);
   background: var(--black);
