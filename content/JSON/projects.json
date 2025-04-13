@@ -1,6 +1,8 @@
 [
- {
-    "title": "villas4u",
+  {
+    "title": "Villas4u",
+    "slug": "villas4u",
+    "alt": "Large villas situated near water",
     "description": "Eerste groeps project",
     "live": "https://google.com",
     "github": "https://github.com",
@@ -14,6 +16,8 @@
   },
    {
     "title": "Crow",
+    "slug": "crow",
+    "alt": "A crow overlayed on a sleek design",
     "description": "CRUD project in PHP",
     "live": "https://google.com",
     "github": "https://github.com",
@@ -27,7 +31,8 @@
   },
   {
     "title": "Hoe verzinnen ze het?",
-    "slug": "hvzh",
+    "slug": "hoevzh",
+    "alt": "A book depicting popular (old) dutch advertisements",
     "description": "Dit is een test",
     "live": "https://google.com",
     "github": "https://github.com",
@@ -36,5 +41,59 @@
       "JS",
       "CSS"
     ]
+  },
+  {
+    "title": "FoodieFinder",
+    "slug": "foodiefinder",
+    "alt": "A plate with various cuisines and a location pin",
+    "description": "Find popular food spots nearby using an interactive map.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["Vue", "LeafletJS", "SCSS", "REST API"]
+  },
+  {
+    "title": "PixelPlayground",
+    "slug": "pixelplayground",
+    "alt": "A colorful pixel art board with drag-and-drop UI",
+    "description": "Browser-based pixel drawing tool with grid snapping.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["React", "Canvas API", "TailwindCSS", "Vite"]
+  },
+  {
+    "title": "EcoTrackr",
+    "slug": "ecotrackr",
+    "alt": "A green dashboard with eco icons and stats",
+    "description": "Track your carbon footprint with daily tips to reduce it.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["Next.js", "TypeScript", "Chart.js", "MongoDB"]
+  },
+  {
+    "title": "QuizWhizz",
+    "slug": "quizwhizz",
+    "alt": "A question mark surrounded by colorful answer choices",
+    "description": "Create and share custom quizzes in real-time.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["Svelte", "Socket.io", "Express", "PostgreSQL"]
+  },
+  {
+    "title": "ResumeForge",
+    "slug": "resumeforge",
+    "alt": "A digital resume being edited live on-screen",
+    "description": "Generate modern CVs from templates with live preview.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["Astro", "TailwindCSS", "Markdown", "Prisma"]
+  },
+  {
+    "title": "CodeBuddy",
+    "slug": "codebuddy",
+    "alt": "Two developers collaborating on code through a UI",
+    "description": "Real-time collaborative coding tool with chat and versioning.",
+    "live": "https://google.com",
+    "github": "https://github.com",
+    "labels": ["React", "NodeJS", "Yjs", "WebRTC"]
   }
 ]
