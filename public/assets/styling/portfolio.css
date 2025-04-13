@@ -7,7 +7,7 @@ html body {
 
 /* Overlay covering the entire page */
 .overlay {
-  view-transition-name: seeker;
+  /* view-transition-name: seeker; */
   position: fixed;
   top: 0;
   left: 0;
@@ -19,4 +19,6 @@ html body {
   transition: all 0.3s ease;
 }
 
-/* Remove duplicate view transition animations as they're defined in general.css */
+body .slice{
+  transform: translateX(100%);
+}
