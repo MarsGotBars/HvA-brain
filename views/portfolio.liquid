@@ -1,20 +1,35 @@
-{% render './partials/head.liquid', styles: styles, scripts: scripts %}
-<div class="slice" style="--slice: 1; view-transition-name: slice-1;"></div>
-<div class="slice" style="--slice: 2; view-transition-name: slice-2;"></div>
-<div class="slice" style="--slice: 3; view-transition-name: slice-3;"></div>
-<div class="overlay"></div>
-<div class="container">
-<h1 class="main-heading huge">PORTFOLIO
-  <span class="heading-label">EXPERIENCE</span>
-</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+{% render './partials/head.liquid', styles: styles, scripts: scripts, bodyClass: "huge" %}
 
-<a href="/">home</a>
-</div>
+<header>
+  <h1 class="main-heading huge">PORTFOLIO
+    <span class="heading-label">LOG</span>
+  </h1>
+</header>
+<main>
+  {% for project in allProjects reversed %}
+    <article class="card">
+      <div class="description">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+      </div>
+    </article>
+  {% endfor %}
+</main>
+<aside class="navigation">
+  <nav><ul>
+    <li><a href="/">ABOUT</a></li>
+    <li><a href="/journal">JOURNAL</a></li>
+  </ul></nav>
+</aside>
+<aside class="visuals">
+  {% for project in allProjects reversed %}
+    <article class="card">
+      <div class="description">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+      </div>
+    </article>
+  {% endfor %}
+</aside>
+
 {% render './partials/page-end.liquid' %}
