@@ -1,0 +1,6 @@
+.back-to-home {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  font-size: 1rem;
+}
