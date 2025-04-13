@@ -11,6 +11,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* because you can't unset this... */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition {
