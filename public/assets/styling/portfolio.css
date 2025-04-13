@@ -1,26 +1,30 @@
-body header{
+body header {
   position: sticky;
   top: 0;
   grid-row: 1;
   grid-column: 2;
-  background: var(--accent);
+  background: var(--black);
+  
 }
-main{
+
+body .main-heading{
+  color: var(--tertiary);
+}
+main {
   font-size: inherit;
   grid-column: 1;
   grid-row: 1 / 3;
-  background: orange;
 }
 
-.navigation{
+.navigation {
   grid-column: 1;
   grid-row: 3;
-  background: green;
+  background: var(--tertiary);
   position: sticky;
   bottom: 0;
 }
 
-.visuals{
+.visuals {
   grid-column: 2;
   grid-row: 2 / 4;
 }
@@ -28,82 +32,143 @@ main{
   scale: 1.027;
 } */
 
-aside{
+aside {
   font-size: inherit;
 }
+
 article.card {
-  padding: 1em 0;
   font-size: inherit;
   position: sticky;
-
+  width: 100%;
+  height: 100%;
 }
-main article.card{
+
+.card img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center bottom;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+main article.card {
+  padding: 1em 0;
   top: 0;
   height: calc(100vh - 1em);
   background: var(--black);
   color: var(--tertiary);
 }
 
-main article:nth-child(odd){
+main article:nth-child(odd) {
   background: var(--primary);
 }
-.visuals article.card{
+
+.visuals article.card {
   font-size: inherit;
   height: calc(100vh - 1em);
-  background: red;
+  background: var(--black);
+  color: var(--tertiary);
   top: 1em;
+}
+
+.anchor{
+  visibility: hidden;
+  height: 0;
 }
 
 /* .visuals article.card */
-aside.visuals article:nth-child(odd){
-  background: orange;
+aside.visuals article:nth-child(odd) {
+  background: var(--primary);
 }
-body{
+body {
   display: grid;
   grid-template-columns: 5fr 7fr;
   /* body makes use of the h1 height, adjusting to it appropriately */
-  grid-template-rows: 1em 1fr minmax(1em, 12.5rem);
+  grid-template-rows: 1em 1fr 1em;
+  transition: .3s ease;
 }
-/* .visuals .card {
-  position: sticky;
-  top: 1em;
-  height: calc(100vh - 1em);
-  z-index: var(--card-number);
-  background: var(--black);
-  color: var(--tertiary);
-} */
+.description-wrapper{
+  height: 100%;
+}
+.split-text {
+  display: flex;
+  flex-direction: column;
 
-/* hide below 800 */
-/* .info .card{
-  display: none;
 }
 
-.visuals .card:nth-child(odd) {
-  background: var(--primary);
-  color: var(--accent);
+.split-text span {
+  font-size: clamp(var(--SM), 3vw, var(--LG));
+  display: block;
 }
 
-@supports (display: grid) {
-  body {
-    display: grid;
-    grid-template-columns: 0fr 1fr;
-  }
-
-  .visuals, h1{
-    grid-column: 2;
+@media (prefers-reduced-motion: no-preference) {
+  /* check if device supports hover */
+  body:has(main:focus-within) {
+    grid-template-columns: 5fr 6.75fr;
   }
   
-  @media (min-width: 800px) {
-    body{
-      grid-template-columns: 5fr 7fr;
-      grid-template-rows: auto 1fr;
+  body:has(aside.navigation:focus-within) {
+    grid-template-columns: 5fr 6.75fr;
+  }
+  
+  body:has(aside.visuals:focus-within) {
+    grid-template-columns: 4.75fr 7fr;
+  }
+  
+  /* check if device supports hover */
+  @media (hover: hover) {
+    body:has(main:hover) {
+      grid-template-columns: 5fr 6.75fr;
     }
-    .visuals .card .description {
-      display: none;
+    
+    body:has(aside.navigation:hover) {
+      grid-template-columns: 5fr 6.75fr;
     }
-    /* display on 800 > */
-    /* .info .card{
-      display: unset;
+    
+    body:has(aside.visuals:hover) {
+      grid-template-columns: 4.75fr 7fr;
+    }
+    
+    body:has(header:hover) {
+      grid-template-columns: 4.75fr 7fr;
     }
   }
-} */
+}
+
+@keyframes card-timeline {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.visuals {
+  overflow: clip;
+}
+
+.visuals article.card, main article.card {
+  transform-origin: center;
+  opacity: 0; /* Ensure cards start invisible before animation */
+  animation: card-timeline linear both;
+  animation-timeline: view();
+  animation-range: entry 10% entry 50%;
+}
+
+main article.card{
+  animation-range: entry 40% entry 90%;
+  
+}
+
+/* Keep first card visible by default */
+.visuals article.card:first-of-type, main article.card:first-of-type {
+  opacity: 1;
+  animation: none;
+}
