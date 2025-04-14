@@ -17,7 +17,6 @@ const dailyNotes = await readdir("content/daily_notes");
 
 const readProjectJSON = await readFile("content/JSON/projects.json", "utf-8");
 const allProjects = JSON.parse(readProjectJSON);
-console.log(allProjects[2]);
 
 // routes
 app.get("/", async function (request, response) {

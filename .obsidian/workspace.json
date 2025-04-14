@@ -67,13 +67,14 @@
             "id": "6135fb51515d0f10",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/daily-notes.json",
-                "staged": false
+                "file": "content/stuff/Debriefing Drop&Heal.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "git-pull-request",
-              "title": "Diff View (daily-notes.json)"
+              "icon": "lucide-file",
+              "title": "Debriefing Drop&Heal"
             }
           }
         ],
