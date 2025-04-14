@@ -12,6 +12,7 @@ class MouseFollow {
   _blob;
   _page;
 
+  _resizePage;
   _mouseLeave;
   _mouseMove;
 
@@ -23,9 +24,10 @@ class MouseFollow {
 
   _velocityX = 0;
   _velocityY = 0;
-
+  
   _offsetX = 20;
   _offsetY = 25;
+
   // Target offset values for lerping
   _targetOffsetX = 20;
   _targetOffsetY = 25;
@@ -38,12 +40,17 @@ class MouseFollow {
   _updateFrame = null;
 
   // spring stiffness
-  _stiffness = 0.1;
+  _stiffness = 0.3;
   // spring damping
-  _damping = 0.6;
+  _damping = 0.5;
   // threshold for update check
   _epsilon = 0.1;
 
+  _pageSize = window.innerWidth;
+  _resizeTimer;
+
+  // Enhancement
+  _resizeObserver;
   /**
    * Creates a MouseFollow instance.
    * 
@@ -56,6 +63,7 @@ class MouseFollow {
     // page
     this._page = page;
 
+    this._resizePage = this.resizePage.bind(this);
     this._mouseLeave = this.mouseLeave.bind(this);
     this._mouseMove = this.mouseMove.bind(this);
     // start following the mouse
@@ -65,8 +73,9 @@ class MouseFollow {
   /**
    * Initialize event listeners and start the animation loop.
    */
-  init() {
+  init() {    
     // add eventlisteners to our page
+    window.addEventListener("resize", this._resizePage)
     this._page.addEventListener("mousemove", this._mouseMove);
     this._page.addEventListener("mouseleave", this._mouseLeave);
     // begin the update loop
@@ -91,6 +100,13 @@ class MouseFollow {
     if (this._blob.classList.contains("gone")) {
       this._blob.classList.remove("gone");
     }
+    
+    // Are we on the left side?
+    if(this._blobX > (this._pageSize / 2)){
+      this.screenSideSwap()
+    } else {
+      this._targetOffsetX = 20;
+    }
     // update mouse position on movement
     this._mouseX = e.clientX;
     this._mouseY = e.clientY;
@@ -100,6 +116,15 @@ class MouseFollow {
       this._ticking = true;
       this.startUpdateLoop();
     }
+  }
+
+  resizePage(e){
+    clearTimeout(this._resizeTimer)
+    this._resizeTimer = setTimeout(() => {
+      this._pageSize = window.innerWidth;
+      console.log(this._pageSize);
+    }, 300);
+    
   }
   
   /**
@@ -139,7 +164,8 @@ class MouseFollow {
   /**
    * Check on which side of the screen we are and invert the position of the blob
      */
-  screenSideCheck() {
+  screenSideSwap() {
+    this._targetOffsetX = -20;
   }
   
   /**
