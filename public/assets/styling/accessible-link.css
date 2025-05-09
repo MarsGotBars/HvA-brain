@@ -1,6 +1,14 @@
-.back-to-home {
-  left: 50%;
+.back-to-about {
+  left: 0;
   position: absolute;
-  transform: translate(-50%, -100%);
+  transform: translate(0, -100%);
   font-size: 1rem;
+  background: var(--tertiary);
+  z-index: 999;
+  color: var(--primary);
+  transition: transform .3s ease;
+}
+
+.back-to-about:focus-visible{
+  transform: translate(0, 0);
 }
