@@ -89,16 +89,9 @@ main article:nth-child(odd) {
   top: 1em;
 }
 
-/* Helps with linking to next/previous */
-.anchor {
-  visibility: hidden;
-  height: 0;
-}
-
 /* .visuals article.card */
 .visuals article.card:nth-of-type(odd) {
   background: var(--primary);
-
 }
 
 html body {
@@ -159,7 +152,6 @@ html body {
 
     body:has(header:hover) {
       grid-template-columns: 4.75fr 7fr;
-      grid-template-rows: calc(1em + 1rem) 1fr calc(1em - 1rem);
     }
   }
 }
@@ -218,11 +210,11 @@ html body {
 
   @keyframes parallax {
     from {
-      translate: 0% -15%;
+      translate: 0% -10%;
     }
 
     to {
-      translate: -30% 15%;
+      translate: -22.5% 30%;
     }
   }
 
