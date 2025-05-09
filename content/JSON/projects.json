@@ -3,97 +3,97 @@
     "title": "Villas4u",
     "slug": "villas4u",
     "alt": "Large villas situated near water",
-    "description": "Eerste groeps project",
+    "short-description": "An online villa bidding site with a classy look",
+    "description": "Responsiveness, Local storage, First group project",
     "live": "https://google.com",
-    "github": "https://github.com",
+    "github": "",
     "labels": [
-      "LiquidJS",
-      "JS",
+      "HTML",
       "CSS",
-      "Express",
-      "NodeJS"
+      "JS"
     ]
   },
    {
     "title": "Crow",
     "slug": "crow",
     "alt": "A crow overlayed on a sleek design",
-    "description": "CRUD project in PHP",
+    "short-description": "A website on which you can upload animal photos",
+    "description": "CRUD, glassmorphism",
     "live": "https://google.com",
-    "github": "https://github.com",
+    "github": "",
     "labels": [
-      "LiquidJS",
-      "JS",
-      "CSS",
-      "Express",
-      "NodeJS"
+      "PHP",
+      "MYSQL"
     ]
+  },
+  {
+    "title": "ARA",
+    "slug": "ara",
+    "alt": "The text 'ARA' printed upon a high vantage picture overlayed with a pink hue",
+    "short-description": "The new ARA website built with Next.JS and Drupal",
+    "description": "Framer motion, creativity, Headless CMS",
+    "live": "https://ara.nl",
+    "github": "",
+    "labels": ["Next.js", "TailwindCSS", "Drupal"]
   },
   {
     "title": "Hoe verzinnen ze het?",
     "slug": "hoevzh",
     "alt": "A book depicting popular (old) dutch advertisements",
-    "description": "Dit is een test",
-    "live": "https://google.com",
-    "github": "https://github.com",
+    "short-description": "<a href='https://ara.nl'>ARA</a> project for Jaap Torenaar",
+    "description": "Video control customization, Infinite scroll, Serverside rendering",
+    "live": "https://hoeverzinnenzehet.nl",
+    "github": "",
     "labels": [
-      "HTML",
-      "JS",
-      "CSS"
+      "Next.js",
+      "TailwindCSS"
     ]
   },
   {
-    "title": "FoodieFinder",
-    "slug": "foodiefinder",
-    "alt": "A plate with various cuisines and a location pin",
-    "description": "Find popular food spots nearby using an interactive map.",
+    "title": "DDA Vacancies",
+    "slug": "dda",
+    "alt": "A black and white website with bold texts",
+    "short-description": "Website for the Dutch Digital Agencies, made to look like the website is contained at all times",
+    "description": "Responsiveness, Adhere to design, Minimalism",
     "live": "https://google.com",
-    "github": "https://github.com",
-    "labels": ["Vue", "LeafletJS", "SCSS", "REST API"]
+    "github": "",
+    "labels": ["HTML", "CSS", "JS"]
   },
   {
-    "title": "PixelPlayground",
-    "slug": "pixelplayground",
-    "alt": "A colorful pixel art board with drag-and-drop UI",
-    "description": "Browser-based pixel drawing tool with grid snapping.",
+    "title": "JUST",
+    "slug": "just",
+    "alt": "A circle with text inside of it ...",
+    "short-description": "School project for <a href='https://JUST.nl'>JUST</a>",
+    "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
     "live": "https://google.com",
-    "github": "https://github.com",
-    "labels": ["React", "Canvas API", "TailwindCSS", "Vite"]
-  },
-  {
-    "title": "EcoTrackr",
-    "slug": "ecotrackr",
-    "alt": "A green dashboard with eco icons and stats",
-    "description": "Track your carbon footprint with daily tips to reduce it.",
-    "live": "https://google.com",
-    "github": "https://github.com",
-    "labels": ["Next.js", "TypeScript", "Chart.js", "MongoDB"]
+    "github": "",
+    "labels": ["HTML", "CSS", "JS"]
   },
   {
     "title": "QuizWhizz",
     "slug": "quizwhizz",
     "alt": "A question mark surrounded by colorful answer choices",
-    "description": "Create and share custom quizzes in real-time.",
+    "short-description": "Create and share custom quizzes in real-time.",
     "live": "https://google.com",
-    "github": "https://github.com",
+    "github": "",
     "labels": ["Svelte", "Socket.io", "Express", "PostgreSQL"]
   },
   {
     "title": "ResumeForge",
     "slug": "resumeforge",
     "alt": "A digital resume being edited live on-screen",
-    "description": "Generate modern CVs from templates with live preview.",
+    "short-description": "Generate modern CVs from templates with live preview.",
     "live": "https://google.com",
-    "github": "https://github.com",
+    "github": "",
     "labels": ["Astro", "TailwindCSS", "Markdown", "Prisma"]
   },
   {
     "title": "CodeBuddy",
     "slug": "codebuddy",
     "alt": "Two developers collaborating on code through a UI",
-    "description": "Real-time collaborative coding tool with chat and versioning.",
+    "short-description": "Real-time collaborative coding tool with chat and versioning.",
     "live": "https://google.com",
-    "github": "https://github.com",
+    "github": "",
     "labels": ["React", "NodeJS", "Yjs", "WebRTC"]
   }
 ]
