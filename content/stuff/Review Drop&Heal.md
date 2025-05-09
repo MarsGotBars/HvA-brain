@@ -25,7 +25,7 @@ Krijgen we maandag nog een uitgebreidere uitwerking van. Zoals die nu staat is d
 
 ## Review 2
 
-Ziet er goed uit!
+"Ziet er goed uit!"
 
 ### Waar moet de gebruiker heen als er een concept opgeslagen wordt?
 
