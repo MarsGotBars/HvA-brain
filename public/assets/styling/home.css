@@ -77,13 +77,18 @@ nav {
       height: anchor-size(height);
       margin-left: .5rem;
       visibility: hidden;
-      transition: .5s ease;
+      transition: .9s cubic-bezier(0.075, 0.82, 0.165, 1);
       text-transform: uppercase;
+      scale: 1.2;
+      transform: translate(10%, -20%);
     }
 
     .me:hover ~ .extra-info{
       visibility: visible;
       opacity: 1;
+      scale: 1;
+      transform: translate(0, 0%);
+
     }
 
     body:has(main:hover) {
