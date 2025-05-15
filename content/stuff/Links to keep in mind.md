@@ -11,6 +11,9 @@ tags:
   - Great place to check out themes and contrast accessibility
 - [https://color.adobe.com/create/color-wheel](https://color.adobe.com/create/color-wheel "https://color.adobe.com/create/color-wheel")
   - Nice tool for picking out a good color theme
+- https://css-tricks.com/almanac/functions/o/oklch/
+   - example use 1: encapsulate rgb and change into more vibrant oklch
+   - example use 2: more natural gradients
 
 ---
 

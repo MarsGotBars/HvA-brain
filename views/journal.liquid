@@ -4,10 +4,11 @@
 </header>
 <main>
   {% comment %} {% render './partials/cards/daily-note.liquid' %} {% endcomment %}
-  {% for file in dailyNotes %}
+  {% for file in dailyNotes reversed %}
     {% assign link = file | slice: 0, -3 %}
-
-    {% render './partials/cards/daily-note.liquid', title: path, link: link %}
+    {% render './partials/cards/daily-note.liquid'
+      , title: path
+      , link: link %}
   {% endfor %}
 </main>
 {% render './partials/page-end.liquid' %}

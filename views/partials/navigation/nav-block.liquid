@@ -1,0 +1,11 @@
+<nav class="bg-black footer-nav">
+  <h2>SOCIALS</h2>
+  <ul>
+    {{ links }}
+    {% for link in links %}
+      <li>
+        <a href="">{{ link | upcase }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

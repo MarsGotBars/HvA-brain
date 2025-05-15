@@ -34,7 +34,7 @@
     "description": "Framer motion, creativity, Headless CMS",
     "live": "https://ara.nl",
     "github": "",
-    "labels": ["Next.js", "TailwindCSS", "Drupal"]
+    "labels": ["Next.js", "TailwindCSS", "Typescript"]
   },
   {
     "title": "Hoe verzinnen ze het?",
@@ -46,14 +46,15 @@
     "github": "",
     "labels": [
       "Next.js",
+      "Typescript",
       "TailwindCSS"
     ]
   },
   {
     "title": "DDA Vacancies",
     "slug": "dda",
-    "alt": "A black and white website with bold texts",
-    "short-description": "Website for the Dutch Digital Agencies, made to look like the website is contained at all times",
+    "alt": "A black and white themed boxy website with bold texts",
+    "short-description": "Website for the Dutch Digital Agencies, made to look like the website is contained within a box at all times",
     "description": "Responsiveness, Adhere to design, Minimalism",
     "live": "https://google.com",
     "github": "",
@@ -68,32 +69,5 @@
     "live": "https://google.com",
     "github": "",
     "labels": ["HTML", "CSS", "JS"]
-  },
-  {
-    "title": "QuizWhizz",
-    "slug": "quizwhizz",
-    "alt": "A question mark surrounded by colorful answer choices",
-    "short-description": "Create and share custom quizzes in real-time.",
-    "live": "https://google.com",
-    "github": "",
-    "labels": ["Svelte", "Socket.io", "Express", "PostgreSQL"]
-  },
-  {
-    "title": "ResumeForge",
-    "slug": "resumeforge",
-    "alt": "A digital resume being edited live on-screen",
-    "short-description": "Generate modern CVs from templates with live preview.",
-    "live": "https://google.com",
-    "github": "",
-    "labels": ["Astro", "TailwindCSS", "Markdown", "Prisma"]
-  },
-  {
-    "title": "CodeBuddy",
-    "slug": "codebuddy",
-    "alt": "Two developers collaborating on code through a UI",
-    "short-description": "Real-time collaborative coding tool with chat and versioning.",
-    "live": "https://google.com",
-    "github": "",
-    "labels": ["React", "NodeJS", "Yjs", "WebRTC"]
   }
 ]
