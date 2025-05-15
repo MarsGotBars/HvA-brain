@@ -14,7 +14,6 @@ body .main-heading {
 }
 
 main {
-  border-right: .125rem solid var(--tertiary);
   grid-column: 1;
   grid-row: 1 / 3;
 }
@@ -34,6 +33,7 @@ main {
   border-left: .125rem solid var(--tertiary);
   grid-column: 2;
   grid-row: 2 / 4;
+  display: none;
 }
 
 /* h1{
@@ -97,13 +97,23 @@ main article:nth-child(odd) {
 html body {
   min-height: 100vh;
   height: unset;
-  display: grid;
   grid-template-columns: 5fr 7fr;
   /* body makes use of the h1 height, adjusting to it appropriately */
   grid-template-rows: 1em 1fr 1em;
   transition: .3s ease;
 }
+@media (min-width: 768px){
+  html body{
+    display: grid;
+  }
 
+  .visuals{
+    display: initial;
+  }
+  .main{
+    border-right: .125rem solid var(--tertiary);
+  }
+}
 .description-wrapper {
   height: 100%;
   font-size: clamp(var(--SM), 3vw, var(--LG));
