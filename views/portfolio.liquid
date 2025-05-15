@@ -1,7 +1,10 @@
-{% render './partials/head.liquid'
-  , styles: styles
-  , scripts: scripts
-  , bodyClass: "huge" %}
+{% layout './layouts/layout.liquid' %}
+{% block head %}
+<link rel="stylesheet" href="/assets/styling/portfolio.css">
+<link rel="stylesheet" href="/assets/styling/accessible-link.css">
+{% endblock %}
+
+{% block %}
 <a class="back-to-about" href="/">
   back to about
 </a>
@@ -62,4 +65,4 @@
   {% endfor %}
 </aside>
 
-{% render './partials/page-end.liquid' %}
+{% endblock %}

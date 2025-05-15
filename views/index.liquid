@@ -1,120 +1,125 @@
-{% render './partials/head.liquid'
-  , styles: styles
-  , scripts: scripts
-  , bodyClass: "huge" %}
-<main>
-  <header>
-    <h1 class="main-heading huge">ABOUT
-      <span class="heading-label">MARCIN</span>
-    </h1>
-  </header>
-  <article>
-    <h2 class="highlight-block me">
-      <span>MARCIN MAGDZIAK</span>
-    </h2>
-    <span class="extra-info">very creative guy, <span class="highlight-block">trust me!</span></span>
-    <p>
-      <span style="--order: 1;">I AM A
-        <span class="underlined semi-bold">DEVELOPER</span>:</span>
-    </p>
-    <p>
-      <span style="--order: 2;">I
-        <span class="semi-bold">WRITE</span>
-        CODE.</span>
-    </p>
-    <p>
-      <span style="--order: 3;">I DESIGN
-        <span class="semi-bold">INTERFACES</span>.</span>
-    </p>
-    <p>
-      <span style="--order: 4;">I CRAFT ANIMATIONS WITH CSS.</span>
-    </p>
-    <div style="--order: 5.5;" class="group anti">
-      <p class="exclude">
-        <span style="--order: 5;" class="sentence anti-highlight-block">— NO LIBRARIES,</span>
+{% layout './layouts/layout.liquid' %}
+{% block head %}
+  <link rel="stylesheet" href="/assets/styling/home.css">
+  <script type="module" src="/scripts/mouse-follow.js"></script>
+{% endblock %}
+{% block %}
+
+  <main>
+    <header>
+      <h1 class="main-heading huge">ABOUT
+        <span class="heading-label">MARCIN</span>
+      </h1>
+    </header>
+    <article>
+      <h2 class="highlight-block me">
+        <span>MARCIN MAGDZIAK</span>
+      </h2>
+      <span class="extra-info">very creative guy,
+        <span class="highlight-block">trust me!</span>
+      </span>
+      <p>
+        <span style="--order: 1;">I AM A
+          <span class="underlined semi-bold">DEVELOPER</span>:</span>
       </p>
-      <p class="exclude">
-        <span style="--order: 5.5;" class="anti-highlight-block">NO GIMMICKS.</span>
+      <p>
+        <span style="--order: 2;">I
+          <span class="semi-bold">WRITE</span>
+          CODE.</span>
       </p>
+      <p>
+        <span style="--order: 3;">I DESIGN
+          <span class="semi-bold">INTERFACES</span>.</span>
+      </p>
+      <p>
+        <span style="--order: 4;">I CRAFT ANIMATIONS WITH CSS.</span>
+      </p>
+      <div style="--order: 5.5;" class="group anti">
+        <p class="exclude">
+          <span style="--order: 5;" class="sentence anti-highlight-block">— NO LIBRARIES,</span>
+        </p>
+        <p class="exclude">
+          <span style="--order: 5.5;" class="anti-highlight-block">NO GIMMICKS.</span>
+        </p>
+      </div>
+      <div class="group">
+        <p class="special-case">
+          <span style="--order: 6.75;" class="sentence">NO
+            <span class="semi-bold">TEMPLATES</span>.</span>
+        </p>
+        <p class="special-case">
+          <span style="--order: 7.5;" class="sentence">NO
+            <span class="semi-bold">SHORTCUTS</span>.</span>
+        </p>
+        <p class="special-case">
+          <span style="--order: 8.25;" class="sentence">NO
+            <span class="semi-bold">BLOAT</span>.</span>
+        </p>
+      </div>
+      <img
+        data-moshable="me"
+        style="--reveal: 8.25;"
+        src="./assets/img/me.jpeg"
+        alt="">
+    </article>
+  </main>
+  <aside class="details bg-brown">
+    <span class="aside-heading huge">↯
+      <h2 class="heading-label">DETAILS</h2>
+    </span>
+    <div class="spacing">
+      <div class="details">
+        <h3>GET IN TOUCH WITH ME</h3>
+        <ul>
+          <li>
+            <a href="mailto:marcinm@live.nl" class="underlined">marcinm@live.nl</a>
+          </li>
+        </ul>
+        <h3>CURRENTLY</h3>
+        <ul>
+          <li>OPEN TO WORK</li>
+          <li>STUDENT AT
+            <a href="HVA" class="highlight-block">HVA</a>
+          </li>
+        </ul>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/portfolio">PORTFOLIO</a></li>
+          <li><a href="/" class="active">ABOUT</a></li>
+          <li><a href="/journal">JOURNAL</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="group">
-      <p class="special-case">
-        <span style="--order: 6.75;" class="sentence">NO
-          <span class="semi-bold">TEMPLATES</span>.</span>
-      </p>
-      <p class="special-case">
-        <span style="--order: 7.5;" class="sentence">NO
-          <span class="semi-bold">SHORTCUTS</span>.</span>
-      </p>
-      <p class="special-case">
-        <span style="--order: 8.25;" class="sentence">NO
-          <span class="semi-bold">BLOAT</span>.</span>
-      </p>
-    </div>
-    <img
-      data-moshable="me"
-      style="--reveal: 8.25;"
-      src="./assets/img/me.jpeg"
-      alt="">
-  </article>
-</main>
-<aside class="details bg-brown">
-  <span class="aside-heading huge">↯
-    <h2 class="heading-label">DETAILS</h2>
-  </span>
-  <div class="spacing">
-  <div class="details">
-    <h3>GET IN TOUCH WITH ME</h3>
+  </aside>
+  <nav class="bg-black footer-nav">
+    <h2>SOCIALS</h2>
     <ul>
-      <li>
-        <a href="mailto:marcinm@live.nl" class="underlined">marcinm@live.nl</a>
-      </li>
-    </ul>
-    <h3>CURRENTLY</h3>
-    <ul>
-      <li>OPEN TO WORK</li>
-      <li>STUDENT AT
-        <a href="HVA" class="highlight-block">HVA</a>
-      </li>
-    </ul>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="/portfolio">PORTFOLIO</a></li>
-      <li><a href="/" class="active">ABOUT</a></li>
-      <li><a href="/journal">JOURNAL</a></li>
+      <li><a href="">LINKEDIN</a></li>
+      <li><a href="">GITHUB</a></li>
+      <li><a href="">BSKY</a></li>
     </ul>
   </nav>
-  </div>
-</aside>
-<nav class="bg-black footer-nav">
-  <h2>SOCIALS</h2>
-  <ul>
-    <li><a href="">LINKEDIN</a></li>
-    <li><a href="">GITHUB</a></li>
-    <li><a href="">BSKY</a></li>
-  </ul>
-</nav>
-<footer>
-  <div class="grouping">
-    <h2>SERVICES</h2>
-    <ul>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-  <details>
-    <summary>
-      <h2>CONTACT</h2>
-    </summary>
-    <div class="details-content">
-      <p>Have a project in mind? Mail me
-        <span class="underlined">
-          <a href="mailto:marcinm@live.nl">marcinm@live.nl</a>
-        </span>
-      </p>
+  <footer>
+    <div class="grouping">
+      <h2>SERVICES</h2>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
-  </details>
-  <div class="icon">( M ‿ M )</div>
-</footer>
-{% render './partials/page-end.liquid' %}
+    <details>
+      <summary>
+        <h2>CONTACT</h2>
+      </summary>
+      <div class="details-content">
+        <p>Have a project in mind? Mail me
+          <span class="underlined">
+            <a href="mailto:marcinm@live.nl">marcinm@live.nl</a>
+          </span>
+        </p>
+      </div>
+    </details>
+    <div class="icon">( M ‿ M )</div>
+  </footer>
+{% endblock %}
