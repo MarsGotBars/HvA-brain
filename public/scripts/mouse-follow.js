@@ -94,7 +94,14 @@ class MouseFollow {
     // update mouse position on movement
     this._mouseX = e.clientX;
     this._mouseY = e.clientY;
-
+    // Are we on the left side?
+    if(this._mouseX > (this._pageSize / 2)){
+      console.log('test');
+      
+      this.screenSideSwap()
+    } else if (this._targetOffsetX != 20){
+      this._targetOffsetX = 20;
+    }
     // reset the ticking flag and restart the update loop if mouse moves
     if (!this._ticking) {
       this._ticking = true;
@@ -274,7 +281,6 @@ class pageClickTransition {
     // ! probably not needed
     this._page.addEventListener("click", (e) => {
       // e.preventDefault();
-      console.log(e)
       // this._mouseTracker.stopTracking();
 
     })

@@ -23,20 +23,30 @@ const retrieveProjects = async () => {
   allProjects = JSON.parse(readProjectJSON);
 }
 
-const findProject = (providedSlug) => {  
+
+
+const findProject = (providedSlug) => {
   try {
     const project = allProjects.find((project) => project.slug === providedSlug);
+    
     // throwing an error does not work..?
     if(project === undefined){
       throw new Error("No project found")
     }
-    
-    return {project}
+    const {before, after} = findAdjecentProject(project.id)
+    return {before, project, after}
   } catch (error) {
     const errPage = "err"
     console.log(errPage);
     return {errPage}
   }
+}
+
+const findAdjecentProject = (num) => {
+  // 
+  const before = allProjects[num-1] ? allProjects[num-1] : allProjects[allProjects.length-1];
+  const after = allProjects[num+1] ? allProjects[num+1] : allProjects[0];
+  return {before, after}
 }
 
 retrieveProjects();
@@ -50,10 +60,7 @@ app.get("/", async function (request, response) {
 });
 
 app.get("/err", async function (request, response) {
-  response.render("err.liquid", {
-    styles: ["home.css"],
-    scripts: ["moshing.js", "mouse-follow.js"]
-  });
+  response.render("err.liquid");
 });
 
 app.get("/portfolio", async function (request, response) {
@@ -65,16 +72,17 @@ app.get("/portfolio", async function (request, response) {
     })
 })
 
+let previousBefore, previousAfter;
 app.get("/portfolio/:slug", async function (request, response) {
   const {slug} = request.params;
-  const {project, errPage} = findProject(slug)
+  const {project, errPage, before, after} = findProject(slug)
 
-  console.log(project, "???", errPage);
   if(errPage){
-    response.redirect(303, `/${errPage}`)
+    response.render(`/${errPage}`)
   }
+  console.log(before, after);
   
-  response.render("project.liquid", { project });
+  response.render("project.liquid", { before, project, after });
 })
 
 app.get("/journal", async function (request, response) {
@@ -94,4 +102,20 @@ app.set("port", process.env.PORT || 8000);
 
 app.listen(app.get("port"), function () {
   console.log(`Application started on http://localhost:${app.get("port")}`);
+});
+
+app.use((err, request, response, next) => {
+  
+  // Hiermee zorg ik ervoor dat er voor gebruikers een 404 weergeven wordt ipv de code-error
+  // Dit werkt alleen in de dev env omdat ik een .env heb met SHOW_DETAILED_ERRORS=true
+  if (process.env.SHOW_DETAILED_ERRORS === "true") {
+    // Weergeef alle error details
+    response.status(500).send({
+      error: err.message,
+      stack: err.stack,
+    });
+  } else {
+    // Redirect naar mijn error pagina
+    response.status(404).render("err.liquid", {error: "Er ging iets mis"});
+  }
 });

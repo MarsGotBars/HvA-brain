@@ -1,3 +1,7 @@
+body{
+  view-transition-name: seeker;
+}
+
 body header {
   position: sticky;
   top: 0;
@@ -27,6 +31,7 @@ main {
   color: var(--primary);
   position: sticky;
   bottom: 0;
+  height: 1em;
 }
 
 .visuals {
@@ -71,11 +76,12 @@ article.card {
 
 main article.card {
   padding-bottom: 1em;
-  top: 0;
-  height: calc(100vh - 1em);
+    top: 1em;
+  height: calc(100vh - 2em);
   background: var(--primary);
   color: var(--accent);
 }
+
 
 main article:nth-child(odd) {
   background: var(--black);
@@ -102,18 +108,7 @@ html body {
   grid-template-rows: 1em 1fr 1em;
   transition: .3s ease;
 }
-@media (min-width: 768px){
-  html body{
-    display: grid;
-  }
 
-  .visuals{
-    display: initial;
-  }
-  .main{
-    border-right: .125rem solid var(--tertiary);
-  }
-}
 .description-wrapper {
   height: 100%;
   font-size: clamp(var(--SM), 3vw, var(--LG));
@@ -214,7 +209,6 @@ html body {
 
   /* vertical reverse scroll */
   main article.card {
-    top: 0;
     animation-range: entry -50% entry calc(100% + 1em);
   }
 
@@ -240,5 +234,24 @@ html body {
   main article.card:first-of-type {
     opacity: 1;
     /* animation: none; */
+  }
+}
+
+@media (min-width: 768px){
+  html body{
+    display: grid;
+  }
+
+  .visuals{
+    display: initial;
+  }
+
+  main{
+    border-right: .125rem solid var(--tertiary);
+  }
+
+  main article.card{
+    top: 0;
+    height: calc(100vh - 1em);
   }
 }

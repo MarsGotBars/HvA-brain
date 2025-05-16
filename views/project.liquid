@@ -3,5 +3,22 @@
   <link rel="stylesheet" href="/assets/styling/project.css">
 {% endblock %}
 {% block %}
-  <h1 class="huge">{{ project.title }}</h1>
+  <header>
+    {% comment %} <nav> <a href="/portfolio">..</a> </nav> {% endcomment %}
+    <nav>
+      <ul>
+        <li>
+          <a href="/portfolio/{{before.slug}}">{{ before.title }}</a>
+        </li>
+        <li>
+          <h1 class="huge">{{ project.title }}</h1>
+        </li>
+        <li>
+          <a href="/portfolio/{{after.slug}}">{{ after.title }}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main></main>
 {% endblock %}

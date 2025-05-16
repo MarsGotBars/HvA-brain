@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "title": "Villas4u",
     "slug": "villas4u",
     "alt": "Large villas situated near water",
@@ -14,6 +15,7 @@
     ]
   },
    {
+    "id": 1,
     "title": "Crow",
     "slug": "crow",
     "alt": "A crow overlayed on a sleek design",
@@ -27,6 +29,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "ARA",
     "slug": "ara",
     "alt": "The text 'ARA' printed upon a high vantage picture overlayed with a pink hue",
@@ -37,6 +40,7 @@
     "labels": ["Next.js", "TailwindCSS", "Typescript"]
   },
   {
+    "id": 3,
     "title": "Hoe verzinnen ze het?",
     "slug": "hoevzh",
     "alt": "A book depicting popular (old) dutch advertisements",
@@ -51,6 +55,7 @@
     ]
   },
   {
+    "id": 4,
     "title": "DDA Vacancies",
     "slug": "dda",
     "alt": "A black and white themed boxy website with bold texts",
@@ -61,6 +66,7 @@
     "labels": ["HTML", "CSS", "JS"]
   },
   {
+    "id": 5,
     "title": "JUST",
     "slug": "just",
     "alt": "A circle with text inside of it ...",

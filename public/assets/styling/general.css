@@ -197,10 +197,6 @@ footer *::selection,
 /* MARK: Transitioning
  */
 
-.container {
-  view-transition-name: body;
-}
-
 :root::view-transition {
   pointer-events: none;
 }
