@@ -8,13 +8,13 @@
     <nav>
       <ul>
         <li>
-          <a href="/portfolio/{{before.slug}}">{{ before.title }}</a>
+          <a style="--name: {{before.slug}}" href="/portfolio/{{before.slug}}">{{ before.title }}</a>
         </li>
         <li>
-          <h1 class="huge">{{ project.title }}</h1>
+          <h1 class="huge" style="--name: {{project.slug}}">{{ project.title }}</h1>
         </li>
         <li>
-          <a href="/portfolio/{{after.slug}}">{{ after.title }}</a>
+          <a style="--name: {{after.slug}}" href="/portfolio/{{after.slug}}">{{ after.title }}</a>
         </li>
       </ul>
     </nav>

@@ -1,20 +1,28 @@
-body{
-    height: 200vh;
-    background: oklch(from var(--tertiary) l c h);
-    color: oklch(from var(--primary) l c h);
+:root {
+  view-transition-name: none;
 }
 
-header{
-    position: sticky;
-    top: 0;
+body {
+  height: 200vh;
+  background: oklch(from var(--tertiary) l c h);
+  color: oklch(from var(--primary) l c h);
 }
 
-@supports (view-transition-name: view){
-    h1{
-        view-transition-name: title;
-        transform-origin: left;
-    }
-    ::view-transition-old(title){
+header {
+  position: sticky;
+  top: 0;
+}
+
+@supports (view-transition-name: view) {
+  h1,
+  a {
+    view-transition-name: var(--name);
+  }
+  
+  ::view-transition-old(var(--name)):only-child {
+    animation-duration: 1s;
+  }
+  /* ::view-transition-old(title){
         animation: scaleDown;
         animation-duration: .5s;
     }
@@ -22,33 +30,23 @@ header{
     ::view-transition-new(title){
         animation: scaleUp;
         animation-duration: .5s;
-    }
-    
-    @keyframes scaleDown {
-        to{
-            scale: .5;
-        }
-    }
-    @keyframes scaleUp {
-        to{
-            scale: 1;
-        }
-    }
+    } */
 }
 
-@supports(animation-timeline: scroll()){
-    body{
-        animation: bg linear both;
+@supports (animation-timeline: scroll()) {
+  body {
+    animation: bg linear both;
     animation-timeline: scroll(block nearest);
-    }
+  }
 
-    @keyframes bg{
-        40%{
-            color: oklch(from var(--accent) l c h);
-        }
-        60%, 100%{
-            background: oklch(from var(--primary) l c h);
-            color: oklch(from var(--accent) l c h);
-        }
+  @keyframes bg {
+    40% {
+      color: oklch(from var(--accent) l c h);
     }
+    60%,
+    100% {
+      background: oklch(from var(--primary) l c h);
+      color: oklch(from var(--accent) l c h);
+    }
+  }
 }
