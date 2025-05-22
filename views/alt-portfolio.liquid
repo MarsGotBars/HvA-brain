@@ -6,8 +6,7 @@
 {% block %}
   <header>
     <h1>PORTFOLIO</h1>
-  </header>
-  <main>
+  <nav>
     <ul>
       {% for project in allProjects %}
         <li style="--sibling-index: 1">
@@ -19,6 +18,12 @@
         </li>
       {% endfor %}
     </ul>
+  </nav>
+  </header>
+  <main>
+    {% for project in allProjects %}
+      <h2 id="{{project.slug}}">{{project.title}}</h2>
+    {% endfor %}
   </main>
   <aside><img src="/assets/img/project-visuals/ara/ara-bg.webp" alt=""></aside>
 {% endblock %}

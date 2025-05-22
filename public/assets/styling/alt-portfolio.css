@@ -1,13 +1,33 @@
-header{
-    position: sticky;
-    top: 0;
+body{
+    height: 200vh;
 }
+
+nav{
+    position: fixed;
+    top: 0;
+    background: var(--tertiary);
+    height: 45vh;
+    width: 100%;
+}
+
 header, h1{
     font-size: inherit;
     font-family: Space;
 }
 
-main, main ul {
+header h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+header{
+    height: 45vh;
+}
+
+nav, nav ul {
+    overflow-y: clip;
     overflow-x: auto;
     display: flex;
     flex: 0 0 auto;
@@ -15,13 +35,13 @@ main, main ul {
 }
 
 /* center first & last items in list and size it properly to avoid the height shifting*/
-main ul{
+nav ul{
     view-transition-name: navigation;
     min-height: 1.2em;
     padding: 0 33.33vw;
 }
 
-main li{
+nav li{
     text-align: center;
     width: 33.33vw;
     display: block;
@@ -31,23 +51,27 @@ main li{
     font-size: initial;
 }
 
-main li a{
+nav li a{
     font-size: var(--SM);
     transition: font-size .9s cubic-bezier(0.075, 0.82, 0.165, 1) ;
 }
 
-.active, main li a:focus, main li a:focus-visible{
+nav li:focus-within a, nav li:focus-visible a, a:target{
     font-size: var(--em);
 }
 
-main ul:focus-within .active{
+nav ul:focus-within .active{
     font-size: initial;
 }
 
-main ul .active:focus{
+nav ul .active:focus-within a{
     font-size: var(--em);
 }
-/* main ul li{
+
+aside img{
+    width: 100%;
+}
+/* nav ul li{
     background: oklch(from #ff0000 calc(l / var(--sibling-index)) c h);
 } */
 
