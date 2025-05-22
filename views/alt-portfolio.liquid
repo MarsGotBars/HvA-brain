@@ -5,20 +5,17 @@
 
 {% block %}
   <header>
-    <h1>PORTFOLIO</h1>
-  </header>
+      <h1 class="main-heading huge">PORTFOLIO
+        <span class="heading-label">WORK</span>
+      </h1>
+    </header>
   <main>
-    <ul>
-      {% for project in allProjects %}
-        <li style="--sibling-index: 1">
-          <a
-            href="#{{project.slug}}"
-            {% if forloop.index == 1 %}
-            class="active"
-            {% endif %}>{{ project.title | upcase }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% for project in allProjects %}
+      <a href="portfolio/{{project.slug}}"><article style="background: var(--custom-{{forloop.index}});">{{project.title |  upcase}}
+      </article></a>
+    {% endfor %}
   </main>
-  <aside><img src="/assets/img/project-visuals/ara/ara-bg.webp" alt=""></aside>
+  <aside>
+    <h2>some text</h2>
+  </aside>
 {% endblock %}

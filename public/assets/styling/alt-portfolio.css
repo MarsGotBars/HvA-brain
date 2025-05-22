@@ -1,53 +1,94 @@
-header{
-    position: sticky;
-    top: 0;
-}
-header, h1{
-    font-size: inherit;
-    font-family: Space;
+@view-transition {
+  navigation: auto;
 }
 
-main, main ul {
-    overflow-x: auto;
-    display: flex;
-    flex: 0 0 auto;
-    font-size: inherit;
+html:only-child > body {
+  background: var(--black);
+  font-size: clamp(calc(var(--LG) - 1rem), 8.5vw, var(--XXL));
+  color: var(--tertiary);
+  height: unset;
+
+  --custom-1: #6DFFB6;
+  --custom-2: #EEFF6D;
+  --custom-3: #FFAA6D;
+  --custom-4: #FF6D70;
+  --custom-5: #FF6DBD;
+  --custom-6: #C06DFF;
+  --custom-7: #6D74FF;
+
+  --sidebar: 40.625vw;
 }
 
-/* center first & last items in list and size it properly to avoid the height shifting*/
-main ul{
-    view-transition-name: navigation;
-    min-height: 1.2em;
-    padding: 0 33.33vw;
+header,
+main {
+  width: calc(100% - var(--sidebar));
 }
 
-main li{
-    text-align: center;
-    width: 33.33vw;
-    display: block;
-    place-content: center;
-    align-items: center;
-    display: flex;
-    font-size: initial;
+header {
+  position: sticky;
+  top: 0;
+  font-size: inherit;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 clamp(var(--XS), 3vw, var(--MD));
+  background: var(--black);
 }
 
-main li a{
-    font-size: var(--SM);
-    transition: font-size .9s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+header h1.main-heading {
+  line-height: 1;
+  color: var(--tertiary);
+  font-family: var(--primary-font);
+  font-size: inherit;
 }
 
-.active, main li a:focus, main li a:focus-visible{
-    font-size: var(--em);
+h1 span {
+  font-size: clamp(var(--XS), 2vw, var(--MD));
 }
 
-main ul:focus-within .active{
-    font-size: initial;
+aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar);
+  background: var(--primary);
+  height: 100%;
 }
 
-main ul .active:focus{
-    font-size: var(--em);
+@media (max-width: 720px) {
+  html:only-child > body {
+    --sidebar: 2rem;
+  }
+  h1 {
+    padding: 1rem 0;
+  }
+  aside {
+    transform: translateX(calc(75vw - var(--sidebar)));
+    width: 100%;
+    transition: transform 0.3s ease;
+    max-width: 75vw;
+  }
 }
-/* main ul li{
-    background: oklch(from #ff0000 calc(l / var(--sibling-index)) c h);
-} */
 
+main,
+article {
+  font-size: inherit;
+}
+
+a {
+  position: sticky;
+  top: 1em;
+  height: calc(100vh - 1em);
+  display: block;
+  width: 100%;
+}
+
+a article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    color: var(--black);
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+}
