@@ -32,6 +32,8 @@ tags:
 - https://css-tricks.com/grainy-gradients/
   - Grainy gradient effects with svg filters
     - [related video](https://www.youtube.com/watch?v=_ZFghigBmqo)
+- https://live-transitions.pages.dev/
+	- view transition stuff & navigation api
 
 #### - Codepen
 
@@ -50,6 +52,8 @@ tags:
 - https://v0.dev/chat/community/dynamic-frame-layout-v1tIli3svjV
   - V0 suggested by Ivan from SV (freelancing work)
   - grid hover changing sizes of all images/videos on hover
+- https://hakim.se/
+  - QoL and interesting/unusual animations
 
 ---
 

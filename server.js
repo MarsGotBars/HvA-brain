@@ -1,7 +1,7 @@
 import express from "express";
 import { Liquid } from "liquidjs";
 import { readdir, readFile } from "node:fs/promises";
-import "dotenv/config";
+// import "dotenv/config";
 const app = express();
 
 const engine = new Liquid();
@@ -62,8 +62,15 @@ app.get("/err", async function (request, response) {
   response.render("err.liquid");
 });
 
+
+app.get("/alt-portfolio", async function (request, response) {
+
+  response.render("alt-portfolio.liquid", {
+    allProjects,
+  });
+});
+
 app.get("/portfolio", async function (request, response) {
-  console.log(allProjects);
 
   response.render("portfolio.liquid", {
     allProjects,
@@ -96,7 +103,7 @@ app.get("/journal/:path", async function (request, response) {
   response.render("note.liquid", { note });
 });
 
-app.set("port", process.env.PORT || 8000);
+app.set("port", process.env.PORT || 8001);
 
 app.listen(app.get("port"), function () {
   console.log(`Application started on http://localhost:${app.get("port")}`);

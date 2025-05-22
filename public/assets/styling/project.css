@@ -1,28 +1,84 @@
-:root {
-  view-transition-name: none;
-}
+@import url('./view-transition/seeker-transition.css');
 
 body {
-  height: 200vh;
-  background: oklch(from var(--tertiary) l c h);
-  color: oklch(from var(--primary) l c h);
+    height: 200vh;
+    background: oklch(from var(--tertiary) l c h);
+    color: oklch(from var(--primary) l c h);
+    padding: random(1rem, 5rem);
 }
 
 header {
-  position: sticky;
-  top: 0;
+    background: oklch(from var(--tertiary) l c h);
+    position: sticky;
+    top: 0;
+}
+
+header,
+header nav,
+header nav ul {
+    min-height: 45vh;
+}
+
+header nav ul {
+    view-transition-name: navigation;
+    display: flex;
+    align-items: center;
+}
+
+header nav li{
+    display: flex;
+    place-content: center;
+    flex-basis: 50%;
 }
 
 @supports (view-transition-name: view) {
-  h1,
-  a {
-    view-transition-name: var(--name);
-  }
-  
-  ::view-transition-old(var(--name)):only-child {
-    animation-duration: 1s;
-  }
-  /* ::view-transition-old(title){
+    body {
+        view-transition-name: page;
+    }
+
+    ::view-transition-old(page) {
+        animation: .9s page-out cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      }
+      ::view-transition-new(page) {
+        animation: .9s page-in cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      }
+      header {
+        /* exclude this from the page transition */
+        view-transition-name: header;
+      }
+      @keyframes page-out {
+        0% {
+            opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes page-in {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      
+    h1,
+    a {
+        view-transition-name: var(--name);
+        display: inline-block;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-duration: 1s;
+    }
+    ::view-transition-old(var(--name)):only-of-type{
+        background: red;
+    }
+    ::view-transition-group(*){
+        animation-duration: .7s;
+    }
+
+    /* ::view-transition-old(title){
         animation: scaleDown;
         animation-duration: .5s;
     }
@@ -34,19 +90,41 @@ header {
 }
 
 @supports (animation-timeline: scroll()) {
-  body {
-    animation: bg linear both;
-    animation-timeline: scroll(block nearest);
-  }
+    body, header {
+        animation: bg linear both;
+        animation-timeline: scroll(block nearest);
+    }
 
-  @keyframes bg {
-    40% {
-      color: oklch(from var(--accent) l c h);
+    @keyframes bg {
+        40% {
+            color: oklch(from var(--accent) l c h);
+        }
+
+        60%,
+        100% {
+            background: oklch(from var(--primary) l c h);
+            color: oklch(from var(--accent) l c h);
+        }
     }
-    60%,
-    100% {
-      background: oklch(from var(--primary) l c h);
-      color: oklch(from var(--accent) l c h);
+
+    header ul li:not(:nth-child(2)) {
+        animation: fade-away linear both;
+        animation-timeline: scroll(block nearest);
+        transition: opacity .3s ease-out;
+        flex-basis: 25%;
     }
-  }
+
+    /* !FIXME reveal on header hover */
+    header:hover li {
+        animation: unset !important;
+        opacity: 1;
+    }
+
+    @keyframes fade-away {
+
+        22.5%,
+        100% {
+            opacity: 0;
+        }
+    }
 }

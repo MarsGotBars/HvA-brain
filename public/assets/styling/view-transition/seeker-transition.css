@@ -1,0 +1,15 @@
+::view-transition-old(seeker){
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+::view-transition-new(seeker){
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-out {
+  to{
+    opacity: 0;
+    scale: 20;
+  }
+}

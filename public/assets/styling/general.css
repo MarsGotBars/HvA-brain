@@ -107,6 +107,8 @@ body {
   --SM: 1.5rem;
   --XS: 1rem;
 
+  --em: clamp(calc(var(--XL) - .5rem), 9vw, var(--XXL));
+
   /* Styling */
   background: var(--tertiary);
   color: var(--black);
