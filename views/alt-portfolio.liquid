@@ -1,0 +1,21 @@
+{% layout './layouts/layout.liquid' %}
+{% block head %}
+  <link rel="stylesheet" href="assets/styling/alt-portfolio.css">
+{% endblock %}
+
+{% block %}
+  <header>
+      <h1 class="main-heading huge">PORTFOLIO
+        <span class="heading-label">WORK</span>
+      </h1>
+    </header>
+  <main>
+    {% for project in allProjects %}
+      <a href="portfolio/{{project.slug}}"><article style="background: var(--custom-{{forloop.index}});">{{project.title |  upcase}}
+      </article></a>
+    {% endfor %}
+  </main>
+  <aside>
+    <h2>some text</h2>
+  </aside>
+{% endblock %}

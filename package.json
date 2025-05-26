@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.2",
+    "dotenv": "^16.5.0",
     "prettier": "^3.5.3"
   }
 }
