@@ -123,3 +123,11 @@ app.use((err, request, response, next) => {
     response.status(404).render("err.liquid", { error: "Er ging iets mis" });
   }
 });
+
+
+
+app.get("/demo-page/:text", async function (request, response) {
+  const {text} = request.params
+
+  response.render("demo.liquid", { text, pageTitle: "Demo pagina" });
+});
