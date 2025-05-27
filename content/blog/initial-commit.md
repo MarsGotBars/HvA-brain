@@ -4,7 +4,6 @@ tags:
   - CSS25
   - CSSDAY
 ---
-
 ## Why bother using JS when you have CSS?
 
 The web development landscape has dramatically shifted in 2025. What once required complex JavaScript libraries and hundreds of lines of code can now be achieved with just a few CSS declarations. It's time we seriously reconsider our JavaScript-first approach.
@@ -81,7 +80,7 @@ Before `:has()`, achieving these effects required:
 
 Now it's just CSS. **Pure, declarative, performant CSS.**
 
-[And it is also a selector that I used for the cool hover effect on my about page!](../)
+[And it is also a selector that I used for the cool hover effect on my about page! (Hover over the different bits in the grid!)](../)
 
 #### Scroll-Driven Animations
 ```css
