@@ -80,7 +80,7 @@ Before `:has()`, achieving these effects required:
 
 Now it's just CSS. **Pure, declarative, performant CSS.**
 
-[And it is also a selector that I used for the cool hover effect on my about page! (Hover over the different bits in the grid!)](../)
+[And it is also a selector that I used for the cool hover effect on my about page! <br/>(Hover over the different bits in the grid!)](../)
 
 #### Scroll-Driven Animations
 ```css
