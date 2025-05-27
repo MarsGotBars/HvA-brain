@@ -98,6 +98,8 @@ Now it's just CSS. **Pure, declarative, performant CSS.**
 
 **No Intersection Observer. No scroll event listeners. Just CSS.**
 [You can even shift colors with it!](../portfolio/ara)
+
+[Or use it to animate individual elements when they enter view](../portfolio)
 ### View Transitions - The Game Changer
 [My personal favorite that I've implemented all across this project!](../)
 Perhaps the most revolutionary CSS feature of 2025 is **View Transitions**. With just two lines of CSS, you can transform how users experience navigation on your website.
@@ -211,3 +213,5 @@ When CSS "fails":
 - Fallbacks work automatically
 - Zero runtime errors
 - Progressive enhancement by default
+
+<!-- Yes I dislike GSAP! How'd you know? -->
