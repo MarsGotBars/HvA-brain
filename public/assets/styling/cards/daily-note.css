@@ -13,5 +13,6 @@
 }
 
 .daily-note:visited {
-  background: var(--tertiary);
+  background: var(--black);
+  color: var(--tertiary);
 }

@@ -1,0 +1,68 @@
+body > * {
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+main h2{
+    font-size: var(--MD);
+}
+
+main h3{
+    font-size: var(--SM);
+}
+
+main > h2,
+main > h3,
+main > h4 {
+    background-color: var(--accent);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+main > pre{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+ul ul {
+    margin-left: 1rem;
+}
+
+
+main a{
+    color: var(--tertiary);
+    text-decoration: underline;
+    background-color: var(--primary);
+    margin: .5rem 0;
+    display: inline-block;
+    padding: .5rem;
+    &:hover{
+        color: var(--accent);
+    }
+}
+
+main p {
+    margin: 0.5rem 0;
+}
+
+main p:has(> a:only-child) {
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+}
+
+::selection{
+    background-color: var(--black);
+    color: var(--tertiary);
+}
+
+code::selection {
+    background-color: var(--tertiary);
+    color: var(--primary);
+}

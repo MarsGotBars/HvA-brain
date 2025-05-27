@@ -1,6 +1,8 @@
 import express from "express";
 import { Liquid } from "liquidjs";
 import { readdir, readFile } from "node:fs/promises";
+import { marked } from "marked";
+import yaml from "js-yaml";
 // import "dotenv/config";
 const app = express();
 
@@ -14,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", "./views");
 
 const dailyNotes = await readdir("content/daily_notes");
+const blogFiles = await readdir("content/blog");
 
 let allProjects;
 const retrieveProjects = async () => {
@@ -52,6 +55,39 @@ const findAdjecentProject = (num) => {
 };
 
 retrieveProjects();
+
+// Helper function to parse frontmatter and content
+const parseFrontmatter = (markdownContent) => {
+  let frontmatter = {};
+  let content = markdownContent;
+
+  console.log('Raw markdown content starts with:', markdownContent.substring(0, 50));
+  
+  if (markdownContent.startsWith('---')) {
+    console.log('Found frontmatter delimiter');
+    const frontmatterEnd = markdownContent.indexOf('---', 3);
+    console.log('Frontmatter end position:', frontmatterEnd);
+    
+    if (frontmatterEnd !== -1) {
+      const frontmatterText = markdownContent.slice(3, frontmatterEnd).trim();
+      content = markdownContent.slice(frontmatterEnd + 3).trim();
+      
+      console.log('Frontmatter text:', frontmatterText);
+      
+      try {
+        frontmatter = yaml.load(frontmatterText) || {};
+        console.log('Parsed frontmatter:', frontmatter);
+      } catch (error) {
+        console.error('Error parsing frontmatter:', error);
+        frontmatter = {};
+      }
+    }
+  } else {
+    console.log('No frontmatter delimiter found');
+  }
+
+  return { frontmatter, content };
+};
 
 // routes
 app.get("/", async function (request, response) {
@@ -94,13 +130,46 @@ app.get("/journal", async function (request, response) {
   response.render("journal.liquid", { dailyNotes });
 });
 
+app.get("/blog", async function (request, response) {
+  response.render("journal.liquid", { 
+    dailyNotes: blogFiles, 
+    isBlogs: true,
+    pageTitle: "Blog Posts" 
+  });
+});
+
 app.get("/journal/:path", async function (request, response) {
   const { path } = request.params;
-  const note = await readFile("content/daily_notes/" + path + ".md", {
+  const markdownContent = await readFile("content/daily_notes/" + path + ".md", {
     encoding: "utf8",
   });
 
-  response.render("note.liquid", { note });
+  const { frontmatter, content } = parseFrontmatter(markdownContent);
+
+  // Convert Markdown to HTML
+  const note = marked(content, {
+    breaks: true,
+    gfm: true
+  });
+
+  response.render("note.liquid", { note, frontmatter });
+});
+
+app.get("/blog/:name", async function (request, response) {
+  const { name } = request.params;
+  const markdownContent = await readFile("content/blog/" + name + ".md", {
+    encoding: "utf8",
+  });
+
+  const { frontmatter, content } = parseFrontmatter(markdownContent);
+  console.log(frontmatter);
+  // Convert Markdown to HTML
+  const note = marked(content, {
+    breaks: true,
+    gfm: true
+  });
+
+  response.render("note.liquid", { note, frontmatter });
 });
 
 app.set("port", process.env.PORT || 8001);

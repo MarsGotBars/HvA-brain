@@ -1,0 +1,8 @@
+<a class="daily-note" href="/blog/{{ link }}">
+  <article>
+    <h3>
+      {% assign formattedTitle = link | replace: "-", " " | capitalize %}
+      <span>{{ formattedTitle }}</span>
+    </h3>
+  </article>
+</a>
