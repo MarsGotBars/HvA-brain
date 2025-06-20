@@ -60,3 +60,9 @@ tags:
 ### Others/Miscellaneous
 
 https://wireframe.cc/
+
+
+### No place yet
+[https://scroll-driven-animations.style](https://scroll-driven-animations.style/) 
+[https://ryanmulligan.dev](https://ryanmulligan.dev/) 
+[https://codepen.io/krijnhoetmer/pen/qBgGwLB](https://codepen.io/krijnhoetmer/pen/qBgGwLB)
