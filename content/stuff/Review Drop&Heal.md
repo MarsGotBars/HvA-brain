@@ -30,3 +30,8 @@ Krijgen we maandag nog een uitgebreidere uitwerking van. Zoals die nu staat is d
 ### Waar moet de gebruiker heen als er een concept opgeslagen wordt?
 
 Ook naar de drops pagina. Zelfde geld voor als je daar al zit, dan blijf je daar.
+
+
+## Review 3
+
+De opdrachtgever was erg blij met het geleverde werk en wou graag de link hebben om deze te delen met haar eigen developer; ook vroeg ze of de animatie van het berichten gedeelte makkelijk te hercreeren was in svelte; hierbij gaf ik aan dat dit voor een 2e jaars student wel te doen zou moeten zijn.
