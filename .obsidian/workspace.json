@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/stuff/IO Review met Lee Ravenberg.md",
+                "file": "content/stuff/Briefing - Debriefing IO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IO Review met Lee Ravenberg"
+              "title": "Briefing - Debriefing IO"
             }
           }
         ],
@@ -347,8 +347,9 @@
   },
   "active": "05b07cc5b373355e",
   "lastOpenFiles": [
-    "content/stuff/Briefing - Debriefing IO.md",
     "content/stuff/IO Review met Lee Ravenberg.md",
+    "content/stuff/Briefing - Debriefing IO.md",
+    "content/stuff/Briefing - Debriefing IO.md",
     "views/partials/cards/blog-post.liquid",
     "public/assets/styling/journal.css",
     "content/daily_notes/2025-05-27.md",
@@ -366,7 +367,6 @@
     "content/Templates/Daily notes template.md",
     "content/stuff/test.md",
     "content/stuff/before CSS day.md",
-    "content/stuff/Untitled 1.md",
     "content/stuff/Review Drop&Heal.md",
     "content/stuff/Create.md",
     "content/stuff/Debriefing Drop&Heal.md",
