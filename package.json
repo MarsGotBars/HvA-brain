@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec npm start"
+    "dev": "nodemon --exec npm start",
+    "build": "rimraf dist && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.2",
     "dotenv": "^16.5.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1"
   }
 }
