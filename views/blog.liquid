@@ -1,0 +1,19 @@
+{% layout './layouts/layout.liquid' %}
+{% block head %}
+<link rel="stylesheet" href="/assets/styling/journal.css">
+{% endblock %}
+
+{% block %}
+  <header>
+    <h1 class="main-heading">{{ pageTitle | default: "Welcome!" }}</h1>
+  </header>
+  <main>
+    {% for post in blog reversed %}
+      {% render './partials/cards/blog-post.liquid'
+        , title: post.frontmatter.title
+        , link: post.slug
+        , date: post.frontmatter.date
+        , excerpt: post.frontmatter.excerpt %}
+    {% endfor %}
+  </main>
+{% endblock %}
