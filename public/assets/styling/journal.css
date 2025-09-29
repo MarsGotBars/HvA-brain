@@ -2,6 +2,11 @@ body > * {
     padding: 1rem;
 }
 
+header > a{
+    position: relative;
+    z-index: 2;
+}
+
 main {
     display: flex;
     flex-direction: column;
