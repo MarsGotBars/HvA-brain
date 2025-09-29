@@ -1,12 +1,27 @@
+---
+pagination:
+  data: blog
+  size: 1
+  alias: post
+permalink: "/blog/{{ post.slug }}/"
+---
 {% layout './layouts/layout.liquid' %}
 {% block head %}
-  <link rel="stylesheet" href="/assets/styling/general.css">
+  <link rel="stylesheet" href="/assets/styling/cards/daily-note.css">
   <link rel="stylesheet" href="/assets/styling/journal.css">
+  <title>{{ post.frontmatter.title }}</title>
 {% endblock %}
 
 {% block %}
   <header>
-    <h1 class="main-heading huge">{{ frontmatter.title | default: "Learning journal!" }}</h1>
+    <a href="/blog">← Back to blog</a>
+    <h1 class="main-heading huge">{{ post.frontmatter.title }}</h1>
+    {% if post.frontmatter.date %}
+      <time>{{ post.frontmatter.date }}</time>
+    {% endif %}
   </header>
-  <main>{{ note }}</main>
+  
+  <main>
+    {{ post.html }}
+  </main>
 {% endblock %}
