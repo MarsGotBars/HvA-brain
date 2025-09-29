@@ -1,10 +1,32 @@
+---
+pagination:
+  data: projects.allProjects
+  size: 1
+  alias: project
+permalink: "/portfolio/{{ project.slug }}/"
+---
 {% layout './layouts/layout.liquid' %}
 {% block head %}
   <link rel="stylesheet" href="/assets/styling/project.css">
 {% endblock %}
 {% block %}
+  {% assign currentIndex = pagination.pageNumber %}
+  {% assign totalProjects = projects.allProjects.size %}
+  {% assign beforeIndex = currentIndex | minus: 1 %}
+  {% assign afterIndex = currentIndex | plus: 1 %}
+  
+  {% comment %} Wrap around if needed {% endcomment %}
+  {% if beforeIndex < 0 %}
+    {% assign beforeIndex = totalProjects | minus: 1 %}
+  {% endif %}
+  {% if afterIndex >= totalProjects %}
+    {% assign afterIndex = 0 %}
+  {% endif %}
+  
+  {% assign before = projects.allProjects[beforeIndex] %}
+  {% assign after = projects.allProjects[afterIndex] %}
+
   <header>
-    {% comment %} <nav> <a href="/portfolio">..</a> </nav> {% endcomment %}
     <nav>
       <ul>
         <li>
