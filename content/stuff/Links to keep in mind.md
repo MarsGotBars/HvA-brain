@@ -34,7 +34,7 @@ tags:
     - [related video](https://www.youtube.com/watch?v=_ZFghigBmqo)
 - https://live-transitions.pages.dev/
 	- view transition stuff & navigation api
-
+- [Curved paths in CSS](https://tobiasahlin.com/blog/curved-path-animations-in-css/)
 #### - Codepen
 
 - https://codepen.io/cjimmy/pen/wvexYoJ
