@@ -1,9 +1,9 @@
-{% layout './layouts/layout.liquid' %}
+{% layout './layouts/grid.liquid' %}
 {% block head %}
   <link rel="stylesheet" href="/assets/styling/home.css">
   <script type="module" src="/scripts/mouse-follow.js"></script>
 {% endblock %}
-{% block %}
+{% block grid %}
 
   <main>
     <header>
@@ -63,64 +63,5 @@
         alt="">
     </article>
   </main>
-  <aside class="details bg-brown">
-    <span class="aside-heading huge">↯
-      <h2 class="heading-label">DETAILS</h2>
-    </span>
-    <div class="spacing">
-      <div class="details">
-        <h3>GET IN TOUCH WITH ME</h3>
-        <ul>
-          <li>
-            <a href="mailto:marcinm@live.nl" class="underlined">marcinm@live.nl</a>
-          </li>
-        </ul>
-        <h3>CURRENTLY</h3>
-        <ul>
-          <li>OPEN TO WORK</li>
-          <li>STUDENT AT
-            <a href="https://www.hva.nl/opleidingen/ad-frontend-design-and-development" class="highlight-block">HVA</a>
-          </li>
-        </ul>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/portfolio">PORTFOLIO</a></li>
-          <li><a href="/" class="active">ABOUT</a></li>
-          <li><a href="/blog">BLOG</a></li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
-  <nav class="bg-black footer-nav">
-    <h2>SOCIALS</h2>
-    <ul>
-      <li><a href="">LINKEDIN</a></li>
-      <li><a href="">GITHUB</a></li>
-      <li><a href="">BSKY</a></li>
-    </ul>
-  </nav>
-  <footer>
-    <div class="grouping">
-      <h2>SERVICES</h2>
-      <ul>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    <details>
-      <summary>
-        <h2>CONTACT</h2>
-      </summary>
-      <div class="details-content">
-        <p>Have a project in mind? Mail me
-          <span class="underlined">
-            <a href="mailto:marcinm@live.nl">marcinm@live.nl</a>
-          </span>
-        </p>
-      </div>
-    </details>
-    <div class="icon">( M ‿ M )</div>
-  </footer>
-  
+
 {% endblock %}

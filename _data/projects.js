@@ -11,7 +11,7 @@ const projectsJSON = fs.readFileSync(
 );
 const allProjects = JSON.parse(projectsJSON);
 
-console.log("Loaded projects data with", allProjects.length, "projects.");
+console.log("Loaded projects data with", allProjects.length, "projects.", allProjects);
 
 // Export the data directly, not wrapped in a function
 export default {
