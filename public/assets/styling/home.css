@@ -124,7 +124,6 @@ header {
 */
 
 main article {
-  overflow: hidden;
   padding: var(--MD);
   font-size: clamp(var(--SM), calc(2vw - 15%), var(--MD));
   font-family: Martian;

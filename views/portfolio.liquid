@@ -1,22 +1,16 @@
-{% layout './layouts/grid.liquid' %}
+{% layout './layouts/layout.liquid' %}
 
 {% block head %}
   <link rel="stylesheet" href="/assets/styling/portfolio.css">
-  <link rel="stylesheet" href="/assets/styling/accessible-link.css">
 {% endblock %}
 
-{% block grid %}
-  <a class="back-to-about" href="/">
-    back to about
-  </a>
-
-  <header>
-    <h1 class="main-heading huge">PORTFOLIO
-      <span class="heading-label">LOG</span>
-    </h1>
-  </header>
-
-  <main>
+{% block %}
+  <main class="huge">
+    <header>
+      <h1 class="main-heading huge">PORTFOLIO
+        <span class="heading-label">LOG</span>
+      </h1>
+    </header>
     {% for project in projects.allProjects reversed %}
       {% assign splitText = project.title | split: " " %}
       {% assign firstWord = splitText[0] %}
@@ -24,14 +18,6 @@
         style="--card-number: {{forloop.index0}}"
         class="card"
         id="{{ project.slug }}">
-
-        <picture>
-          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp" type="image/webp">
-          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" type="image/jpeg">
-          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpeg" type="image/jpeg">
-          <img src="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" alt="{{ project.alt }}">
-        </picture>
-
         <div class="description-wrapper">
           <a href="/portfolio/{{ project.slug }}/">
             <h2 class="split-text">
@@ -40,10 +26,17 @@
               {% endfor %}
             </h2>
           </a>
-          <p>{{ project.short-description | upcase }}</p>
+          <div class="wrapper">
+            <p>{{ project.short-description }}</p>
+            <picture>
+              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp" type="image/webp">
+              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" type="image/jpeg">
+              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpeg" type="image/jpeg">
+              <img src="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" alt="{{ project.alt }}">
+            </picture>
+          </div>
         </div>
       </article>
     {% endfor %}
   </main>
-
 {% endblock %}
