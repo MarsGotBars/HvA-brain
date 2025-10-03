@@ -1,11 +1,13 @@
-> [!BUG]- # Erwin Hofman & Karlijn Löwik
+> [!WARNING] 
+> # Erwin Hofman & Karlijn Löwik
 > ## Web performance in 2025: Putting real UX first
 > Core web vitals only run on chrome (not other browsers)
 > 
 > ## Browser APIs
 > - Speculation rules
 
-> [!TIP]- # Brecht de Ruyte
+> [!NOTE]
+> # <ins>[Brecht de Ruyte](https://utilitybend.com/)</ins>
 > ## Pop it, Invoke it, Select it
 > popover="manual" so you can set your own actions
 > css pseudoclass
@@ -61,7 +63,8 @@
 > ### Custom command
 > requires 2 dashes (--custom-comand) and can be used in JS
 
-> [!info] # [Thorsten Jonas](https://thorstenjonas.com)
+> [!TIP]
+> # <ins>[Thorsten Jonas](https://thorstenjonas.com)</ins>
 > https://sustainableuxnetwork.com
 > 
 > ## Beyond user-centricity: designing sustainable digital products
@@ -74,14 +77,6 @@
 > - Design for _less carbon emissions_
 > - [WSG](https://w3c.github.io/sustyweb/)
 
-> [!bug] # [Dylan Beattie](https://dylanbeattie.net)
+> [!IMPORTANT]
+> # <ins>[Dylan Beattie](https://dylanbeattie.net)</ins>
 > ## HOW TO BE A ROCKSTAR DEVELOPER
-> 
-> 
-> 
-
-
-
-
-
-
