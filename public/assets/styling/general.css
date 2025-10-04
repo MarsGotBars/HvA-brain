@@ -109,9 +109,10 @@ body {
   --LG: 3.25rem;
   --MD: 2.25rem;
   --SM: 1.5rem;
-  --XS: 1rem;
+  --XS: 1.125rem;
+  --XXS: 1rem;
 
-  --em: clamp(calc(var(--XL) - .5rem), 9vw, var(--XXL));
+  --em: clamp(var(--LG), 15.5vw, var(--XXL));
 
   /* Styling */
   background: var(--tertiary);
@@ -119,10 +120,22 @@ body {
   font-family: Martian;
 }
 
+span{
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  text-transform: inherit;
+  display: inline-block;
+}
+
 /* MARK: Font sizes
  */
 .huge {
-  font-size: clamp(calc(var(--XL) - .5rem), 8.5vw, var(--XXL));
+  font-size: clamp(var(--LG), 15.5vw, var(--XXL));
 }
 
 .icon {
@@ -178,7 +191,7 @@ body {
   text-orientation: mixed;
   top: calc(36% - 1em);
   font-family: Tauri;
-  font-size: clamp(var(--XS), 2vw, var(--MD));
+  font-size: clamp(var(--XXS), 2vw, var(--MD));
   right: clamp(-2rem, -3vw, -1rem);
 }
 
@@ -225,18 +238,9 @@ footer *::selection,
   }
 }
 
-/* MARK: Slices
+/* MARK: Scrollbar
   */
 
-.slice {
-  position: fixed;
-  height: 33.33vh;
-  width: 100%;
-  top: calc(100vh - (33.33vh * var(--slice)));
-  left: 0;
-  background: rgba(255, 166, 0, 0.425);
-  z-index: 100;
-  pointer-events: none;
-  transform: translateX(-100%);
-  transition: 2s ease;
+*{
+  scrollbar-color: var(--accent) var(--secondary);
 }
