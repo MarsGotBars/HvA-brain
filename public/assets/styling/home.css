@@ -221,7 +221,7 @@ main article div.anti::after {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--black);
+  background: var(--secondary);
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -280,9 +280,9 @@ aside {
   padding: 0 var(--MD);
   display: flex;
   flex-direction: column;
-  border-right: 0.25rem solid var(--black);
+  border-right: 0.25rem solid var(--secondary);
   @media (max-width: 969px) {
-    border-top: var(--black) 0.25rem solid;
+    border-top: var(--secondary) 0.25rem solid;
     border-right: unset;
   }
 }
@@ -355,7 +355,7 @@ li a {
   font-family: Space;
   /* undo the reverse */
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2.25rem;
 }
 
@@ -382,7 +382,7 @@ aside nav ul {
 footer {
   padding: 0.75rem 2.25rem;
   position: relative;
-  border-top: 0.25rem solid var(--black);
+  border-top: 0.25rem solid var(--secondary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -398,7 +398,7 @@ footer .icon {
   right: 0;
   transform: translateY(-100%);
   background: var(--accent);
-  border: 0.25rem solid var(--black);
+  border: 0.25rem solid var(--secondary);
   border-bottom: 0;
   border-right: 0;
   position: absolute;
@@ -448,11 +448,11 @@ main summary {
 /* deliberate delay in animation */
 .highlight-block:not(:focus) {
   background: var(--accent);
-  color: var(--black);
+  color: var(--secondary);
 }
 
 .anti-highlight-block {
-  background: var(--black);
+  background: var(--secondary);
   color: var(--tertiary);
   /* display: block; */
   /* width: fit-content; */

@@ -32,7 +32,7 @@ main > h4 {
 main > pre{
     padding: 1rem;
     border-radius: 1rem;
-    background-color: var(--black);
+    background-color: var(--secondary);
     color: var(--white);
 }
 
@@ -63,7 +63,7 @@ main p:has(> a:only-child) {
 }
 
 ::selection{
-    background-color: var(--black);
+    background-color: var(--secondary);
     color: var(--tertiary);
 }
 

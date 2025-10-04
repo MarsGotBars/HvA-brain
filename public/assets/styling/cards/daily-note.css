@@ -2,7 +2,7 @@
   grid-column: span 3;
   padding: 1.125rem;
   background: var(--accent);
-  color: var(--black);
+  color: var(--secondary);
   display: flex;
   text-align: center;
   justify-content: center;
@@ -13,6 +13,6 @@
 }
 
 .daily-note:visited {
-  background: var(--black);
+  background: var(--secondary);
   color: var(--tertiary);
 }

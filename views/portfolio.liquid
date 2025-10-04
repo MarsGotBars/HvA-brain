@@ -1,42 +1,57 @@
 {% layout './layouts/layout.liquid' %}
 
 {% block head %}
-  <link rel="stylesheet" href="/assets/styling/portfolio.css">
+<link rel="stylesheet" href="/assets/styling/portfolio.css">
 {% endblock %}
 
 {% block %}
-  <main class="huge">
-    <header>
-      <h1 class="main-heading huge">PORTFOLIO
-        <span class="heading-label">LOG</span>
-      </h1>
-    </header>
+<main class="huge">
+  <header>
+    <h1 class="main-heading huge">
+      PORTFOLIO
+      <span class="heading-label">LOG</span>
+    </h1>
+  </header>
+  <h2>VIEW MY LATEST 
+    <span>{{ projects.allProjects | size }}</span>
+     PROJECTS</h2>
+  <form action="">
+    SORT BY: 
+    <select>
+      <option value="newest">NEWEST</option>
+      <option value="oldest">OLDEST</option>
+      <option value="fun-factor">FUN FACTOR</option>
+      <option value="alphabetical">ALPHABETICAL</option>
+    </select>
+  </form>
+  <ul>
     {% for project in projects.allProjects reversed %}
-      {% assign splitText = project.title | split: " " %}
-      {% assign firstWord = splitText[0] %}
-      <article
-        style="--card-number: {{forloop.index0}}"
-        class="card"
-        id="{{ project.slug }}">
-        <div class="description-wrapper">
-          <a href="/portfolio/{{ project.slug }}/">
-            <h2 class="split-text">
-              {% for text in splitText %}
-                <span style="--stagger: {{forloop.index0}}">{{ text | upcase }}</span>
-              {% endfor %}
-            </h2>
-          </a>
-          <div class="wrapper">
-            <p>{{ project.short-description }}</p>
-            <picture>
-              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp" type="image/webp">
-              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" type="image/jpeg">
-              <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpeg" type="image/jpeg">
-              <img src="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" alt="{{ project.alt }}">
-            </picture>
-          </div>
-        </div>
-      </article>
+    {% assign splitText = project.title | split: " " %}
+    {% assign firstWord = splitText[0] %}
+    <li style="--card-number: {{forloop.index0}}" class="card" id="{{ project.slug }}">
+      <a href="/portfolio/{{ project.slug }}/">
+        <h2 class="split-text">
+          {% for text in splitText %}
+          <span style="--stagger: {{forloop.index0}}">{{ text | upcase }}</span>
+          {% endfor %}
+        </h2>
+        <picture>
+          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp" type="image/webp">
+          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" type="image/jpeg">
+          <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpeg" type="image/jpeg">
+          <img src="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" alt="{{ project.alt }}">
+        </picture>
+      </a>
+      <dl>
+        <dt>FUN FACTOR</dt>
+        <dd>{{ project.fun_factor }}</dd>
+        <dt>DATE OF PRODUCTION</dt>
+        <dd>{{ project.date_of_production }}</dd>
+      </dl>
+      {% comment %} arrow here {% endcomment %}
+    </li>
     {% endfor %}
-  </main>
+  </ul>
+
+</main>
 {% endblock %}
