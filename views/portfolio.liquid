@@ -12,46 +12,64 @@
       <span class="heading-label">LOG</span>
     </h1>
   </header>
-  <h2>VIEW MY LATEST 
-    <span>{{ projects.allProjects | size }}</span>
-     PROJECTS</h2>
-  <form action="">
-    SORT BY: 
-    <select>
-      <option value="newest">NEWEST</option>
-      <option value="oldest">OLDEST</option>
-      <option value="fun-factor">FUN FACTOR</option>
-      <option value="alphabetical">ALPHABETICAL</option>
-    </select>
-  </form>
+  <section class="filtering">
+    <h2>VIEW MY LATEST
+      <span>{{ projects.allProjects | size | default: 0 }}</span>
+      PROJECTS
+    </h2>
+    <form action="">
+      <label>SORT BY:
+        <select name="sort">
+          <option value="newest">NEWEST</option>
+          <option value="oldest">OLDEST</option>
+          <option value="fun-factor">FUN FACTOR</option>
+          <option value="alphabetical">ALPHABETICAL</option>
+        </select>
+      </label>
+    </form>
+  </section>
   <ul>
     {% for project in projects.allProjects reversed %}
+    {% unless project.condition == "BROKEN" %}
+
     {% assign splitText = project.title | split: " " %}
     {% assign firstWord = splitText[0] %}
     <li style="--card-number: {{forloop.index0}}" class="card" id="{{ project.slug }}">
       <a href="/portfolio/{{ project.slug }}/">
-        <h2 class="split-text">
+        <h3 class="split-text">
           {% for text in splitText %}
           <span style="--stagger: {{forloop.index0}}">{{ text | upcase }}</span>
           {% endfor %}
-        </h2>
+        </h3>
         <picture>
           <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp" type="image/webp">
           <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" type="image/jpeg">
           <source srcset="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpeg" type="image/jpeg">
           <img src="/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.jpg" alt="{{ project.alt }}">
         </picture>
+        <div class="group">
+          <dl>
+            {% if project.condition %}
+            <dt>CONDITION</dt>
+            <dd>{{ project.condition }}</dd>
+            {% endif %}
+            <dt>FUN FACTOR</dt>
+            <dd>{{ project.fun_factor | default: "CASUAL" }}</dd>
+            <dt>DATE OF PRODUCTION</dt>
+            <dd>{{ project.date_of_production | default: "UNKNOWN" }}</dd>
+          </dl>
+          <p><span class="link">VIEW</span><span class="arrow">🡭</span></p>
+        </div>
       </a>
-      <dl>
-        <dt>FUN FACTOR</dt>
-        <dd>{{ project.fun_factor }}</dd>
-        <dt>DATE OF PRODUCTION</dt>
-        <dd>{{ project.date_of_production }}</dd>
-      </dl>
+
       {% comment %} arrow here {% endcomment %}
     </li>
+    {% endunless %}
+
     {% endfor %}
   </ul>
-
+  <footer>
+    BACK
+  </footer>
 </main>
 {% endblock %}
