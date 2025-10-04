@@ -8,6 +8,8 @@
     "description": "Responsiveness, Local storage, First group project",
     "live": "https://google.com",
     "github": "",
+    "date_of_production": "2020",
+    "fun_factor": "fun",
     "labels": [
       "HTML",
       "CSS",
@@ -23,6 +25,9 @@
     "description": "CRUD, glassmorphism",
     "live": "https://google.com",
     "github": "",
+    "fun_factor": "fun",
+    "condition": "BROKEN",
+    "date_of_production": "2021",
     "labels": [
       "PHP",
       "MYSQL"
@@ -37,6 +42,9 @@
     "description": "Framer motion, creativity, Headless CMS",
     "live": "https://ara.nl",
     "github": "",
+    "date_of_production": "2023",
+    "fun_factor": "serious",
+    "condition": "DONE",
     "labels": ["Next.js", "TailwindCSS", "Typescript"]
   },
   {
@@ -48,6 +56,8 @@
     "description": "Video control customization, Infinite scroll, Serverside rendering",
     "live": "https://hoeverzinnenzehet.nl",
     "github": "",
+    "date_of_production": "2023",
+    "fun_factor": "serious",
     "labels": [
       "Next.js",
       "Typescript",
@@ -63,6 +73,8 @@
     "description": "Responsiveness, Adhere to design, Minimalism",
     "live": "https://google.com",
     "github": "",
+    "date_of_production": "2024",
+    "fun_factor": "serious",
     "labels": ["HTML", "CSS", "JS"]
   },
   {
@@ -72,8 +84,23 @@
     "alt": "A circle with text inside of it ...",
     "short-description": "School project for <a href='https://JUST.nl'>JUST</a>",
     "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
+    "live": "https://marsgotbars.github.io/the-startup-responsive-interactive-website/",
+    "github": "https://github.com/MarsGotBars/the-startup-responsive-interactive-website",
+    "date_of_production": "2024",
+    "fun_factor": "playful",
+    "labels": ["HTML", "CSS", "JS"]
+  },
+  {
+    "id": 6,
+    "title": "LITTLE ALPINE",
+    "slug": "little-alpine",
+    "alt": "A circle with text inside of it ...",
+    "short-description": "School project for <a href='https://JUST.nl'>JUST</a>",
+    "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
     "live": "https://google.com",
     "github": "",
+    "date_of_production": "2025",
+    "fun_factor": "playful",
     "labels": ["HTML", "CSS", "JS"]
   }
 ]
