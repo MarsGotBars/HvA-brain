@@ -48,7 +48,7 @@ tags:
   - amazing slider
 - https://www.makereign.com/
   - text opacity on scroll
-  - also a possible internship/job opportunity?
+  - fixed footer that is hidden behind the main content... great idea
 - https://v0.dev/chat/community/dynamic-frame-layout-v1tIli3svjV
   - V0 suggested by Ivan from SV (freelancing work)
   - grid hover changing sizes of all images/videos on hover
@@ -60,6 +60,7 @@ tags:
 ### Others/Miscellaneous
 
 https://wireframe.cc/
+https://jqlang.org/
 
 
 ### No place yet
