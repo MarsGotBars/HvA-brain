@@ -45,10 +45,9 @@ ul {
       --padding-y: var(--SM);
       padding: var(--padding-y) 0.875rem;
       display: flex;
-      gap: 1rem .5rem;
+      gap: 1rem 0.5rem;
       flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
       transition: scale 0.1s var(--brutal-transition);
@@ -62,12 +61,23 @@ ul {
       p {
         font-size: inherit;
       }
+      @supports (corner-shape: bevel) {
+        dd {
+          corner-shape: bevel;
+          border-radius: .5rem;
+          padding: .5rem .25rem;
+          background: var(--tertiary);
+          color: var(--primary);
+        }
+      }
 
       picture {
         transform: translateY(-100%);
         display: none;
         position: absolute;
-        right: 0;
+        top: 0;
+        right: 20%;
+        max-width: 25%;
         height: 100%;
         width: 100%;
         opacity: 0;
@@ -75,6 +85,10 @@ ul {
           transform 0.1s var(--brutal-transition),
           opacity 0.1s var(--brutal-transition);
         transition-delay: 0.1s;
+
+        /* center text in case of missing image */
+        display: grid;
+        place-content: center;
 
         img {
           object-fit: contain;
@@ -87,12 +101,13 @@ ul {
       .group {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         flex-wrap: wrap;
         gap: 1rem 4rem;
         font-size: inherit;
         width: 100%;
 
-        dl{
+        dl {
           display: inherit;
           flex-wrap: inherit;
           gap: 1rem;
@@ -143,7 +158,7 @@ ul {
     }
     /* li hover */
     &:hover {
-      picture{
+      picture {
         opacity: 1;
         transform: translate(0);
       }
