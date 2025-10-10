@@ -23,6 +23,7 @@
   "type": "module",
   "homepage": "https://github.com/MarsGotBars/hva-brain#readme",
   "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
     "express": "^5.1.0",
     "js-yaml": "^4.1.0",
     "liquidjs": "^10.21.0",
