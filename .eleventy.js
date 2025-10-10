@@ -31,6 +31,7 @@ export default function (eleventyConfig) {
           formats: ["avif", "webp", "jpeg"],
           outputDir: "./dist/assets/img/",
           urlPath: "/assets/img/",
+          transformOnRequest: false, // Disable image transformation
         });
 
         let imageAttributes = {

@@ -91,7 +91,7 @@
     "id": 7,
     "title": "JUST",
     "slug": "just",
-    "alt": "A circle with text inside of it ...",
+    "alt": "A black page with a white circle on it; which contains text inside of it and is surrounded by many different stickers",
     "short-description": "School project for <a href='https://JUST.nl'>JUST</a>",
     "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
     "live": "https://marsgotbars.github.io/the-startup-responsive-interactive-website/",
@@ -104,13 +104,13 @@
     "id": 8,
     "title": "LITTLE ALPINE",
     "slug": "little-alpine",
-    "alt": "A circle with text inside of it ...",
-    "short-description": "School project for <a href='https://JUST.nl'>JUST</a>",
-    "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
-    "live": "https://google.com",
-    "github": "",
+    "alt": "A black page with white text and some music bars with different heights",
+    "short-description": "My brainchild: bringing the CDA-9855 car radio UI to life in the browser.",
+    "description":"",
+    "live": "https://little-alpine.netlify.app/",
+    "github": "https://github.com/MarsGotBars/little-alpine",
     "date_of_production": "2025",
     "fun_factor": "playful",
-    "labels": ["HTML", "CSS", "JS"]
+    "labels": ["Sveltekit 5", "CSS", "JS"]
   }
 ]
