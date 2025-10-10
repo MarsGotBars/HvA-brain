@@ -135,7 +135,7 @@ span{
 /* MARK: Font sizes
  */
 .huge {
-  font-size: clamp(var(--LG), 15.5vw, var(--XXL));
+  font-size: clamp(var(--LG), 13vw, var(--XXL));
 }
 
 .icon {
