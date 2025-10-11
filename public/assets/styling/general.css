@@ -208,7 +208,8 @@ span{
 footer *::selection,
 .highlight-block::selection,
 .highlight-block span::selection,
-.anti-highlight-block::selection {
+.anti-highlight-block::selection,
+dl *::selection {
   color: var(--accent);
   background: var(--secondary);
 }
@@ -241,6 +242,6 @@ footer *::selection,
 /* MARK: Scrollbar
   */
 
-*{
-  scrollbar-color: var(--accent) var(--secondary);
+* {
+  scrollbar-color: var(--accent) var(--secondary);;
 }
