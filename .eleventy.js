@@ -22,6 +22,7 @@ export default function (eleventyConfig) {
     }
   });
 
+  // Image generation shortcode
   eleventyConfig.addLiquidShortcode(
     "image",
     async function (src, alt = "", sizes, loading = "lazy") {
@@ -50,6 +51,24 @@ export default function (eleventyConfig) {
       }
     }
   );
+
+  // Custom filters!
+  eleventyConfig.addFilter("split_chars", (str) => {
+  if (typeof str !== "string") return [];
+
+  const chars = str.split("");
+  const merged = [];
+
+  for (const c of chars) {
+    if (c === " " && merged.length > 0) {
+      merged[merged.length - 1] += "&nbsp;";
+    } else {
+      merged.push(c);
+    }
+  }
+
+  return merged;
+});
 
   return {
     dir: {
