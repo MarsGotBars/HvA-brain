@@ -65,17 +65,7 @@
     ]
   },
   {
-    "id": 5,
-    "title": "MY CARD",
-    "slug": "my-card",
-    "alt": "A circle with text inside of it ...",
-    "short-description": "My personal portfolio website, built with SvelteKit",
-    "description":"<ul><li>Animations</li><li>Progressive enhancement</li><li>Brutalism</li></ul>",
-    "live": "https://marsgotbars.github.io/vite-card/",
-    "github": "https://github.com/MarsGotBars/vite-card"
-  },
-  {
-    "id": 6,
+    "id": 4,
     "title": "DDA",
     "slug": "dda",
     "alt": "A black and white themed boxy website with bold texts",
@@ -88,7 +78,7 @@
     "labels": ["HTML", "CSS", "JS"]
   },
   {
-    "id": 7,
+    "id": 5,
     "title": "JUST",
     "slug": "just",
     "alt": "A black page with a white circle on it; which contains text inside of it and is surrounded by many different stickers",
@@ -101,7 +91,7 @@
     "labels": ["HTML", "CSS", "JS"]
   },
   {
-    "id": 8,
+    "id": 6,
     "title": "LITTLE ALPINE",
     "slug": "little-alpine",
     "alt": "A black page with white text and some music bars with different heights",
