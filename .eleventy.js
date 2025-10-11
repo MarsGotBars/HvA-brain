@@ -15,7 +15,7 @@ export default function (eleventyConfig) {
       "img",
       "project-visuals"
     );
-    
+
     if (existsSync(projectVisualsPath)) {
       await rm(projectVisualsPath, { recursive: true, force: true });
       console.log("Removed:", projectVisualsPath);
@@ -41,34 +41,16 @@ export default function (eleventyConfig) {
           loading,
           decoding: "async",
         };
-        console.log(metadata, "created metadata");
+        // console.log(metadata, "created metadata");
 
         return Image.generateHTML(metadata, imageAttributes);
       } catch (error) {
         // handle missing images (empty image)
-        console.error(`Error processing image ${src}:`, error);
+        // console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;
       }
     }
   );
-
-  // Custom filters!
-  eleventyConfig.addFilter("split_chars", (str) => {
-  if (typeof str !== "string") return [];
-
-  const chars = str.split("");
-  const merged = [];
-
-  for (const c of chars) {
-    if (c === " " && merged.length > 0) {
-      merged[merged.length - 1] += "&nbsp;";
-    } else {
-      merged.push(c);
-    }
-  }
-
-  return merged;
-});
 
   return {
     dir: {
