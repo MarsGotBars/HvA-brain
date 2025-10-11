@@ -32,35 +32,51 @@
     {% for project in projects.allProjects reversed %}
     {% unless project.condition == "BROKEN" %}
 
-    {% assign splitText = project.title | split: " " %}
-    {% assign firstWord = splitText[0] %}
-    <li style="--card-number: {{forloop.index0}}" class="card" id="{{ project.slug }}">
+    <li style="--card-number: {{ forloop.index0 }}" class="card" id="{{ project.slug }}">
       <ul class="description-list">
-        <li>
+        <li style="--stagger: 0">
           <dl>
             <dt>YEAR</dt>
             <dd>{{ project.date_of_production | default: "TBA" }}</dd>
           </dl>
         </li>
-        <li>
+        <li style="--stagger: 1">
           <dl>
             <dt>PROGRESS</dt>
             <dd>{{ project.progress | default: "UNKNOWN" }}</dd>
           </dl>
         </li>
-        <li>
+        <li style="--stagger: 2">
           <dl>
             <dt>FUN FACTOR</dt>
             <dd>{{ project.fun_factor | default: "CASUAL" }}</dd>
           </dl>
         </li>
       </ul>
-      <a href="/portfolio/{{ project.slug }}/">
+      <a href="/portfolio/{{ project.slug }}/" style="--h3-length: {{project.title | size}}ch">
         <article>
           <h3 class="split-text">
-            {% for char in splitText %}
-              <span style="--stagger: {{forloop.index0}}">{{ char | upcase }}</span>
+            {% assign chars = project.title | split: "" %}
+            {% assign staggerIndex = 0 %}
+            {% assign inWord = false %}
+
+            {% for char in chars %}
+              {% comment %} Add a space {% endcomment %}
+            {% if char == " " %}
+            {% if inWord %}</span>{% endif %}
+            <span class="word-space"> </span>
+            {% assign inWord = false %}
+            {% else %}
+            {% unless inWord %}
+            <span class="word" data-view="visible">
+              {% assign inWord = true %}
+              {% endunless %}
+              <span style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
+              {% assign staggerIndex = staggerIndex | plus: 1 %}
+              {% if forloop.last and inWord %}</span>{% endif %}
+            {% endif %}
             {% endfor %}
+
 
             <span>{% render './partials/icons/arrow/arrow.liquid' %}</span>
           </h3>
