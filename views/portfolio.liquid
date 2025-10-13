@@ -35,22 +35,16 @@
     <li style="--card-number: {{ forloop.index0 }}" class="card" id="{{ project.slug }}">
       <ul class="description-list">
         <li style="--stagger: 0">
-          <dl>
-            <dt>YEAR</dt>
-            <dd>{{ project.date_of_production | default: "TBA" }}</dd>
-          </dl>
+          <span class="production-title">YEAR</span>
+          <span class="progress-value">{{ project.date_of_production | default: "TBA" }}</span>
         </li>
         <li style="--stagger: 1">
-          <dl>
-            <dt>PROGRESS</dt>
-            <dd>{{ project.progress | default: "UNKNOWN" }}</dd>
-          </dl>
+          <span class="progress-title">PROGRESS</span>
+          <span class="progress-value">{{ project.progress | default: "UNKNOWN" }}</span>
         </li>
         <li style="--stagger: 2">
-          <dl>
-            <dt>FUN FACTOR</dt>
-            <dd>{{ project.fun_factor | default: "CASUAL" }}</dd>
-          </dl>
+          <span class="fun_factor-title">FUN FACTOR</span>
+          <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
         </li>
       </ul>
       <a href="/portfolio/{{ project.slug }}/" style="--h3-length: {{project.title | size}}ch">
