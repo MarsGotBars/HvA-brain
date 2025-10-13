@@ -14,7 +14,7 @@ permalink: "/portfolio/{{ project.slug }}/"
   {% assign totalProjects = projects.allProjects.size %}
   {% assign beforeIndex = currentIndex | minus: 1 %}
   {% assign afterIndex = currentIndex | plus: 1 %}
-  
+
   {% comment %} Wrap around if needed {% endcomment %}
   {% if beforeIndex < 0 %}
     {% assign beforeIndex = totalProjects | minus: 1 %}
@@ -22,7 +22,7 @@ permalink: "/portfolio/{{ project.slug }}/"
   {% if afterIndex >= totalProjects %}
     {% assign afterIndex = 0 %}
   {% endif %}
-  
+
   {% assign before = projects.allProjects[beforeIndex] %}
   {% assign after = projects.allProjects[afterIndex] %}
 

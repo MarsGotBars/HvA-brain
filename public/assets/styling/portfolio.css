@@ -1,4 +1,4 @@
-html{
+html {
   height: fit-content;
 }
 
@@ -215,16 +215,15 @@ main {
               }
 
               @media (prefers-reduced-motion: no-preference) {
-                > span {
-                  transform: translateY(100%) rotate(7deg);
-                }
+                &[data-animation="animateable"] {
+                  /* transform: translateY(-100%) rotate(-7deg); */
 
-                &[data-view="visible"] {
-                  > span {
-                    transform: translateY(100%) rotate(7deg);
-                    animation: split-text--slide-up 0.6s
-                      calc((var(--stagger) + 1) * 0.05s)
-                      var(--brutal-transition) forwards;
+                  &[data-view="visible"] {
+                    > span {
+                      animation: split-text--slide-up 0.6s
+                        calc((var(--stagger) + 1) * 0.05s)
+                        var(--brutal-transition) forwards;
+                    }
                   }
                 }
               }
@@ -274,11 +273,8 @@ main {
 }
 
 @keyframes split-text--slide-up {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
   20% {
-    transform: translateY(-10%) rotate(-5deg);
+    transform: translateY(10%) rotate(7deg);
   }
   100% {
     transform: translateY(0) rotate(0deg);
