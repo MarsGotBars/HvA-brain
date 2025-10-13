@@ -66,9 +66,8 @@ html {
 
 html,
 body {
-  height: auto;
+  height: 100%;
   position: relative;
-  min-height: 100vh;
 }
 
 *:focus-visible,

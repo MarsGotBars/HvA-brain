@@ -1,16 +1,16 @@
-@import url('./view-transition/seeker-transition.css');
+@import url("./view-transition/seeker-transition.css");
 /* MARK: GRID
  */
 body {
+  display: block;
   margin: 0;
-  display: grid;
   grid-template-columns: 5fr 7fr;
   grid-template-rows: 1fr minmax(9rem, 12.5rem);
-  @media (max-width: 969px) {
-    display: block;
-  }
   width: 100%;
   transition: grid-template 0.4s ease;
+  @media (min-width: 969px) {
+    display: grid;
+  }
 }
 
 main {
@@ -76,20 +76,19 @@ nav {
       position-area: top right;
       width: anchor-size(width);
       height: anchor-size(height);
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       visibility: hidden;
-      transition: .9s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
       text-transform: uppercase;
       scale: 1.2;
       transform: translate(10%, -20%);
     }
 
-    .me:hover ~ .extra-info{
+    .me:hover ~ .extra-info {
       visibility: visible;
       opacity: 1;
       scale: 1;
       transform: translate(0, 0%);
-
     }
 
     body:has(main:hover) {
@@ -295,7 +294,7 @@ aside h3 {
 aside .details {
   padding-top: var(--MD);
 }
-.details .spacing{
+.details .spacing {
   height: 100%;
   display: flex;
   flex-direction: column;
