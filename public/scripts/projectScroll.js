@@ -1,6 +1,13 @@
-const observeItems = document.querySelectorAll('[data-observeable]');
+const observeItems = document.querySelectorAll("[data-observeable]");
+observeItems.forEach((item) => {
+  const itemChild = item.querySelectorAll("[data-view]");
+  console.log(itemChild);
+  itemChild.forEach((child) => {
+    child.dataset.view = "ready";
+  });
+});
 const percentage = 40;
-console.log('initialized');
+console.log("initialized");
 
 const intersectionSettings = {
   root: null, // Use the viewport
@@ -9,22 +16,18 @@ const intersectionSettings = {
 };
 
 const animateItIn = (item) => {
-  const itemChildren = item.querySelectorAll('[data-view]');
+  const itemChildren = item.querySelectorAll("[data-view]");
+
   itemChildren.forEach((child) => {
-    child.dataset.view = "viewing";
+    child.dataset.view = "visible";
   });
-  console.log('animating!');
+  console.log("animating!");
 };
 
 const intersectionCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      if (!document.startViewTransition) {
-        animateItIn(entry.target);
-      } else {
-        console.log('here!');
-        const transition = document.startViewTransition(() => animateItIn(entry.target));
-      }
+      animateItIn(entry.target);
       // Stop observing this item after animating
       itemIntersection.unobserve(entry.target);
     }

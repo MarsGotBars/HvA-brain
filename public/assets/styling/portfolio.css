@@ -215,15 +215,16 @@ main {
               }
 
               @media (prefers-reduced-motion: no-preference) {
-                &[data-animation="animateable"] {
-                  /* transform: translateY(-100%) rotate(-7deg); */
-
-                  &[data-view="visible"] {
-                    > span {
-                      animation: split-text--slide-up 0.6s
-                        calc((var(--stagger) + 1) * 0.05s)
-                        var(--brutal-transition) forwards;
-                    }
+                &[data-view="ready"] {
+                  > span {
+                    transform: translateY(-100%) rotate(-7deg);
+                  }
+                }
+                &[data-view="visible"] {
+                  > span {
+                    animation: split-text--slide-up 0.6s
+                      calc((var(--stagger) + 1) * 0.05s)
+                      var(--brutal-transition) forwards;
                   }
                 }
               }

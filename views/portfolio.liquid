@@ -63,7 +63,7 @@
             {% assign inWord = false %}
             {% else %}
             {% unless inWord %}
-            <span class="word" data-view="visible">
+            <span class="word" data-view="default">
               {% assign inWord = true %}
               {% endunless %}
               <span style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
