@@ -200,6 +200,29 @@ main {
             }
           }
         }
+        
+        &[data-triggered="ready"] {
+
+          @media (prefers-reduced-motion: no-preference) {
+
+            h3 .word > span {
+              transform: translateY(100%) rotate(7deg);
+            }
+          }
+        }
+        &[data-triggered="true"] {
+
+          @media (prefers-reduced-motion: no-preference) {
+
+            h3 .word > span {
+              transform: translateY(100%) rotate(7deg);
+              position: relative;
+              animation: split-text--slide-up 0.8s
+                calc((var(--stagger)) * 0.045s) var(--brutal-transition)
+                forwards;
+            }
+          }
+        }
 
         article {
           display: inherit;
@@ -220,7 +243,7 @@ main {
             grid-column: 1 / -1;
             line-height: 1.4;
             display: inline-block;
-            /* overflow: hidden; */
+            overflow: hidden;
             margin-left: -0.15em;
             text-align: end;
 
@@ -232,34 +255,12 @@ main {
             /* inherit from article */
             font-size: inherit;
 
-            @media (prefers-reduced-motion: no-preference) {
-              @supports (animation-timeline: view()) {
-                animation: slideIn linear forwards;
-                transform: translateX(50%);
-                animation-timeline: view();
-                animation-range: 0% 50%;
-              }
-            }
-
             > .word-space {
               width: 0.4ch;
             }
 
             > span.word {
               display: inline-flex;
-
-              @media (prefers-reduced-motion: no-preference) {
-                > span {
-                  position: relative;
-                  animation: split-text--slide-up 0.6s
-                    calc((var(--stagger) + 1) * 0.05s) var(--brutal-transition)
-                    forwards;
-                  @supports (animation-timeline: view()) {
-                    animation: unset;
-                    transform: skew(calc(var(--scroll-velocity) * 125deg));
-                  }
-                }
-              }
             }
 
             > span:last-child {
@@ -308,8 +309,8 @@ main {
 }
 
 @keyframes split-text--slide-up {
-  20% {
-    transform: translateY(10%) rotate(7deg);
+  25% {
+    transform: translateY(-10%) rotate(-2deg);
   }
   100% {
     transform: translateY(0) rotate(0deg);

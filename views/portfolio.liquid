@@ -1,7 +1,7 @@
 {% layout './layouts/layout.liquid' %}
 
 {% block head %}
-<script defer src="/scripts/projectScroll.js"></script>
+<script defer src="/scripts/reveal.js"></script>
 <link rel="stylesheet" href="/assets/styling/portfolio.css">
 {% endblock %}
 
@@ -48,7 +48,7 @@
           <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
         </li>
       </ul>
-      <a href="/portfolio/{{ project.slug }}/" style="--h3-length: {{project.title | size}}ch">
+      <a href="/portfolio/{{ project.slug }}/" data-triggered="false" style="--h3-length: {{project.title | size}}ch">
         <article>
           <h3 class="split-text">
             {% assign chars = project.title | split: "" %}
