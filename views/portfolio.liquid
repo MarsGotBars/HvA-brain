@@ -48,7 +48,7 @@
           <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
         </li>
       </ul>
-      <a href="/portfolio/{{ project.slug }}/" data-observeable="true" style="--h3-length: {{project.title | size}}ch">
+      <a href="/portfolio/{{ project.slug }}/" style="--h3-length: {{project.title | size}}ch">
         <article>
           <h3 class="split-text">
             {% assign chars = project.title | split: "" %}
@@ -63,10 +63,10 @@
             {% assign inWord = false %}
             {% else %}
             {% unless inWord %}
-            <span class="word" data-view="visible">
+            <span class="word">
               {% assign inWord = true %}
               {% endunless %}
-              <span style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
+              <span data-char="{{ char |  upcase }}" style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
               {% assign staggerIndex = staggerIndex | plus: 1 %}
               {% if forloop.last and inWord %}</span>{% endif %}
             {% endif %}

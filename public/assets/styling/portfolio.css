@@ -1,5 +1,34 @@
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --skew {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  animation: adjust_position linear both;
+  animation-timeline: scroll(root);
+}
+
 html {
   height: fit-content;
+}
+
+body {
+  transition: --scroll-position-delayed 0.15s linear;
+  --scroll-velocity: calc(
+    var(--scroll-position) - var(--scroll-position-delayed)
+  );
+  --scroll-speed: abs(var(--scroll-velocity));
 }
 
 main {
@@ -191,8 +220,9 @@ main {
             grid-column: 1 / -1;
             line-height: 1.4;
             display: inline-block;
-            overflow: hidden;
+            /* overflow: hidden; */
             margin-left: -0.15em;
+            text-align: end;
 
             /* since we split the text */
             display: flex;
@@ -201,35 +231,39 @@ main {
 
             /* inherit from article */
             font-size: inherit;
+
+            @media (prefers-reduced-motion: no-preference) {
+              @supports (animation-timeline: view()) {
+                animation: slideIn linear forwards;
+                transform: translateX(50%);
+                animation-timeline: view();
+                animation-range: 0% 50%;
+              }
+            }
+
             > .word-space {
               width: 0.4ch;
             }
-            > span.word {
-              display: flex;
 
-              /* If no JS and reduced motion is set */
-              &[data-view="default"] {
-                > span {
-                  transform: translateY(0) rotate(0deg);
-                }
-              }
+            > span.word {
+              display: inline-flex;
 
               @media (prefers-reduced-motion: no-preference) {
-                &[data-animation="animateable"] {
-                  /* transform: translateY(-100%) rotate(-7deg); */
-
-                  &[data-view="visible"] {
-                    > span {
-                      animation: split-text--slide-up 0.6s
-                        calc((var(--stagger) + 1) * 0.05s)
-                        var(--brutal-transition) forwards;
-                    }
+                > span {
+                  position: relative;
+                  animation: split-text--slide-up 0.6s
+                    calc((var(--stagger) + 1) * 0.05s) var(--brutal-transition)
+                    forwards;
+                  @supports (animation-timeline: view()) {
+                    animation: unset;
+                    transform: skew(calc(var(--scroll-velocity) * 125deg));
                   }
                 }
               }
             }
 
             > span:last-child {
+              display: inline-block;
               height: 1em;
               margin-left: 0.5rem;
               svg {
@@ -270,6 +304,7 @@ main {
       }
     }
   }
+  margin-bottom: 300px;
 }
 
 @keyframes split-text--slide-up {
@@ -278,5 +313,18 @@ main {
   }
   100% {
     transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes adjust_position {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateX(0%);
   }
 }
