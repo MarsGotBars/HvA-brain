@@ -66,7 +66,7 @@
             <span class="word">
               {% assign inWord = true %}
               {% endunless %}
-              <span data-char="{{ char |  upcase }}" style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
+              <span data-char="{{ char |  upcase }}" data-enhanced="false" style="--stagger: {{ staggerIndex }}">{{ char | upcase }}</span>
               {% assign staggerIndex = staggerIndex | plus: 1 %}
               {% if forloop.last and inWord %}</span>{% endif %}
             {% endif %}
