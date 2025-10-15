@@ -90,7 +90,7 @@ main {
       grid-column: 1 / -1;
       font-size: clamp(var(--MD), 3vw, var(--XL));
 
-      &:has(a:hover) ul.description-list li {
+      &:has(a:hover) ul.description-list li, ul.description-list li:hover {
         transform: translateY(0.4375rem);
         background: var(--tertiary);
       }
@@ -125,6 +125,8 @@ main {
           span:last-child {
             font-size: clamp(var(--XXS), 4vw, var(--MD));
             font-weight: 500;
+            overflow: hidden;
+            overflow: clip;
             line-height: clamp(
               calc(var(--XXS) * 1.15),
               5vw,
@@ -285,8 +287,18 @@ main {
       }
     }
   }
-  margin-bottom: 300px;
+  footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: clamp(var(--XS), 3vw, var(--MD));
+    z-index: 1;
+    background: var(--accent);
+  }
 }
+
+/* Icons */
+
 
 /* Animations */
 
