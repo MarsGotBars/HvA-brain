@@ -66,12 +66,12 @@ header nav li{
       
     h1,
     a {
-        view-transition-name: var(--name);
+        view-transition-name: var(--vt-name);
         display: inline-block;
         animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         animation-duration: 1s;
     }
-    ::view-transition-old(var(--name)):only-of-type{
+    ::view-transition-old(var(--vt-name)):only-of-type{
         background: red;
     }
     ::view-transition-group(*){
