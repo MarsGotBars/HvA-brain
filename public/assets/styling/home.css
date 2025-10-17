@@ -488,7 +488,6 @@ main summary {
 */
 
 div.seeker {
-  view-transition-name: seeker;
   /* size to go to */
   --custom-width: 10px;
   --custom-height: 10px;
