@@ -101,10 +101,13 @@ main {
       grid-column: 1 / -1;
       font-size: clamp(var(--MD), 3vw, var(--XL));
       @supports (animation-timeline: view()) {
-        animation: step-in steps(8);
+        /* opacity: 0; */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+        animation: step-in steps(10);
         animation-duration: 1ms;
         animation-timeline: view();
-        animation-range: calc(20% + 1em) calc(80% - 1em);
+        animation-range: entry 20% 80%;
       }
 
       &:has(a:hover) ul.description-list li,
@@ -118,6 +121,7 @@ main {
         display: flex;
         column-gap: clamp(0.125rem, 1vw, 0.875rem);
         overflow: hidden;
+
         overflow: clip;
 
         li {
@@ -395,4 +399,17 @@ main {
   100% {
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
+
+  /* 0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  } */
 }
