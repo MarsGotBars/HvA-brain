@@ -1,1 +1,1 @@
-[[test]]
+[[content/stuff/test]]

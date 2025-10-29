@@ -54,6 +54,7 @@ tags:
   - grid hover changing sizes of all images/videos on hover
 - https://hakim.se/
   - QoL and interesting/unusual animations
+- [Fun solar powered site](https://solar.lowtechmagazine.com/power/)
 
 ---
 
