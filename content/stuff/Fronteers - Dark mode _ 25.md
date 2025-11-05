@@ -79,4 +79,4 @@
 
 > [!IMPORTANT]
 > # <ins>[Dylan Beattie](https://dylanbeattie.net)</ins>
-> ## HOW TO BE A ROCKSTAR DEVELOPER
+> ## [HOW TO BE A ROCKSTAR DEVELOPER](https://codewithrockstar.com/)
