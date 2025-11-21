@@ -4,10 +4,10 @@
   "description": "Mijn learning journal",
   "main": "server.js",
   "scripts": {
+    "11": "npx @11ty/eleventy --incremental",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && npx @11ty/eleventy",
-    "11": "npx @11ty/eleventy --incremental",
-    "dev": "npx serve dist"
+    "dev": "npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
