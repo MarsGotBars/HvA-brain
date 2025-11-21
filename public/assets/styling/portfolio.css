@@ -124,6 +124,9 @@ main {
         overflow: clip;
 
         li {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           transition: transform 0.2s calc(0.05s * var(--stagger))
             var(--brutal-transition);
           padding: 0.25rem 0.75rem;
