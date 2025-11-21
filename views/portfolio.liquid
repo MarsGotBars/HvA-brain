@@ -1,4 +1,4 @@
-{% layout './layouts/layout.liquid' %}
+{% layout './layouts/layout.liquid', title: "PORTFOLIO" %}
 
 {% block head %}
 <script defer src="/scripts/reveal.js"></script>
@@ -16,10 +16,13 @@
   </header>
 
   <section class="filtering">
-    <h2>VIEW MY LATEST
-      <span>{{ projects.allProjects | size | default: 0 }}</span>
-      PROJECTS
-    </h2>
+<h2>VIEW MY LATEST
+  <span>{{ projects.length }}</span>
+  PROJECTS
+</h2>
+
+
+
     <form method="get" action="/portfolio">
       <label>SORT BY:
         <select name="sort" data-form="input">
@@ -37,7 +40,7 @@
 
   <ul class="block-list">
     {% for project in projects.allProjects reversed %}
-    {% unless project.condition == "BROKEN" %}
+    {% unless project.progress == "BROKEN" %}
 
     <li style="--card-number: {{ forloop.index0 }}" class="card" id="{{ project.slug }}">
       <ul class="description-list">
@@ -54,7 +57,7 @@
           <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
         </li>
       </ul>
-      <a href="/portfolio/{{ project.slug }}/" data-triggered="false" style="--h3-length: {{project.title | size}}">
+      <a href="{{ project.live }}" target="_blank" data-triggered="false" style="--h3-length: {{project.title | size}}">
         <article>
           <h3 class="split-text" style="--vt-name: {{ project.title |  replace: " ", " -" | downcase }}">
             {% assign chars = project.title | split: "" %}
