@@ -102,13 +102,13 @@ main {
       font-size: clamp(var(--MD), 3vw, var(--XL));
 
       opacity: 1;
-        @supports (animation-timeline: view()) {
-          animation: step-in linear;
-          animation-duration: 1ms;
-          animation-timeline: view();
-          animation-range: entry -5% 100%;
-          transform-origin: top left;
-        }
+      @supports (animation-timeline: view()) {
+        animation: step-in linear;
+        animation-duration: 1ms;
+        animation-timeline: view();
+        animation-range: entry -5% 100%;
+        transform-origin: top left;
+      }
 
       &:has(a:hover) ul.description-list li,
       ul.description-list li:hover {
@@ -171,8 +171,10 @@ main {
         grid-column: inherit;
         grid-template-columns: subgrid;
         font-size: inherit;
+        outline-offset: -0.1875rem;
+        outline-color: var(--primary);
 
-        &:hover {
+        &:is(:hover, :focus-visible) {
           color: var(--secondary);
           background-color: var(--accent);
           border-color: var(--tertiary);
