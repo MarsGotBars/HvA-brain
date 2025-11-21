@@ -6,17 +6,14 @@
     "alt": "Large villas situated near water",
     "short-description": "An online villa bidding site with a classy look",
     "description": "Responsiveness, Local storage, First group project",
-    "live": "https://google.com",
+    "live": "https://villas4u.netlify.app/",
     "github": "",
     "date_of_production": "2020",
     "fun_factor": "fun",
-    "labels": [
-      "HTML",
-      "CSS",
-      "JS"
-    ]
+    "progress": "done",
+    "labels": ["HTML", "CSS", "JS"]
   },
-   {
+  {
     "id": 1,
     "title": "Crow",
     "slug": "crow",
@@ -26,12 +23,9 @@
     "live": "https://google.com",
     "github": "",
     "fun_factor": "fun",
-    "condition": "BROKEN",
+    "progress": "BROKEN",
     "date_of_production": "2021",
-    "labels": [
-      "PHP",
-      "MYSQL"
-    ]
+    "labels": ["PHP", "MYSQL"]
   },
   {
     "id": 2,
@@ -44,7 +38,7 @@
     "github": "",
     "date_of_production": "2023",
     "fun_factor": "serious",
-    "condition": "DONE",
+    "progress": "done",
     "labels": ["Next.js", "TailwindCSS", "Typescript"]
   },
   {
@@ -58,11 +52,8 @@
     "github": "",
     "date_of_production": "2023",
     "fun_factor": "serious",
-    "labels": [
-      "Next.js",
-      "Typescript",
-      "TailwindCSS"
-    ]
+    "progress": "done",
+    "labels": ["Next.js", "Typescript", "TailwindCSS"]
   },
   {
     "id": 4,
@@ -71,10 +62,11 @@
     "alt": "A black and white themed boxy website with bold texts",
     "short-description": "Website for the Dutch Digital Agencies, made to look like the website is contained within a box at all times",
     "description": "Responsiveness, Adhere to design, Minimalism",
-    "live": "https://google.com",
+    "live": "https://marsgotbars.github.io/fix-the-flow-interactive-website/",
     "github": "",
     "date_of_production": "2024",
     "fun_factor": "serious",
+    "progress": "done",
     "labels": ["HTML", "CSS", "JS"]
   },
   {
@@ -83,11 +75,12 @@
     "slug": "just",
     "alt": "A black page with a white circle on it; which contains text inside of it and is surrounded by many different stickers",
     "short-description": "School project for JUST",
-    "description":"<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
+    "description": "<ul><li>Randomization</li><li>Interactivity</li><li>Progressive enhancement</li></ul>",
     "live": "https://marsgotbars.github.io/the-startup-responsive-interactive-website/",
     "github": "https://github.com/MarsGotBars/the-startup-responsive-interactive-website",
     "date_of_production": "2024",
     "fun_factor": "playful",
+    "progress": "done",
     "labels": ["HTML", "CSS", "JS"]
   },
   {
@@ -96,11 +89,12 @@
     "slug": "little-alpine",
     "alt": "A black page with white text and some music bars with different heights",
     "short-description": "My brainchild: bringing the CDA-9855 car radio UI to life in the browser.",
-    "description":"",
+    "description": "",
     "live": "https://little-alpine.netlify.app/",
     "github": "https://github.com/MarsGotBars/little-alpine",
     "date_of_production": "2025",
     "fun_factor": "playful",
+    "progress": "done?",
     "labels": ["Sveltekit 5", "CSS", "JS"]
   }
 ]
