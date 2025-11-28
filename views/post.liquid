@@ -5,7 +5,7 @@ pagination:
   alias: post
 permalink: "/blog/{{ post.slug }}/"
 ---
-{% layout './layouts/layout.liquid' %}
+{% layout './layouts/layout.liquid', title: post.frontmatter.title %}
 {% block head %}
   <link rel="stylesheet" href="/assets/styling/cards/daily-note.css">
   <link rel="stylesheet" href="/assets/styling/journal.css">
@@ -14,6 +14,6 @@ permalink: "/blog/{{ post.slug }}/"
 
 {% block %}
   <main>
-    test
+    {{ post.html }}
   </main>
 {% endblock %}
