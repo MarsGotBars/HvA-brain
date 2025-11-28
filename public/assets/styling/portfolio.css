@@ -46,6 +46,7 @@ main {
     background: var(--tertiary);
 
     h1 {
+      padding: 0 var(--MD);
       margin-bottom: clamp(1rem, 3vw, 2rem);
     }
   }
