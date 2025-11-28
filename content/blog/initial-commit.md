@@ -4,11 +4,11 @@ tags:
   - CSS25
   - CSSDAY
 ---
-## Why bother using JS when you have CSS?
+# Why bother using JS when you have CSS?
 
 The web development landscape has dramatically shifted in 2025. What once required complex JavaScript libraries and hundreds of lines of code can now be achieved with just a few CSS declarations. It's time we seriously reconsider our JavaScript-first approach.
 
-### The Performance Revolution
+## The Performance Revolution
 
 **CSS runs on the main thread, but it's optimized by the browser.** JavaScript, on the other hand, blocks the main thread and can cause jank. When you use CSS for animations, transitions, and interactions, you're leveraging the browser's highly optimized rendering engine.
 
@@ -21,9 +21,9 @@ The web development landscape has dramatically shifted in 2025. What once requir
 
 This replaces entire JavaScript routing libraries and provides buttery-smooth page transitions that feel native.
 
-### Interactions Without JavaScript
+## Interactions Without JavaScript
 
-#### Hover Effects and State Management
+### Hover Effects and State Management
 
 The most obvious and usefull one!
 
@@ -46,7 +46,7 @@ And with recent additions even a :has() selector exists
 
 **The `:has()` selector is revolutionary** - it's the parent selector we've been waiting decades for! For the first time in CSS history, you can style an element based on what it contains.
 
-#### Real-World `:has()` Examples:
+### Real-World `:has()` Examples:
 
 ```css
 /* Highlight form sections with errors */
@@ -80,9 +80,9 @@ Before `:has()`, achieving these effects required:
 
 Now it's just CSS. **Pure, declarative, performant CSS.**
 
-[And it is also a selector that I used for the cool hover effect on my about page! <br/>(Hover over the different bits in the grid!)](../)
+[And it is also a selector that I used for the cool hover effect on my about page! <br/>(Hover over the different bits in the grid!)](/)
 
-#### Scroll-Driven Animations
+### Scroll-Driven Animations
 ```css
 @keyframes reveal {
   from { opacity: 0; transform: translateY(50px); }
@@ -97,12 +97,12 @@ Now it's just CSS. **Pure, declarative, performant CSS.**
 ```
 
 **No Intersection Observer. No scroll event listeners. Just CSS.**
-[You can even shift colors with it!](../portfolio/ara)
+[You can even shift colors with it!](/portfolio/ara)
 
-[Or use it to animate individual elements when they enter view](../portfolio)
-### View Transitions - The Game Changer
-[My personal favorite that I've implemented all across this project!](../)
-Perhaps the most revolutionary CSS feature of 2025 is **View Transitions**. With just two lines of CSS, you can transform how users experience navigation on your website.
+[Or use it to animate individual elements when they enter view](/portfolio)
+## View Transitions - The Game Changer
+<!-- [My personal favorite that I've implemented all across this project!](/) -->
+Perhaps the most revolutionary CSS feature of 2025 is **View Transitions**. With a few lines of CSS, you can transform how users experience navigation on your website.
 
 ```css
 @view-transition {
@@ -110,23 +110,23 @@ Perhaps the most revolutionary CSS feature of 2025 is **View Transitions**. With
 }
 ```
 
-#### What View Transitions Do
+### What View Transitions Do
 
 Instead of the jarring "flash of white" between page loads, view transitions create smooth crossfades between pages. Elements that remain the same (like headers, navigation) stay perfectly in place, while content that changes fades smoothly from old to new.
 
-#### Before View Transitions:
+### Before View Transitions:
 - Page 1 → **Flash of white** → Page 2
 - Headers and navigation "blink" and repaint
 - Feels like separate, disconnected pages
 - Requires JavaScript libraries like Barba.js or custom solutions
 
-#### After View Transitions:
+### After View Transitions:
 - Page 1 → **Smooth crossfade** → Page 2  
 - Persistent elements never move or flicker
 - Feels like a single, cohesive application
 - **Zero JavaScript required**
 
-#### Advanced View Transitions
+### Advanced View Transitions
 
 You can also create custom transitions for specific elements:
 
@@ -148,16 +148,16 @@ You can also create custom transitions for specific elements:
 
 This allows elements to smoothly morph from one page to another, creating the illusion that the same element is moving and changing rather than being replaced.
 
-#### Browser Support Reality
+### Browser Support Reality
 
-- **Safari 18.2+**: ✅ Full support
-- **Chrome 126+**: ✅ Full support  
-- **Edge 126+**: ✅ Full support
-- **Global coverage**: ~85% of users
+- **Safari 18.2+**: Full support
+- **Chrome 126+**: Full support  
+- **Edge 126+**: Full support
+- **Global coverage**: ~89% of users
 
 The fallback is graceful - browsers without support simply behave normally. No broken experiences, no JavaScript errors.
 
-#### Why This Matters
+### Why This Matters
 
 View transitions represent a fundamental shift in web UX. They make websites feel more like native applications while requiring **zero additional JavaScript**. No more:
 - Complex routing libraries
@@ -167,9 +167,9 @@ View transitions represent a fundamental shift in web UX. They make websites fee
 
 Just two lines of CSS that work better than anything we could build ourselves.
 
-### Layout That Actually Works
+## Layout That Actually Works
 
-#### Container Queries - The Game Changer
+### Container Queries - The Game Changer
 ```css
 .card-container {
   container-type: inline-size;
@@ -185,7 +185,7 @@ Just two lines of CSS that work better than anything we could build ourselves.
 
 Components that respond to their container, not the viewport. This is what we've been trying to achieve with JavaScript for years.
 
-#### Anchor Positioning - Goodbye Popper.js
+### Anchor Positioning - Goodbye Popper.js
 ```css
 .tooltip {
   position: absolute;
@@ -200,7 +200,7 @@ Perfect positioning without calculating coordinates, handling edge cases, or imp
 [I even hid one of these tooltips on my own name on the about page...](../)
 
 
-### The Maintenance Nightmare of JavaScript
+## The Maintenance Nightmare of JavaScript
 
 **JavaScript breaks.** CSS degrades gracefully. When your JavaScript fails:
 - Users see broken functionality
