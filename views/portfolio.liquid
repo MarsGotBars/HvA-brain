@@ -16,26 +16,14 @@
   </header>
 
   <section class="filtering">
-<h2>VIEW MY LATEST
-  <span>{{ projects.length }}</span>
-  PROJECTS
-</h2>
+    <h2>VIEW MY LATEST
+      <span>{{ projects.length }}</span>
+      PROJECTS
+    </h2>
 
 
-
-    <form method="get" action="" data-form="filtering">
-      <label>SORT BY:
-        <select name="sort" data-form="input">
-          <option value="newest">NEWEST</option>
-          <option value="oldest">OLDEST</option>
-          <option value="fun-factor">FUN FACTOR</option>
-          <option value="alphabetical">ALPHABETICAL</option>
-        </select>
-      </label>
-      <button type="submit">
-        search
-      </button>
-    </form>
+    {% assign list = "newest, oldest, fun factor, alphabetical" | split: ", " %}
+    {% render './partials/forms/projectForm', list: list %}
   </section>
 
   <ul class="block-list">
@@ -57,7 +45,13 @@
           <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
         </li>
       </ul>
-      <a href="{{ project.live }}" target="_blank" data-triggered="false" style="--h3-length: {{project.title | size}}">
+      <a href="{{ project.live }}" 
+         target="_blank" 
+         data-date="{{ project.date_of_production | default: " TBA" }}"
+         data-fun="{{ project.fun_factor | default: " CASUAL" }}"
+         data-name="{{ project.title | downcase }}"
+         data-triggered="false" 
+         style="--h3-length: {{project.title | size}}">
         <article>
           <h3 class="split-text" style="--vt-name: {{ project.title |  replace: " ", " -" | downcase }}">
             {% assign chars = project.title | split: "" %}
