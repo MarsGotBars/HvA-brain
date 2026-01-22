@@ -1,18 +1,27 @@
-<form method="get" action="" data-form="filtering">
-    <label for="sort">SORT BY</label>
-    <select id="sort" name="sort" data-form="input">
-        {% for option in list %}
-            {{option}}
+<form
+  method="get"
+  action=""
+  data-form="filtering">
+  <label for="sort">SORT BY
+    <select
+      id="sort"
+      name="sort"
+      data-form="input">
+      {% for option in list %}
+        {{ option }}
         <option value="{{ option | replace: " ", "-" | downcase }}">
-            {{ option | upcase }}
+          {{ option | upcase }}
         </option>
-        {% endfor %}
+      {% endfor %}
     </select>
-
-    <label>SEARCH
-        <input type="search" name="search" data-form="input">
-    </label>
-    <button type="submit">
-        search
-    </button>
+  </label>
+  <label>SEARCH
+    <input
+      type="text"
+      name="search"
+      data-form="input">
+  </label>
+  <button type="submit">
+    search
+  </button>
 </form>

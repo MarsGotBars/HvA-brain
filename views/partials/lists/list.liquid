@@ -1,0 +1,64 @@
+<ul class="block-list">
+    {% for project in projects.allProjects reversed %}
+    {% unless project.progress == "BROKEN" %}
+
+    <li style="--card-number: {{ forloop.index0 }}" class="card" id="{{ project.slug }}">
+      <ul class="description-list">
+        <li style="--stagger: 0">
+          <span class="production-title">YEAR</span>
+          <span class="progress-value">{{ project.date_of_production | default: "TBA" }}</span>
+        </li>
+        <li style="--stagger: 1">
+          <span class="progress-title">PROGRESS</span>
+          <span class="progress-value">{{ project.progress | default: "UNKNOWN" }}</span>
+        </li>
+        <li style="--stagger: 2">
+          <span class="fun_factor-title">FUN FACTOR</span>
+          <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
+        </li>
+      </ul>
+      <a href="{{ project.live }}" 
+         target="_blank" 
+         data-date="{{ project.date_of_production | default: " TBA" }}"
+         data-fun="{{ project.fun_factor | default: " CASUAL" }}"
+         data-name="{{ project.title | downcase }}"
+         data-triggered="false" 
+         style="--h3-length: {{project.title | size}}">
+        <article>
+          <h3 class="split-text" style="--vt-name: {{ project.title |  replace: " ", " -" | downcase }}">
+            {% assign chars = project.title | split: "" %}
+            {% assign staggerIndex = 0 %}
+            {% assign inWord = false %}
+
+            {% for char in chars %}
+            {% comment %} Add a space {% endcomment %}
+            {% if char == " " %}
+            {% if inWord %}</span>{% endif %}
+            <span class="word-space"> </span>
+            {% assign inWord = false %}
+            {% else %}
+            {% unless inWord %}
+            <span class="word">
+              {% assign inWord = true %}
+              {% endunless %}
+              <span data-char="{{ char |  upcase }}" data-enhanced="false" style="--stagger: {{ staggerIndex }}">{{ char
+                | upcase }}</span>
+              {% assign staggerIndex = staggerIndex | plus: 1 %}
+              {% if forloop.last and inWord %}</span>{% endif %}
+            {% endif %}
+            {% endfor %}
+
+
+            <span>{% render './partials/icons/arrow/arrow.liquid' %}</span>
+          </h3>
+          <p>{{ project.short-description }}</p>
+        </article>
+        {% capture imagePath %}public/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp{%
+        endcapture %}
+        {% image imagePath, project.alt %}
+
+      </a>
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
