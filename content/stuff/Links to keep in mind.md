@@ -35,6 +35,9 @@ tags:
 - https://live-transitions.pages.dev/
 	- view transition stuff & navigation api
 
+##### - cool stackoverflow snippets
+[CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
+
 #### Codepen
 
 - https://codepen.io/cjimmy/pen/wvexYoJ
@@ -69,3 +72,4 @@ https://jqlang.org/
 [https://ryanmulligan.dev](https://ryanmulligan.dev/) 
 [https://codepen.io/krijnhoetmer/pen/qBgGwLB](https://codepen.io/krijnhoetmer/pen/qBgGwLB)
 https://threlte.xyz/
+https://en.wikipedia.org/wiki/Munsell_color_system
