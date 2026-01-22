@@ -16,9 +16,12 @@ const brokenProject = allProjects.filter((e)=> e.progress == "BROKEN")
 console.log(brokenProject);
 const length = allProjects.length - brokenProject.length
 
-console.log("Loaded projects data with", allProjects.length, "projects.", allProjects);
+console.log("Loaded projects data with", allProjects.length, "projects.");
 
 // Export the data directly, not wrapped in a function
+
+// Note; these can only be passed to pages - globally - not to partials.
+// To use these in partials; pass it down from the page to the partial as a prop
 export default {
   allProjects,
   length
