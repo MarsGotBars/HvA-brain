@@ -1,11 +1,24 @@
+"use strict";
+
 class FormGatherer {
   constructor(selector) {
     this.form = document.querySelector(selector);
 
     this.inputs = this.form.querySelectorAll('[data-form="input"]');
     this.submit = this.form.querySelector(
-      '[data-form="submit"], [type="submit"]'
+      '[data-form="submit"]'
     );
+    this.onSubmit = this.onSubmit.bind(this);
+    this.form.addEventListener("submit", this.onSubmit);
+  }
+
+  onSubmit(e) {
+    console.log(e);
+
+    const submittedForm = e.target;
+    console.log(submittedForm);
+
+    e.preventDefault();
   }
 }
 
@@ -48,7 +61,8 @@ class FormEnhancer {
   inputListeners() {
     this.inputs.forEach((input) => {
       input.addEventListener("change", (e) => {
-        this.form.submit();
+        this.formGatherer.onSubmit(e);
+        console.log(e);
       });
     });
   }
@@ -83,13 +97,12 @@ class FormEnhancer {
   }
 
   handleSelect(input, value) {
-
     const validOption = [...input.options].find(
       (option) => option.value === value
     );
     if (validOption) input.value = value;
   }
-  
+
   handleText(input, value) {
     input.value = value;
   }
@@ -113,5 +126,22 @@ class FormEnhancer {
   }
 }
 
+class FormFiltering { 
+  constructor(form) {
+    this.form = form
+    this.list = document.querySelector(".block-list");
+    this.listItems = this.list.querySelectorAll("li");
+  }
+
+  sortList() {
+    
+  }
+
+  transitionFilter() {
+
+  }
+}
+
 const form = new FormGatherer('[data-form="filtering"]');
 const formEnhancer = new FormEnhancer(form);
+const formFiltering = new FormFiltering(form);
