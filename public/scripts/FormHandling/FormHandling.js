@@ -1,8 +1,8 @@
 "use strict";
 
 class FormGatherer {
-  constructor(selector) {
-    this.form = document.querySelector(selector);
+  constructor(form) {
+    this.form = document.querySelector(form);
 
     this.inputs = this.form.querySelectorAll('[data-form="input"]');
     this.submit = this.form.querySelector(
@@ -13,12 +13,8 @@ class FormGatherer {
   }
 
   onSubmit(e) {
-    console.log(e);
-
-    const submittedForm = e.target;
-    console.log(submittedForm);
-
-    e.preventDefault();
+    // I pass on the rest of the logic to the filtering class
+    formFiltering.sortList(e)
   }
 }
 
@@ -126,15 +122,29 @@ class FormEnhancer {
   }
 }
 
-class FormFiltering { 
+class FormFiltering {
   constructor(form) {
     this.form = form
     this.list = document.querySelector(".block-list");
-    this.listItems = this.list.querySelectorAll("li");
+    this.listItems = this.list.querySelectorAll("li a");
+    this.listData = this.listItems[0].attributes;
+    this.groupFilters()
   }
 
-  sortList() {
+  groupFilters () {
+    console.log(this.listData);
     
+  }
+
+  sortList(form) {
+    const formData = new FormData(form.target);
+    const formDataObj = new URLSearchParams(formData);
+    console.log(formDataObj);
+    
+    form.preventDefault();
+
+    
+
   }
 
   transitionFilter() {
