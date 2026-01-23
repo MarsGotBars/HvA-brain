@@ -4,6 +4,8 @@ import { rm } from "fs/promises";
 import { existsSync } from "fs";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addWatchTarget("public/**/**");
+
   // Copy everything from public/ to /
   eleventyConfig.addPassthroughCopy({ "public/": "/" });
 
