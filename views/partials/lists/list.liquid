@@ -6,7 +6,7 @@
       <ul class="description-list">
         <li style="--stagger: 0">
           <span class="production-title">YEAR</span>
-          <span class="progress-value">{{ project.date_of_production | default: "TBA" }}</span>
+          <span class="production-value">{{ project.date_of_production | default: "TBA" }}</span>
         </li>
         <li style="--stagger: 1">
           <span class="progress-title">PROGRESS</span>
@@ -18,10 +18,11 @@
         </li>
       </ul>
       <a href="{{ project.live }}" 
-         target="_blank" 
-         data-date="{{ project.date_of_production | default: " TBA" }}"
-         data-fun="{{ project.fun_factor | default: " CASUAL" }}"
-         data-name="{{ project.title | downcase }}"
+         target="_blank"
+         data-date="{{ project.date_of_production | default: "TBA" }}"
+         data-fun="{{ project.fun_factor | default: "CASUAL" }}"
+         data-progress="{{ project.progress | default: "UNKOWN" }}"
+         data-name="{{ project.title | downcase | default: "oopsie" }}"
          data-triggered="false" 
          style="--h3-length: {{project.title | size}}">
         <article>
