@@ -7,9 +7,7 @@ class FormGatherer {
     this.form = document.querySelector(form);
 
     this.inputs = this.form.querySelectorAll('[data-form="input"]');
-    this.submit = this.form.querySelector(
-      '[data-form="submit"]'
-    );
+    this.submit = this.form.querySelector('[data-form="submit"]');
     this.onSubmit = this.onSubmit.bind(this);
     this.onSubmitCallback = onSubmitCallback;
     this.form.addEventListener("submit", this.onSubmit);
@@ -27,7 +25,6 @@ class FormEnhancer {
     this.form = formGatherer.form;
     this.inputs = formGatherer.inputs;
     this.submit = formGatherer.submit;
-    this.debouncedFunctions = [];
     this.safeInit();
   }
 
@@ -67,8 +64,7 @@ class FormEnhancer {
       } else {
         const debouncedOnSubmit = debounce((e) => {
           this.formGatherer.onSubmit(e);
-        }, 150);
-        this.debouncedFunctions[index] = debouncedOnSubmit;
+        }, 220);
         input.addEventListener("input", debouncedOnSubmit);
       }
     });
@@ -105,7 +101,7 @@ class FormEnhancer {
 
   handleSelect(input, value) {
     const validOption = [...input.options].find(
-      (option) => option.value === value
+      (option) => option.value === value,
     );
     if (validOption) input.value = value;
   }
