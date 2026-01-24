@@ -1,5 +1,7 @@
 "use strict";
 
+import debounce from "../utils/debounce.js";
+
 class FormGatherer {
   constructor(form) {
     this.form = document.querySelector(form);
