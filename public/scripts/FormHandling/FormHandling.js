@@ -27,6 +27,7 @@ class FormEnhancer {
     this.form = formGatherer.form;
     this.inputs = formGatherer.inputs;
     this.submit = formGatherer.submit;
+    this.debouncedFunctions = [];
     this.safeInit();
   }
 
@@ -58,11 +59,18 @@ class FormEnhancer {
   }
 
   inputListeners() {
-    this.inputs.forEach((input) => {
-      input.addEventListener("change", (e) => {
-        this.formGatherer.onSubmit(e);
-        console.log(e);
-      });
+    this.inputs.forEach((input, index) => {
+      if (!(input.type === "text" || input.type === "search")) {
+        input.addEventListener("change", (e) => {
+          this.formGatherer.onSubmit(e);
+        });
+      } else {
+        const debouncedOnSubmit = debounce((e) => {
+          this.formGatherer.onSubmit(e);
+        }, 150);
+        this.debouncedFunctions[index] = debouncedOnSubmit;
+        input.addEventListener("input", debouncedOnSubmit);
+      }
     });
   }
 
