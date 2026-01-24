@@ -1,5 +1,2 @@
-# Welcome to my second brain!
-
-<em> Mainly used for my studies at HvA </em>
-
-`The main purpose of this repository is to store my obsidian workspace momentarily, as I will eventually move this over to a Quartz repository so I can publish my notes on the web as a sort of digital garden.`
+# ( M ‿ M )
+_Because what better way to signify that this is my portfolio; than my initials!_
