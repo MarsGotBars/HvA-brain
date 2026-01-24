@@ -2,21 +2,8 @@
     {% for project in projects.allProjects reversed %}
     {% unless project.progress == "BROKEN" %}
 
-    <li style="--card-number: {{ forloop.index0 }}" class="card" id="{{ project.slug }}">
-      <ul class="description-list">
-        <li style="--stagger: 0">
-          <span class="production-title">YEAR</span>
-          <span class="production-value">{{ project.date_of_production | default: "TBA" }}</span>
-        </li>
-        <li style="--stagger: 1">
-          <span class="progress-title">PROGRESS</span>
-          <span class="progress-value">{{ project.progress | default: "UNKNOWN" }}</span>
-        </li>
-        <li style="--stagger: 2">
-          <span class="fun_factor-title">FUN FACTOR</span>
-          <span class="fun_factor-value">{{ project.fun_factor | default: "CASUAL" }}</span>
-        </li>
-      </ul>
+    <li class="card" id="{{ project.slug }}">
+      {% render "./description-list" %}
       <a href="{{ project.live }}" 
          target="_blank"
          data-date="{{ project.date_of_production | default: "TBA" }}"
