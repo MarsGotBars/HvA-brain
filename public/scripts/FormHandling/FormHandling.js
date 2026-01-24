@@ -137,13 +137,17 @@ class FormFiltering {
   constructor() {
     this.list = document.querySelector(".block-list");
     this.listItems = this.list.querySelectorAll("li a");
-    this.listData = this.listItems[0].attributes;
-    this.groupFilters()
+    this.dataAttributes = [];
+    this.init();
   }
 
-  groupFilters () {
-    console.log(this.listData);
-    
+  init() {
+    if (this.listItems.length > 0) {
+      const firstItem = this.listItems[0];
+
+      // We slice the last one away as this is the data-triggerd attr, which we do not require here
+      this.dataAttributes = Object.keys(firstItem.dataset).slice(0, -1);
+    }
   }
 
   sortList(form) {
