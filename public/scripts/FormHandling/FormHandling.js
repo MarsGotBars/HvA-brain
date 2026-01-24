@@ -155,6 +155,11 @@ class FormFiltering {
   }
 }
 
-const form = new FormGatherer('[data-form="filtering"]');
-const formEnhancer = new FormEnhancer(form);
-const formFiltering = new FormFiltering(form);
+function createFormSystem(formSelector) {
+  const formFiltering = new FormFiltering();
+  const form = new FormGatherer(formSelector, (e) => formFiltering.triggerFiltering(e));
+  const formEnhancer = new FormEnhancer(form);
+  return { form, formEnhancer, formFiltering };
+}
+
+const { form, formEnhancer, formFiltering } = createFormSystem('[data-form="filtering"]');
