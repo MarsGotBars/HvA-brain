@@ -134,8 +134,7 @@ class FormEnhancer {
 }
 
 class FormFiltering {
-  constructor(form) {
-    this.form = form
+  constructor() {
     this.list = document.querySelector(".block-list");
     this.listItems = this.list.querySelectorAll("li a");
     this.listData = this.listItems[0].attributes;
