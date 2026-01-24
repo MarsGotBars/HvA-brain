@@ -150,10 +150,7 @@ class FormFiltering {
     }
   }
 
-  sortList(form) {
-    const formData = new FormData(form.target);
-    const formDataObj = new URLSearchParams(formData);
-    console.log(formDataObj);
+  triggerFiltering(e) {
     
     form.preventDefault();
 
