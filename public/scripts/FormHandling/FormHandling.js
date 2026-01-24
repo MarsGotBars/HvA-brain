@@ -146,6 +146,7 @@ class FormFiltering {
       // We slice the last one away as this is the data-triggerd attr, which we do not require here
       this.dataAttributes = Object.keys(firstItem.dataset).slice(0, -1);
 
+      // Secondly we want to store all the possible data we have
       this.listItems.forEach((item) => {
         const itemData = {};
         this.dataAttributes.forEach((attr) => {
