@@ -34,6 +34,7 @@ tags:
     - [related video](https://www.youtube.com/watch?v=_ZFghigBmqo)
 - https://live-transitions.pages.dev/
 	- view transition stuff & navigation api
+- [Paint order seems cool!](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/paint-order)
 
 ##### - cool stackoverflow snippets
 [CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
