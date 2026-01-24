@@ -3,7 +3,7 @@
     {% unless project.progress == "BROKEN" %}
 
     <li class="card" id="{{ project.slug }}">
-      {% render "./description-list" %}
+      {% render "./description-list", project: project %}
       <a href="{{ project.live }}" 
          target="_blank"
          data-date="{{ project.date_of_production | default: "TBA" }}"
