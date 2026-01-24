@@ -285,14 +285,6 @@ class pageClickTransition {
 
     })
   }
-  
-  /**
-   * Trigger a page transition
-   * Currently empty, for future implementation
-   */
-  triggerPageTransition() {
-    // page transition stuff after click...
-  }
 }
 
 // create my blob
