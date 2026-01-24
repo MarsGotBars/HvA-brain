@@ -130,11 +130,13 @@ class FormEnhancer {
 }
 
 class FormFiltering {
-  constructor() {
+  constructor(form) {
+    this.form = form;
     this.list = document.querySelector(".block-list");
     this.listItems = this.list.querySelectorAll("li a");
     this.dataAttributes = [];
     this.listItemDetails = [];
+    this.previousFilters = {};
     this.init();
   }
 
@@ -155,13 +157,29 @@ class FormFiltering {
         this.listItemDetails.push(itemData);
       });
     }
+
+    // Lastly we xtract input names from the form
+    const inputs = this.form.querySelectorAll('[data-form="input"]');
+    inputs.forEach(input => {
+      this.previousFilters[input.name] = '';
+    });
+    
   }
 
   triggerFiltering(e) {
     // Apparently you can access the form element that the input element is within!
     const formData = new FormData(e.target.form);
     const formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj);
+    console.log(formDataObj, this.inputNames);
+    console.log(this.previousFilters);
+    
+    
+    // Sorting happens by checking the formDataObj
+    // The naming for the fields is as follows; [operation]-[name] (for example sort-general)
+    // This way we can explicitly infer what type of operation should happen
+    
+    this.previousFilters = formDataObj;
+    console.log(this.previousFilters);
 
     e.preventDefault();
   }
@@ -170,10 +188,10 @@ class FormFiltering {
 }
 
 function createFormSystem(formSelector) {
-  const formFiltering = new FormFiltering();
   const form = new FormGatherer(formSelector, (e) =>
     formFiltering.triggerFiltering(e),
   );
+  const formFiltering = new FormFiltering(form.form);
   const formEnhancer = new FormEnhancer(form);
   return { form, formEnhancer, formFiltering };
 }
