@@ -37,6 +37,8 @@ tags:
 - [Paint order seems cool!](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/paint-order)
 - [Animation composition](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-composition)
 - [Shape image threshold](https://codepen.io/argyleink/pen/ZEZLWzP)
+- [Toggle sticky to fixed](https://frontendmasters.com/blog/toggle-position-sticky-to-position-fixed-on-scroll/)
+- [Scroll trigger in CSS!](https://codepen.io/argyleink/pen/gbYGgrB)
 
 ##### - cool stackoverflow snippets
 [CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
