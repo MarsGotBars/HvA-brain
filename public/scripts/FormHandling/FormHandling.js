@@ -156,16 +156,18 @@ class FormFiltering {
     e.preventDefault();
   }
 
-  transitionFilter() {
-
-  }
+  transitionFilter() { }
 }
 
 function createFormSystem(formSelector) {
   const formFiltering = new FormFiltering();
-  const form = new FormGatherer(formSelector, (e) => formFiltering.triggerFiltering(e));
+  const form = new FormGatherer(formSelector, (e) =>
+    formFiltering.triggerFiltering(e),
+  );
   const formEnhancer = new FormEnhancer(form);
   return { form, formEnhancer, formFiltering };
 }
 
-const { form, formEnhancer, formFiltering } = createFormSystem('[data-form="filtering"]');
+const { form, formEnhancer, formFiltering } = createFormSystem(
+  '[data-form="filtering"]',
+);
