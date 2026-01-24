@@ -152,10 +152,12 @@ class FormFiltering {
 
   triggerFiltering(e) {
     
-    form.preventDefault();
-
+    // Apparently you can access the form element that the input element is within!
+    const formData = new FormData(e.target.form);
+    const formDataObj = Object.fromEntries(formData.entries())
+    console.log(formDataObj);
     
-
+    e.preventDefault();
   }
 
   transitionFilter() {
