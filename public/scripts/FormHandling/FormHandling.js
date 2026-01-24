@@ -3,7 +3,7 @@
 import debounce from "../utils/debounce.js";
 
 class FormGatherer {
-  constructor(form) {
+  constructor(form, onSubmitCallback) {
     this.form = document.querySelector(form);
 
     this.inputs = this.form.querySelectorAll('[data-form="input"]');
@@ -11,12 +11,13 @@ class FormGatherer {
       '[data-form="submit"]'
     );
     this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmitCallback = onSubmitCallback;
     this.form.addEventListener("submit", this.onSubmit);
   }
 
   onSubmit(e) {
     // I pass on the rest of the logic to the filtering class
-    formFiltering.sortList(e)
+    this.onSubmitCallback(e);
   }
 }
 
