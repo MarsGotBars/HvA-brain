@@ -206,7 +206,7 @@ main {
           left: calc(var(--border-width) * -1);
           width: var(--border-width);
           height: calc(100% - (var(--h3-size) * 2) - calc(var(--padding) * 2));
-          top: calc(var(--h3-size) + var(--padding));
+          top: calc(var(--h3-size) + var(--padding) + 0.4375rem);
           background: var(--secondary);
         }
 
@@ -214,7 +214,7 @@ main {
           /* but here we want right so we unset left! */
           left: unset;
           right: calc(var(--border-width) * -1);
-          top: calc(var(--border-width) * -1);
+          top: calc(var(--border-width) * -1 + 0.4375rem);
         }
 
         @media (min-width: 58.75rem) {
