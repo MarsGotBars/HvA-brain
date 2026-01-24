@@ -134,25 +134,34 @@ class FormFiltering {
     this.list = document.querySelector(".block-list");
     this.listItems = this.list.querySelectorAll("li a");
     this.dataAttributes = [];
+    this.listItemDetails = [];
     this.init();
   }
 
   init() {
     if (this.listItems.length > 0) {
+      // First we want to know which data-points exist and save these for filter/sort purposes
       const firstItem = this.listItems[0];
 
       // We slice the last one away as this is the data-triggerd attr, which we do not require here
       this.dataAttributes = Object.keys(firstItem.dataset).slice(0, -1);
+
+      this.listItems.forEach((item) => {
+        const itemData = {};
+        this.dataAttributes.forEach((attr) => {
+          itemData[attr.toUpperCase()] = item.dataset[attr];
+        });
+        this.listItemDetails.push(itemData);
+      });
     }
   }
 
   triggerFiltering(e) {
-    
     // Apparently you can access the form element that the input element is within!
     const formData = new FormData(e.target.form);
-    const formDataObj = Object.fromEntries(formData.entries())
+    const formDataObj = Object.fromEntries(formData.entries());
     console.log(formDataObj);
-    
+
     e.preventDefault();
   }
 
