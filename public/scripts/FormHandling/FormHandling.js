@@ -177,7 +177,7 @@ class FormFiltering {
     // Sorting happens by checking the formDataObj
     // The naming for the fields is as follows; [operation]-[name] (for example sort-general)
     // This way we can explicitly infer what type of operation should happen
-
+    this.CompareObjByType(this.previousFilters, formDataObj);
     this.previousFilters = formDataObj;
     console.log(this.previousFilters);
 
@@ -185,10 +185,12 @@ class FormFiltering {
   }
 
   getFilterType(key) {
-    return key.split('-')[1]; // e.g., 'sort-general' → 'general'
+    return key.split('-')[0]; // e.g., 'sort-general' → 'general'
   }
 
   CompareObjByType(PrevObj, currentObj) {
+    console.log("stuff");
+    
     const allKeys = new Set([...Object.keys(PrevObj), ...Object.keys(currentObj)]);
     for (const key of allKeys) {
       const type = this.getFilterType(key);
@@ -201,10 +203,13 @@ class FormFiltering {
   triggerFunctionForChange(type) {
     switch (type) {
       case "sort":
+        console.log("sorted");
         
         break;
       
       case "search":
+        console.log("searched");
+
       default:
         break;
     }
