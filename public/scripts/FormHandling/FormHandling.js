@@ -163,25 +163,51 @@ class FormFiltering {
     inputs.forEach(input => {
       this.previousFilters[input.name] = '';
     });
-    
+
   }
 
   triggerFiltering(e) {
     // Apparently you can access the form element that the input element is within!
+    console.log(this.previousFilters);
     const formData = new FormData(e.target.form);
     const formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj, this.inputNames);
-    console.log(this.previousFilters);
-    
-    
+    console.log(formDataObj);
+
+
     // Sorting happens by checking the formDataObj
     // The naming for the fields is as follows; [operation]-[name] (for example sort-general)
     // This way we can explicitly infer what type of operation should happen
-    
+
     this.previousFilters = formDataObj;
     console.log(this.previousFilters);
 
     e.preventDefault();
+  }
+
+  getFilterType(key) {
+    return key.split('-')[1]; // e.g., 'sort-general' → 'general'
+  }
+
+  CompareObjByType(PrevObj, currentObj) {
+    const allKeys = new Set([...Object.keys(PrevObj), ...Object.keys(currentObj)]);
+    for (const key of allKeys) {
+      const type = this.getFilterType(key);
+      if (PrevObj[key] !== currentObj[key]) {
+        this.triggerFunctionForChange(type)
+      }
+    }
+  }
+
+  triggerFunctionForChange(type) {
+    switch (type) {
+      case "sort":
+        
+        break;
+      
+      case "search":
+      default:
+        break;
+    }
   }
 
   transitionFilter() { }
