@@ -133,7 +133,7 @@ class FormFiltering {
   constructor(form) {
     this.form = form;
     this.list = document.querySelector(".block-list");
-    this.listItems = this.list.querySelectorAll("li a");
+    this.listItems = this.list.querySelectorAll("li.card");
     this.dataAttributes = [];
     this.listItemDetails = [];
     this.previousFilters = {};
@@ -160,19 +160,17 @@ class FormFiltering {
 
     // Lastly we xtract input names from the form
     const inputs = this.form.querySelectorAll('[data-form="input"]');
-    inputs.forEach(input => {
-      this.previousFilters[input.name] = '';
+    inputs.forEach((input) => {
+      this.previousFilters[input.name] = "";
     });
-
   }
 
   triggerFiltering(e) {
     // Apparently you can access the form element that the input element is within!
-    console.log(this.previousFilters);
+    // We do this in case there is multiple forms available on the page
     const formData = new FormData(e.target.form);
     const formDataObj = Object.fromEntries(formData.entries());
     console.log(formDataObj);
-
 
     // Sorting happens by checking the formDataObj
     // The naming for the fields is as follows; [operation]-[name] (for example sort-general)
@@ -185,37 +183,107 @@ class FormFiltering {
   }
 
   getFilterType(key) {
-    return key.split('-')[0]; // e.g., 'sort-general' → 'general'
+    return key.split("-")[0]; // e.g., 'sort-general' → 'general'
   }
 
   CompareObjByType(PrevObj, currentObj) {
-    console.log("stuff");
-    
-    const allKeys = new Set([...Object.keys(PrevObj), ...Object.keys(currentObj)]);
+    // We get a Set with the previous keys and current keys
+    const allKeys = new Set([
+      ...Object.keys(PrevObj),
+      ...Object.keys(currentObj),
+    ]);
+
     for (const key of allKeys) {
       const type = this.getFilterType(key);
       if (PrevObj[key] !== currentObj[key]) {
-        this.triggerFunctionForChange(type)
+        if (document.startViewTransition) {
+          return document.startViewTransition(() => {
+            this.triggerFunctionForChange(type, currentObj[key]);
+          });
+        }
+        this.triggerFunctionForChange(type, currentObj[key]);
       }
     }
   }
 
-  triggerFunctionForChange(type) {
+  triggerFunctionForChange(type, byValueofType) {
     switch (type) {
       case "sort":
-        console.log("sorted");
-        
+        this.sort(byValueofType);
         break;
-      
+
       case "search":
-        console.log("searched");
+        this.search(byValueofType);
+        break;
 
       default:
         break;
     }
   }
 
-  transitionFilter() { }
+  sort(byValue) {
+    // Converting our NodeList to an array
+    const items = Array.from(this.listItems);
+
+    // Defined values for orogress
+    const progressMap = {
+      done: 100,
+      "done?": 80,
+      "in progress": 50,
+      broken: 0,
+    };
+
+    // Sort the array of <a> elements
+    items.sort((a, b) => {
+      a = a.children[1];
+      b = b.children[1];
+
+      switch (byValue) {
+        case "newest": {
+          const dateA = parseInt(a.getAttribute("data-date"), 10);
+          const dateB = parseInt(b.getAttribute("data-date"), 10);
+          return dateB - dateA; // Newest first
+        }
+        case "oldest": {
+          const dateA = parseInt(a.getAttribute("data-date"), 10);
+          const dateB = parseInt(b.getAttribute("data-date"), 10);
+          return dateA - dateB; // Oldest first
+        }
+        case "progress": {
+          const progressA =
+            progressMap[a.getAttribute("data-progress")] || 0;
+          const progressB =
+            progressMap[b.getAttribute("data-progress")] || 0;
+          return progressB - progressA; // Highest progress first
+        }
+        case "alphabetical": {
+          const alphaA = a.getAttribute("data-name");
+          const alphaB = b.getAttribute("data-name");
+          console.log(alphaA, alphaB);
+      
+          return alphaA.localeCompare(alphaB);
+        }
+        default:
+          return 0; // No sorting
+      }
+    });
+
+    // Clear the container (assuming this.list is the parent container)
+    this.list.innerHTML = "";
+
+
+    // Re-append the sorted <a> elements to the DOM
+    items.forEach((item) => this.list.appendChild(item));
+
+    // Update this.listItems to the sorted array
+    this.listItems = items;
+  }
+
+  search() {
+    console.log("searched");
+  }
+
+  transitionFilter() {}
 }
 
 function createFormSystem(formSelector) {
