@@ -11,9 +11,10 @@
          data-progress="{{ project.progress | default: "UNKOWN" }}"
          data-name="{{ project.title | downcase | default: "oopsie" }}"
          data-triggered="false" 
-         style="--h3-length: {{project.title | size}}">
+         style="--split-length: {{project.title | size}}">
         <article>
-          <h3 class="split-text" style="--vt-name: {{ project.title |  replace: " ", " -" | downcase }}">
+          <h3 class="visually-hidden">{{project.title | upcase}}</h3>
+          <span class="split-text" style="--vt-name: {{ project.title |  replace: " ", " -" | downcase }}">
             {% assign chars = project.title | split: "" %}
             {% assign staggerIndex = 0 %}
             {% assign inWord = false %}
@@ -38,7 +39,7 @@
 
 
             <span>{% render './partials/icons/arrow/arrow.liquid' %}</span>
-          </h3>
+          </span>
           <p>{{ project.short-description }}</p>
         </article>
         {% capture imagePath %}public/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp{%
