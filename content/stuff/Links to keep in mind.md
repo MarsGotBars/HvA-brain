@@ -71,6 +71,10 @@ tags:
 https://wireframe.cc/
 https://jqlang.org/
 
+---
+### Image optimization
+- https://squoosh.app/editor
+
 
 ### No place yet
 [https://scroll-driven-animations.style](https://scroll-driven-animations.style/) 
@@ -78,3 +82,7 @@ https://jqlang.org/
 [https://codepen.io/krijnhoetmer/pen/qBgGwLB](https://codepen.io/krijnhoetmer/pen/qBgGwLB)
 https://threlte.xyz/
 https://en.wikipedia.org/wiki/Munsell_color_system
+
+
+#### Merlin
+https://bruno-simon.com/
