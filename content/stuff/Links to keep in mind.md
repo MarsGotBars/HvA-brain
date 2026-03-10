@@ -38,8 +38,11 @@ tags:
 - [Animation composition](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-composition)
 - [Shape image threshold](https://codepen.io/argyleink/pen/ZEZLWzP)
 - [Toggle sticky to fixed](https://frontendmasters.com/blog/toggle-position-sticky-to-position-fixed-on-scroll/)
+- [Current :target](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-current)
 - [Scroll trigger in CSS!](https://codepen.io/argyleink/pen/gbYGgrB)
-
+	- https://codepen.io/hexagoncircle/pen/wvOPmGO
+- [relative colors](https://theosoti.com/blog/css-relative-colors/)
+- [flappy bird](https://blog.scottlogic.com/2026/03/09/noJS-3-flappy-bird.html)
 ##### - cool stackoverflow snippets
 [CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
 
@@ -72,6 +75,11 @@ https://wireframe.cc/
 https://jqlang.org/
 
 ---
+## Accessibility
+[Adrian Roselli](https://adrianroselli.com/)
+
+## Performance 
+[Lazy loading yt videos](https://frontendmasters.com/blog/performance-optimized-video-embeds-with-zero-javascript/)
 ### Image optimization
 - https://squoosh.app/editor
 
@@ -85,4 +93,8 @@ https://en.wikipedia.org/wiki/Munsell_color_system
 
 
 #### Merlin
+##### 3D
 https://bruno-simon.com/
+
+##### Inspo
+https://www.jhey.dev/
