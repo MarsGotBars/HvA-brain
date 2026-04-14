@@ -1,0 +1,11 @@
+---
+layout: default-layout
+pagination:
+  data: projects.allProjects
+  size: 1
+  alias: project
+title: 'projects'
+permalink: '/{{config.routes.portfolio}}/{{project.slug}}/'
+---
+
+{{ project | json }}

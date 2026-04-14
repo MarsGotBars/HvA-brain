@@ -1,0 +1,37 @@
+---
+layout: 'default-layout'
+title: 'PORTFOLIO'
+pageScripts:
+  head:
+    - '/scripts/reveal.js'
+    - '/scripts/FormHandling/Formhandling.js'
+---
+
+
+<main class="huge">
+  <header>
+    <h1 class="main-heading huge">
+      PORTFOLIO
+      <span class="heading-label">LOG</span>
+    </h1>
+  </header>
+
+  <section class="filtering">
+    <h2>VIEW MY LATEST
+      <span>{{ projects.length }}</span>
+      PROJECTS
+    </h2>
+
+
+    {% assign list = "newest, oldest, progress, alphabetical" | split: ", " %}
+    {% render 'organism/projectForm/projectForm'
+      , list: list %}
+  </section>
+
+  {% render 'organism/lists/list'
+    , projects: projects %}
+
+  <footer>
+    <a href="/">BACK</a>
+  </footer>
+</main>

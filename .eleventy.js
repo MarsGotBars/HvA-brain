@@ -4,10 +4,24 @@ import { rm } from "fs/promises";
 import { existsSync } from "fs";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("public/**/**");
 
-  // Copy everything from public/ to /
-  eleventyConfig.addPassthroughCopy({ "public/": "/" });
+  // Re-inject CSS dependencies before every build
+  eleventyConfig.on("eleventy.before", async () => {
+    try {
+      const { autoInjectCSSQuiet } = await import("./lib/component-bundler.js");
+      await autoInjectCSSQuiet();
+    } catch (error) {
+      console.warn("⚠️ CSS injection failed:", error.message);
+    }
+  });
+  
+  eleventyConfig.addWatchTarget("src/static/**/*");
+  eleventyConfig.addWatchTarget("src/views/components/**/*.liquid");
+
+  eleventyConfig.addPassthroughCopy({ 'src/static/': '/' });
+  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.css': '/css/components/' });
+  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.js': '/js/components/' });
+
 
   // Remove project-visuals/ after build
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
@@ -28,6 +42,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode(
     "image",
     async function (src, alt = "", sizes, loading = "lazy") {
+      console.log(src);
+      
       try {
         let metadata = await Image(src, {
           widths: [300, 600, 1200, 1600],
@@ -56,13 +72,13 @@ export default function (eleventyConfig) {
 
   return {
     dir: {
-      input: "views",
-      includes: "partials",
+      input: "src/views",
+      includes: "components",
       layouts: "layouts",
-      data: "../_data", // <-- Go up one level from 'views' to reach root/_data
+      data: "../../_data", // <-- Go up two levels from 'views' to reach root/_data
       output: "dist",
     },
-    templateFormats: ["liquid", "md", "html"],
+    templateFormats: ["liquid", "html"],
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
     passthroughFileCopy: true,

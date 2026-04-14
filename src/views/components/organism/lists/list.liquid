@@ -1,0 +1,54 @@
+<ul class="block-list">
+    {% for project in projects.allProjects reversed %}
+    {% unless project.progress == "BROKEN" %}
+
+    <li class="card" id="{{ project.slug }}" style="view-transition-name: {{project.slug}}-card;">
+      {% render "./description-list", project: project %}
+      <a href="{{ project.live }}" 
+         target="_blank"
+         data-date="{{ project.date_of_production | default: "TBA" }}"
+         data-fun="{{ project.fun_factor | default: "CASUAL" }}"
+         data-progress="{{ project.progress | default: "UNKOWN" }}"
+         data-name="{{ project.title | downcase | default: "oopsie" }}"
+         data-triggered="false" 
+         style="--split-length: {{project.title | size}}">
+        <article>
+
+          <h3 class="visually-hidden">{{project.title | upcase}}</h3>
+          <span class="split-text" aria-hidden="true" style="--vt-name: {{ project.title |  replace: " ", "-" | downcase }}">
+            {% assign chars = project.title | split: "" %}
+            {% assign staggerIndex = 0 %}
+            {% assign inWord = false %}
+
+            {% for char in chars %}
+            {% comment %} Add a space {% endcomment %}
+            {% if char == " " %}
+            {% if inWord %}</span>{% endif %}
+            <span class="word-space"> </span>
+            {% assign inWord = false %}
+            {% else %}
+            {% unless inWord %}
+            <span class="word">
+              {% assign inWord = true %}
+              {% endunless %}
+              <span data-char="{{ char |  upcase }}" data-enhanced="false" style="--stagger: {{ staggerIndex }}">{{ char
+                | upcase }}</span>
+              {% assign staggerIndex = staggerIndex | plus: 1 %}
+              {% if forloop.last and inWord %}</span>{% endif %}
+            {% endif %}
+            {% endfor %}
+
+
+            <span>{% render 'atom/icons/arrow/arrow' %}</span>
+          </span>
+          <p>{{ project.short-description }}</p>
+        </article>
+        {% capture imagePath %}/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp{%
+        endcapture %}
+        {% image imagePath, project.alt %}
+
+      </a>
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>

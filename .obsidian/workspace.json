@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/stuff/Links to keep in mind.md",
+                "file": "content/daily_notes/2026-03-24.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Links to keep in mind"
+              "title": "2026-03-24"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/daily_notes/2026-03-05.md",
+                "file": "content/daily_notes/2026-04-10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-05"
+              "title": "2026-04-10"
             }
           },
           {
@@ -49,7 +49,8 @@
               "title": "filters"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "we web",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -106,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 296.5
+    "width": 200
   },
   "right": {
     "id": "923a096a3d76abda",
@@ -199,11 +200,12 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,54 +221,53 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1afbadfdb8740629",
+  "active": "e80d99a1a1c05ad4",
   "lastOpenFiles": [
-    "content/stuff/filters.md",
-    "content/stuff/Links to keep in mind.md",
-    "content/daily_notes/2026-03-05.md",
-    "content/stuff/CSS DAY LOG.md",
-    "content/stuff/Fronteers - Dark mode _ 25.md",
-    "content/stuff/Frontmania 25.md",
-    "content/stuff/Review Drop&Heal.md",
-    "content/stuff/Pasted image 20260224113439.png",
-    "content/PRIVATE/MERLIN/Directory retro 23 feb 2026.md",
     "dist/assets/img/project-visuals/little-alpine/little-alpine-bg.webp",
-    "dist/assets/img/project-visuals/villas4u/villas4u-bg.webp",
     "dist/assets/img/project-visuals/just/just-bg.webp",
     "dist/assets/img/project-visuals/dda/dda-bg.webp",
-    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
     "dist/assets/img/project-visuals/crow/crow-bg.webp",
-    "dist/assets/img/project-visuals/ara/ara-bg.webp",
+    "dist/assets/img/project-visuals/villas4u/villas4u-bg.webp",
+    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
+    "dist/assets/img/project-visuals/dda",
     "dist/assets/img/project-visuals/villas4u",
     "dist/assets/img/project-visuals/little-alpine",
     "dist/assets/img/project-visuals/just",
     "dist/assets/img/project-visuals/hoevzh",
-    "dist/assets/img/project-visuals/dda",
     "dist/assets/img/project-visuals/crow",
     "dist/assets/img/project-visuals/ara",
     "dist/assets/img/project-visuals",
+    "dist/assets/img/project-visuals/ara/ara-bg.webp",
+    "dist/index.html",
+    "dist/portfolio/villas4u/index.html",
+    "dist/assets/img/me.jpeg",
+    "src/static/assets/img/project-visuals/villas4u/villas4u-bg.webp",
+    "src/static/assets/img/project-visuals/little-alpine/little-alpine-bg.webp",
+    "content/stuff/filters.md",
+    "content/daily_notes/2026-04-10.md",
+    "content/PRIVATE/Nebula Xplorer sprint review 2.md",
+    "content/PRIVATE/temp/Figma tokenisation.md",
+    "content/daily_notes/2026-04-02.md",
+    "temp/Figma tokenisation.md",
+    "content/stuff/CSS DAY LOG.md",
+    "content/daily_notes/2026-03-31.md",
+    "content/daily_notes/2026-03-27.md",
+    "content/daily_notes/2026-03-26.md",
+    "content/stuff/Links to keep in mind.md",
+    "content/daily_notes/2026-03-05.md",
+    "content/daily_notes/2026-03-24.md",
+    "content/daily_notes/2026-03-19.md",
+    "content/stuff/Fronteers - Dark mode _ 25.md",
+    "content/stuff/Frontmania 25.md",
+    "content/stuff/Review Drop&Heal.md",
+    "content/PRIVATE/MERLIN/Directory retro 23 feb 2026.md",
     "content/PRIVATE/MERLIN/Niveaumatrix cheat sheet.md",
     "content/PRIVATE/Leervragen.md",
-    "content/stuff/Pasted image 20260223110520.png",
-    "content/stuff/Pasted image 20260223110458.png",
     "content/stuff/Eigen vragen (briefing) Drop&Heal.md",
     "content/stuff/Debriefing Drop&Heal.md",
     "content/stuff/Briefing - Debriefing IO.md",
     "content/stuff/Briefing - Debriefing SRON Nebula.md",
     "content/stuff/Mentor feedback.md",
-    "content/stuff/Methodisch handelen.md",
-    "content/stuff/open-ui.org.md",
-    "content/PRIVATE/MERLIN/log.md",
-    "content/daily_notes/2025-10-03.md",
-    "content/daily_notes/2025-05-10.md",
-    "content/daily_notes/2025-05-15.md",
-    "content/daily_notes/2025-05-23.md",
-    "content/daily_notes/2025-05-27.md",
-    "content/daily_notes/2026-01-22.md",
-    "content/PRIVATE/MERLIN",
-    "content/PRIVATE/Verbeterpunte.md",
-    "content/PRIVATE/Schedule planning.md",
-    "dist/portfolio/little-alpineX/index.html",
     "Untitled.canvas",
     "Daily notes/Untitled.canvas"
   ]

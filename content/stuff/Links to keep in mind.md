@@ -4,7 +4,7 @@ tags:
   - Information
   - Tutorials
 ---
-
+ 
 ### Theme/Color related links
 
 - [https://www.realtimecolors.com/](https://www.realtimecolors.com/ "https://www.realtimecolors.com/")
@@ -43,6 +43,7 @@ tags:
 	- https://codepen.io/hexagoncircle/pen/wvOPmGO
 - [relative colors](https://theosoti.com/blog/css-relative-colors/)
 - [flappy bird](https://blog.scottlogic.com/2026/03/09/noJS-3-flappy-bird.html)
+- [Get the scrollbar width](https://css-tip.com/width-scrollbar/)
 ##### - cool stackoverflow snippets
 [CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
 
@@ -98,3 +99,6 @@ https://bruno-simon.com/
 
 ##### Inspo
 https://www.jhey.dev/
+
+##### Jazz (db?)
+https://jazz.tools/

@@ -1,0 +1,446 @@
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --skew {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  animation: adjust_position linear both;
+  animation-timeline: scroll(root);
+}
+
+html {
+  height: fit-content;
+}
+
+/* this is for mobile background since the footer is accent colored */
+html,
+body {
+  background: var(--accent);
+}
+
+body {
+  transition: --scroll-position-delayed 0.15s linear;
+  --scroll-velocity: calc(
+    var(--scroll-position) - var(--scroll-position-delayed)
+  );
+  --scroll-speed: abs(var(--scroll-velocity));
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    background: var(--tertiary);
+
+    h1 {
+      /* Different from the filter & grid padding since the font is monospaced */
+      padding: 0 0.25rem;
+      margin-bottom: clamp(1rem, 3vw, 2rem);
+    }
+  }
+
+  .filtering {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background: var(--primary);
+    display: block;
+    color: var(--tertiary);
+    font-size: clamp(var(--SM), 4vw, var(--MD));
+    padding: 0.4375rem 0.875rem;
+    h2,
+    h2 span {
+      font-size: inherit;
+    }
+
+    h2 span {
+      color: var(--accent);
+    }
+
+    h2 {
+      margin-bottom: 0.4375rem;
+    }
+  }
+
+  ul.block-list {
+    --global-grid-gap: 2.25rem;
+    --global-columns-repeat: 4;
+
+    background: var(--secondary);
+    display: grid;
+
+    @media (min-width: 940px) {
+      --global-columns-repeat: 12;
+    }
+
+    grid-template-columns: repeat(var(--global-columns-repeat), 1fr);
+    column-gap: var(--global-grid-gap);
+    row-gap: 4rem;
+    /* overflow-y: auto; */
+    padding: var(--global-grid-gap) 0.875rem calc((var(--global-grid-gap) * 2))
+      0.875rem;
+
+    color: var(--tertiary);
+
+    > li {
+      content-visibility: auto;
+      display: inherit;
+      grid-template-columns: inherit;
+      column-gap: inherit;
+      grid-column: 1 / -1;
+      font-size: clamp(var(--MD), 3vw, var(--XL));
+
+      opacity: 1;
+      @supports (animation-timeline: view()) {
+        animation: step-in linear;
+        animation-duration: 1ms;
+        animation-timeline: view();
+        animation-range: entry -5% 100%;
+        transform-origin: top left;
+      }
+
+      &:has(a:hover) ul.description-list li,
+      ul.description-list li:hover {
+        transform: translateY(0.4375rem);
+        background: var(--tertiary);
+      }
+
+      ul.description-list {
+        grid-column: inherit;
+        display: flex;
+        column-gap: clamp(0.125rem, 1vw, 0.875rem);
+        overflow: hidden;
+        overflow: clip;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: transform 0.2s calc(0.05s * var(--stagger))
+            var(--brutal-transition);
+          padding: 0.25rem 0.75rem;
+          background: var(--accent);
+          color: var(--secondary);
+
+          will-change: transform;
+
+          > * {
+            display: block;
+            color: inherit;
+            text-transform: uppercase;
+          }
+
+          span:first-child {
+            font-size: clamp(var(--XXS), 3vw, var(--SM));
+            font-weight: 200;
+          }
+
+          span:last-child {
+            font-size: clamp(var(--XXS), 4vw, var(--MD));
+            font-weight: 500;
+            overflow: hidden;
+            overflow: clip;
+            line-height: clamp(
+              calc(var(--XXS) * 1.15),
+              5vw,
+              calc(var(--MD) * 1.4)
+            );
+          }
+        }
+      }
+
+      a {
+        --split-size: calc(1em * 1.4);
+        --split-length: 0;
+        --padding: 0.875rem;
+        --border-width: 0.125rem;
+
+        position: relative;
+        border: var(--border-width) solid var(--accent);
+        display: inherit;
+        column-gap: inherit;
+        row-gap: 0.5rem;
+        grid-column: inherit;
+        grid-template-columns: subgrid;
+        font-size: inherit;
+        outline-offset: -0.1875rem;
+        outline-color: var(--primary);
+
+        /* animation: shake 1s both var(--brutal-transition); */
+
+        &:is(:hover, :focus-visible) {
+          color: var(--secondary);
+          background-color: var(--accent);
+          border-color: var(--tertiary);
+
+          /* ! View transition needs some adjusting */
+          h3 {
+            view-transition-name: var(--vt-name);
+          }
+        }
+        &:active {
+          background-color: var(--tertiary);
+        }
+
+        > * {
+          padding: var(--padding);
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          font-size: inherit;
+          position: absolute;
+          /* default is left */
+          left: calc(var(--border-width) * -1);
+          width: var(--border-width);
+          height: calc(
+            100% - (var(--split-size) * 2) - calc(var(--padding) * 2)
+          );
+          top: calc(var(--split-size) + var(--padding) + 0.4375rem);
+          background: var(--secondary);
+        }
+
+        &::after {
+          /* but here we want right so we unset left! */
+          left: unset;
+          right: calc(var(--border-width) * -1);
+          top: calc(var(--border-width) * -1 + 0.4375rem);
+        }
+
+        @media (min-width: 58.75rem) {
+          --padding: 1.3125rem;
+          row-gap: unset;
+
+          &::before,
+          &::after {
+            display: none;
+          }
+
+          @supports (corner-shape: bevel) {
+            corner-shape: superellipse(-10);
+
+            /* h3 font-size + h3 line height */
+            border-bottom-left-radius: calc(
+                var(--padding) + (var(--split-length) * 1ch)
+              )
+              var(--split-size);
+            > * {
+              padding-bottom: calc(var(--padding) + var(--split-size));
+              /* padding-top: 2.25rem; */
+            }
+          }
+        }
+
+        article {
+          display: inherit;
+          grid-template-rows: auto 1fr;
+          grid-template-columns: subgrid;
+          column-gap: inherit;
+          row-gap: 0.4375rem;
+          grid-column: 1 / -1;
+
+          /* inheritfrom a */
+          font-size: inherit;
+
+          @media (min-width: 58.75rem) {
+            row-gap: 0.875rem;
+            grid-column: span 6;
+          }
+          .split-text {
+            grid-column: 1 / -1;
+            line-height: 1.4;
+            display: inline-block;
+            margin-left: -0.15em;
+            text-align: end;
+
+            /* since we split the text */
+            display: flex;
+            flex-wrap: wrap;
+            /* literal space */
+
+            /* inherit from article */
+            font-size: inherit;
+
+            > .word-space {
+              width: 0.4ch;
+            }
+
+            > span.word {
+              display: inline-flex;
+              overflow: hidden;
+            }
+
+            > span:last-child {
+              display: inline-block;
+              height: 1em;
+              margin-left: 0.5rem;
+              svg {
+                height: 100%;
+                width: fit-content;
+              }
+            }
+          }
+          p {
+            grid-column: 1 / -1;
+            @media (min-width: 58.75rem) {
+              grid-column: span 5;
+            }
+            max-width: 50ch;
+            font-size: clamp(var(--XXS), 2vw, var(--MD));
+            font-weight: 300;
+            transition: opacity 0.8s calc((var(--split-length)) * 0.045s)
+              var(--brutal-transition);
+          }
+        }
+
+        picture {
+          grid-column: 1 / -1;
+          height: auto;
+          width: 100%;
+          @media (min-width: 58.75rem) {
+            grid-column: 7 / -1;
+          }
+
+          @media (min-width: 75rem) {
+            grid-column: 8 / -1;
+          }
+
+          img {
+            transition: clip-path 0.8s var(--brutal-transition);
+            height: 100%;
+            object-fit: contain;
+            width: inherit;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: clamp(var(--XS), 3vw, var(--MD));
+    z-index: 1;
+    background: var(--accent);
+  }
+}
+
+/* Icons */
+
+/* Animations */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-triggered="ready"] {
+    .split-text .word > span {
+      transform: translateY(100%) rotate(7deg);
+    }
+
+    picture img {
+      clip-path: polygon(0% 0, 100% 0, 100% 0%, 0% 0%);
+    }
+
+    p {
+      opacity: 0;
+    }
+  }
+  [data-triggered="true"] {
+    .split-text .word > span {
+      transform: translateY(100%) rotate(7deg);
+      position: relative;
+      animation: split-text--slide-up 0.8s calc((var(--stagger)) * 0.045s)
+        var(--brutal-transition) forwards;
+    }
+    picture img {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    p {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes split-text--slide-up {
+  25% {
+    transform: translateY(-10%) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes adjust_position {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes step-in {
+  0% {
+    opacity: 0;
+    scale: 0.75;
+  }
+
+  40% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  80% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+/* Shake anim */
+
+@keyframes shake {
+  33% {
+    transform: translateY(1rem) rotate(0deg);
+  }
+  45% {
+    transform: translateY(2rem) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-1rem) rotate(10deg);
+  }
+  78% {
+    transform: translateY(-2rem) rotate(5deg);
+    
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes shake-content {
+  to {
+    opacity: 0;
+  }
+}
