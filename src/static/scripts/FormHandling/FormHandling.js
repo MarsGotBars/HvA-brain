@@ -5,7 +5,7 @@ import debounce from "../utils/debounce.js";
 class FormGatherer {
   constructor(form, onSubmitCallback) {
     this.form = document.querySelector(form);
-
+    this.invertBtn = this.form.querySelector('[data-form="button"]');
     this.inputs = this.form.querySelectorAll('[data-form="input"]');
     this.submit = this.form.querySelector('[data-form="submit"]');
     this.onSubmit = this.onSubmit.bind(this);
@@ -25,13 +25,13 @@ class FormEnhancer {
     this.form = formGatherer.form;
     this.inputs = formGatherer.inputs;
     this.submit = formGatherer.submit;
+    this.invertBtn = formGatherer.invertBtn;
     this.safeInit();
   }
 
   safeInit() {
     try {
       this.init();
-
       this.safelyRemoveSubmit();
     } catch (error) {
       console.error("I messed up!", error);
@@ -56,7 +56,7 @@ class FormEnhancer {
   }
 
   inputListeners() {
-    this.inputs.forEach((input, index) => {
+    this.inputs.forEach((input) => {
       if (!(input.type === "text" || input.type === "search")) {
         input.addEventListener("change", (e) => {
           this.formGatherer.onSubmit(e);
@@ -67,6 +67,9 @@ class FormEnhancer {
         }, 220);
         input.addEventListener("input", debouncedOnSubmit);
       }
+    });
+    this.invertBtn.addEventListener("click", () => {
+      formFiltering.flipbtn();
     });
   }
 
@@ -132,11 +135,14 @@ class FormEnhancer {
 class FormFiltering {
   constructor(form) {
     this.form = form;
-    this.list = document.querySelector(".block-list");
+    this.list = document.querySelector(".BlockList");
     this.listItems = this.list.querySelectorAll("li.card");
     this.dataAttributes = [];
     this.listItemDetails = [];
     this.previousFilters = {};
+    this.previousCase = "recency";
+    this.invert = false;
+
     this.init();
   }
 
@@ -154,6 +160,8 @@ class FormFiltering {
         this.dataAttributes.forEach((attr) => {
           itemData[attr.toUpperCase()] = item.dataset[attr];
         });
+
+        // TODO: finish this up for perf
         this.listItemDetails.push(itemData);
       });
     }
@@ -184,6 +192,15 @@ class FormFiltering {
 
   getFilterType(key) {
     return key.split("-")[0]; // e.g., 'sort-general' → 'general'
+  }
+  // test
+  flipbtn() {
+    this.invert = !this.invert;
+    if (document.startViewTransition) {
+      return document.startViewTransition(() => {
+        this.sort(this.previousCase, this.invert);
+      });
+    } else this.sort(this.previousCase, this.invert);
   }
 
   CompareObjByType(PrevObj, currentObj) {
@@ -221,7 +238,7 @@ class FormFiltering {
     }
   }
 
-  sort(byValue) {
+  sort(byValue = previousCase, flip = this.invert) {
     // Converting our NodeList to an array
     const items = Array.from(this.listItems);
 
@@ -239,28 +256,30 @@ class FormFiltering {
       b = b.children[1];
 
       switch (byValue) {
-        case "newest": {
+        case "recency": {
           const dateA = parseInt(a.getAttribute("data-date"), 10);
           const dateB = parseInt(b.getAttribute("data-date"), 10);
+
+          if (flip) {
+            return dateA - dateB; // Oldest first
+          }
           return dateB - dateA; // Newest first
         }
-        case "oldest": {
-          const dateA = parseInt(a.getAttribute("data-date"), 10);
-          const dateB = parseInt(b.getAttribute("data-date"), 10);
-          return dateA - dateB; // Oldest first
-        }
         case "progress": {
-          const progressA =
-            progressMap[a.getAttribute("data-progress")] || 0;
-          const progressB =
-            progressMap[b.getAttribute("data-progress")] || 0;
+          const progressA = progressMap[a.getAttribute("data-progress")] || 0;
+          const progressB = progressMap[b.getAttribute("data-progress")] || 0;
+          if (flip) {
+            return progressA - progressB; // Lowest progress first
+          }
           return progressB - progressA; // Highest progress first
         }
         case "alphabetical": {
           const alphaA = a.getAttribute("data-name");
           const alphaB = b.getAttribute("data-name");
-          console.log(alphaA, alphaB);
-      
+
+          if (flip) {
+            return alphaB.localeCompare(alphaA);
+          }
           return alphaA.localeCompare(alphaB);
         }
         default:
@@ -268,15 +287,15 @@ class FormFiltering {
       }
     });
 
+    this.previousCase = byValue;
+
     // ! shake the card down, then set the reduce opacity to 0 of the content
     // ! and shake it up, and whilst it goes back into place set opacity of new content to 1
 
     // Clear the container (assuming this.list is the parent container)
-    if(document.startViewTransition){
-      
+    if (document.startViewTransition) {
+      this.list.innerHTML = "";
     }
-    this.list.innerHTML = "";
-
 
     // Re-append the sorted <a> elements to the DOM
     items.forEach((item) => this.list.appendChild(item));
@@ -287,12 +306,16 @@ class FormFiltering {
 
   search(byValue) {
     const items = Array.from(this.listItems);
-    console.log(items[0].children[1].getAttribute("data-name"), byValue);
-    
-    // just trying...
-    const filteredItems = items.filter((item) => item.children[1].getAttribute("data-name").contains(byValue));
-    console.log(filteredItems, 'filters?');
-    
+
+    const filteredItems = items.filter((item) =>
+      item.children[1].getAttribute("data-name").includes(byValue),
+    );
+
+    if (document.startViewTransition) {
+      this.list.innerHTML = "";
+    }
+
+    filteredItems.forEach((item) => this.list.appendChild(item));
   }
 }
 

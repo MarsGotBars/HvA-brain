@@ -5,6 +5,9 @@ pageScripts:
   head:
     - '/scripts/reveal.js'
     - '/scripts/FormHandling/Formhandling.js'
+componentStyles:
+  - /css/components/projectForm.css
+  - /css/components/BlockList.css
 ---
 
 
@@ -16,19 +19,19 @@ pageScripts:
     </h1>
   </header>
 
+
+  <h2 class="countHeading">VIEW MY LATEST
+    <span data-project-count>{{ projects.length }}</span>
+    PROJECTS
+  </h2>
+
   <section class="filtering">
-    <h2>VIEW MY LATEST
-      <span>{{ projects.length }}</span>
-      PROJECTS
-    </h2>
-
-
-    {% assign list = "newest, oldest, progress, alphabetical" | split: ", " %}
+    {% assign list = "recency, progress, alphabetical" | split: ", " %}
     {% render 'organism/projectForm/projectForm'
       , list: list %}
   </section>
 
-  {% render 'organism/lists/list'
+  {% render 'organism/BlockList/BlockList'
     , projects: projects %}
 
   <footer>

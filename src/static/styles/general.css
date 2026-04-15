@@ -235,6 +235,9 @@ span {
 	white-space: nowrap;
 }
 
+.uppity {
+  text-transform: uppercase;
+}
 /* MARK: Selections
  */
 
@@ -282,7 +285,6 @@ dl *::selection {
 /* MARK: Scrollbar
   */
 
-*,
 html {
   scrollbar-color: var(--accent) var(--secondary);
 }

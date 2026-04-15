@@ -1,0 +1,38 @@
+@scope (.ProjectForm) {
+  :scope {
+    display: flex;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+
+    @media (min-width: 500px) {
+      flex-wrap: unset;
+    }
+
+    .grouper {
+      display: flex;
+      align-items: end;
+    }
+
+    label {
+      display: inline-flex;
+      gap: 0.4375rem;
+      flex-wrap: wrap;
+      flex-direction: column;
+      /* 
+            &:not(:last-child){
+                margin-right: .875rem;
+            } */
+      input:not([type="search"]),
+      select,
+      option {
+        border-radius: 0;
+        border: 0;
+        text-transform: uppercase;
+      }
+    }
+
+    button {
+      border: 0;
+    }
+  }
+}

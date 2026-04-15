@@ -294,12 +294,7 @@ aside h3 {
 aside .details {
   padding-top: var(--MD);
 }
-.details .spacing {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 aside ul {
   list-style-position: inside;
 }

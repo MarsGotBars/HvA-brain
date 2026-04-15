@@ -1,9 +1,9 @@
-<ul class="block-list">
+<ul class="BlockList">
     {% for project in projects.allProjects reversed %}
     {% unless project.progress == "BROKEN" %}
 
     <li class="card" id="{{ project.slug }}" style="view-transition-name: {{project.slug}}-card;">
-      {% render "./description-list", project: project %}
+      {% render "molecule/DescriptionList/DescriptionList", project: project %}
       <a href="{{ project.live }}" 
          target="_blank"
          data-date="{{ project.date_of_production | default: "TBA" }}"
@@ -43,7 +43,7 @@
           </span>
           <p>{{ project.short-description }}</p>
         </article>
-        {% capture imagePath %}/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp{%
+        {% capture imagePath %}src/static/assets/img/project-visuals/{{ project.slug }}/{{ project.slug }}-bg.webp{%
         endcapture %}
         {% image imagePath, project.alt %}
 
