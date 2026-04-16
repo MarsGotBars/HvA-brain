@@ -60,7 +60,6 @@ export default function (eleventyConfig) {
 
         return Image.generateHTML(metadata, imageAttributes);
       } catch (error) {
-        // handle missing images (empty image)
         console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;
       }
