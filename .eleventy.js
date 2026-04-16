@@ -42,29 +42,26 @@ export default function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode(
     "image",
     async function (src, alt = "", sizes, loading = "lazy") {
-      console.log(src);
-      
       try {
         let metadata = await Image(src, {
-          widths: [300, 600, 1200, 1600],
+          widths: [320, 640, 1024, 1536],
           formats: ["avif", "webp", "jpeg"],
           outputDir: "./dist/assets/img/",
           urlPath: "/assets/img/",
-          transformOnRequest: false, // Disable image transformation
+          transformOnRequest: false,
         });
 
         let imageAttributes = {
           alt,
-          sizes: sizes || "(max-width: 768px) 100vw, 50vw",
+          sizes: sizes || "(max-width: 768px) 50vw, (max-width: 1024px) 85vw, 1024px",
           loading,
           decoding: "async",
         };
-        // console.log(metadata, "created metadata");
 
         return Image.generateHTML(metadata, imageAttributes);
       } catch (error) {
         // handle missing images (empty image)
-        // console.error(`Error processing image ${src}:`, error);
+        console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;
       }
     }

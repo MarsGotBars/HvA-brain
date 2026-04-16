@@ -31,7 +31,7 @@ function parseFrontmatter(fileContent) {
   const content = match[2];
   
   const frontmatter = yaml.load(frontmatterString);
-  console.log("Parsed frontmatter:", frontmatter);
+  // console.log("Parsed frontmatter:", frontmatter);
   
   return { frontmatter, content };
 }
