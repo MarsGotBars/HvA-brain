@@ -13,21 +13,42 @@
       align-items: end;
     }
 
+    > * {
+      &:nth-child(even) select {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:nth-child(odd) input {
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
     label {
       display: inline-flex;
       gap: 0.4375rem;
       flex-wrap: wrap;
       flex-direction: column;
-      /* 
-            &:not(:last-child){
-                margin-right: .875rem;
-            } */
-      input:not([type="search"]),
+
+      input,
       select,
       option {
-        border-radius: 0;
-        border: 0;
-        text-transform: uppercase;
+        padding: 3px 7px;
+
+        &:not([type="text"]) {
+          text-transform: uppercase;
+        }
+      }
+
+      input,
+      select {
+        color: var(--accent);
+        background: var(--secondary);
+        border: 2px solid var(--tertiary);
+        border-radius: 7px;
+        corner-shape: superellipse(0.1);
+        caret-color: var(--tertiary);
       }
     }
 

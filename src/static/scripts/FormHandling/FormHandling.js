@@ -140,8 +140,10 @@ class FormFiltering {
     this.dataAttributes = [];
     this.listItemDetails = [];
     this.previousFilters = {};
-    this.previousCase = "recency";
+
+    // We set the initial states here, hardcoded, not everything needs to be dynamic...
     this.invert = false;
+    this.previousCase = "recency";
 
     this.init();
   }
@@ -195,6 +197,10 @@ class FormFiltering {
   }
   // test
   flipbtn() {
+    if(this.listItems.length === 0) {
+      return
+    }
+    
     this.invert = !this.invert;
     if (document.startViewTransition) {
       return document.startViewTransition(() => {
@@ -238,7 +244,7 @@ class FormFiltering {
     }
   }
 
-  sort(byValue = previousCase, flip = this.invert) {
+  sort(byValue = this.previousCase, flip = this.invert) {
     // Converting our NodeList to an array
     const items = Array.from(this.listItems);
 
@@ -305,10 +311,13 @@ class FormFiltering {
   }
 
   search(byValue) {
+    console.log(byValue);
+    
+    const searchedValue = byValue !== '' || undefined ? byValue.toLowerCase() : byValue;
     const items = Array.from(this.listItems);
 
     const filteredItems = items.filter((item) =>
-      item.children[1].getAttribute("data-name").includes(byValue),
+      item.children[1].getAttribute("data-name").includes(searchedValue),
     );
 
     if (document.startViewTransition) {
@@ -316,6 +325,7 @@ class FormFiltering {
     }
 
     filteredItems.forEach((item) => this.list.appendChild(item));
+    this.listItems = filteredItems
   }
 }
 
