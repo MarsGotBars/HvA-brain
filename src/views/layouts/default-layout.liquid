@@ -1,0 +1,17 @@
+{% assign specificStyle = title | downcase | split: " " | join: "-" %}
+{% render 'organism/Head/Head.liquid'
+  , title: title 
+  , pageStyles: pageStyles
+  , specificStyle: specificStyle
+  , pageScripts: pageScripts 
+  , componentStyles: componentStyles %}</head><body class="tertiary">
+
+{{ content }}
+
+
+<!-- Page-specific scripts before closing body -->
+{% if pageScripts.body %}
+  {% for script in pageScripts.body %}
+    <script src="{{ script }}"></script>
+  {% endfor %}
+{% endif %}</body></html>

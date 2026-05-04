@@ -4,8 +4,24 @@ import { rm } from "fs/promises";
 import { existsSync } from "fs";
 
 export default function (eleventyConfig) {
-  // Copy everything from public/ to /
-  eleventyConfig.addPassthroughCopy({ "public/": "/" });
+
+  // Re-inject CSS dependencies before every build
+  eleventyConfig.on("eleventy.before", async () => {
+    try {
+      const { autoInjectCSSQuiet } = await import("./lib/component-bundler.js");
+      await autoInjectCSSQuiet();
+    } catch (error) {
+      console.warn("⚠️ CSS injection failed:", error.message);
+    }
+  });
+  
+  eleventyConfig.addWatchTarget("src/static/**/*");
+  eleventyConfig.addWatchTarget("src/views/components/**/*.liquid");
+
+  eleventyConfig.addPassthroughCopy({ 'src/static/': '/' });
+  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.css': '/css/components/' });
+  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.js': '/js/components/' });
+
 
   // Remove project-visuals/ after build
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
@@ -25,28 +41,32 @@ export default function (eleventyConfig) {
   // Image generation shortcode
   eleventyConfig.addLiquidShortcode(
     "image",
-    async function (src, alt = "", sizes, loading = "lazy") {
+    async function (src, alt = "", sizes, loading = "lazy", className = "", ...rest) {
       try {
         let metadata = await Image(src, {
-          widths: [300, 600, 1200, 1600],
+          widths: [320, 640, 1024, 1536],
           formats: ["avif", "webp", "jpeg"],
           outputDir: "./dist/assets/img/",
           urlPath: "/assets/img/",
-          transformOnRequest: false, // Disable image transformation
+          transformOnRequest: false,
         });
 
         let imageAttributes = {
           alt,
-          sizes: sizes || "(max-width: 768px) 100vw, 50vw",
+          sizes: sizes || "(max-width: 768px) 50vw, (max-width: 1024px) 85vw, 1024px",
           loading,
           decoding: "async",
         };
-        // console.log(metadata, "created metadata");
 
-        return Image.generateHTML(metadata, imageAttributes);
+        let html = Image.generateHTML(metadata, imageAttributes);
+        
+        if (className) {
+          html = html.replace("<picture>", `<picture class="${className}">`);
+        }
+
+        return html;
       } catch (error) {
-        // handle missing images (empty image)
-        // console.error(`Error processing image ${src}:`, error);
+        console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;
       }
     }
@@ -54,13 +74,13 @@ export default function (eleventyConfig) {
 
   return {
     dir: {
-      input: "views",
-      includes: "partials",
+      input: "src/views",
+      includes: "components",
       layouts: "layouts",
-      data: "../_data", // <-- Go up one level from 'views' to reach root/_data
+      data: "../../_data", // <-- Go up two levels from 'views' to reach root/_data
       output: "dist",
     },
-    templateFormats: ["liquid", "md", "html"],
+    templateFormats: ["liquid", "html"],
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "liquid",
     passthroughFileCopy: true,

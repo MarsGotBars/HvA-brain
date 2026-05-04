@@ -8,5 +8,6 @@
   ],
   "newFileLocation": "folder",
   "newFileFolderPath": "content/stuff",
-  "attachmentFolderPath": "content/stuff"
+  "attachmentFolderPath": "content/stuff",
+  "openBehavior": "daily"
 }

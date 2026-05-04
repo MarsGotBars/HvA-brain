@@ -1,0 +1,41 @@
+{% layout './layouts/layout.liquid'
+  , title: "PORTFOLIO" %}
+
+{% block head %}
+  <script defer src="/scripts/reveal.js"></script>
+  <script
+    defer
+    type="module"
+    src="/scripts/Formhandling/FormHandling.js"></script>
+  <link rel="stylesheet" href="/assets/styling/portfolio.css">
+{% endblock %}
+
+{% block %}
+  <main class="huge">
+    <header>
+      <h1 class="main-heading huge">
+        PORTFOLIO
+        <span class="heading-label">LOG</span>
+      </h1>
+    </header>
+
+    <section class="filtering">
+      <h2>VIEW MY LATEST
+        <span>{{ projects.length }}</span>
+        PROJECTS
+      </h2>
+
+
+      {% assign list = "newest, oldest, progress, alphabetical" | split: ", " %}
+      {% render './components/forms/projectForm'
+        , list: list %}
+    </section>
+
+    {% render './components/lists/list'
+      , projects: projects %}
+
+    <footer>
+      <a href="/">BACK</a>
+    </footer>
+  </main>
+{% endblock %}

@@ -1,0 +1,5 @@
+- The assignments page conforms to what the client wants but could use some more polishing and layers of flare (pleasurable UI)
+- For the testimonial page there should be a different solution; as there will eventually be 300+ (many many many) testimonials
+	- A summary should be added for a short version
+- For the teams page the idea is the following;
+	- To separate all members into (already established) time-periods and sort them based on how long they were a part of the project (longest first)

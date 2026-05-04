@@ -1,0 +1,127 @@
+---
+layout: default-layout
+title: 'Home'
+pageScripts:
+  head: 
+    - '/scripts/mouse-follow.js'
+---
+<main class="uppity">
+  <header>
+    <h1 class="main-heading huge">
+      About
+      <span class="heading-label">Marcin</span>
+    </h1>
+  </header>
+  <article>
+    <h2 class="highlight-block me">
+      <span>Marcin Magdziak</span>
+    </h2>
+    <span class="extra-info">very creative guy,
+      <span class="highlight-block">trust me!</span>
+    </span>
+    <p>
+      <span style="--order: 1;">I am a
+        <span class="underlined semi-bold">Developer</span>:</span>
+    </p>
+    <p>
+      <span style="--order: 2;">I
+        <span class="semi-bold">write</span>
+        code.</span>
+    </p>
+    <p>
+      <span style="--order: 3;">I design
+        <span class="semi-bold">interfaces</span>.</span>
+    </p>
+    <p>
+      <span style="--order: 4;">I craft animations with css.</span>
+    </p>
+    <div style="--order: 5.5;" class="group anti">
+      <p class="exclude">
+        <span style="--order: 5;" class="sentence anti-highlight-block">- no libraries,</span>
+      </p>
+      <p class="exclude">
+        <span style="--order: 5.5;" class="anti-highlight-block">no gimmicks.</span>
+      </p>
+    </div>
+    <div class="group">
+      <p class="special-case">
+        <span style="--order: 6.75;" class="sentence">No
+          <span class="semi-bold">templates</span>.</span>
+      </p>
+      <p class="special-case">
+        <span style="--order: 7.5;" class="sentence">No
+          <span class="semi-bold">shortcuts</span>.</span>
+      </p>
+      <p class="special-case">
+        <span style="--order: 8.25;" class="sentence">No
+          <span class="semi-bold">bloat</span>.</span>
+      </p>
+    </div>
+    {% capture imagePath %}src/static/assets/img/me.jpeg{%
+        endcapture %}
+    {% image imagePath, "", "", "eager", "delayed-img" %}
+  {% comment %} <img
+                  data-moshable="me"
+                  style="--reveal: 8.25;"
+                  src="./assets/img/me.jpeg"
+            alt=""> {% endcomment %}
+  </article>
+</main>
+<aside class="details bg-brown">
+  <span class="aside-heading huge">↯
+    <h2 class="heading-label">DETAILS</h2>
+  </span>
+  <div class="details">
+    <h3>GET IN TOUCH WITH ME</h3>
+    <ul>
+      <li>
+        <a href="mailto:marcinm@live.nl" class="underlined">marcinm@live.nl</a>
+      </li>
+    </ul>
+    <h3>CURRENTLY</h3>
+    <ul>
+      <li>OPEN TO WORK</li>
+      <li>
+        STUDENT AT
+        <a href="https://www.hva.nl/opleidingen/ad-frontend-design-and-development" class="highlight-block">HVA</a>
+      </li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/portfolio">PORTFOLIO</a></li>
+      <li><a href="/" class="active">ABOUT</a></li>
+      <li><a href="/blog">BLOG</a></li>
+    </ul>
+  </nav>
+</aside>
+<nav class="bg-black footer-nav">
+  <h2>SOCIALS</h2>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/marcin-magdziak-664847223/">LINKEDIN</a></li>
+    <li><a href="https://github.com/marsgotbars">GITHUB</a></li>
+  </ul>
+</nav>
+<footer>
+  <div class="grouping">
+    <h2>SERVICES</h2>
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <details>
+    <summary>
+      <h2>CONTACT</h2>
+    </summary>
+    <div class="details-content">
+      <p>
+        Have a project in mind? Mail me
+        <span class="underlined">
+          <a href="mailto:marcinm@live.nl">marcinm@live.nl</a>
+        </span>
+      </p>
+    </div>
+  </details>
+  <div class="icon">( M ‿ M )</div>
+</footer>

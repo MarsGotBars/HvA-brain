@@ -4,7 +4,7 @@ tags:
   - Information
   - Tutorials
 ---
-
+ 
 ### Theme/Color related links
 
 - [https://www.realtimecolors.com/](https://www.realtimecolors.com/ "https://www.realtimecolors.com/")
@@ -34,6 +34,18 @@ tags:
     - [related video](https://www.youtube.com/watch?v=_ZFghigBmqo)
 - https://live-transitions.pages.dev/
 	- view transition stuff & navigation api
+- [Paint order seems cool!](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/paint-order)
+- [Animation composition](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-composition)
+- [Shape image threshold](https://codepen.io/argyleink/pen/ZEZLWzP)
+- [Toggle sticky to fixed](https://frontendmasters.com/blog/toggle-position-sticky-to-position-fixed-on-scroll/)
+- [Current :target](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-current)
+- [Scroll trigger in CSS!](https://codepen.io/argyleink/pen/gbYGgrB)
+	- https://codepen.io/hexagoncircle/pen/wvOPmGO
+- [relative colors](https://theosoti.com/blog/css-relative-colors/)
+- [flappy bird](https://blog.scottlogic.com/2026/03/09/noJS-3-flappy-bird.html)
+- [Get the scrollbar width](https://css-tip.com/width-scrollbar/)
+##### - cool stackoverflow snippets
+[CSS bow shadow](https://stackoverflow.com/questions/6008949/css-box-shadow-on-scrolled-content)
 
 #### Codepen
 
@@ -63,9 +75,30 @@ tags:
 https://wireframe.cc/
 https://jqlang.org/
 
+---
+## Accessibility
+[Adrian Roselli](https://adrianroselli.com/)
+
+## Performance 
+[Lazy loading yt videos](https://frontendmasters.com/blog/performance-optimized-video-embeds-with-zero-javascript/)
+### Image optimization
+- https://squoosh.app/editor
+
 
 ### No place yet
 [https://scroll-driven-animations.style](https://scroll-driven-animations.style/) 
 [https://ryanmulligan.dev](https://ryanmulligan.dev/) 
 [https://codepen.io/krijnhoetmer/pen/qBgGwLB](https://codepen.io/krijnhoetmer/pen/qBgGwLB)
 https://threlte.xyz/
+https://en.wikipedia.org/wiki/Munsell_color_system
+
+
+#### Merlin
+##### 3D
+https://bruno-simon.com/
+
+##### Inspo
+https://www.jhey.dev/
+
+##### Jazz (db?)
+https://jazz.tools/

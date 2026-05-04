@@ -1,0 +1,50 @@
+<form
+  class="ProjectForm ff-s"
+  method="POST"
+  action="/portfolio"
+  data-form="filtering">
+  <label>
+    <span>SEARCH:</span>
+    <div class="wrapper">
+      <input
+        type="text"
+        class="searchField ff-s"
+        name="search-name"
+        placeholder="NAME"
+        data-form="input">
+    </div>
+  </label>
+  <div class="grouper">
+
+    <label>
+      <span>SORT:</span>
+      <div class="wrapper">
+        <select
+          name="sort-general"
+          class="selectField"
+          data-form="input">
+          <div class="picker">
+            {% for option in list %}
+              <option value="{{ option | replace: " ", "-" | downcase }}">
+                {{ option }}
+              </option>
+            {% endfor %}
+          </div>
+        </select>
+      </div>
+    </label>
+    <span>-</span>
+    <div class="wrapper">
+      <button
+        type="button"
+        data-form="button"
+        name="sort-invert">invert</button>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="ff-s"
+    data-form="submit">
+    search
+  </button>
+</form>

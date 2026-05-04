@@ -1,0 +1,40 @@
+---
+layout: 'default-layout'
+title: 'PORTFOLIO'
+pageScripts:
+  head:
+    - '/scripts/reveal.js'
+    - '/scripts/FormHandling/Formhandling.js'
+componentStyles:
+  - /css/components/projectForm.css
+  - /css/components/BlockList.css
+---
+
+
+<main class="huge">
+  <header>
+    <h1 class="main-heading huge">
+      PORTFOLIO
+      <span class="heading-label">LOG</span>
+    </h1>
+  </header>
+
+
+  <h2 class="countHeading">VIEW MY LATEST
+    <span data-project-count>{{ projects.length }}</span>
+    PROJECTS
+  </h2>
+
+  <section class="filtering">
+    {% assign list = "recency, progress, alphabetical" | split: ", " %}
+    {% render 'organism/projectForm/projectForm'
+      , list: list %}
+  </section>
+
+  {% render 'organism/BlockList/BlockList'
+    , projects: projects %}
+
+  <footer>
+    <a href="/">BACK</a>
+  </footer>
+</main>
