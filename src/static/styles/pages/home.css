@@ -135,35 +135,48 @@ main article * {
   position: relative;
 }
 
-main article img {
-  transition: width 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+main article picture {
+  --adjustment: calc(var(--MD) + 0.25rem);
+  z-index: 1;
   position: absolute;
-  left: calc(var(--MD) * 2);
-  bottom: calc(var(--MD) * 2);
-  border: 0.25rem solid var(--primary);
+  left: calc(var(--adjustment) * 2);
+  bottom: calc(var(--adjustment) * 2);
   width: calc(55% - 0.125rem);
   height: calc(60% - 0.125rem);
-  object-position: 0 25%;
-  @media screen and (max-width: 969px) {
-    width: calc(50% - (var(--MD) * 2));
-    height: calc(100% - (var(--MD) * 2));
-    left: var(--MD);
-    bottom: var(--MD);
-    object-position: 30% 25%;
+
+  &.delayed-img {
+    --reveal: 8.25;
+  }
+  img {
+    transition: width 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: 100%;
+    width: 100%;
+    object-position: 0 25%;
+    border: 0.25rem solid var(--primary);
+    object-fit: cover;
+    opacity: 0;
+    /* default animation */
+    animation: reveal-me 0.5s calc(0.75s * var(--reveal)) ease-out forwards;
+    
+    @media screen and (max-width: 969px) {
+      object-position: 30% 25%;
+    }
+
+    @media screen and (max-width: 560px) {
+      width: 75%;
+    }
+  }
+  @media (max-width: 969px) {
+    width: calc(50% - (var(--adjustment) * 2));
+    height: calc(100% - (var(--adjustment) * 2));
+    left: var(--adjustment);
+    bottom: var(--adjustment);
     left: unset;
-    right: calc(0px + var(--MD));
+    right: calc(0px + var(--adjustment));
   }
-  @media screen and (max-width: 560px) {
-    width: 75%;
-  }
-  object-fit: cover;
-  opacity: 0;
-  z-index: 1;
-  /* default animation */
-  animation: reveal-me 0.5s calc(0.75s * var(--reveal)) ease-out forwards;
 }
 
-main article img[data-moshable="enhanced"] {
+main article picture[data-moshable="enhanced"] {
   animation: unset;
   opacity: 1;
 }
@@ -317,15 +330,21 @@ aside li {
   font-size: clamp(var(--SM), 2vw, var(--LG));
 }
 
-nav li::marker {
-  content: "";
-}
+aside {
+  nav {
+    margin-top: auto;
 
-aside nav ul {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+
+      li {
+        display: inline;
+      }
+    }
+  }
 }
 
 li a {

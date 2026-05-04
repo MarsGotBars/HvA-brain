@@ -41,7 +41,7 @@ export default function (eleventyConfig) {
   // Image generation shortcode
   eleventyConfig.addLiquidShortcode(
     "image",
-    async function (src, alt = "", sizes, loading = "lazy") {
+    async function (src, alt = "", sizes, loading = "lazy", className = "", ...rest) {
       try {
         let metadata = await Image(src, {
           widths: [320, 640, 1024, 1536],
@@ -58,7 +58,13 @@ export default function (eleventyConfig) {
           decoding: "async",
         };
 
-        return Image.generateHTML(metadata, imageAttributes);
+        let html = Image.generateHTML(metadata, imageAttributes);
+        
+        if (className) {
+          html = html.replace("<picture>", `<picture class="${className}">`);
+        }
+
+        return html;
       } catch (error) {
         console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;

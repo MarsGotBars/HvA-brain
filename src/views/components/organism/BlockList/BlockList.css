@@ -217,6 +217,8 @@ ul.BlockList {
           }
         }
         p {
+          text-wrap: balance;
+          text-wrap: pretty;
           grid-column: 1 / -1;
           @media (min-width: 58.75rem) {
             grid-column: span 5;

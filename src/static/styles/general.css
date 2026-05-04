@@ -70,9 +70,13 @@ body {
   position: relative;
 }
 
-*:focus-visible,
+*:not(input, select):focus-visible,
 details:focus-within {
   outline: dashed 0.25rem var(--accent);
+}
+
+input, select {
+  outline: none;
 }
 
 li {
@@ -136,7 +140,7 @@ body {
   --XXL: 11.625rem;
   --XL: 5rem;
   --LG: 3.25rem;
-  --MD: 2.25rem;
+  --MD: 2rem;
   --SM: 1.5rem;
   --XS: 1.125rem;
   --XXS: 1rem;
@@ -237,6 +241,14 @@ span {
 
 .uppity {
   text-transform: uppercase;
+}
+
+.ff-p {
+  font-family: var(--primary-font);
+}
+
+.ff-s {
+  font-family: var(--secondary-font);
 }
 /* MARK: Selections
  */

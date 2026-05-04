@@ -1,34 +1,50 @@
 <form
-  class="ProjectForm"
+  class="ProjectForm ff-s"
   method="POST"
   action="/portfolio"
   data-form="filtering">
   <label>
-    <span>SEARCH</span>
-    <input
-      type="text"
-      name="search-name"
-      data-form="input">
+    <span>SEARCH:</span>
+    <div class="wrapper">
+      <input
+        type="text"
+        class="searchField ff-s"
+        name="search-name"
+        placeholder="NAME"
+        data-form="input">
+    </div>
   </label>
   <div class="grouper">
 
     <label>
-      <span>SORTED BY</span>
-      <select name="sort-general" data-form="input">
-        {% for option in list %}
-          {{ option }}
-          <option value="{{ option | replace: " ", "-" | downcase }}">
-            {{ option }}
-          </option>
-        {% endfor %}
-      </select>
+      <span>SORT:</span>
+      <div class="wrapper">
+        <select
+          name="sort-general"
+          class="selectField"
+          data-form="input">
+          <div class="picker">
+            {% for option in list %}
+              <option value="{{ option | replace: " ", "-" | downcase }}">
+                {{ option }}
+              </option>
+            {% endfor %}
+          </div>
+        </select>
+      </div>
     </label>
-    <button
-      type="button"
-      data-form="button"
-      name="sort-invert">invert sort</button>
+    <span>-</span>
+    <div class="wrapper">
+      <button
+        type="button"
+        data-form="button"
+        name="sort-invert">invert</button>
+    </div>
   </div>
-  <button type="submit" data-form="submit">
+  <button
+    type="submit"
+    class="ff-s"
+    data-form="submit">
     search
   </button>
 </form>

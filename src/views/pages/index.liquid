@@ -57,11 +57,14 @@ pageScripts:
           <span class="semi-bold">bloat</span>.</span>
       </p>
     </div>
-    <img
-      data-moshable="me"
-      style="--reveal: 8.25;"
-      src="./assets/img/me.jpeg"
-      alt="">
+    {% capture imagePath %}src/static/assets/img/me.jpeg{%
+        endcapture %}
+    {% image imagePath, "", "", "eager", "delayed-img" %}
+  {% comment %} <img
+                  data-moshable="me"
+                  style="--reveal: 8.25;"
+                  src="./assets/img/me.jpeg"
+            alt=""> {% endcomment %}
   </article>
 </main>
 <aside class="details bg-brown">
