@@ -83,6 +83,10 @@
         cursor: pointer;
         --selected: 1;
 
+        ::checkmark {
+          content: "";
+        }
+
         option {
           outline: none;
         }
@@ -103,7 +107,8 @@
             appearance: base-select;
             border: 0;
             top: anchor(center);
-            left: anchor(end);
+            /* TODO: change this based on length of text? or invert */
+            left: calc(anchor(center));
             transform: translate(
               -50%,
               calc(-50% + ((1lh + 6px) * var(--selected)))
