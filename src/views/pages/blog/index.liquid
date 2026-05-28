@@ -1,0 +1,28 @@
+---
+layout: 'default-layout'
+title: 'BLOG'
+---
+
+
+<main class="huge">
+  <header>
+    <h1 class="main-heading huge">
+      BLOG
+      <span class="heading-label">NEWS</span>
+    </h1>
+  </header>
+
+  <section class="blog-list">
+    <ul>
+      {% for post in blog %}
+        <li>
+          <a href="{{config.routes.blog}}/{{post.slug}}">{{ post.slug | raw }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer>
+    <a href="/">BACK</a>
+  </footer>
+</main>

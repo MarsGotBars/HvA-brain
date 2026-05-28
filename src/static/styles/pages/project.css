@@ -1,5 +1,3 @@
-@import url('./view-transition/seeker-transition.css');
-
 body {
     height: 200vh;
     background: oklch(from var(--tertiary) l c h);

@@ -8,10 +8,13 @@ export default function () {
     const raw = fs.readFileSync(path.join("./content/blog", file), "utf-8");
     const { frontmatter, content } = parseFrontmatter(raw);
     const html = marked.parse(content);
+    const slug = file.replace(/\.md$/, "");
+    // console.log('read', blogStore);
     
-    return { 
+    
+    return {
       filename: file, 
-      slug: file.replace(/\.md$/, ""), 
+      slug,
       frontmatter, 
       html, 
       isBlog: true 

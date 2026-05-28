@@ -1,0 +1,11 @@
+---
+layout: default-layout
+pagination:
+  data: blog
+  size: 1
+  alias: post
+title: 'posts'
+permalink: '/{{config.routes.blog}}/{{post.slug}}/'
+---
+
+{{ post | json }}

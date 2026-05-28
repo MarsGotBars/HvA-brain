@@ -23,23 +23,8 @@ html {
 }
 
 @font-face {
-  font-family: Cabin;
-  src: url(../assets/fonts/Cabin.ttf);
-}
-
-@font-face {
-  font-family: Archivo;
-  src: url(../assets/fonts/Archivo.ttf);
-}
-
-@font-face {
   font-family: Martian;
   src: url(../assets/fonts/MartianMono.ttf);
-}
-
-@font-face {
-  font-family: Sour;
-  src: url(../assets/fonts/SourGummy.ttf);
 }
 
 @font-face {

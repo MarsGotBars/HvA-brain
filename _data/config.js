@@ -1,7 +1,7 @@
 export default {
     routes: {
         home: "/",
-        portfolio: "portfolio"
-        // ...
+        portfolio: "portfolio",
+        blog: 'blog'
     }
 }
