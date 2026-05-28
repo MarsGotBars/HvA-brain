@@ -1,285 +1,289 @@
-ul.BlockList {
-  --global-grid-gap: 2.25rem;
-  --global-columns-repeat: 4;
+@scope (.BlockList) {
+  :scope {
+    --global-grid-gap: 2.25rem;
+    --global-columns-repeat: 4;
 
-  background: var(--secondary);
-  display: grid;
-  flex-grow: 1;
-  
-  @media (min-width: 940px) {
-    --global-columns-repeat: 12;
-  }
+    background: var(--secondary);
+    display: grid;
+    flex-grow: 1;
 
-  grid-template-columns: repeat(var(--global-columns-repeat), 1fr);
-  column-gap: var(--global-grid-gap);
-  row-gap: 4rem;
-  /* overflow-y: auto; */
-  padding: var(--global-grid-gap) 0.875rem calc((var(--global-grid-gap) * 2))
-    0.875rem;
-
-  color: var(--tertiary);
-
-  > li {
-    content-visibility: auto;
-    display: inherit;
-    grid-template-columns: inherit;
-    column-gap: inherit;
-    grid-column: 1 / -1;
-    font-size: clamp(var(--MD), 3vw, var(--XL));
-
-    opacity: 1;
-    @supports (animation-timeline: view()) {
-      animation: step-in linear;
-      animation-duration: 1ms;
-      animation-timeline: view();
-      animation-range: entry -5% 100%;
-      transform-origin: top left;
+    @media (min-width: 940px) {
+      --global-columns-repeat: 12;
     }
 
-    &:has(a:hover) ul.description-list li,
-    ul.description-list li:hover {
-      transform: translateY(0.4375rem);
-      background: var(--tertiary);
-    }
+    grid-template-columns: repeat(var(--global-columns-repeat), 1fr);
+    column-gap: var(--global-grid-gap);
+    row-gap: 4rem;
+    /* overflow-y: auto; */
+    padding: var(--global-grid-gap) 0.875rem calc((var(--global-grid-gap) * 2))
+      0.875rem;
 
-    ul.description-list {
-      grid-column: inherit;
-      display: flex;
-      column-gap: clamp(0.125rem, 1vw, 0.875rem);
-      overflow: hidden;
-      overflow: clip;
+    color: var(--tertiary);
 
-      li {
+    > li {
+      content-visibility: auto;
+      display: inherit;
+      grid-template-columns: inherit;
+      column-gap: inherit;
+      grid-column: 1 / -1;
+      font-size: clamp(var(--MD), 3vw, var(--XL));
+
+      opacity: 1;
+      @supports (animation-timeline: view()) {
+        animation: step-in linear;
+        animation-duration: 1ms;
+        animation-timeline: view();
+        animation-range: entry -5% 100%;
+        transform-origin: top left;
+      }
+
+      &:has(a:hover) ul.description-list li,
+      ul.description-list li:hover {
+        transform: translateY(0.4375rem);
+        background: var(--tertiary);
+      }
+
+      ul.description-list {
+        grid-column: inherit;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 0.2s calc(0.05s * var(--stagger))
-          var(--brutal-transition);
-        padding: 0.25rem 0.75rem;
-        background: var(--accent);
-        color: var(--secondary);
+        column-gap: clamp(0.125rem, 1vw, 0.875rem);
+        overflow: hidden;
+        overflow: clip;
 
-        will-change: transform;
+        li {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: transform 0.2s calc(0.05s * var(--stagger))
+            var(--brutal-transition);
+          padding: 0.25rem 0.75rem;
+          background: var(--accent);
+          color: var(--secondary);
+
+          will-change: transform;
+
+          > * {
+            display: block;
+            color: inherit;
+            text-transform: uppercase;
+          }
+
+          span:first-child {
+            font-size: clamp(var(--XXS), 3vw, var(--SM));
+            font-weight: 200;
+          }
+
+          span:last-child {
+            font-size: clamp(var(--XXS), 4vw, var(--MD));
+            font-weight: 500;
+            overflow: hidden;
+            overflow: clip;
+            line-height: clamp(
+              calc(var(--XXS) * 1.15),
+              5vw,
+              calc(var(--MD) * 1.4)
+            );
+          }
+        }
+      }
+
+      a {
+        --split-size: calc(1em * 1.4);
+        --split-length: 0;
+        --padding: 0.875rem;
+        --border-width: 0.125rem;
+
+        position: relative;
+        border: var(--border-width) solid var(--accent);
+        display: inherit;
+        column-gap: inherit;
+        row-gap: 0.5rem;
+        grid-column: inherit;
+        grid-template-columns: subgrid;
+        font-size: inherit;
+        outline-offset: -0.1875rem;
+        outline-color: var(--primary);
+
+        /* animation: shake 1s both var(--brutal-transition); */
+
+        &:is(:hover, :focus-visible) {
+          color: var(--secondary);
+          background-color: var(--accent);
+          border-color: var(--tertiary);
+
+          /* ! View transition needs some adjusting */
+          h3 {
+            view-transition-name: var(--vt-name);
+          }
+        }
+        &:active {
+          background-color: var(--tertiary);
+        }
 
         > * {
-          display: block;
-          color: inherit;
-          text-transform: uppercase;
+          padding: var(--padding);
         }
-
-        span:first-child {
-          font-size: clamp(var(--XXS), 3vw, var(--SM));
-          font-weight: 200;
-        }
-
-        span:last-child {
-          font-size: clamp(var(--XXS), 4vw, var(--MD));
-          font-weight: 500;
-          overflow: hidden;
-          overflow: clip;
-          line-height: clamp(
-            calc(var(--XXS) * 1.15),
-            5vw,
-            calc(var(--MD) * 1.4)
-          );
-        }
-      }
-    }
-
-    a {
-      --split-size: calc(1em * 1.4);
-      --split-length: 0;
-      --padding: 0.875rem;
-      --border-width: 0.125rem;
-
-      position: relative;
-      border: var(--border-width) solid var(--accent);
-      display: inherit;
-      column-gap: inherit;
-      row-gap: 0.5rem;
-      grid-column: inherit;
-      grid-template-columns: subgrid;
-      font-size: inherit;
-      outline-offset: -0.1875rem;
-      outline-color: var(--primary);
-
-      /* animation: shake 1s both var(--brutal-transition); */
-
-      &:is(:hover, :focus-visible) {
-        color: var(--secondary);
-        background-color: var(--accent);
-        border-color: var(--tertiary);
-
-        /* ! View transition needs some adjusting */
-        h3 {
-          view-transition-name: var(--vt-name);
-        }
-      }
-      &:active {
-        background-color: var(--tertiary);
-      }
-
-      > * {
-        padding: var(--padding);
-      }
-
-      &::before,
-      &::after {
-        content: "";
-        font-size: inherit;
-        position: absolute;
-        /* default is left */
-        left: calc(var(--border-width) * -1);
-        width: var(--border-width);
-        height: calc(100% - (var(--split-size) * 2) - calc(var(--padding) * 2));
-        top: calc(var(--split-size) + var(--padding) + 0.4375rem);
-        background: var(--secondary);
-      }
-
-      &::after {
-        /* but here we want right so we unset left! */
-        left: unset;
-        right: calc(var(--border-width) * -1);
-        top: calc(var(--border-width) * -1 + 0.4375rem);
-      }
-
-      @media (min-width: 58.75rem) {
-        --padding: 1.3125rem;
-        row-gap: unset;
 
         &::before,
         &::after {
-          display: none;
+          content: "";
+          font-size: inherit;
+          position: absolute;
+          /* default is left */
+          left: calc(var(--border-width) * -1);
+          width: var(--border-width);
+          height: calc(
+            100% - (var(--split-size) * 2) - calc(var(--padding) * 2)
+          );
+          top: calc(var(--split-size) + var(--padding) + 0.4375rem);
+          background: var(--secondary);
         }
 
-        @supports (corner-shape: bevel) {
-          corner-shape: superellipse(-10);
-
-          /* h3 font-size + h3 line height */
-          border-bottom-left-radius: calc(
-              var(--padding) + (var(--split-length) * 1ch)
-            )
-            var(--split-size);
-          > * {
-            padding-bottom: calc(var(--padding) + var(--split-size));
-            /* padding-top: 2.25rem; */
-          }
+        &::after {
+          /* but here we want right so we unset left! */
+          left: unset;
+          right: calc(var(--border-width) * -1);
+          top: calc(var(--border-width) * -1 + 0.4375rem);
         }
-      }
-
-      article {
-        display: inherit;
-        grid-template-rows: auto 1fr;
-        grid-template-columns: subgrid;
-        column-gap: inherit;
-        row-gap: 0.4375rem;
-        grid-column: 1 / -1;
-
-        /* inheritfrom a */
-        font-size: inherit;
 
         @media (min-width: 58.75rem) {
-          row-gap: 0.875rem;
-          grid-column: span 6;
-        }
-        .split-text {
-          grid-column: 1 / -1;
-          line-height: 1.4;
-          display: inline-block;
-          margin-left: -0.15em;
-          text-align: end;
+          --padding: 1.3125rem;
+          row-gap: unset;
 
-          /* since we split the text */
-          display: flex;
-          flex-wrap: wrap;
-          /* literal space */
-
-          /* inherit from article */
-          font-size: inherit;
-
-          > .word-space {
-            width: 0.4ch;
+          &::before,
+          &::after {
+            display: none;
           }
 
-          > span.word {
-            display: inline-flex;
-            overflow: hidden;
-          }
+          @supports (corner-shape: bevel) {
+            corner-shape: superellipse(-10);
 
-          > span:last-child {
-            display: inline-block;
-            height: 1em;
-            margin-left: 0.5rem;
-            svg {
-              height: 100%;
-              width: fit-content;
+            /* h3 font-size + h3 line height */
+            border-bottom-left-radius: calc(
+                var(--padding) + (var(--split-length) * 1ch)
+              )
+              var(--split-size);
+            > * {
+              padding-bottom: calc(var(--padding) + var(--split-size));
+              /* padding-top: 2.25rem; */
             }
           }
         }
-        p {
-          text-wrap: balance;
-          text-wrap: pretty;
+
+        article {
+          display: inherit;
+          grid-template-rows: auto 1fr;
+          grid-template-columns: subgrid;
+          column-gap: inherit;
+          row-gap: 0.4375rem;
           grid-column: 1 / -1;
+
+          /* inheritfrom a */
+          font-size: inherit;
+
           @media (min-width: 58.75rem) {
-            grid-column: span 5;
+            row-gap: 0.875rem;
+            grid-column: span 6;
           }
-          max-width: 50ch;
-          font-size: clamp(var(--XXS), 2vw, var(--MD));
-          font-weight: 300;
-          transition: opacity 0.8s calc((var(--split-length)) * 0.045s)
-            var(--brutal-transition);
-        }
-      }
+          .split-text {
+            grid-column: 1 / -1;
+            line-height: 1.4;
+            display: inline-block;
+            margin-left: -0.15em;
+            text-align: end;
 
-      picture {
-        grid-column: 1 / -1;
-        height: auto;
-        width: 100%;
-        @media (min-width: 58.75rem) {
-          grid-column: 7 / -1;
+            /* since we split the text */
+            display: flex;
+            flex-wrap: wrap;
+            /* literal space */
+
+            /* inherit from article */
+            font-size: inherit;
+
+            > .word-space {
+              width: 0.4ch;
+            }
+
+            > span.word {
+              display: inline-flex;
+              overflow: hidden;
+            }
+
+            > span:last-child {
+              display: inline-block;
+              height: 1em;
+              margin-left: 0.5rem;
+              svg {
+                height: 100%;
+                width: fit-content;
+              }
+            }
+          }
+          p {
+            text-wrap: balance;
+            text-wrap: pretty;
+            grid-column: 1 / -1;
+            @media (min-width: 58.75rem) {
+              grid-column: span 5;
+            }
+            max-width: 50ch;
+            font-size: clamp(var(--XXS), 2vw, var(--MD));
+            font-weight: 300;
+            transition: opacity 0.8s calc((var(--split-length)) * 0.045s)
+              var(--brutal-transition);
+          }
         }
 
-        @media (min-width: 75rem) {
-          grid-column: 8 / -1;
-        }
+        picture {
+          grid-column: 1 / -1;
+          height: auto;
+          width: 100%;
+          @media (min-width: 58.75rem) {
+            grid-column: 7 / -1;
+          }
 
-        img {
-          transition: clip-path 0.8s var(--brutal-transition);
-          height: 100%;
-          object-fit: contain;
-          width: inherit;
+          @media (min-width: 75rem) {
+            grid-column: 8 / -1;
+          }
+
+          img {
+            transition: clip-path 0.8s var(--brutal-transition);
+            height: 100%;
+            object-fit: contain;
+            width: inherit;
+          }
         }
       }
     }
   }
-}
-@media (prefers-reduced-motion: no-preference) {
-  [data-triggered="ready"] {
-    .split-text .word > span {
-      transform: translateY(100%) rotate(7deg);
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    [data-triggered="ready"] {
+      .split-text .word > span {
+        transform: translateY(100%) rotate(7deg);
+      }
 
-    picture img {
-      clip-path: polygon(0% 0, 100% 0, 100% 0%, 0% 0%);
-    }
+      picture img {
+        clip-path: polygon(0% 0, 100% 0, 100% 0%, 0% 0%);
+      }
 
-    p {
-      opacity: 0;
+      p {
+        opacity: 0;
+      }
     }
-  }
-  [data-triggered="true"] {
-    .split-text .word > span {
-      transform: translateY(100%) rotate(7deg);
-      position: relative;
-      animation: split-text--slide-up 0.8s calc((var(--stagger)) * 0.045s)
-        var(--brutal-transition) forwards;
-    }
-    picture img {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
+    [data-triggered="true"] {
+      .split-text .word > span {
+        transform: translateY(100%) rotate(7deg);
+        position: relative;
+        animation: split-text--slide-up 0.8s calc((var(--stagger)) * 0.045s)
+          var(--brutal-transition) forwards;
+      }
+      picture img {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
 
-    p {
-      opacity: 1;
+      p {
+        opacity: 1;
+      }
     }
   }
 }
