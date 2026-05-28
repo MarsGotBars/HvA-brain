@@ -1,0 +1,135 @@
+---
+layout: default-layout
+title: Liquify
+date: "2026-05-28"
+tags: [blog, tutorial]
+pageScripts:
+  head:
+    '/scripts/sync.js'
+---
+
+{% assign manager = "npm, pnpm, yarn" %}
+{% assign manager_arr = manager | split: ", " %}
+
+<main class="huge">
+  <header>
+    <h1 class="main-heading large">
+      Liquify your
+      <span class="huge">life</span>
+    </h1>
+  </header>
+
+  <article>
+    {% comment %} will add TOC later {% endcomment %}
+    {% comment %} <h2>Table of contents</h2> {% endcomment %}
+
+    <h2>Installation</h2>
+    <p>Firstly create a directory and enter it with the following commands:</p>
+    <code>mkdir my-static-site</code>
+    <code>cd my-static-site</code>
+
+    <section data-swapping>
+      {% for pkg in manager_arr %}
+        {% if forloop.first %}
+          <details name="pkg_init" class="pkg-tab" data-manager="{{ pkg }}" open>
+        {% else %}
+          <details name="pkg_init" class="pkg-tab" data-manager="{{ pkg }}">
+        {% endif %}
+          <summary>{{ pkg }}</summary>
+          <div>
+            <code>{{ pkg }} init{% if pkg != "pnpm" %} -y{% endif %}</code>
+          </div>
+        </details>
+      {% endfor %}
+    </section>
+
+    <p>Then open up your terminal and get the following packages ready:</p>
+
+    <section data-swapping>
+      {% for pkg in manager_arr %}
+        {% if forloop.first %}
+          <details name="pkg_install" class="pkg-tab" data-manager="{{ pkg }}" open>
+        {% else %}
+          <details name="pkg_install" class="pkg-tab" data-manager="{{ pkg }}">
+        {% endif %}
+          <summary>{{ pkg }}</summary>
+          <div>
+            <code>
+              <span data-swappable>{{ pkg }}</span> 
+              {% if pkg == "npm" %}install{% else %}add{% endif %} liquidjs
+            </code>
+            <code>
+              <span data-swappable>{{ pkg }}</span> 
+              {% if pkg == "npm" %}install{% else %}add{% endif %} -D @11ty/eleventy
+            </code>
+          </div>
+        </details>
+      {% endfor %}
+    </section>
+
+    <h2>Configuring Eleventy (v3+)</h2>
+    <p>Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named <code>eleventy.config.js</code> in your project root and add the modern <code>export default</code> structure:</p>
+    
+<pre><code>export default function (eleventyConfig) {
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
+  };
+};</code></pre>
+    <p>This explicitly tells Eleventy to process everything inside your <code>src</code> directory and compile the optimized, production-ready static assets directly into <code>_site</code>.</p>
+
+    <h2>Your First Template</h2>
+    <p>Create your source folder structure and your primary template file:</p>
+    <code>mkdir src</code>
+    <code>touch src/index.liquid</code>
+
+    <p>Open up <code>src/index.liquid</code> and add a front matter block along with a dynamic Liquid array loop to test parsing capabilities:</p>
+<pre><code>&lt;---
+title: Welcome to Liquify
+---&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;&#123;&#123; title &#125;&#125;&lt;/h1&gt;
+  
+  &#123;% assign array = "HTML, CSS, Liquid" | split: ", " %&#125;
+  &lt;ul&gt;
+    &#123;% for item in array %&#125;
+      &lt;li&gt;Rendering: &#123;&#123; item &#125;&#125;&lt;/li&gt;
+    &#123;% endfor %&#125;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>Fire Up the Build Server</h2>
+    <p>To keep development moving quickly, add a start script execution path directly into your <code>package.json</code> file:</p>
+<pre><code>"scripts": {
+  "start": "eleventy --serve"
+}</code></pre>
+
+    <p>Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading development server:</p>
+
+    <section data-swapping>
+      {% for pkg in manager_arr %}
+        {% if forloop.first %}
+          <details name="pkg_run" class="pkg-tab" data-manager="{{ pkg }}" open>
+        {% else %}
+          <details name="pkg_run" class="pkg-tab" data-manager="{{ pkg }}">
+        {% endif %}
+          <summary>{{ pkg }}</summary>
+          <div>
+            <code>{% if pkg == "npm" %}npm run start{% else %}{{ pkg }} start{% endif %}</code>
+          </div>
+        </details>
+      {% endfor %}
+    </section>
+
+    <p>The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at <code>http://localhost:8080</code>. Open it up and start hacking!</p>
+
+  </article>
+</main>

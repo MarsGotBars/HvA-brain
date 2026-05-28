@@ -25,12 +25,14 @@
             "id": "42306d010f571e14",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "content/PRIVATE/images/Screenshot 2026-05-15 at 12.49.47.png"
+                "file": "content/PRIVATE/FDND BEWIJS/SEMESTER 4 ENDTERM.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Screenshot 2026-05-15 at 12.49.47"
+              "icon": "lucide-file",
+              "title": "SEMESTER 4 ENDTERM"
             }
           }
         ],
@@ -204,12 +206,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "32083376ada586b4",
+  "active": "42306d010f571e14",
   "lastOpenFiles": [
+    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
     "dist/assets/img/project-visuals/villas4u/villas4u-bg.webp",
     "dist/assets/img/project-visuals/little-alpine/little-alpine-bg.webp",
     "dist/assets/img/project-visuals/just/just-bg.webp",
-    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
     "dist/assets/img/project-visuals/dda/dda-bg.webp",
     "dist/assets/img/project-visuals/crow/crow-bg.webp",
     "dist/assets/img/project-visuals/ara/ara-bg.webp",
@@ -218,16 +220,17 @@
     "dist/assets/img/project-visuals/just",
     "dist/assets/img/project-visuals/hoevzh",
     "dist/assets/img/project-visuals/dda",
-    "dist/assets/img/project-visuals/crow",
     "dist/assets/img/project-visuals/ara",
+    "dist/assets/img/project-visuals/crow",
     "dist/assets/img/project-visuals",
-    "dist/blog/test-copy/index.html",
-    "dist/blog/test-copy",
-    "content/blog/test-copy.md",
-    "content/blog/initial-commit copy.md",
+    "dist/scripts/sync.js",
+    "src/static/scripts/sync.js",
     "dist/assets/img/hfcI0GOyvb-1536.jpeg",
     "dist/assets/img/hfcI0GOyvb-1024.jpeg",
     "dist/assets/img/hfcI0GOyvb-640.jpeg",
+    "content/blog/liquify.md",
+    "content/blog/test-copy.md",
+    "content/blog/initial-commit copy.md",
     "content/stuff/Songs.md",
     "content/PRIVATE/FDND BEWIJS/SEMESTER 4 ENDTERM.md",
     "content/daily_notes/2026-05-28.md",
@@ -250,7 +253,6 @@
     "content/daily_notes/2026-04-29.md",
     "content/daily_notes/2026-04-10.md",
     "content/daily_notes/2026-04-02.md",
-    "content/daily_notes/2026-03-31.md",
     "Untitled.canvas",
     "Daily notes/Untitled.canvas"
   ]

@@ -27,9 +27,11 @@ html {
   src: url(../assets/fonts/MartianMono.ttf);
 }
 
+
 @font-face {
   font-family: Space;
-  src: url(../assets/fonts/SpaceMono-Bold.ttf);
+  src: url('../assets/fonts/SpaceMono-Bold.woff2') format('woff2'),
+       url('../assets/fonts/SpaceMono-Bold.woff') format('woff'),
 }
 
 @font-face {
@@ -154,6 +156,10 @@ span {
  */
 .huge {
   font-size: clamp(var(--LG), 13vw, var(--XXL));
+}
+
+.large {
+  font-size: clamp(var(--MD), 10vw, var(--LG));
 }
 
 .icon {
@@ -325,4 +331,9 @@ html {
 /* Buttons (arrows) - Optional */
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+header + * {
+  position: relative;
+  z-index: 1;
 }

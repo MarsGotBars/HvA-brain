@@ -1,0 +1,10 @@
+header{
+    &:first-of-type {
+     padding-bottom: var(--MD);
+    }
+}
+
+.blog-list {
+    position: relative;
+    z-index: 1;
+}
