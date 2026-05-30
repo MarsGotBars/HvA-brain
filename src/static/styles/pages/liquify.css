@@ -130,7 +130,6 @@ main.huge {
     grid-column: 1 / -1;
     overflow-x: hidden;
     overflow-x: clip;
-    z-index: 2;
 
     @media (min-width: 969px) {
       grid-column: 4 / -1;
@@ -148,6 +147,7 @@ main.huge {
     display: none;
     position: sticky;
     top: 0;
+    z-index: 2;
 
     @supports (scroll-target-group: auto) {
       @media (min-width: 969px) {
