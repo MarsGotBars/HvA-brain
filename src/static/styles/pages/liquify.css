@@ -14,7 +14,8 @@ main.huge {
       grid-column: 5 / -2;
     }
   }
-  h1 {
+  h1.main-heading {
+    text-align: left;
     display: flex;
     flex-direction: column;
 
