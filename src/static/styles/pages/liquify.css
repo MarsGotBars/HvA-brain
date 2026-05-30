@@ -26,7 +26,8 @@ main.huge {
 
   section {
     padding-block: var(--LG);
-
+    overflow-x: hidden;
+    overflow-x: clip;
     --tab-bg: var(--secondary);
     --tab-color: var(--accent);
     --tab-selected-bg: var(--accent);
@@ -133,14 +134,12 @@ main.huge {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
-    overflow-x: hidden;
-    overflow-x: clip;
     @media (min-width: 969px) {
       grid-column: 4 / -1;
     }
 
     > * {
-      grid-column: 2 / -1;
+      grid-column: 2 / -2;
     }
   }
 
