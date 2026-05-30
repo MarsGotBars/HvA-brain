@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "build": "rimraf dist && npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve",
+    "dev": "eleventy --serve",
     "component": "node lib/component-generator.js",
     "page": "node lib/page-generator.js"
   },

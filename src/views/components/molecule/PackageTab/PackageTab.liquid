@@ -1,0 +1,21 @@
+<section class="PackageTab">
+  <div role="tablist" data-swapping>
+    {% for mgr in managers %}
+      <button
+        role="tab"
+        id="tab-{{ name }}-{{ mgr }}"
+        {% if forloop.first %}
+          aria-selected="true"
+        {% else %}
+          aria-selected="false"
+          tabindex="-1"
+        {% endif %}
+        data-manager="{{ mgr }}"
+      >
+        {{ mgr }}
+      </button>
+    {% endfor %}
+  </div>
+
+  {% render 'atom/CodeBlock/CodeBlock', managers: managers, cmd: cmd %}
+</section>

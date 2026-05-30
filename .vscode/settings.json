@@ -1,0 +1,10 @@
+{
+  "prettier.prettierPath": "./node_modules/.pnpm/prettier@3.8.3/node_modules/prettier",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[liquid]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true
+}

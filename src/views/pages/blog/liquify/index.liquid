@@ -5,12 +5,13 @@ date: "2026-05-28"
 tags: [blog, tutorial]
 pageScripts:
   head:
-    '/scripts/sync.js'
+    - '/scripts/sync.js'
+    - '/scripts/copyCode.js'
+componentStyles:
+  - /css/components/CodeBlock.css
+  - /css/components/CopyButton.css
+  - /css/components/PackageTab.css
 ---
-
-{% assign manager = "npm, pnpm, yarn" %}
-{% assign manager_arr = manager | split: ", " %}
-
 <main class="huge">
   <header>
     <h1 class="main-heading large">
@@ -20,57 +21,33 @@ pageScripts:
   </header>
 
   <article>
+    {% for manager in managers %}
+      {{ manager }}
+    {% endfor %}
+
     {% comment %} will add TOC later {% endcomment %}
     {% comment %} <h2>Table of contents</h2> {% endcomment %}
 
     <h2>Installation</h2>
     <p>Firstly create a directory and enter it with the following commands:</p>
-    <code>mkdir my-static-site</code>
-    <code>cd my-static-site</code>
+    {% render 'atom/CodeBlock/CodeBlock', cmd: 'mkdir my-static-site', type: 'console' %}
+    {% render 'atom/CodeBlock/CodeBlock', cmd: 'cd my-static-site', type: 'console' %}
 
-    <section data-swapping>
-      {% for pkg in manager_arr %}
-        {% if forloop.first %}
-          <details name="pkg_init" class="pkg-tab" data-manager="{{ pkg }}" open>
-        {% else %}
-          <details name="pkg_init" class="pkg-tab" data-manager="{{ pkg }}">
-        {% endif %}
-          <summary>{{ pkg }}</summary>
-          <div>
-            <code>{{ pkg }} init{% if pkg != "pnpm" %} -y{% endif %}</code>
-          </div>
-        </details>
-      {% endfor %}
-    </section>
+    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_init', cmd: 'init', managers: managers %}
 
     <p>Then open up your terminal and get the following packages ready:</p>
 
-    <section data-swapping>
-      {% for pkg in manager_arr %}
-        {% if forloop.first %}
-          <details name="pkg_install" class="pkg-tab" data-manager="{{ pkg }}" open>
-        {% else %}
-          <details name="pkg_install" class="pkg-tab" data-manager="{{ pkg }}">
-        {% endif %}
-          <summary>{{ pkg }}</summary>
-          <div>
-            <code>
-              <span data-swappable>{{ pkg }}</span> 
-              {% if pkg == "npm" %}install{% else %}add{% endif %} liquidjs
-            </code>
-            <code>
-              <span data-swappable>{{ pkg }}</span> 
-              {% if pkg == "npm" %}install{% else %}add{% endif %} -D @11ty/eleventy
-            </code>
-          </div>
-        </details>
-      {% endfor %}
-    </section>
+    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_liquidjs', cmd: 'add liquidjs', managers: managers %}
+    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_11ty', cmd: 'add -D @11ty/eleventy', managers: managers %}
 
     <h2>Configuring Eleventy (v3+)</h2>
-    <p>Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named <code>eleventy.config.js</code> in your project root and add the modern <code>export default</code> structure:</p>
-    
-<pre><code>export default function (eleventyConfig) {
+    <p>
+      Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named
+      {% render 'atom/CodeBlock/CodeBlock', cmd: 'eleventy.config.js' %} in your project root and add the modern
+      {% render 'atom/CodeBlock/CodeBlock', cmd: 'export default' %} structure:
+    </p>
+
+    <pre><code>export default function (eleventyConfig) {
   return {
     dir: {
       input: "src",
@@ -78,15 +55,23 @@ pageScripts:
     }
   };
 };</code></pre>
-    <p>This explicitly tells Eleventy to process everything inside your <code>src</code> directory and compile the optimized, production-ready static assets directly into <code>_site</code>.</p>
+
+    <p>
+      This explicitly tells Eleventy to process everything inside your
+      {% render 'atom/CodeBlock/CodeBlock', cmd: 'src' %} directory and compile the optimized, production-ready static
+      assets directly into {% render 'atom/CodeBlock/CodeBlock', cmd: '_site' %}.
+    </p>
 
     <h2>Your First Template</h2>
     <p>Create your source folder structure and your primary template file:</p>
-    <code>mkdir src</code>
-    <code>touch src/index.liquid</code>
+    {% render 'atom/CodeBlock/CodeBlock', cmd: 'mkdir src', type: 'console' %}
+    {% render 'atom/CodeBlock/CodeBlock', cmd: 'touch src/index.liquid', type: 'console' %}
 
-    <p>Open up <code>src/index.liquid</code> and add a front matter block along with a dynamic Liquid array loop to test parsing capabilities:</p>
-<pre><code>&lt;---
+    <p>
+      Open up {% render 'atom/CodeBlock/CodeBlock', cmd: 'src/index.liquid' %} and add a front matter block along with a
+      dynamic Liquid array loop to test parsing capabilities:
+    </p>
+    <pre><code>&lt;---
 title: Welcome to Liquify
 ---&gt;
 &lt;!DOCTYPE html&gt;
@@ -107,29 +92,27 @@ title: Welcome to Liquify
 &lt;/html&gt;</code></pre>
 
     <h2>Fire Up the Build Server</h2>
-    <p>To keep development moving quickly, add a start script execution path directly into your <code>package.json</code> file:</p>
-<pre><code>"scripts": {
+    <p>
+      To keep development moving quickly, add a start script execution path directly into your
+      {% render 'atom/CodeBlock/CodeBlock', cmd: 'package.json' %} file:
+    </p>
+    <pre><code>"scripts": {
   "start": "eleventy --serve"
 }</code></pre>
 
-    <p>Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading development server:</p>
+    <p>
+      Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading
+      development server:
+    </p>
 
     <section data-swapping>
-      {% for pkg in manager_arr %}
-        {% if forloop.first %}
-          <details name="pkg_run" class="pkg-tab" data-manager="{{ pkg }}" open>
-        {% else %}
-          <details name="pkg_run" class="pkg-tab" data-manager="{{ pkg }}">
-        {% endif %}
-          <summary>{{ pkg }}</summary>
-          <div>
-            <code>{% if pkg == "npm" %}npm run start{% else %}{{ pkg }} start{% endif %}</code>
-          </div>
-        </details>
-      {% endfor %}
+      {% render 'molecule/PackageTab/PackageTab', name: 'pkg_run', cmd: 'start', managers: managers %}
     </section>
 
-    <p>The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at <code>http://localhost:8080</code>. Open it up and start hacking!</p>
-
+    <p>
+      The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
+      {% render 'atom/CodeBlock/CodeBlock', cmd: 'http://localhost:8080', type: 'console' %}. Open it up and start
+      hacking!
+    </p>
   </article>
 </main>

@@ -1,0 +1,27 @@
+{% if mgr %}
+  <button
+    class="CopyButton"
+    data-manager="{{ mgr }}"
+    data-copy="{{mgr}} {{cmd}}"
+  >
+    <span class="sr-only">
+      Copy
+      {{- mgr -}}
+      &nbsp;
+      {{- cmd -}}
+    </span>
+    {% render 'atom/icons/copy/copy' %}
+  </button>
+
+{% else %}
+  <button
+    class="CopyButton"
+    data-copy="{{cmd}}"
+  >
+    <span class="sr-only">
+      Copy
+      {{- cmd -}}
+    </span>
+    {% render 'atom/icons/copy/copy' %}
+  </button>
+{% endif %}

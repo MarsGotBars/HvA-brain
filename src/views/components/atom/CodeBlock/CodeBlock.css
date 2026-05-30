@@ -1,0 +1,32 @@
+@scope (.CodeBlock) {
+  :scope {
+    pointer-events: fill;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: min(30em, 100%);
+    position: relative;
+    background: var(--secondary);
+    color: var(--tertiary);
+
+    .cmd-managers {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      width: 100%;
+
+      .cmd-group {
+        grid-area: 1 / 1;
+
+        &[inert] {
+          visibility: hidden;
+
+          + .CopyButton {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+}

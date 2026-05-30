@@ -8,30 +8,6 @@ h1 {
   }
 }
 
-[data-swapping] {
-  display: flex;
-  position: relative;
-
-  details {
-    margin-bottom: 1em;
-
-    &:has(div code:nth-child(2)){
-        margin-bottom: 2em;
-    }
-    summary {
-      list-style: none;
-    }
-
-    &:open {
-      pointer-events: none;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      left: 0;
-      top: 1em;
-    }
-  }
+code {
+  display: block;
 }

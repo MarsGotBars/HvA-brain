@@ -27,11 +27,11 @@ html {
   src: url(../assets/fonts/MartianMono.ttf);
 }
 
-
 @font-face {
   font-family: Space;
-  src: url('../assets/fonts/SpaceMono-Bold.woff2') format('woff2'),
-       url('../assets/fonts/SpaceMono-Bold.woff') format('woff'),
+  src:
+    url("../assets/fonts/SpaceMono-Bold.woff2") format("woff2"),
+    url("../assets/fonts/SpaceMono-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -62,7 +62,8 @@ details:focus-within {
   outline: dashed 0.25rem var(--accent);
 }
 
-input, select {
+input,
+select {
   outline: none;
 }
 
@@ -220,14 +221,14 @@ span {
   right: clamp(-2rem, -3vw, -1rem);
 }
 
-.visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
 
 .uppity {
@@ -307,7 +308,7 @@ html {
   background: #2d150b; /* Light gray background */
 }
 
-::-webkit-scrollbar-track:hover{
+::-webkit-scrollbar-track:hover {
   background: #2d150b;
 }
 /* Handle (thumb) */
@@ -317,15 +318,14 @@ html {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #54B96F; /* Darker gray on hover */
+  background: #54b96f; /* Darker gray on hover */
   border: 4px solid transparent;
 }
 
 /* Handle on drag */
 ::-webkit-scrollbar-thumb:active {
-  background: #459A5C; /* Even darker gray when clicked */
+  background: #459a5c; /* Even darker gray when clicked */
   border: 4px solid transparent;
-
 }
 
 /* Buttons (arrows) - Optional */

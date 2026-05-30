@@ -1,0 +1,17 @@
+@scope (.PackageTab) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+
+    [role="tablist"] {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  :scope:has([role="tab"][data-manager="npm"][aria-selected="true"]) .cmd-manager[data-manager="npm"],
+  :scope:has([role="tab"][data-manager="pnpm"][aria-selected="true"]) .cmd-manager[data-manager="pnpm"],
+  :scope:has([role="tab"][data-manager="yarn"][aria-selected="true"]) .cmd-manager[data-manager="yarn"] {
+    display: inline;
+  }
+}
