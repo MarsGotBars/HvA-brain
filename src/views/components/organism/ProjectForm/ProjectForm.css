@@ -74,7 +74,8 @@
           text-transform: uppercase;
         }
 
-        &:is(:hover, :focus-visible), &:is(:hover, :focus-visible)::placeholder {
+        &:is(:hover, :focus-visible),
+        &:is(:hover, :focus-visible)::placeholder {
           color: var(--tertiary);
         }
       }
@@ -88,7 +89,7 @@
         }
 
         option {
-          outline: none;
+          outline: transparent;
         }
 
         &:has(option:nth-child(2):checked) {
@@ -109,10 +110,7 @@
             top: anchor(center);
             /* TODO: change this based on length of text? or invert */
             left: calc(anchor(center));
-            transform: translate(
-              -50%,
-              calc(-50% + ((1lh + 6px) * var(--selected)))
-            );
+            transform: translate(-50%, calc(-50% + ((1lh + 6px) * var(--selected))));
           }
 
           .picker {
@@ -168,7 +166,7 @@
       background: none;
       color: var(--accent);
       cursor: pointer;
-      outline: none;
+      outline: transparent;
       &:hover {
         color: var(--tertiary);
       }

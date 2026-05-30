@@ -1,0 +1,43 @@
+@scope (.PackageTab) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+
+    &:has(+ .PackageTab) {
+      margin-bottom: 1rem;
+    }
+
+    [role="tablist"] {
+      display: flex;
+      flex-direction: row;
+      max-width: min(30em, 100%);
+      justify-content: end;
+
+      button {
+        padding: 0.25rem 0.5rem;
+        background: transparent;
+        border: 0.125rem solid var(--border, var(--accent));
+        background: var(--background, var(--secondary));
+        color: var(--color, var(--tertiary));
+        font-family: var(--primary-font);
+        border-bottom: none;
+
+        + button {
+          border-left: none;
+        }
+
+        &[aria-selected="true"] {
+          background: var(--invert, var(--secondary, var(--background)));
+          color: var(--tertiary);
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  :scope:has([role="tab"][data-manager="npm"][aria-selected="true"]) .cmd-manager[data-manager="npm"],
+  :scope:has([role="tab"][data-manager="pnpm"][aria-selected="true"]) .cmd-manager[data-manager="pnpm"],
+  :scope:has([role="tab"][data-manager="yarn"][aria-selected="true"]) .cmd-manager[data-manager="yarn"] {
+    display: inline;
+  }
+}

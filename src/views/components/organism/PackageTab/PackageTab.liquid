@@ -1,4 +1,4 @@
-<section class="PackageTab">
+<div class="PackageTab">
   <div role="tablist" data-swapping>
     {% for mgr in managers %}
       <button
@@ -17,5 +17,5 @@
     {% endfor %}
   </div>
 
-  {% render 'atom/CodeBlock/CodeBlock', managers: managers, cmd: cmd %}
-</section>
+  {% render 'organism/CodeBlock/CodeBlock', managers: managers, cmd: cmd %}
+</div>

@@ -21,33 +21,30 @@ componentStyles:
   </header>
 
   <article>
-    {% for manager in managers %}
-      {{ manager }}
-    {% endfor %}
+    <section>
+      <h2 id="installation">Installation</h2>
+      <p>Firstly create a directory and enter it with the following commands:</p>
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'mkdir my-static-site', type: 'console' %}
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'cd my-static-site', type: 'console' %}
+      <p>Or create one by hand!</p>
 
-    {% comment %} will add TOC later {% endcomment %}
-    {% comment %} <h2>Table of contents</h2> {% endcomment %}
+      {% render 'organism/PackageTab/PackageTab', name: 'pkg_init', cmd: 'init', managers: managers %}
 
-    <h2>Installation</h2>
-    <p>Firstly create a directory and enter it with the following commands:</p>
-    {% render 'atom/CodeBlock/CodeBlock', cmd: 'mkdir my-static-site', type: 'console' %}
-    {% render 'atom/CodeBlock/CodeBlock', cmd: 'cd my-static-site', type: 'console' %}
+      <p>Then get the following packages ready:</p>
 
-    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_init', cmd: 'init', managers: managers %}
+      {% render 'organism/PackageTab/PackageTab', name: 'pkg_liquidjs', cmd: 'add liquidjs', managers: managers %}
+      {% render 'organism/PackageTab/PackageTab', name: 'pkg_11ty', cmd: 'add -D @11ty/eleventy', managers: managers %}
+    </section>
+    <section>
+      <h2 id="11ty">Configuring Eleventy (v3+)</h2>
+      <p>
+        Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named
+        <span class="code">elventy.config.js</span>
+        in your project root and add the modern
+        <span class="code">export default</span> structure:
+      </p>
 
-    <p>Then open up your terminal and get the following packages ready:</p>
-
-    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_liquidjs', cmd: 'add liquidjs', managers: managers %}
-    {% render 'molecule/PackageTab/PackageTab', name: 'pkg_11ty', cmd: 'add -D @11ty/eleventy', managers: managers %}
-
-    <h2>Configuring Eleventy (v3+)</h2>
-    <p>
-      Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named
-      {% render 'atom/CodeBlock/CodeBlock', cmd: 'eleventy.config.js' %} in your project root and add the modern
-      {% render 'atom/CodeBlock/CodeBlock', cmd: 'export default' %} structure:
-    </p>
-
-    <pre><code>export default function (eleventyConfig) {
+      <pre><code>export default function (eleventyConfig) {
   return {
     dir: {
       input: "src",
@@ -56,22 +53,23 @@ componentStyles:
   };
 };</code></pre>
 
-    <p>
-      This explicitly tells Eleventy to process everything inside your
-      {% render 'atom/CodeBlock/CodeBlock', cmd: 'src' %} directory and compile the optimized, production-ready static
-      assets directly into {% render 'atom/CodeBlock/CodeBlock', cmd: '_site' %}.
-    </p>
+      <p>
+        This explicitly tells Eleventy to process everything inside your
+        <span class="code">src</span> directory and compile the optimized, production-ready static assets directly into
+        <span class="code">_site</span>.
+      </p>
+    </section>
+    <section>
+      <h2 id="templating">Your First Template</h2>
+      <p>Create your source folder structure and your primary template file:</p>
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'mkdir src', type: 'console' %}
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'touch src/index.liquid', type: 'console' %}
 
-    <h2>Your First Template</h2>
-    <p>Create your source folder structure and your primary template file:</p>
-    {% render 'atom/CodeBlock/CodeBlock', cmd: 'mkdir src', type: 'console' %}
-    {% render 'atom/CodeBlock/CodeBlock', cmd: 'touch src/index.liquid', type: 'console' %}
-
-    <p>
-      Open up {% render 'atom/CodeBlock/CodeBlock', cmd: 'src/index.liquid' %} and add a front matter block along with a
-      dynamic Liquid array loop to test parsing capabilities:
-    </p>
-    <pre><code>&lt;---
+      <p>
+        Open up the <span class="code">src/index.liquid</span> file and add a front matter block along with a dynamic
+        Liquid array loop to test parsing capabilities:
+      </p>
+      <pre><code>&lt;---
 title: Welcome to Liquify
 ---&gt;
 &lt;!DOCTYPE html&gt;
@@ -90,29 +88,39 @@ title: Welcome to Liquify
   &lt;/ul&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-
-    <h2>Fire Up the Build Server</h2>
-    <p>
-      To keep development moving quickly, add a start script execution path directly into your
-      {% render 'atom/CodeBlock/CodeBlock', cmd: 'package.json' %} file:
-    </p>
-    <pre><code>"scripts": {
-  "start": "eleventy --serve"
-}</code></pre>
-
-    <p>
-      Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading
-      development server:
-    </p>
-
-    <section data-swapping>
-      {% render 'molecule/PackageTab/PackageTab', name: 'pkg_run', cmd: 'start', managers: managers %}
     </section>
+    <section>
+      <h2 id="fire-up">Fire Up the Build Server</h2>
+      <p>
+        To keep development moving quickly, add a start/dev script execution path directly into your
+        <span class="code">package.json</span> file:
+      </p>
+      <pre><code>"scripts": {
+    "dev": "eleventy --serve"
+  }</code></pre>
 
-    <p>
-      The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
-      {% render 'atom/CodeBlock/CodeBlock', cmd: 'http://localhost:8080', type: 'console' %}. Open it up and start
-      hacking!
-    </p>
+      <p>
+        Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading
+        development server:
+      </p>
+
+      {% render 'organism/PackageTab/PackageTab', name: 'pkg_run', cmd: 'dev', managers: managers %}
+
+      <p>
+        The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
+        <span class="code highlight-block">http://localhost:8080</span>. Open it up and start hacking!
+      </p>
+    </section>
   </article>
+  <aside>
+    <nav>
+      <a href="/blog">back</a>
+      <ol class="TOC">
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#11ty">Configuring Eleventy</a></li>
+        <li><a href="#templating">Your First Template</a></li>
+        <li><a href="#fire-up">Fire Up the Build Server</a></li>
+      </ol>
+    </nav>
+  </aside>
 </main>

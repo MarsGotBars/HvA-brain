@@ -3,7 +3,7 @@
     <span class="cmd-managers">
       {% for mgr in managers %}
         <span
-          class="cmd-group"
+          class="cmd-group cmd-text"
           data-manager="{{ mgr }}"
           {% unless forloop.first %}
             inert
@@ -16,12 +16,14 @@
             {{- cmd -}}
           </span>
         </span>
-        {% render 'atom/CopyButton/CopyButton', cmd: cmd, mgr: mgr %}
+        {% render 'molecule/CopyButton/CopyButton', cmd: cmd, mgr: mgr %}
       {% endfor %}
     </span>
 
   {% else %}
-    {{ cmd }}
-    {% render 'atom/CopyButton/CopyButton', cmd: cmd %}
+    <span class="cmd-text">
+      {{ cmd }}
+    </span>
+    {% render 'molecule/CopyButton/CopyButton', cmd: cmd %}
   {% endif %}
 </code>

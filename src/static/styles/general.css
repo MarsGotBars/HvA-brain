@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
 }
 
 /* because you can't unset this... */
@@ -64,7 +65,7 @@ details:focus-within {
 
 input,
 select {
-  outline: none;
+  outline: transparent;
 }
 
 li {
@@ -74,10 +75,17 @@ li {
   font-weight: inherit;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
+  cursor: pointer;
+}
+
+header + * {
+  position: relative;
+  z-index: 1;
 }
 
 /* MARK: Theme
@@ -90,29 +98,29 @@ body {
   /* Theme */
   --white: hsl(43, 76%, 92%);
 
-  --accent-light-30: hsl(15, 10%, 76%);
-  --accent-light-20: hsl(17, 10%, 53%);
-  --accent-light-10: hsl(17, 20%, 31%);
+  --primary-light-30: hsl(15, 10%, 76%);
+  --primary-light-20: hsl(17, 10%, 53%);
+  --primary-light-10: hsl(17, 20%, 31%);
   --primary: hsl(18, 61%, 11%);
-  --accent-dark-10: #1f0b05;
-  --accent-dark-20: hsl(11, 85%, 3%);
-  --accent-dark-30: hsl(0, 100%, 0%);
+  --primary-dark-10: #1f0b05;
+  --primary-dark-20: hsl(11, 85%, 3%);
+  --primary-dark-30: hsl(0, 100%, 0%);
 
-  --accent-light-30: hsl(20, 4%, 73%);
-  --accent-light-20: hsl(20, 5%, 48%);
-  --accent-light-10: hsl(19, 13%, 25%);
+  --secondary-light-30: hsl(20, 4%, 73%);
+  --secondary-light-20: hsl(20, 5%, 48%);
+  --secondary-light-10: hsl(19, 13%, 25%);
   --secondary: hsl(16, 60%, 5%);
-  --accent-dark-10: hsl(9, 64%, 2%);
-  --accent-dark-20: hsl(0, 50%, 1%);
-  --accent-dark-30: hsl(0, 0%, 0%);
+  --secondary-dark-10: hsl(9, 64%, 2%);
+  --secondary-dark-20: hsl(0, 50%, 1%);
+  --secondary-dark-30: hsl(0, 0%, 0%);
 
-  --accent-light-30: hsl(43, 93%, 94%);
-  --accent-light-20: hsl(44, 93%, 88%);
-  --accent-light-10: hsl(44, 91%, 82%);
+  --tertiary-light-30: hsl(43, 93%, 94%);
+  --tertiary-light-20: hsl(44, 93%, 88%);
+  --tertiary-light-10: hsl(44, 91%, 82%);
   --tertiary: hsl(44, 92%, 75%);
-  --accent-dark-10: hsl(45, 33%, 51%);
-  --accent-dark-20: hsl(44, 35%, 28%);
-  --accent-dark-30: hsl(43, 47%, 9%);
+  --tertiary-dark-10: hsl(45, 33%, 51%);
+  --tertiary-dark-20: hsl(44, 35%, 28%);
+  --tertiary-dark-30: hsl(43, 47%, 9%);
 
   --accent-light-10: hsl(132, 93%, 82%);
   --accent-light-10: hsl(133, 93%, 79%);
@@ -331,9 +339,4 @@ html {
 /* Buttons (arrows) - Optional */
 ::-webkit-scrollbar-button {
   display: none;
-}
-
-header + * {
-  position: relative;
-  z-index: 1;
 }

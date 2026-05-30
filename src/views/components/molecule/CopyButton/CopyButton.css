@@ -5,26 +5,18 @@
     background: transparent;
     outline: transparent;
     border: none;
-    color: var(--accent);
+    color: inherit;
     cursor: copy;
     width: 24px;
     transition: color 0.3s var(--brutal-transition);
-    transition: transform 1s var(--brutal-transition);
+    transition:
+      rotate 2s var(--brutal-transition),
+      scale 1.2s var(--brutal-transition);
 
-    &:hover {
-      color: oklch(from var(--accent) calc(l + 0.1) c h);
-    }
-
-    &:focus {
-      z-index: 1;
-    }
-    &:active {
-      transform: rotate(-20deg) scale(1.2);
-      transition: transform 0.1s ease-out;
-    }
     aspect-ratio: 1/1;
     visibility: hidden;
     pointer-events: none;
+
     &.render {
       visibility: visible;
       pointer-events: initial;
