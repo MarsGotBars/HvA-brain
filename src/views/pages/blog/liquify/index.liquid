@@ -28,6 +28,11 @@ componentStyles:
       {% render 'organism/CodeBlock/CodeBlock', cmd: 'cd my-static-site', type: 'console' %}
       <p>Or create one by hand!</p>
 
+      <p>
+        Then simply create your <span class="code">package.json</span>, don't worry about this file too much, we'll come
+        back to it later!
+      </p>
+
       {% render 'organism/PackageTab/PackageTab', name: 'pkg_init', cmd: 'init', managers: managers %}
 
       <p>Then get the following packages ready:</p>
@@ -108,8 +113,9 @@ title: Welcome to Liquify
 
       <p>
         The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
-        <span class="code highlight-block">http://localhost:8080</span>. Open it up and start hacking!
+        <span class="code">http://localhost:8080</span>. Open it up and start hacking!
       </p>
+      <p class="hello-world uppity">nice!</p>
     </section>
   </article>
   <aside>

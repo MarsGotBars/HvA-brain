@@ -1,13 +1,20 @@
+document.querySelectorAll(".cmd-managers, [role='tablist']").forEach((el) => {
+  el.classList.add("enhanced");
+});
+
+let activeManager = document.querySelector("[role='tab'][aria-selected='true']")?.dataset.manager;
+
 function activateTab(selectedTab) {
   const manager = selectedTab.dataset.manager;
+  if (manager === activeManager) return;
+  activeManager = manager;
 
   const update = () => {
-    document.querySelectorAll("[role='tablist']").forEach((tablist) => {
-      tablist.querySelectorAll("[role='tab']").forEach((tab) => {
-        const isSelected = tab.dataset.manager === manager;
-        tab.setAttribute("aria-selected", String(isSelected));
-        tab.tabIndex = isSelected ? 0 : -1;
-      });
+    document.querySelectorAll("[role='tab']").forEach((tab) => {
+      const isSelected = tab.dataset.manager === manager;
+      tab.setAttribute("aria-selected", String(isSelected));
+      tab.tabIndex = isSelected ? 0 : -1;
+      console.log("happened");
     });
 
     document.querySelectorAll(".cmd-group").forEach((group) => {
@@ -15,11 +22,7 @@ function activateTab(selectedTab) {
     });
   };
 
-  if (document.startViewTransition) {
-    document.startViewTransition(update);
-  } else {
-    update();
-  }
+  update();
 }
 
 document.querySelectorAll("[role='tab']").forEach((tab) => {
@@ -43,8 +46,4 @@ document.querySelectorAll("[role='tablist']").forEach((tablist) => {
     tabs[next].focus();
     activateTab(tabs[next]);
   });
-});
-
-document.querySelectorAll("[role='tab']").forEach((tab) => {
-  tab.addEventListener("click", () => activateTab(tab));
 });

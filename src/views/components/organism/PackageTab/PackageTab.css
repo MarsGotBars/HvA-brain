@@ -8,7 +8,13 @@
     }
 
     [role="tablist"] {
-      display: flex;
+      --display: none;
+      display: var(--display);
+
+      &.enhanced {
+        --display: flex;
+      }
+
       flex-direction: row;
       max-width: min(30em, 100%);
       justify-content: end;
@@ -16,9 +22,9 @@
       button {
         padding: 0.25rem 0.5rem;
         background: transparent;
-        border: 0.125rem solid var(--border, var(--accent));
-        background: var(--background, var(--secondary));
-        color: var(--color, var(--tertiary));
+        border: 0.125rem solid var(--border, var(--primary));
+        background: var(--tab-bg);
+        color: var(--tab-color);
         font-family: var(--primary-font);
         border-bottom: none;
 
@@ -27,8 +33,8 @@
         }
 
         &[aria-selected="true"] {
-          background: var(--invert, var(--secondary, var(--background)));
-          color: var(--tertiary);
+          background: var(--tab-selected-bg);
+          color: var(--tab-selected-color);
           cursor: default;
         }
       }

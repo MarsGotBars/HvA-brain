@@ -2,21 +2,23 @@
   {% if managers %}
     <span class="cmd-managers">
       {% for mgr in managers %}
-        <span
-          class="cmd-group cmd-text"
-          data-manager="{{ mgr }}"
-          {% unless forloop.first %}
-            inert
-          {% endunless %}
-        >
-          <span class="cmd-manager">
-            {{- mgr -}}
+        <span class="cmd-pair">
+          <span
+            class="cmd-group cmd-text"
+            data-manager="{{ mgr }}"
+            {% unless forloop.first %}
+              inert
+            {% endunless %}
+          >
+            <span class="cmd-manager">
+              {{- mgr -}}
+            </span>
+            <span class="cmd-rest">
+              {{- cmd -}}
+            </span>
           </span>
-          <span class="cmd-rest">
-            {{- cmd -}}
-          </span>
+          {% render 'molecule/CopyButton/CopyButton', cmd: cmd, mgr: mgr %}
         </span>
-        {% render 'molecule/CopyButton/CopyButton', cmd: cmd, mgr: mgr %}
       {% endfor %}
     </span>
 

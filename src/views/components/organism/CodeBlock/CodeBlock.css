@@ -1,7 +1,5 @@
 @scope (.CodeBlock) {
   :scope {
-    --border_scoped: var(--border, var(--accent));
-
     pointer-events: fill;
     display: flex;
     align-items: center;
@@ -12,15 +10,11 @@
     color: var(--color, var(--tertiary));
     font-weight: 600;
     padding: 0.5rem 1rem;
-    border: var(--border) 0.125rem solid;
+    border: 0.125rem solid var(--border, var(--primary));
     cursor: copy;
 
     &:has(+ .CodeBlock) {
       border-bottom-style: dashed;
-    }
-
-    &:has(+ .CodeBlock:hover) {
-      border-bottom-color: oklch(from var(--border_scoped) calc(l + 0.1) c h);
     }
 
     .CodeBlock + & {
@@ -32,6 +26,7 @@
       position: relative;
       width: fit-content;
       max-width: calc(100% - 40px);
+      cursor: text;
     }
 
     .cmd-managers {
@@ -40,18 +35,18 @@
       grid-template-rows: 1fr;
       width: 100%;
 
-      > * {
-        grid-area: 1 / 1;
+      > .cmd-pair {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
       }
 
-      .cmd-group[inert] {
-        visibility: hidden;
+      &.enhanced {
+        grid-template-rows: unset;
 
-        + .CopyButton {
-          visibility: hidden;
-          pointer-events: none;
-        }
-        + .CopyButton::after {
+        grid-area: 1 / 1;
+
+        > .cmd-pair:has(.cmd-group[inert]) {
           display: none;
         }
       }
@@ -59,14 +54,10 @@
   }
 
   &:hover {
-    border-color: oklch(from var(--border_scoped) calc(l + 0.1) c h);
-
-    .CopyButton.render {
-      color: oklch(from var(--border_scoped) calc(l + 0.1) c h);
-    }
+    background: var(--bg-hover, var(--primary));
   }
 
-  &:focus-within .CopyButton.render {
+  &:is(:focus-within, :focus) .CopyButton.render {
     z-index: 1;
   }
 
