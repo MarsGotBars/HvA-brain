@@ -97,10 +97,6 @@ main.huge {
       @media (min-width: 969px) {
         margin-left: calc(-1 * var(--gap));
         padding-left: var(--gap);
-
-        &::before {
-          visibility: hidden;
-        }
       }
     }
   }
@@ -134,6 +130,7 @@ main.huge {
     grid-column: 1 / -1;
     overflow-x: hidden;
     overflow-x: clip;
+    z-index: 2;
 
     @media (min-width: 969px) {
       grid-column: 4 / -1;
