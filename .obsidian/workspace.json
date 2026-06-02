@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/PRIVATE/FDND BEWIJS/SEMESTER 4 ENDTERM.md",
+                "file": "content/stuff/Links to keep in mind.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SEMESTER 4 ENDTERM"
+              "title": "Links to keep in mind"
             }
           }
         ],
@@ -208,10 +208,11 @@
   },
   "active": "42306d010f571e14",
   "lastOpenFiles": [
-    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
+    "dist/assets/img/project-visuals",
     "dist/assets/img/project-visuals/villas4u/villas4u-bg.webp",
     "dist/assets/img/project-visuals/little-alpine/little-alpine-bg.webp",
     "dist/assets/img/project-visuals/just/just-bg.webp",
+    "dist/assets/img/project-visuals/hoevzh/hoevzh-bg.webp",
     "dist/assets/img/project-visuals/dda/dda-bg.webp",
     "dist/assets/img/project-visuals/crow/crow-bg.webp",
     "dist/assets/img/project-visuals/ara/ara-bg.webp",
@@ -220,11 +221,11 @@
     "dist/assets/img/project-visuals/just",
     "dist/assets/img/project-visuals/hoevzh",
     "dist/assets/img/project-visuals/dda",
-    "dist/assets/img/project-visuals/ara",
     "dist/assets/img/project-visuals/crow",
-    "dist/assets/img/project-visuals",
-    "dist/scripts/sync.js",
-    "src/static/scripts/sync.js",
+    "dist/assets/img/project-visuals/ara",
+    "content/PRIVATE/FDND BEWIJS/SEMESTER 4 ENDTERM.md",
+    "dist/scripts/copyCode.js",
+    "dist/css/components/CopyButton.css",
     "dist/assets/img/hfcI0GOyvb-1536.jpeg",
     "dist/assets/img/hfcI0GOyvb-1024.jpeg",
     "dist/assets/img/hfcI0GOyvb-640.jpeg",
@@ -232,7 +233,6 @@
     "content/blog/test-copy.md",
     "content/blog/initial-commit copy.md",
     "content/stuff/Songs.md",
-    "content/PRIVATE/FDND BEWIJS/SEMESTER 4 ENDTERM.md",
     "content/daily_notes/2026-05-28.md",
     "content/stuff/CONF/CSS DAY LOG.md",
     "content/PRIVATE/Verbeterpunte.md",

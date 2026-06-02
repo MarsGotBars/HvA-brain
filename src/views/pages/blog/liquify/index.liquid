@@ -115,7 +115,13 @@ title: Welcome to Liquify
         The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
         <span class="code">http://localhost:8080</span>. Open it up and start hacking!
       </p>
-      <p class="hello-world uppity">nice!</p>
+      {% assign splitWord = 'nice!' | split %}
+      <p class="hello-world uppity">
+        {% for item in splitWord %}
+          <span data-char>{{ item }}</span>
+        {% endfor -%}
+        <span class="sr-only">nice!</span>
+      </p>
     </section>
   </article>
   <aside>

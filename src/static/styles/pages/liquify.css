@@ -38,7 +38,7 @@ main.huge {
       padding-block-end: var(--XL);
     }
 
-    > * + * {
+    > * + *:not(.hello-world) {
       margin-block-start: 0.5rem;
     }
 
@@ -131,6 +131,7 @@ main.huge {
     grid-column: 1 / -1;
     overflow-x: hidden;
     overflow-x: clip;
+    anchor-name: --post;
 
     @media (min-width: 969px) {
       grid-column: 4 / -1;
@@ -138,6 +139,19 @@ main.huge {
 
     > * {
       grid-column: 2 / -2;
+    }
+
+    .hello-world {
+      position: fixed;
+      position-anchor: --post;
+      position-area: bottom right;
+      transform: translate(-100%, -lh);
+      display: flex;
+      flex-direction: row;
+
+      [data-char] {
+        animation: waves-block 0.8s calc(0.2s * sibling-index()) var(--brutal-transition) infinite;
+      }
     }
   }
 
@@ -240,5 +254,20 @@ main.huge {
         }
       }
     }
+  }
+}
+
+@keyframes waves-block {
+  33.333% {
+    rotate: -5deg;
+  }
+  50% {
+    translate: 0 -0.25lh;
+  }
+  66.666% {
+    rotate: 5deg;
+  }
+  100% {
+    translate: 0 0lh;
   }
 }
