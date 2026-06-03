@@ -81,7 +81,6 @@
 
   @position-try --custom-flip {
     position-area: bottom center;
-    margin-top: 6px;
   }
 
   /* https://codepen.io/monknow/fullembedgrid/PormJMG */
@@ -90,7 +89,7 @@
     position-anchor: --code;
     position-area: top center;
     justify-self: start;
-    position-try: --center-right, flip-block;
+    position-try: flip-block;
     display: none;
     pointer-events: none;
     background: var(--secondary);
