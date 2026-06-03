@@ -1,5 +1,7 @@
 @scope (.CodeBlock) {
   :scope {
+    anchor-name: --code;
+    anchor-scope: --code;
     pointer-events: fill;
     display: flex;
     align-items: center;
@@ -67,5 +69,37 @@
     transition:
       rotate 1.2s 0.3s var(--brutal-transition),
       scale 0.1s ease-in-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .anchored-aside {
+        display: block;
+      }
+    }
+  }
+
+  @position-try --custom-flip {
+    position-area: bottom center;
+    margin-top: 6px;
+  }
+
+  /* https://codepen.io/monknow/fullembedgrid/PormJMG */
+  .anchored-aside {
+    position: fixed;
+    position-anchor: --code;
+    position-area: top center;
+    justify-self: start;
+    position-try: --center-right, flip-block;
+    display: none;
+    pointer-events: none;
+    background: var(--secondary);
+    color: var(--tertiary);
+    border: 2px solid black;
+    margin-block: 6px;
+    text-align: center;
+    user-select: none;
+    z-index: 99999;
+    width: 20ch;
   }
 }

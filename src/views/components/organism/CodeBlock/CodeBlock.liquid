@@ -1,4 +1,4 @@
-<code class="CodeBlock" data-type="{{type}}">
+<code class="CodeBlock" containertiming="copyBlock" data-type="{{type}}">
   {% if managers %}
     <span class="cmd-managers">
       {% for mgr in managers %}
@@ -28,4 +28,7 @@
     </span>
     {% render 'molecule/CopyButton/CopyButton', cmd: cmd %}
   {% endif %}
+  <aside containertiming="steamhappy" class="anchored-aside ff-p">
+    <p>Click to copy</p>
+  </aside>
 </code>

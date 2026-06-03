@@ -7,6 +7,7 @@ pageScripts:
   head:
     - '/scripts/sync.js'
     - '/scripts/copyCode.js'
+    - '/scripts/containerTiming.js'
 componentStyles:
   - /css/components/CodeBlock.css
   - /css/components/CopyButton.css
@@ -124,10 +125,10 @@ title: Welcome to Liquify
       </p>
     </section>
   </article>
-  <aside>
+  <aside class="tocWrapper">
     <nav>
       <a href="/blog">back</a>
-      <ol class="TOC">
+      <ol class="toc">
         <li><a href="#installation">Installation</a></li>
         <li><a href="#11ty">Configuring Eleventy</a></li>
         <li><a href="#templating">Your First Template</a></li>

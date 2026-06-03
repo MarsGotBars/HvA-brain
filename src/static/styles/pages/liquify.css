@@ -155,7 +155,7 @@ main.huge {
     }
   }
 
-  aside {
+  aside.tocWrapper {
     grid-column: 1 / calc(var(--aside-cols) + 1);
     grid-row: 1;
     height: 0px;
@@ -164,10 +164,8 @@ main.huge {
     top: 0;
     z-index: 2;
 
-    @supports (scroll-target-group: auto) {
-      @media (min-width: 969px) {
-        display: block;
-      }
+    @media (min-width: 969px) {
+      display: block;
     }
 
     > nav {
@@ -176,7 +174,7 @@ main.huge {
       height: 100svh;
       background: var(--primary);
 
-      ol.TOC {
+      ol.toc {
         padding: 0.5rem;
         display: flex;
         flex-direction: column;
