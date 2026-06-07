@@ -25,7 +25,7 @@
 >
 > FigmaLint to (for example) find hardcoded values & missing tokens
 
-> [!bug]
+> [!tip]
 >
 > ## Soft skills & Hard problems
 >
