@@ -1,6 +1,8 @@
 # Speakers
 
-> [!tip]- ## The invisible Divide
+> [!tip]
+>
+> ## The invisible Divide
 >
 > ### _Christine Vallaure_
 >
@@ -11,7 +13,9 @@
 > [Jen Simmons](https://labs.jensimmons.com/)
 > https://moonblocks.io
 
-> [!tip]- ## AI Without the Chaos: Context-Based Design Systems in Practice
+> [!tip]
+>
+> ## AI Without the Chaos: Context-Based Design Systems in Practice
 >
 > ### _TJ Pitre_
 >
@@ -21,13 +25,17 @@
 >
 > FigmaLint to (for example) find hardcoded values & missing tokens
 
-> [!bug]- ## Soft skills & Hard problems
+> [!bug]
+>
+> ## Soft skills & Hard problems
 >
 > ### _Calvin Robertson & Chris Kolb_
 >
 > summary; it is not about the flow/process but the people within it
 
-> [!important]- ## Manuel Matuzović on 19½ Things You Didn’t Know about Accessibility in HTML and CSS
+> [!important]
+>
+> ## Manuel Matuzović on 19½ Things You Didn’t Know about Accessibility in HTML and CSS
 >
 > ### _Manuel Matuzovic_
 >
@@ -47,11 +55,15 @@
 > 8. Chrome devtools settings Advanced Perceptual algorithm (APCA)
 >    [htmhell](https://htmhell.dev)
 
-> [!tip]- ## UX writing for AI interfaces
+> [!tip]
+>
+> ## UX writing for AI interfaces
 >
 > ### _Nick DiLallo_
 
-> [!warning]- ## Complex design for stupid people
+> [!warning]
+>
+> ## Complex design for stupid people
 >
 > ## _Chris Kolb_
 >
@@ -59,7 +71,9 @@
 >
 > https://bessermit.design
 
-> [!info]- ## Making by breaking
+> [!info]
+>
+> ## Making by breaking
 >
 > ### _dina Amin_
 >
@@ -69,11 +83,15 @@
 >
 > dina a amin
 
-> [!tip]- ## Components as data for humans and machines
+> [!tip]
+>
+> ## Components as data for humans and machines
 >
 > ### _Nathan Curtis_
 
-> [!important]- ## Effective & beautiful data visualization
+> [!important]
+>
+> ## Effective & beautiful data visualization
 >
 > ### _Nadieh Bremer_
 >
