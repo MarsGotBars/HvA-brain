@@ -97,7 +97,7 @@
 >
 > [Data visualization](https://www.visualcinnamon.com/)
 
-> [!info] ## Smart layout patterns with modern CSS
+> [!important] ## Smart layout patterns with modern CSS
 >
 > ### Kevin Powell
 >
@@ -117,10 +117,3 @@
 > `@container style()` is shipping soon in firefox
 >
 > [slides!](https://kevinpowell.co/talks/smart-layout-patterns)
->
-> #### Tips
->
-> ```css
-> @media (width > 768px) {
-> }
-> ```
