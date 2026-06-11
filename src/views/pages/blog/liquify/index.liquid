@@ -42,37 +42,39 @@ componentStyles:
       {% render 'organism/PackageTab/PackageTab', name: 'pkg_11ty', cmd: 'add -D @11ty/eleventy', managers: managers %}
     </section>
     <section>
-      <h2 id="11ty">Configuring Eleventy (v3+)</h2>
+      <h2 id="11ty">Configuring 11ty</h2>
       <p>
-        Modern Eleventy relies on ES Modules (ESM) by default. Create an explicit configuration file named
-        <span class="code">elventy.config.js</span>
-        in your project root and add the modern
+        To setup 11ty properly we need an
+        <span class="code">elventy.config.js</span> file in your project root and add the modern
         <span class="code">export default</span> structure:
       </p>
 
       <pre><code>export default function (eleventyConfig) {
   return {
     dir: {
-      input: "src",
-      output: "_site"
-    }
+      input: "views",
+      includes: "components",
+      layouts: "layouts",
+      data: "../../_data",
+      output: "_site",
+    },
   };
 };</code></pre>
 
       <p>
-        This explicitly tells Eleventy to process everything inside your
-        <span class="code">src</span> directory and compile the optimized, production-ready static assets directly into
+        With this set up; 11ty will be able to find your <span class="code">views</span>
+        directory and compile the optimized, production-ready static assets directly into
         <span class="code">_site</span>.
       </p>
     </section>
     <section>
       <h2 id="templating">Your First Template</h2>
       <p>Create your source folder structure and your primary template file:</p>
-      {% render 'organism/CodeBlock/CodeBlock', cmd: 'mkdir src', type: 'console' %}
-      {% render 'organism/CodeBlock/CodeBlock', cmd: 'touch src/index.liquid', type: 'console' %}
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'mkdir views', type: 'console' %}
+      {% render 'organism/CodeBlock/CodeBlock', cmd: 'touch views/index.liquid', type: 'console' %}
 
       <p>
-        Open up the <span class="code">src/index.liquid</span> file and add a front matter block along with a dynamic
+        Open up the <span class="code">views/index.liquid</span> file and add a front matter block along with a dynamic
         Liquid array loop to test parsing capabilities:
       </p>
       <pre><code>&lt;---
@@ -106,14 +108,14 @@ title: Welcome to Liquify
   }</code></pre>
 
       <p>
-        Now, run the script from your terminal using your active workflow package manager to boot up the hot-reloading
-        development server:
+        Now; run the script from your terminal to boot up the hot-reloading development server, your changes will be
+        reflected shortly after saving your changes!
       </p>
 
       {% render 'organism/PackageTab/PackageTab', name: 'pkg_run', cmd: 'dev', managers: managers %}
 
       <p>
-        The Eleventy compiler will now build your site and launch a hot-reloading dashboard locally at
+        11ty will now build your site and launch a hot-reloading dashboard locally at
         <span class="code">http://localhost:8080</span>. Open it up and start hacking!
       </p>
       {% assign splitWord = 'nice!' | split %}
@@ -129,10 +131,18 @@ title: Welcome to Liquify
     <nav>
       <a href="/blog">back</a>
       <ol class="toc">
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#11ty">Configuring Eleventy</a></li>
-        <li><a href="#templating">Your First Template</a></li>
-        <li><a href="#fire-up">Fire Up the Build Server</a></li>
+        <li>
+          <a href="#installation"><span>Installation</span></a>
+        </li>
+        <li>
+          <a href="#11ty"><span>Configuring Eleventy</span></a>
+        </li>
+        <li>
+          <a href="#templating"><span>Your First Template</span></a>
+        </li>
+        <li>
+          <a href="#fire-up"><span>Fire Up the Build Server</span></a>
+        </li>
       </ol>
     </nav>
   </aside>

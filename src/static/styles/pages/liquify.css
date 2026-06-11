@@ -1,3 +1,6 @@
+body {
+  container-type: scroll-state;
+}
 main.huge {
   --gap: 24px;
   --cols: 14;
@@ -8,17 +11,21 @@ main.huge {
   grid-template-columns: repeat(var(--cols), 1fr);
   gap: 0 var(--gap);
   header {
+    @container scroll-state(scrollable: bottom) {
+      background-color: red !important;
+    }
     grid-column: 2 / -2;
-    text-align: left;
     @media (min-width: 969px) {
       grid-column: 5 / -2;
     }
   }
   h1.main-heading {
+    @container (cqi > 20px) {
+      background-color: red;
+    }
     text-align: left;
     display: flex;
     flex-direction: column;
-
     span {
       position: relative;
       z-index: -1;
@@ -175,17 +182,63 @@ main.huge {
       background: var(--primary);
 
       ol.toc {
-        padding: 0.5rem;
+        --bounce: linear(
+          0,
+          0.375 7%,
+          0.662 14.5%,
+          0.867 22.6%,
+          0.942 27%,
+          0.998 31.6%,
+          1.053 39.5%,
+          1.071 48.8%,
+          1.062 57%,
+          1.01 81.7%,
+          1
+        );
+        padding: var(--MD) 0.5rem;
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 1rem;
+        font-size: var(--SM);
 
         li {
-          font-size: var(--SM);
+          &:has(:target-current) {
+            ~ li a {
+              span {
+                &::after {
+                  height: 40px;
+                }
+              }
+            }
+          }
+
           a {
-            color: var(--accent);
+            scale: 0.8;
+            transition: scale 0.4s var(--bounce);
+            display: inline-flex;
+            flex-direction: row;
+
+            &::before,
+            &::after {
+              display: inherit;
+              height: 0px;
+              width: 1px;
+              transition: height 0.25s var(--bounce);
+            }
+          }
+        }
+
+        li {
+          font-size: var(--XS);
+          a {
+            font-family: var(--secondary-font);
+
+            color: var(--tertiary);
             transform-origin: top left;
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+
             &::before,
             &::after {
               content: "";
@@ -223,31 +276,76 @@ main.huge {
                   1
                 )
                 scale,
-              0.3s ease opacity;
+              0.15s linear opacity;
+          }
+
+          span {
+            overflow: hidden;
+            overflow: clip;
+            display: inline-flex;
+
+            &::before,
+            &::after {
+              --direction: -1;
+              color: var(--accent);
+              content: "[";
+              font: inherit;
+              display: block;
+              max-width: 1ex;
+              scale: 0.8;
+              transform-origin: center;
+              transition:
+                translate 0.5s 0.1s ease-out,
+                scale 0.3s 0.15s ease;
+              translate: calc(100% * var(--direction)) 0;
+            }
+
+            &::after {
+              --direction: 1;
+
+              content: "]";
+            }
           }
         }
 
         &:has(a:target-current) {
-          li a {
-            opacity: 0.5;
-            scale: 0.8;
+          li {
+            a {
+              opacity: 0.5;
+              scale: 0.8;
 
-            &:target-current {
-              scale: 1;
-              opacity: 1;
+              &:target-current {
+                scale: 1;
+                opacity: 1;
 
-              &::before,
-              &::after {
-                content: "";
-                height: 20px;
-                width: 1px;
+                &::before,
+                &::after {
+                  height: 20px;
+                  width: 1px;
+                }
+
+                span {
+                  &::before,
+                  &::after {
+                    transition:
+                      translate 0s ease-in,
+                      scale 0.2s ease-in;
+                    scale: 1;
+                    translate: 0 0;
+                  }
+                }
               }
+            }
+            &:nth-child(odd) {
+              --rotation: 1;
             }
           }
 
-          li:has(a:target-current) ~ li a {
-            opacity: 0.3;
-            scale: 0.8;
+          li:has(a:target-current) ~ li {
+            a {
+              opacity: 0.3;
+              scale: 0.8;
+            }
           }
         }
       }
