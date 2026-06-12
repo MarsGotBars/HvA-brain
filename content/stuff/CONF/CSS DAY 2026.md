@@ -1,5 +1,52 @@
 # Speakers
 
+## Day 2
+> [!important]
+> ## [Kevin Powell](https://kevinpowell.co/talks/css-is-eating-js)
+> **CSS is eating JS**
+> inline css variables obscure the flow of data
+> using attr() makes this clears this up since we can look at the data-* attribute
+> - no internationalization and can't search for/select (with cursor?)
+> (modern) attr() can now be used with any property but values get passed as a string so it won't apply as a number
+> instead we can apply a `type(<number>)` like this;
+> ```css
+> --col-count: attr(data-column-count type(<number>))
+> ```
+> 
+> instead of a type you can also assign a value; for example setting px/rem/lh will likewise convert it to px/rem/lh
+> 
+> custom attributes are valid too
+> 
+> *where else can you assign type()? [how well is it supported*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/type#:~:text=In%20addition%2C%20the%20%7C%20token%20can%20be%20used%20as%20a%20separator%20when%20specifying%20multiple%20values%20or%20combining%20%3Cident%3E%20and%20%3Csyntax%2Dtype%3E%20values%20for%20the%20expected%20syntax.)
+> 
+> [`reading-flow: grid-rows;`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/reading-flow) for tab order when using `order: ...;` to help with keyboard controls (cool)
+> 
+> rathern than setting names per element we can set a `attr(data-id type(<custom-ident>))` for view transitions
+> 
+> we can use media queries and style queries in if()
+> 
+> attr() has some rules around urls;
+> 
+
+> [!important]
+> ## Patrick Brosset
+
+> [!important]
+> ## Manuel Matuzovic
+
+> [!important]
+> ## Niels Leenheer
+
+> [!important]
+> ## Eric Meyer
+
+> [!important]
+> ## Una Kravets
+
+> [!important]
+> ## Adam Argyle
+## Day 1
+
 > [!tip]
 > ## [Lea Verou](https://colorjs.io)
 > **What the color!?**
