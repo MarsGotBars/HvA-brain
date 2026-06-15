@@ -2,35 +2,36 @@ import Image from "@11ty/eleventy-img";
 import { join } from "path";
 import { rm } from "fs/promises";
 import { existsSync } from "fs";
+import { autoInjectCSSQuiet } from "./lib/component-bundler.js";
+import { gatherTaxonomies } from "./lib/registerTaxonomies.js";
 
 export default function (eleventyConfig) {
-
-  // Re-inject CSS dependencies before every build
   eleventyConfig.on("eleventy.before", async () => {
+    // Re-inject CSS dependencies before every build
     try {
-      const { autoInjectCSSQuiet } = await import("./lib/component-bundler.js");
       await autoInjectCSSQuiet();
     } catch (error) {
       console.warn("⚠️ CSS injection failed:", error.message);
     }
+
+    // taxonomy thing...
+    // TODO: rename this
+    try {
+      gatherTaxonomies();
+    } catch (error) {
+      console.error(error);
+    }
   });
-  
   eleventyConfig.addWatchTarget("src/static/**/*");
   eleventyConfig.addWatchTarget("src/views/components/**/*.liquid");
 
-  eleventyConfig.addPassthroughCopy({ 'src/static/': '/' });
-  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.css': '/css/components/' });
-  eleventyConfig.addPassthroughCopy({ 'src/views/components/**/*.js': '/js/components/' });
-
+  eleventyConfig.addPassthroughCopy({ "src/static/": "/" });
+  eleventyConfig.addPassthroughCopy({ "src/views/components/**/*.css": "/css/components/" });
+  eleventyConfig.addPassthroughCopy({ "src/views/components/**/*.js": "/js/components/" });
 
   // Remove project-visuals/ after build
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
-    const projectVisualsPath = join(
-      dir.output,
-      "assets",
-      "img",
-      "project-visuals"
-    );
+    const projectVisualsPath = join(dir.output, "assets", "img", "project-visuals");
 
     if (existsSync(projectVisualsPath)) {
       await rm(projectVisualsPath, { recursive: true, force: true });
@@ -59,7 +60,7 @@ export default function (eleventyConfig) {
         };
 
         let html = Image.generateHTML(metadata, imageAttributes);
-        
+
         if (className) {
           html = html.replace("<picture>", `<picture class="${className}">`);
         }
@@ -69,7 +70,7 @@ export default function (eleventyConfig) {
         console.error(`Error processing image ${src}:`, error);
         return `<picture><img src="" alt="${alt ? alt : "Image not found"}" /></picture>`;
       }
-    }
+    },
   );
 
   return {

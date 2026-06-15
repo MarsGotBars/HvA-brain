@@ -30,21 +30,157 @@
 
 > [!important]
 > ## Patrick Brosset
+> **Fun with *grid lanes***
+> focus group attributes for key arrow navigation in menu's for example
+> orientation depends on either using grid-template-(rows/columns)
+> 
+> works similarly to flex for using col/row & col/row-reverse
+> 
+> `repeat(autofill-fill, auto)` in case you don't know how large your items will be
+> 
+> `flow-tolerance` to 'normalize' the grid-lanes layout
+> 
+> [grid lanes MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout)
 
 > [!important]
 > ## Manuel Matuzovic
+> **Breaking with habits**
+> 
+> wrap css reset in
+> ```css
+> @layer uaplus-reset-styles{
+> 	*,
+> 	*::before,
+> 	*::after{
+> 		box-sizing: border-box;
+> 	}
+> }
+> ```
+> 
+> css pow()
+> 
+> 
 
 > [!important]
 > ## Niels Leenheer
+> **DOOM in CSS**
+> 
+> - negative animation delay
 
 > [!important]
 > ## Eric Meyer
+> 
+> [`ray(<angle>)`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/ray#:~:text=The%20ray()%20CSS%20function,direction%20of%20the%20specified%20angle.)
+> can be written in any order you like, only at needs to have a following position
+> 
 
 > [!important]
-> ## Una Kravets
+> ## [Una Kravets](https://codepen.io/collection/myqqRY)
+> **Modern UI Patterns**
+> 
+> box shadow with multiple delcarations; using light-dark() to hide the light declarations when on dark and vice-versa
+> 
+> ```css
+> @container anchored(fallback: flip-block) {
+> 	position-area: bottom;
+> 	border-top-color: transparent;
+> 	border-bottom-color: var(--tooltip-bg);
+> }
+> ``` 
+>  
+>  overscrollcontainer
+>  button with toggle-overscroll command and a commandfor the menu we want to overscroll
 
 > [!important]
-> ## Adam Argyle
+> ## [Adam Argyle](https://css-day-2026.netlify.app)
+> **Contextualism**
+> 
+> elements should be able to adapt to their environment
+> [Components can know](https://nerdy.dev/components-can-know)
+> ### The user
+> #### The device
+> - width
+> - orientation
+> - pointer
+> - hover
+> - color-gamut
+> 
+> #### PReferences
+> - reduced-data
+> - color-scheme
+> - reduced-motion
+> - reduced-transparency
+> - contrast
+> - forced-color
+> 
+> #### Logical properties
+> inline/block
+> 
+> ### Surroundings
+> #### Design tokens
+> for visual consistency
+> 
+> #### Where am I?
+> components can escape the shadow dom when querying with named container queries!!!
+> 
+> #### Room to breathe
+> Adapt based on width available
+> 
+> #### Quantity queries
+> change parent based on amount of children
+> 
+> #### What's inside
+> query what element it contains to change the styling
+> query amount of invalid fields in a form
+> 
+> #### Style queries
+> based on the value of a css var() we can adapt components
+> 
+> #### Stay close
+> Scoping with @scope
+> 
+> #### Read the room
+> using currentColor and light-dark more often
+> 
+> #### Size to content
+> inline size with (min/max/fit)-content
+> - **min** hug, wrap hard
+> - **max** never wrap
+> - **fit** grow till it fits
+> 
+> #### Animate to auto
+> interpolate-size to grow to auto (even with `calc-size()`)
+> 
+> #### Repaint glyphs
+> change the color of glyphs using `@font-palette-values` and `override-colors`
+> 
+> [**Open props v2**!!!!](https://opv2-beta.netlify.app/color/)
+> 
+> #### Irradiation illusion
+> does not change layout shift; just visual
+> `font-variation-settings: "GRAD" -50`
+> 
+> border radius match parent; no math with padding & border radius of the parent
+> 
+> `:playing` / `:paused` / `:picture-in-picture` / `fullscreen` 
+> 
+> `:placeholder-shown` rather than `:empty`
+> 
+> `:indeterminate`
+> 
+> `nth-child of [class]`
+> 
+> display-mode media query
+> 
+> contain-intrinsic-size: auto x-size;
+> 
+> hoist up the intersection of another element to drive the animation of a (neighbouring ) element
+> 
+> https://prop-for-that.netlify.app
+> 
+> scroll velocity - question
+> 
+> 
 ## Day 1
 
 > [!tip]

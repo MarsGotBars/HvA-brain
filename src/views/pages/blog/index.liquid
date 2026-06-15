@@ -14,7 +14,7 @@ title: 'BLOG'
     {% for post in collections.blog %}
       {% assign item = post.data %}
       <a class="list-item" href="{{ post.url }}">
-        <article>
+        <article data-bottom="200">
           <h2>
             {{ item.title }}
           </h2>
@@ -38,3 +38,24 @@ title: 'BLOG'
     <a href="/">BACK</a>
   </footer>
 </main>
+
+<template>
+  <a class="list-item" href="{{ post.url }}">
+    <article data-bottom="200">
+      <h2>
+        {{ item.title }}
+      </h2>
+      <p>
+        {{ item.date }}
+      </p>
+
+      <footer>
+        {% for tag in item.tags %}
+          <p>{{ tag }}</p>
+        {% else %}
+          none
+        {% endfor %}
+      </footer>
+    </article>
+  </a>
+</template>

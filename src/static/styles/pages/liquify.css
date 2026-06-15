@@ -1,6 +1,8 @@
 body {
   container-type: scroll-state;
+  container-name: main;
 }
+
 main.huge {
   --gap: 24px;
   --cols: 14;
@@ -11,9 +13,6 @@ main.huge {
   grid-template-columns: repeat(var(--cols), 1fr);
   gap: 0 var(--gap);
   header {
-    @container scroll-state(scrollable: bottom) {
-      background-color: red !important;
-    }
     grid-column: 2 / -2;
     @media (min-width: 969px) {
       grid-column: 5 / -2;
@@ -155,9 +154,15 @@ main.huge {
       transform: translate(-100%, -lh);
       display: flex;
       flex-direction: row;
+      background-color: blue;
 
       [data-char] {
         animation: waves-block 0.8s calc(0.2s * sibling-index()) var(--brutal-transition) infinite;
+      }
+
+      /* does not work :( */
+      @container scroll-state(scrollable: top) {
+        background: red;
       }
     }
   }

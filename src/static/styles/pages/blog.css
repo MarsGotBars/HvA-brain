@@ -12,6 +12,12 @@
     display: block;
     background-color: var(--accent);
     color: var(--secondary);
+    padding-bottom: var(--bottom);
+    article {
+      position: relative;
+      /* padding-bottom: attr(data-bottom px);  works!*/
+    }
+
     &:nth-child(odd) {
       background-color: var(--secondary);
       color: var(--tertiary);
