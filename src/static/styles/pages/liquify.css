@@ -162,7 +162,7 @@ main.huge {
         animation: waves-block 0.8s calc(0.2s * sibling-index()) var(--brutal-transition) infinite;
       }
 
-      @container (not scroll-state(scrollable: bottom)) {
+      @container main (not scroll-state(scrollable: bottom)) {
         transition: translate 0.25s var(--bounce);
 
         translate: 0 -1lh;
