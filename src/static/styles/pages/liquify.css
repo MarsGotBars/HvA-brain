@@ -1,4 +1,4 @@
-body {
+html {
   container-type: scroll-state;
   container-name: main;
 }
@@ -151,18 +151,21 @@ main.huge {
       position: fixed;
       position-anchor: --post;
       position-area: bottom right;
-      transform: translate(-100%, -lh);
+      translate: 100% 100%;
+      rotate: -45deg;
       display: flex;
       flex-direction: row;
-      background-color: blue;
+      transition: translate 0.5s var(--bounce);
+      transform-origin: center bottom;
 
       [data-char] {
         animation: waves-block 0.8s calc(0.2s * sibling-index()) var(--brutal-transition) infinite;
       }
 
-      /* does not work :( */
-      @container scroll-state(scrollable: top) {
-        background: red;
+      @container (not scroll-state(scrollable: bottom)) {
+        transition: translate 0.25s var(--bounce);
+
+        translate: 0 -1lh;
       }
     }
   }
@@ -187,19 +190,6 @@ main.huge {
       background: var(--primary);
 
       ol.toc {
-        --bounce: linear(
-          0,
-          0.375 7%,
-          0.662 14.5%,
-          0.867 22.6%,
-          0.942 27%,
-          0.998 31.6%,
-          1.053 39.5%,
-          1.071 48.8%,
-          1.062 57%,
-          1.01 81.7%,
-          1
-        );
         padding: var(--MD) 0.5rem;
         display: flex;
         flex-direction: column;
