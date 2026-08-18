@@ -1,0 +1,11 @@
+@scope (.BlogList) {
+  :scope {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    min-height: calc(100svh - 1lh - var(--MD));
+    .list {
+      display: flex;
+    }
+  }
+}

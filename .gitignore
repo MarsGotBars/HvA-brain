@@ -7,3 +7,4 @@ node_modules/
 .obsidian
 /.obsidian
 /dist
+.DS_Store

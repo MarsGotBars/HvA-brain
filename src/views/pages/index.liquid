@@ -16,21 +16,22 @@ pageScripts:
     <h2 class="highlight-block me">
       <span>Marcin Magdziak</span>
     </h2>
-    <span class="extra-info">very creative guy,
+    <span class="extra-info"
+      >very creative guy,
       <span class="highlight-block">trust me!</span>
     </span>
     <p>
-      <span style="--order: 1;">I am a
-        <span class="underlined semi-bold">Developer</span>:</span>
+      <span style="--order: 1;">I am a <span class="underlined semi-bold">Developer</span>:</span>
     </p>
     <p>
-      <span style="--order: 2;">I
+      <span style="--order: 2;"
+        >I
         <span class="semi-bold">write</span>
-        code.</span>
+        code.</span
+      >
     </p>
     <p>
-      <span style="--order: 3;">I design
-        <span class="semi-bold">interfaces</span>.</span>
+      <span style="--order: 3;">I design <span class="semi-bold">interfaces</span>.</span>
     </p>
     <p>
       <span style="--order: 4;">I craft animations with css.</span>
@@ -45,30 +46,29 @@ pageScripts:
     </div>
     <div class="group">
       <p class="special-case">
-        <span style="--order: 6.75;" class="sentence">No
-          <span class="semi-bold">templates</span>.</span>
+        <span style="--order: 6.75;" class="sentence">No <span class="semi-bold">templates</span>.</span>
       </p>
       <p class="special-case">
-        <span style="--order: 7.5;" class="sentence">No
-          <span class="semi-bold">shortcuts</span>.</span>
+        <span style="--order: 7.5;" class="sentence">No <span class="semi-bold">shortcuts</span>.</span>
       </p>
       <p class="special-case">
-        <span style="--order: 8.25;" class="sentence">No
-          <span class="semi-bold">bloat</span>.</span>
+        <span style="--order: 8.25;" class="sentence">No <span class="semi-bold">bloat</span>.</span>
       </p>
     </div>
-    {% capture imagePath %}src/static/assets/img/me.jpeg{%
-        endcapture %}
+    {% capture imagePath %}src/static/assets/img/me.jpeg{% endcapture %}
     {% image imagePath, "", "", "eager", "delayed-img" %}
-  {% comment %} <img
-                  data-moshable="me"
-                  style="--reveal: 8.25;"
-                  src="./assets/img/me.jpeg"
-            alt=""> {% endcomment %}
+    {% comment %}
+      <img
+            data-moshable="me"
+            style="--reveal: 8.25;"
+            src="./assets/img/me.jpeg"
+      alt="">
+    {% endcomment %}
   </article>
 </main>
 <aside class="details bg-brown">
-  <span class="aside-heading huge">↯
+  <span class="aside-heading huge"
+    >↯
     <h2 class="heading-label">DETAILS</h2>
   </span>
   <div class="details">
@@ -89,9 +89,15 @@ pageScripts:
   </div>
   <nav>
     <ul>
-      <li><a href="/portfolio">PORTFOLIO</a></li>
-      <li><a href="/" class="active">ABOUT</a></li>
-      <li><a href="/blog">BLOG</a></li>
+      <li>
+        <a href="/{{ routes.portfolio }}">{{ routes.portfolio | capitalize }}</a>
+      </li>
+      <li>
+        <a href="{{ routes.home }}" class="active">About</a>
+      </li>
+      <li>
+        <a href="/{{ routes.blog }}">{{ routes.blog | capitalize }}</a>
+      </li>
     </ul>
   </nav>
 </aside>

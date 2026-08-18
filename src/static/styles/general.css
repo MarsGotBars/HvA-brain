@@ -224,10 +224,12 @@ span {
   line-height: 1;
   width: fit-content;
 }
+
 .active {
   background: var(--tertiary);
   color: var(--primary);
 }
+
 .main-heading {
   color: var(--primary);
   font-family: Space, sans-serif;
@@ -363,4 +365,8 @@ html {
   background-color: var(--accent);
   color: var(--primary);
   border: var(--accent);
+}
+
+main {
+  min-height: 100%;
 }

@@ -1,6 +1,9 @@
 ---
 layout: 'default-layout'
 title: 'BLOG'
+componentStyles:
+  - /css/components/BlogList.css
+  - /css/components/BlogItem.css
 ---
 <main class="huge">
   <header class="header">
@@ -10,29 +13,7 @@ title: 'BLOG'
     </h1>
   </header>
 
-  <section class="blog-list">
-    {% for post in collections.blog %}
-      {% assign item = post.data %}
-      <a class="list-item" href="{{ post.url }}">
-        <article data-bottom="200">
-          <h2>
-            {{ item.title }}
-          </h2>
-          <p>
-            {{ item.date }}
-          </p>
-
-          <footer>
-            {% for tag in item.tags %}
-              <p>{{ tag }}</p>
-            {% else %}
-              none
-            {% endfor %}
-          </footer>
-        </article>
-      </a>
-    {% endfor %}
-  </section>
+  {% render 'organism/BlogList/BlogList', posts: collections.blog %}
 
   <footer>
     <a href="/">BACK</a>
@@ -40,22 +21,5 @@ title: 'BLOG'
 </main>
 
 <template>
-  <a class="list-item" href="{{ post.url }}">
-    <article data-bottom="200">
-      <h2>
-        {{ item.title }}
-      </h2>
-      <p>
-        {{ item.date }}
-      </p>
-
-      <footer>
-        {% for tag in item.tags %}
-          <p>{{ tag }}</p>
-        {% else %}
-          none
-        {% endfor %}
-      </footer>
-    </article>
-  </a>
+  {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
 </template>

@@ -1,0 +1,17 @@
+<li class="BlogItem">
+  <a class="list-item" href="{{ href }}">
+    <h2>{{ item.title }}</h2>
+
+    <p>
+      {{ item.date }}
+    </p>
+
+    <footer>
+      {% for tag in item.tags %}
+        <p>{{ tag }}</p>
+      {% else %}
+        none
+      {% endfor %}
+    </footer>
+  </a>
+</li>

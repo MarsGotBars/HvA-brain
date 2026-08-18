@@ -1,0 +1,18 @@
+<div class="BlogList huge">
+  <ul class="list">
+    {% for post in posts %}
+      {% assign item = post.data %}
+
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+      {% render 'molecule/BlogItem/BlogItem', href: post.url, item: item %}
+    {% endfor %}
+  </ul>
+</div>
